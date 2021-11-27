@@ -13,8 +13,3 @@ page.includeCSS {
 page.includeJSFooter {
   654 > # remove CS_SEO Tag Manager
 }
-
-page.includeJS {
-  modernizr = EXT:dp_theme/Resources/Public/js/modernizr.js
-  template = EXT:dp_theme/Resources/Public/js/script.min.js
-}

@@ -15,11 +15,9 @@ const _PACKGES_ = [
     {
         'vendor': 'js/vendor/',
         'src': [
-            '@barba/core/dist/barba.js',
-            '@barba/core/dist/barba.js.map',
+            '@barba/core/dist/barba.umd.js',
+            '@barba/core/dist/barba.umd.js.map',
             '@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-            'popper.js/dist/popper.min.js',
-            'popper.js/dist/popper.min.js.map',
             'bootstrap/dist/js/bootstrap.bundle.min.js',
             'bootstrap/dist/js/bootstrap.bundle.min.js.map',
             'jquery/dist/jquery.min.js',
@@ -27,9 +25,9 @@ const _PACKGES_ = [
             'rrssb/js/rrssb.min.js',
             'lazysizes/lazysizes.min.js',
             'waypoints/lib/jquery.waypoints.js', // Waypoint Scrolling
-            'waypoints/lib/shortcuts/infinite.js', // Waypoint Scrolling Modules (infinite...)
-            'waypoints/lib/shortcuts/inview.js', // Waypoint Scrolling Modules (inview...)
-            'waypoints/lib/shortcuts/sticky.js', // Waypoint Scrolling Modules (sticky...)
+            ['waypoints/lib/shortcuts/infinite.js', 'shortcuts'], // Waypoint Scrolling Modules (infinite...)
+            ['waypoints/lib/shortcuts/inview.js', 'shortcuts'], // Waypoint Scrolling Modules (inview...)
+            ['waypoints/lib/shortcuts/sticky.js', 'shortcuts'], // Waypoint Scrolling Modules (sticky...)
         ]
     },
     {
@@ -53,6 +51,13 @@ const _PACKGES_ = [
 
 _PACKGES_.map((package) => {
     package.src.map((src) => {
+        // dir extend
+        let _subDir = false;
+        // is is array
+        if(typeof src != 'string'){
+            _subDir = src[1];
+            src = src[0];
+        }
         // build src path
         let  from = 'node_modules/' + src;
         // build dest path
@@ -61,6 +66,10 @@ _PACKGES_.map((package) => {
         let  split = src.split('/');
         // add to des path
         dest += split[0]+'/';
+        // add sub path
+        if(_subDir){
+            dest += _subDir+'/';
+        }
         // is filename
         if(fs.existsSync(from) && fs.lstatSync(from).isFile()){
             // add file name do dest

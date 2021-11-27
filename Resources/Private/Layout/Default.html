@@ -1,56 +1,93 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <!-- Load all JS files -->
+    <db:JavaScript dir="EXT:dp_theme/Resources/Public/js" files="js"/>
+    <!-- Navigation left -->
+    <header id="mainNavigation" class="{f:if(condition:'{data.is_siteroot}', then:'home')}">
+        <div class="navbar nav-minimal fixed-top" role="navigation">
+            <button aria-controls="navigation" aria-label="Menu"
+                    class="navbar-toggler hamburger hamburger--collapse"
+                    data-dp-canvis="" data-sync="#canvas-sync" type="button" disabled>
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                <span class="menu-title">Menü</span>
+            </button>
 
-
-<div data-barba="wrapper">
-    <div data-barba="container">
-        <!-- Content -->
-        <div class="main--content">
-            <section class="slider">
-                <f:cObject typoscriptObjectPath="lib.colContent" data="1" />
-            </section>
-            <div data-barba-scroll></div>
-
-            <section class="content container {layout}">
-                  <!-- get Content -->
-                <f:render section="body"/>
-            </section>
-        </div>
-    </div>
-    <!-- overlay -->
-    <div class="barba-overlay">
-        <i class="fas fa-spinner fa-pulse"></i>
-    </div>
-</div>
-<!-- Footer -->
-<footer id="bottom">
-    <div class="container">
-        <div class="row pl-lg-3">
-            <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5 bg-light">
-                <div class="footer--icon">
-                    <i class="fas fa-donate"></i>
+            <div class="nav--center">
+                <div class="nav--brand">
+                    <div class="dp--brand">
+                        <f:link.page pageUid="{settings.pidRoot}" class="navbar-brand" title="Home">
+                            <img class="logo"  src="{f:uri.image(src: '/fileadmin/user_upload/400.jpg', minWidth: 40, maxWidth: 40)}">
+                            <span>Dirk Persky</span>
+                        </f:link.page>
+                    </div>
                 </div>
-                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="14" />
             </div>
-            <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5">
-                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="15" />
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5">
-                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="16" />
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5 gray-scale">
-                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="18" />
+
+            <div class="d-none" id="canvas-sync"></div>
+
+            <div class="icon--bar d-none d-md-flex">
+                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="5" />
             </div>
         </div>
-    </div>
-    <div class="sub-line">
-        <div class="container pb-2 pt-2">
-            <!-- Copyright -->
-            <div class="copyr">
-                <f:cObject typoscriptObjectPath="lib.copyr"/>
+
+        <div class="nav--overlay"></div>
+    </header>
+    <!-- Main Content -->
+    <div data-barba="wrapper">
+        <div data-barba="container">
+            <!-- Content -->
+            <div class="main--content">
+                <section class="slider">
+                    <f:cObject typoscriptObjectPath="lib.colContent" data="1" />
+                </section>
+                <div data-barba-scroll></div>
+
+                <section class="content container {layout}">
+                      <!-- get Content -->
+                    <f:render section="body"/>
+                </section>
             </div>
-            <!-- footer nav -->
-            <nav class="nav-footer">
-                <f:render partial="Navigation/Footer" arguments="{_all}"/>
-            </nav>
+        </div>
+        <!-- overlay -->
+        <div class="barba-overlay">
+            <i class="fas fa-spinner fa-pulse"></i>
         </div>
     </div>
-</footer>
+    <!-- Footer -->
+    <footer id="bottom">
+        <div class="container">
+            <div class="row pl-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5 bg-light">
+                    <div class="footer--icon">
+                        <i class="fas fa-donate"></i>
+                    </div>
+                    <f:cObject typoscriptObjectPath="lib.colContentSlide" data="14" />
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5">
+                    <f:cObject typoscriptObjectPath="lib.colContentSlide" data="15" />
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5">
+                    <f:cObject typoscriptObjectPath="lib.colContentSlide" data="16" />
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5 gray-scale">
+                    <f:cObject typoscriptObjectPath="lib.colContentSlide" data="18" />
+                </div>
+            </div>
+        </div>
+        <div class="sub-line">
+            <div class="container pb-2 pt-2">
+                <!-- Copyright -->
+                <div class="copyr">
+                    <f:cObject typoscriptObjectPath="lib.copyr"/>
+                </div>
+                <!-- footer nav -->
+                <nav class="nav-footer">
+                    <f:render partial="Navigation/Footer" arguments="{_all}"/>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</html>
