@@ -1,0 +1,29 @@
+###################
+### SCRIPTMEGER ###
+###################
+plugin.tx_scriptmerger {
+    javascript {
+        mergedHeadFilePosition = </body>
+        compress.enable = 0
+        minify.enable = 1
+	    minify.useJShrink = 1
+	    minify.ignore >
+	    merge.ignore >
+        parseBody = 1
+    }
+    css {
+        mergedFilePosition = </body>
+        compress.enable = 0
+	    merge.ignore >
+	    minify.ignore >
+        postUrlProcessing {
+            pattern = /(.*\/)(fileadmin|typo3conf)/i
+            replacement = /\2
+        }
+    }
+}
+
+#################
+### SOURCEOPT ###
+#################
+sourceopt.formatHtml = 1

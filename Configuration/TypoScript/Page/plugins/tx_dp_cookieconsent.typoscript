@@ -1,0 +1,20 @@
+# ================================================
+# FE-Plugin configuration for EXT:dp_cookieconsent
+# ================================================
+plugin.dp_cookieconsent {
+    settings {
+        overlay {
+            button {
+                background = {$plugin.tx_dp_theme.settings.config.primarycolor}
+                text = {$plugin.tx_dp_theme.settings.config.primarycolortext}
+            }
+        }
+
+        palette {
+            button {
+                background = {$plugin.tx_dp_theme.settings.config.primarycolor}
+                text = {$plugin.tx_dp_theme.settings.config.primarycolortext}
+            }
+        }
+    }
+}

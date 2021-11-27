@@ -1,0 +1,75 @@
+##########################
+### styles.content.get ###
+##########################
+lib.content = COA
+lib.content {
+  5 = LOAD_REGISTER
+
+  5.maxImageWidth = {$styles.content.textmedia.maxW}
+  5.contentWidth = {$styles.content.textmedia.maxW}
+
+  10 < styles.content.get
+  15 = RESTORE_REGISTER
+}
+
+########################################################################
+###                 Load Content bei Date Attribute                  ###
+### <f:cObject typoscriptObjectPath="lib.colContent" data="1"/> ###
+########################################################################
+lib.colContent = COA
+lib.colContent {
+    5 = LOAD_REGISTER
+    5  {
+        colPos.cObject = TEXT
+        colPos.cObject {
+            value.current = 1
+        }
+    }
+    20 < styles.content.get
+    20.select.where = colPos={register:colPos}
+    20.select.where.insertData = 1
+	stdWrap.required = 1
+    stdWrap.replacement < lib.replacement
+}
+########################################################################
+###                 Load Content bei Date Attribute                  ###
+### <f:cObject typoscriptObjectPath="lib.colContentSlide" data="1"/> ###
+########################################################################
+lib.colContentSlide < lib.colContent
+lib.colContentSlide.20.slide = -1
+lib.colContentSlide.stdWrap.wrap >
+
+########################################################################
+###                 Load Content bei Date Attribute                  ###
+### <f:cObject typoscriptObjectPath="lib.dynamicContent" data="67"/> ###
+########################################################################
+lib.dynamicContent = COA
+lib.dynamicContent {
+    5 = LOAD_REGISTER
+    5  {
+        pID.cObject = TEXT
+        pID.cObject {
+            value.current = 1
+        }
+    }
+    20 = CONTENT
+    20 {
+        table = tt_content
+        select {
+            pidInList = {register:pID}
+            pidInList.insertData = 1
+            where = colPos=2
+            #where.insertData = 1
+            begin=0
+            max=1
+            languageField = sys_language_uid
+        }
+    }
+}
+
+#############################
+### Override Fluid Styles ###
+#############################
+lib.contentElement.partialRootPaths.100 = EXT:dp_theme/Resources/Private/Partial/fluid_styled_content/
+lib.contentElement.templateRootPaths.100 = EXT:dp_theme/Resources/Private/Template/fluid_styled_content/
+lib.contentElement.layoutRootPaths.100 = EXT:dp_theme/Resources/Private/Layout/fluid_styled_content/

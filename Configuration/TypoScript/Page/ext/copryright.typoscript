@@ -1,0 +1,10 @@
+#################
+### Copyright ###
+#################
+lib.copyr = TEXT
+lib.copyr {
+    data = date:U
+    strftime =%Y
+    noTrimWrap = |&copy; 2018 - | {$plugin.tx_dp_theme.settings.meta.author}|
+    noTrimWrap.insertData = 1
+}

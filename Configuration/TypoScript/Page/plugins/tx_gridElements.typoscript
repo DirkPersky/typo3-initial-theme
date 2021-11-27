@@ -1,0 +1,20 @@
+tt_content.gridelements_pi1 {
+    partialRootPaths.99 = EXT:dp_theme/Resources/Private/Partial/plugins/tx_gridelements
+    templateRootPaths.99 = EXT:dp_theme/Resources/Private/Template/plugins/tx_gridelements
+
+    dataProcessing {
+        10 {
+            default {
+                options {
+                    # recursive = 0
+                    # resolveFlexFormData = 0
+                    resolveChildFlexFormData = 0
+                }
+            }
+        }
+        20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        20 {
+            references.fieldName = image
+        }
+    }
+}

@@ -1,0 +1,125 @@
+###################
+### PAGE CONFIG ###
+###################
+config  {
+  admPanel = 0
+  // set doctype to html5
+  doctype = html5
+  // set <html> attributes
+  // in this example: modernizr no-js class
+  htmlTag_setParams = none
+  htmlTag_stdWrap {
+    setContentToCurrent = 1
+    cObject = COA
+    cObject {
+      10 = TEXT
+      10.value = class="no-js"
+      10.noTrimWrap = | | |
+
+      20 = TEXT
+      20.value = de
+      20.wrap = lang="|"
+
+      wrap = <html | >
+    }
+  }
+
+  xmlprologue = none
+  xhtml_cleaning = all
+
+  // Cache settings
+  cache_period = 43200
+  sendCacheHeaders = 1
+
+  renderCharset = utf-8
+  metaCharset = utf-8
+  disablePrefixComment = 1
+  index_enable = 1
+  baseURL = /
+
+  removeDefaultJS = 0
+  removeDefaultCss = 1
+  inlineStyle2TempFile = 0
+  noScaleUp = 1
+  meaningfulTempFilePrefix = 50
+
+  uniqueLinkVars = 1
+  linkVars = L
+  
+  spamProtectEmailAddresses = 2
+  spamProtectEmailAddresses_atSubst = <span>@</span>
+}
+
+#################
+### META DATA ###
+#################
+page.meta.author.ifEmpty = {$plugin.tx_dp_theme.settings.meta.author}
+page.meta.viewport.ifEmpty = width=device-width, initial-scale=1.0
+
+page.meta.keywords{
+  data = page:keywords
+  ifEmpty.data = levelfield :-1, keywords, slide
+}
+
+###############
+### FAVICON ###
+###############
+page.headerData.1337 = COA
+page.headerData.1337 {
+    10 = TEXT
+    10 {
+        typolink {
+            parameter = EXT:dp_theme/Resources/Public/{$favicon}
+            returnLast = url
+        }
+
+        wrap = <link rel="shortcut icon" href="|" type="image/png; charset=binary">
+    }
+
+    20 < .10
+    20.wrap = <link rel="icon" href="|" type="image/png; charset=binary">
+
+    30 < .10
+    30.wrap = <link rel="apple-touch-icon" href="|" type="image/png; charset=binary">
+}
+
+#################
+### BAR COLOR ###
+#################
+page.headerData.101 = COA
+page.headerData.101 {
+  10 = TEXT
+  10 {
+    value = {$plugin.tx_dp_theme.settings.config.primarycolor}
+    wrap = <meta name="theme-color" content="|">
+  }
+  20 = TEXT
+  20 {
+    value = {$plugin.tx_dp_theme.settings.config.primarycolor}
+    wrap = <meta name="msapplication-navbutton-color" content="|">
+  }
+  30 = TEXT
+  30 {
+    value = {$plugin.tx_dp_theme.settings.config.primarycolor}
+    wrap = <meta name="apple-mobile-web-app-status-bar-style" content="|">
+  }
+}
+
+########################
+### BODY-TAG PAGE ID ###
+########################
+page{
+  bodyTag >
+  bodyTagCObject = TEXT
+  bodyTagCObject.field = uid
+  bodyTagCObject.wrap = <body id="page-|" class="body">
+}
+
+#######################
+### WERTE BERECHNEN ###
+#######################
+lib.math = TEXT
+  lib.math {
+  current = 1
+  prioriCalc = 1
+}

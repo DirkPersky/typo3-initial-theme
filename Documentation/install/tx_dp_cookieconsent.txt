@@ -1,0 +1,7 @@
+#####################
+### COOKIE CONFIG ###
+#####################
+plugin.tx_cookieconsent.settings {
+    # PID to Data Protection
+    url =
+}

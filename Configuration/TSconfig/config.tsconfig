@@ -1,0 +1,25 @@
+#################################
+### LOAD BASIC CONFIGURATIONS ###
+#################################
+@import 'EXT:dp_theme/Configuration/TSconfig/ext/rte.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/ext/be_layout.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/ext/ident.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/ext/gridelements.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/ext/image.tsconfig'
+
+#######################
+### Default Sprache ###
+#######################
+mod.SHARED {
+  defaultLanguageFlag = de
+  defaultLanguagelabel = Deutsch
+}
+
+TCEFORM.tt_content.imagewidth.config.range.upper = 2000
+
+########################################
+### Remove old page content elements ###
+########################################
+TCEFORM.tt_content.CType {
+    removeItems = text, textpic, image
+}

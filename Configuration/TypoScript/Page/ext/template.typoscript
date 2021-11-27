@@ -1,0 +1,74 @@
+page.10 = FLUIDTEMPLATE
+page.10 {
+	layoutRootPath = EXT:dp_theme/Resources/Private/Layout/
+	partialRootPath = EXT:dp_theme/Resources/Private/Partial/
+	variables{
+	    layout = TEXT
+	    layout.data = levelfield:-1,backend_layout_next_level,slide
+	    layout.override.field = backend_layout
+    }
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        # Main Menu
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            special = list
+            special.value = {$plugin.tx_dp_theme.settings.nav.homeUid}
+
+            levels = 3
+            includeSpacer = 1
+            as = menuMain
+
+            excludeUidList = {$plugin.tx_dp_theme.settings.nav.exclude}
+            expandAll = 1
+        }
+
+        # Footer Menu
+        20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        20 {
+            special = list
+            special.value = {$plugin.tx_dp_theme.settings.nav.footer}
+
+            levels = 1
+            includeSpacer = 1
+            as = footerMenu
+        }
+
+        # Language Menu
+        30 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+        30 {
+            languages = auto
+            as = menuLanguage
+        }
+
+        # Breadcrumb
+        40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        40 {
+          special = rootline
+          special.range = 0|-1
+          includeNotInMenu = 1
+          as = menuBreadcrumb
+        }
+        # News Breadcrumb Extend
+        50 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+        50.menus = menuBreadcrumb
+    }
+
+    settings {
+      pidRoot = {$plugin.tx_dp_theme.settings.nav.homeUid}
+    }
+
+	file.cObject = CASE
+	file.cObject {
+	  key.data = levelfield:-1, backend_layout_next_level, slide
+	  key.override.field = backend_layout
+	  default = TEXT
+	  default.value = EXT:dp_theme/Resources/Private/Template/normal.html
+
+	  pagets__2 = TEXT
+	  pagets__2.value = EXT:dp_theme/Resources/Private/Template/root.html
+	}
+}

@@ -1,0 +1,10 @@
+#####################
+### POWERMAIL SPF ###
+#####################
+plugin.tx_powermail.settings.setup.receiver.overwrite {
+    senderEmail = TEXT
+    senderEmail.value = kontakt@domain-der-seite.de
+
+    senderName = TEXT
+    senderName.value = Bitte Einstellungen in setup.txt anpassen
+}

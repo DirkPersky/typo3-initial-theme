@@ -1,0 +1,174 @@
+plugin.tx_dp_theme {
+    view {
+        # cat=plugin.tx_dptheme/file; type=string; label=templateRootPath
+        templateRootPath =
+        # cat=plugin.tx_dptheme/file; type=string; label=partialRootPath
+        partialRootPath =
+        # cat=plugin.tx_dptheme/file; type=string; label=layoutRootPath
+        layoutRootPath =
+    }
+
+    settings {
+        #########################
+        ### Navigation Config ###
+        #########################
+        nav {
+            # cat=plugin.tx_dptheme; type=int; label= Root Page UID
+            homeUid =
+            # cat=plugin.tx_dptheme; type=string; label= Exclude UIDs from Menü
+            exclude =
+            # cat=plugin.tx_dptheme; type=string; label= Footer Menü UIDs
+            footer =
+        }
+
+        ##########################
+        ### Additional Configs ###
+        ##########################
+        config {
+             # cat=plugin.tx_dptheme/config; type=color; label= Primary Color BG
+             primarycolor =
+
+             # cat=plugin.tx_dptheme/config; type=color; label= Primary Color Text
+             primarycolortext =
+        }
+
+        meta {
+            # cat=plugin.tx_dptheme/meta; type=string; label=Author
+            author = web-kon Internetagentur
+        }
+    }
+}
+
+
+##############
+### Cookie ###
+##############
+plugin.tx_cookieconsent.settings {
+    # Layout
+    theme = edgeless
+    # Position
+    position = bottom-right
+    # dismiss on scroll (in PX)
+    dismissOnScroll =
+    # Type (info, opt-out, opt-in)
+    type = opt-in
+    # extend layout with checkboxes (basic,dpextend)
+    layout = dpextend
+    #  pre check statistics in checkboxes layout
+    statistics = false
+    # pre check statistics in checkboxes layout
+    marketing = false
+    # reaload page on revoke
+    reloadOnRevoke = true
+
+    palette {
+        popup {
+            # Bar: Background color
+            background = rgba(0,0,0,.8)
+            # Bar: text color
+            text = #FFFFFF
+        }
+    }
+
+    overlay {
+    	notice = true
+        box {
+            # Overlay: Background
+            background = rgba(0,0,0,.8)
+            # Overlay: Text
+            text = #fff
+        }
+    }
+}
+
+###########
+### SEO ###
+###########
+plugin.tx_csseo {
+    # Sitemap.xml
+    sitemap {
+        pages {
+            languageUids = 0
+        }
+        extensions.news {
+            storagePid =
+            detailPid =
+            languageUids = 0
+        }
+    }
+    # hreflang config now from core
+    hreflang.enable = 0
+    # Default Social Image
+    social.defaultImage = EXT:dp_theme/Resources/Public/img/logo.png
+}
+
+###############
+### Favicon ###
+###############
+favicon = favicon.png
+
+########################
+### IndexSearch Page ###
+########################
+plugin.tx_indexedsearch {
+    settings {
+        displayAdvancedSearchLink = 0
+    }
+
+    view {
+        layoutRootPath = EXT:dp_theme/Resources/Private/Layout/plugins/tx_indexedsearch/
+        partialRootPath = EXT:dp_theme/Resources/Private/Partial/plugins/tx_indexedsearch/
+        templateRootPath = EXT:dp_theme/Resources/Private/Template/plugins/tx_indexedsearch/
+    }
+}
+
+###############
+### TX_NEWS ###
+###############
+plugin.tx_news {
+    view {
+        layoutRootPath = EXT:dp_theme/Resources/Private/Layout/plugins/tx_news/
+        partialRootPath = EXT:dp_theme/Resources/Private/Partial/plugins/tx_news/
+        templateRootPath = EXT:dp_theme/Resources/Private/Template/plugins/tx_news/
+    }
+}
+
+###################
+### IMAGE WIDTH ###
+###################
+styles.content.textmedia.maxW = 1960
+styles.content.textmedia.maxWInText = 1960
+# lightbox Size
+styles.content.textmedia.linkWrap.width= 1400m
+styles.content.textmedia.linkWrap.height= 800m
+
+#####################################
+### Standard-Überschriften als H2 ###
+#####################################
+content.defaultHeaderType = 2
+
+###########################
+### AKTIVE LAZY LOADING ###
+###########################
+styles.content.imgtext.layoutKey = lazyloading
+
+############################################
+### disable font awesome from RTE Plugin ###
+############################################
+plugin.tx_ckeditor_fontawesome.loadCSS = 0
+
+#################
+### Powermail ###
+#################
+plugin.tx_powermail {
+  settings.misc {
+     htmlForHtmlFields = 1
+     htmlForLabels = 1
+  }
+
+  view {
+     templateRootPath = EXT:dp_theme/Resources/Private/Template/plugins/tx_powermail/
+     partialRootPath = EXT:dp_theme/Resources/Private/Partial/plugins/tx_powermail/
+     layoutRootPath = EXT:dp_theme/Resources/Private/Layout/plugins/tx_powermail/
+  }
+}

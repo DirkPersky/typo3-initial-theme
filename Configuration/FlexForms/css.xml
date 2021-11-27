@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <general>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Onepage Optionen</sheetTitle>
+                </TCEforms>
+                <el type="array">
+
+                    <image type="array">
+                        <TCEforms type="array">
+                            <label>Paralax Bild</label>
+                            <config type="array">
+                                <type>inline</type>
+                                <maxitems>1</maxitems>
+
+                                <foreign_table>sys_file_reference</foreign_table>
+                                <foreign_field>uid_foreign</foreign_field>
+                                <foreign_sortby>sorting_foreign</foreign_sortby>
+                                <foreign_table_field>tablenames</foreign_table_field>
+                                <foreign_match_fields>
+                                    <fieldname>image</fieldname>
+                                </foreign_match_fields>
+                                <foreign_label>uid_local</foreign_label>
+                                <foreign_selector>uid_local</foreign_selector>
+                                <overrideChildTca>
+                                    <columns>
+                                        <uid_local>
+                                            <config>
+                                                <appearance>
+                                                    <elementBrowserType>file</elementBrowserType>
+                                                    <elementBrowserAllowed></elementBrowserAllowed>
+                                                </appearance>
+                                            </config>
+                                        </uid_local>
+                                    </columns>
+                                    <types>
+                                        <types index="0">
+                                            <showitem>
+                                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                                --palette--;;filePalette
+                                            </showitem>
+                                        </types>
+                                        <types index="1">
+                                            <showitem>
+                                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                                --palette--;;filePalette
+                                            </showitem>
+                                        </types>
+                                        <types index="2">
+                                            <showitem>
+                                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                                --palette--;;filePalette
+                                            </showitem>
+                                        </types>
+                                        <types index="3">
+                                            <showitem>
+                                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.audioOverlayPalette;audioOverlayPalette,
+                                                --palette--;;filePalette
+                                            </showitem>
+                                        </types>
+                                        <types index="4">
+                                            <showitem>
+                                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                                --palette--;;filePalette
+                                            </showitem>
+                                        </types>
+                                        <types index="5">
+                                            <showitem>
+                                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                                --palette--;;filePalette
+                                            </showitem>
+                                        </types>
+                                    </types>
+                                </overrideChildTca>
+                                <filter>
+                                    <userFunc>TYPO3\CMS\Core\Resource\Filter\FileExtensionFilter->filterInlineChildren
+                                    </userFunc>
+                                    <parameters>
+                                        <allowedFileExtensions></allowedFileExtensions>
+                                        <disallowedFileExtensions></disallowedFileExtensions>
+                                    </parameters>
+                                </filter>
+                                <appearance>
+                                    <useSortable>1</useSortable>
+                                    <headerThumbnail>
+                                        <field>uid_local</field>
+                                        <width>45</width>
+                                        <height>45c</height>
+                                    </headerThumbnail>
+                                    <enabledControls>
+                                        <info>0</info>
+                                        <new>0</new>
+                                        <dragdrop>0</dragdrop>
+                                        <sort>0</sort>
+                                        <hide>0</hide>
+                                        <delete>1</delete>
+                                    </enabledControls>
+                                </appearance>
+                            </config>
+                        </TCEforms>
+                    </image>
+
+                    <css type="array">
+                        <TCEforms type="array">
+                            <label>CSS Eigenschaften</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">BG: Weiß</numIndex>
+                                        <numIndex index="1">bg-white</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">BG: Grau</numIndex>
+                                        <numIndex index="1">bg-light</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">BG: Dark</numIndex>
+                                        <numIndex index="1">bg-dark</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">BG: Success</numIndex>
+                                        <numIndex index="1">bg-success</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">BG: Primary</numIndex>
+                                        <numIndex index="1">bg-primary</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">Text: Weiß</numIndex>
+                                        <numIndex index="1">text-white</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">Text: Dark</numIndex>
+                                        <numIndex index="1">text-dark</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">Text: Success</numIndex>
+                                        <numIndex index="1">text-success</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">Text: Primary</numIndex>
+                                        <numIndex index="1">text-primary</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">BG: Full Overlay</numIndex>
+                                        <numIndex index="1">bg-op</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>5</maxitems>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </css>
+
+                    <inlinecss type="array">
+                        <TCEforms type="array">
+                            <label>CSS-Inline</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>250</size>
+                                <eval>trim</eval>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </inlinecss>
+
+                </el>
+            </ROOT>
+        </general>
+    </sheets>
+</T3DataStructure>

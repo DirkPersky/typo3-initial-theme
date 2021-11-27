@@ -1,0 +1,69 @@
+TCEFORM {
+	tt_content {
+		imagecols {
+			removeItems = 8
+			addItems.12 = 12
+			addItems.9999 = auto
+		}
+	}
+}
+
+##################
+### Image Crop ###
+##################
+TCEFORM.sys_file_reference.crop.config.cropVariants {
+    default {
+        title = Default desktop
+        selectedRatio = NaN
+        allowedAspectRatios {
+            NaN {
+                title = free
+                value = 0.0
+            }
+            4:3 {
+                title = 4/3
+                value = 1.3333333
+            }
+            16:9 {
+                title = 16:9
+                value = 1.77777777777
+            }
+        }
+    }
+    tablet {
+        title = Our Tablet variant
+        selectedRatio = NaN
+        allowedAspectRatios {
+            NaN {
+                title = free
+                value = 0.0
+            }
+            4:3 {
+                title = 4/3
+                value = 1.3333333
+            }
+            16:9 {
+                title = 16:9
+                value = 1.77777777777
+            }
+        }
+    }
+    mobile {
+        title = Our Mobile variant
+        selectedRatio = NaN
+        allowedAspectRatios {
+            NaN {
+                title = free
+                value = 0.0
+            }
+            4:3 {
+                title = 4/3
+                value = 1.3333333
+            }
+            16:9 {
+                title = 16:9
+                value = 1.77777777777
+            }
+        }
+    }
+}

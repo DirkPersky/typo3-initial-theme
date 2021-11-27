@@ -1,0 +1,19 @@
+#####################
+### CS_SEO CONFIG ###
+#####################
+plugin.tx_csseo {
+    # Sitemap.xml
+    sitemap {
+        pages {
+            languageUids = 0
+        }
+        extensions.news {
+            storagePid =
+            detailPid =
+            languageUids = 0
+        }
+    }
+    # Analytics
+    tracking.googleAnalytics =
+    tracking.googleTagManager =
+}

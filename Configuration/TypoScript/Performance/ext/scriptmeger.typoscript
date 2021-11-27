@@ -1,0 +1,37 @@
+config {
+    moveJsFromHeaderToFooter = 1
+}
+
+plugin.tx_scriptmerger {
+    css.enable = 1
+    javascript.enable = 1
+}
+
+page {
+    headerData {
+        # Define Preloads
+        105 = TEXT
+        105.insertDate=1
+        # Inline CSS::__Above the fold__::Mobile
+
+        110 = FLUIDTEMPLATE
+        110 {
+            stdWrap.wrap = <style type="text/css" media="(max-width: 991px)" data-ignore="1">|</style>
+            file = {$path.template}Public/css/abovethefold-xs.css
+        }
+
+        # Inline CSS::__Above the fold__::Desktop
+        120 = FLUIDTEMPLATE
+        120 {
+            stdWrap.wrap = <style type="text/css" media="(min-width: 992px)" data-ignore="1">|</style>
+            file = {$path.template}Public/css/abovethefold.css
+        }
+    }
+}
+
+##########################
+### Performance Config ###
+##########################
+config.sendCacheHeaders = 1
+config.enableContentLengthHeader = 1
+config.no_cache=0

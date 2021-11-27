@@ -1,0 +1,23 @@
+tx_gridelements.setup {
+  css {
+    title = CSS-Element
+    description =
+    flexformDS = EXT:dp_theme/Configuration/FlexForms/css.xml
+    frame = 1
+
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Content
+              colPos = 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

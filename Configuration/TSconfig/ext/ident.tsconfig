@@ -1,0 +1,72 @@
+######################
+### IDENT SELECTOR ###
+######################
+TCEFORM.tt_content.frame_class {
+        removeItems = ruler-before,ruler-after,indent,indent-left,indent-right
+	
+	addItems {
+		ruler-right = Rechts
+		ruler-center = Center
+		alert-success = alert-success
+		alert-info = alert-info
+		alert-warning = alert-warning
+		alert-danger = alert-danger
+	}
+}
+
+TCEFORM.tt_content.header_layout {
+	#addItems.6 = H1 Underline
+	#addItems.7 = H2 Underline
+	#addItems.8 = H3 Underline
+	#addItems.9 = H4 Underline
+	#addItems.10 = H5 Underline
+}
+
+TCEFORM.tt_content.layout {
+
+    altLabels  {
+        6 = Carousel(Slider)
+        7 = Carousel(Slider-Startseite)
+        8 = Menu - include not in menu
+    }
+
+	types {
+        textmedia {
+            addItems.6 = 6
+        	addItems.7 = 7
+        }
+
+        menu_pages {
+            addItems.8 = 8
+        }
+    }
+}
+
+#################
+### powermail ###
+#################
+TCEFORM.tx_powermail_domain_model_field {
+    css {
+        addItems {
+                layout4 = 50%
+                layout5 = 50% no Label
+            }
+        }
+    }
+}
+TCEFORM.tx_powermail_domain_model_page {
+    css {
+        addItems {
+                layout4 = 50%
+                layout5 = 50% no Label
+            }
+        }
+    }
+}
+
+############
+### news ###
+############
+tx_news.templateLayouts {
+    #2 = News Header Image
+}

@@ -1,0 +1,7 @@
+###################
+### NEWS CONFIG ###
+###################
+plugin.tx_news {
+    # Folder ID for social.txt & Twitter Opengraph
+    storePidForSocalLink =
+}
