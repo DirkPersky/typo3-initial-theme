@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <picture>
+        <f:variable name="maxW" value="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" />
+        <f:variable name="maxH" value="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" />
+
+        <f:if condition="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)} > 1400">
+            <source srcset="{f:uri.image(image:mediaElement, width:1960, maxWidth:maxW, maxHeight:maxH, cropVariant:'default', fileExtension:'webp')}" media="(min-width: 1400px)" type="image/webp" />
+            <source srcset="{f:uri.image(image:mediaElement, width:1960, maxWidth:maxW, maxHeight:maxH, cropVariant:'default')}" media="(min-width: 1400px)" type="{mediaElement.originalResource.originalFile.properties.mime_type}" />
+        </f:if>
+        <f:if condition="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)} > 1200">
+            <source srcset="{f:uri.image(image:mediaElement, width:1400, maxWidth:maxW, maxHeight:maxH, cropVariant:'default', fileExtension:'webp')}" media="(min-width: 1200px)" type="image/webp" />
+            <source srcset="{f:uri.image(image:mediaElement, width:1400, maxWidth:maxW, maxHeight:maxH, cropVariant:'default')}" media="(min-width: 1200px)" type="{mediaElement.originalResource.originalFile.properties.mime_type}" />
+        </f:if>
+        <f:if condition="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)} > 992">
+            <source srcset="{f:uri.image(image:mediaElement, width:1200, maxWidth:maxW, maxHeight:maxH, cropVariant:'default', fileExtension:'webp')}" media="(min-width: 992px)" type="image/webp" />
+            <source srcset="{f:uri.image(image:mediaElement, width:1200, maxWidth:maxW, maxHeight:maxH, cropVariant:'default')}" media="(min-width: 992px)" type="{mediaElement.originalResource.originalFile.properties.mime_type}" />
+        </f:if>
+        <f:if condition="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)} > 768">
+            <source srcset="{f:uri.image(image:mediaElement, width:992, maxWidth:maxW, maxHeight:maxH, cropVariant:'tablet', fileExtension:'webp')}" media="(min-width: 768px)" type="image/webp" />
+            <source srcset="{f:uri.image(image:mediaElement, width:992, maxWidth:maxW, maxHeight:maxH, cropVariant:'tablet')}" media="(min-width: 768px)" type="{mediaElement.originalResource.originalFile.properties.mime_type}" />
+        </f:if>
+        <f:if condition="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)} > 480">
+            <source srcset="{f:uri.image(image:mediaElement, width:768, maxWidth:maxW, maxHeight:maxH, cropVariant:'tablet', fileExtension:'webp')}" media="(min-width: 480px)" type="image/webp" />
+            <source srcset="{f:uri.image(image:mediaElement, width:768, maxWidth:maxW, maxHeight:maxH, cropVariant:'tablet')}" media="(min-width: 480px)" type="{mediaElement.originalResource.originalFile.properties.mime_type}" />
+        </f:if>
+        <source srcset="{f:uri.image(image:mediaElement, width:360, maxWidth:maxW, maxHeight:maxH, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp" />
+        <source srcset="{f:uri.image(image:mediaElement, width:360, maxWidth:maxW, maxHeight:maxH, cropVariant:'mobile')}" type="{mediaElement.originalResource.originalFile.properties.mime_type}" />
+        <img class="img-fluid" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" lazyload="true"  />
+    </picture>
+</html>

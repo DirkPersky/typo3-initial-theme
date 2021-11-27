@@ -1,3 +1,25 @@
+
+
+<div data-barba="wrapper">
+    <div data-barba="container">
+        <!-- Content -->
+        <div class="main--content">
+            <section class="slider">
+                <f:cObject typoscriptObjectPath="lib.colContent" data="1" />
+            </section>
+            <div data-barba-scroll></div>
+
+            <section class="content container {layout}">
+                  <!-- get Content -->
+                <f:render section="body"/>
+            </section>
+        </div>
+    </div>
+    <!-- overlay -->
+    <div class="barba-overlay">
+        <i class="fas fa-spinner fa-pulse"></i>
+    </div>
+</div>
 <!-- Footer -->
 <footer id="bottom">
     <div class="container">

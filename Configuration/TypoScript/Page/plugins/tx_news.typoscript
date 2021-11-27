@@ -5,6 +5,7 @@ plugin.tx_news {
   # Override Language
 	_LOCAL_LANG.de{
 		more-link = Hier mehr erfahren
+		back-link = Zurück
 	}
 
   settings {

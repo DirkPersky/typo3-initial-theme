@@ -1,0 +1,193 @@
+
+.main--content {
+  padding-top: 60px;
+  min-height: calc(100vh - 60px);
+}
+
+.content {
+  padding-top: 1.5rem;
+}
+
+
+.main--content {
+  padding-bottom: 2rem;
+
+  .container-full,
+  .content.pagets__3 {
+	padding: 0;
+	max-width: 100%;
+	width: 100%;
+
+	.ce-gallery {
+	  margin: 0;
+
+	  .ce-column {
+		width: 100%;
+
+		@include media-breakpoint-up(sm) {
+		  width: 50%;
+		}
+		@include media-breakpoint-up(lg) {
+		  width: 33.33333%;
+		}
+
+		figure {
+		  margin: 0;
+		}
+	  }
+	}
+  }
+
+  .container-full {
+	position: relative;
+	left: 50%;
+	margin-left: -50vw;
+	width: 100vw;
+	max-width: 100vw;
+	padding: 5px 10px;
+  }
+}
+
+/**
+ * Image Filter
+ */
+.filter {
+  overflow: auto;
+  padding: .5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .btn-filter {
+	@extend .btn;
+	@extend .btn-outline-primary;
+
+	border-radius: 10px;
+	padding: .2rem .4rem;
+	font-size: .8rem;
+	margin: 3px;
+
+	&:before {
+	  @extend .fas;
+	  @extend .fa-check;
+
+	  margin-right: 5px;
+	}
+
+	&.active {
+	  &:before {
+		@extend .fa-times;
+	  }
+	}
+  }
+}
+
+#c18 {
+  .ce-column {
+	transition: all .4s ease-in-out;
+
+	&.hide-column {
+	  width: 0 !important;
+	  padding: 0 !important;
+	}
+  }
+}
+
+.ce-table {
+  @extend .table;
+}
+
+.ce-table-striped {
+  @extend .table-striped;
+}
+
+
+.news-list-2 .article,
+#c18 .ce-column {
+  transition: all .4s ease-in-out;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &:nth-child(3n - 3) {
+	transform: translateX(100%);
+  }
+
+  &:nth-child(3n - 1) {
+	transform: scale(.7);
+  }
+
+  &:nth-child(3n - 2) {
+	transform: translateX(-100%);
+  }
+
+  &.animated-show {
+	transform: none;
+	opacity: 1;
+	visibility: visible;
+  }
+}
+
+.frame-layout-1 {
+  figure.image {
+	position: relative;
+
+	.image-caption {
+	  position: absolute;
+	  z-index: 2;
+	  left: 0;
+	  top: 0;
+
+	  padding: .75rem 0 0 .75rem;
+	  text-align: center;
+
+	  color: #fff;
+	  opacity: 1;
+	  visibility: visible;
+
+
+	  &:before {
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+
+		content: '';
+
+		display: block;
+
+		border: 2rem solid $primary;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+	  }
+	}
+  }
+}
+
+header {
+  .subline {
+	font-size: 1.2rem;
+	color: $primary;
+	font-weight: 300;
+  }
+}
+
+.frame-layout-8 {
+  .ce-gallery{
+	margin: -1rem !important;
+
+	.ce-column {
+	  padding: 1rem !important;
+
+	  display: flex !important;
+	  justify-content: center;
+	  align-items: center;
+
+	  .image {
+		margin-bottom: 0;
+	  }
+	}
+  }
+}

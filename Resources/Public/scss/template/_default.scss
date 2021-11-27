@@ -1,0 +1,337 @@
+// main: ../style.scss
+html {
+  font-size: $font-size-base-calc;
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-position: right bottom;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @include font-size($font-size-base-calc);
+  @include line-height($font-size-base-calc);
+
+  background: linear-gradient(to bottom right, #eeeeee, #d5d4d4);
+  background-attachment: fixed;
+
+  @include media-breakpoint-up(md) {
+	// padding-top: 70px;
+  }
+  @include media-breakpoint-up(lg) {
+	// padding-top: 50px;
+  }
+  @include media-breakpoint-up(xl) {
+	// padding-top: 50px;
+  }
+
+  .wf-active & {
+	// Activate google Font here
+  }
+}
+
+.border, div.csc-textpic-border div.csc-textpic-imagewrap img {
+  border: $style_border_width solid $style_border_color;
+}
+
+
+.ce-headline-left,
+.left {
+  text-align: left;
+}
+
+.small {
+  font-size: .8em;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+.right,
+.ce-headline-right,
+.csc-header-alignment-right,
+.align-right {
+  text-align: right;
+}
+
+.center,
+.ce-headline-center,
+.csc-header-alignment-center,
+.align-center {
+  text-align: center;
+}
+
+.indent {
+  padding-left: 15px;
+}
+
+//.tx-powermail .mandatory{color:$brand-danger;}
+.cc_banner-wrapper {
+  height: 0 !important;
+}
+
+/**
+* Space before and after
+*/
+.onepage.onepage-space-,
+.frame-space- {
+  &after- {
+	&extra-small {
+	  padding-bottom: 15px;
+	}
+
+	&small {
+	  padding-bottom: 30px;
+	}
+
+	&medium {
+	  padding-bottom: 45px;
+	}
+
+	&large {
+	  padding-bottom: 60px;
+	}
+
+	&extra-large {
+	  padding-bottom: 75px;
+	}
+  }
+
+  &before- {
+	&extra-small {
+	  padding-top: 15px;
+	}
+
+	&small {
+	  padding-top: 30px;
+	}
+
+	&medium {
+	  padding-top: 45px;
+	}
+
+	&large {
+	  padding-top: 60px;
+	}
+
+	&extra-large {
+	  padding-top: 75px;
+	}
+  }
+}
+
+.css-space- {
+  &after- {
+	&extra-small {
+	  margin-bottom: 15px;
+	}
+
+	&small {
+	  margin-bottom: 30px;
+	}
+
+	&medium {
+	  margin-bottom: 45px;
+	}
+
+	&large {
+	  margin-bottom: 60px;
+	}
+
+	&extra-large {
+	  margin-bottom: 75px;
+	}
+  }
+
+  &before- {
+	&extra-small {
+	  margin-top: 15px;
+	}
+
+	&small {
+	  margin-top: 30px;
+	}
+
+	&medium {
+	  margin-top: 45px;
+	}
+
+	&large {
+	  margin-top: 60px;
+	}
+
+	&extra-large {
+	  margin-top: 75px;
+	}
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.no-js img[data-lazy="load"] {
+  display: none !important;
+}
+
+/**
+ * Reformat Breadcrumb
+ */
+.breadcrumb {
+  background-color: transparent;
+  margin-bottom: 15px;
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+
+  @include font-size(13px);
+
+  display: none;
+  @include media-breakpoint-up(md) {
+	display: flex;
+  }
+
+  a {
+	// color: ;
+  }
+
+  .active {
+	// color: ;
+  }
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+
+/**
+ * Format Accordion
+ */
+.card.card-accordion {
+  margin-bottom: .5rem;
+
+  .card-header {
+	position: relative;
+	display: block;
+	padding: .3rem 2rem .3rem .5rem;
+	text-decoration: none;
+	/** Define Toggle Icon **/
+	.icon {
+	  @extend .fas;
+
+	  overflow: visible !important;
+	  height: auto !important;
+	  display: block;
+
+	  position: absolute;
+	  right: .5rem;
+	  bottom: 0;
+	  top: 0;
+
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+
+	  &:before {
+		@extend .fa-angle-down;
+	  }
+
+	  &.in {
+		&:before {
+		  @extend .fa-angle-up;
+		}
+	  }
+	}
+  }
+}
+
+/**
+ * Format Row as Flex
+ */
+.row {
+  &.row-center {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+  }
+
+  &.row-equalize {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: space-between;
+  }
+}
+
+/**
+ * Fade Box in
+ */
+.animate {
+  visibility: hidden;
+  transition: all .4s ease-in-out;
+
+  transform: scale(0.5);
+  opacity: 0;
+  content-visibility: hidden;
+  contain-intrinsic-size: 30vh;
+
+  .no-js &,
+  &.animated-show {
+	visibility: visible;
+	transform: none;
+	opacity: 1;
+	content-visibility: visible;
+  }
+}
+
+
+.barba-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: all .3s ease-in-out;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background-color: rgba(#000, .7);
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  color: $primary;
+  font-size: 3rem;
+
+  @include media-breakpoint-up(md){
+	font-size: 4rem;
+  }
+  @include media-breakpoint-up(lg){
+	font-size: 6rem;
+  }
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.show {
+	opacity: 1;
+	visibility: visible;
+  }
+}

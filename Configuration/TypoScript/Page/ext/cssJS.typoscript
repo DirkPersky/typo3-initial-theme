@@ -4,7 +4,6 @@
 
 page.includeCSS {
   template = EXT:dp_theme/Resources/Public/scss/style.scss
-
   #changes = EXT:dp_theme/Resources/Public/css/changes.css
 }
 
@@ -16,5 +15,6 @@ page.includeJSFooter {
 }
 
 page.includeJS {
-  template = {$path.template}Public/js/script.min.js
+  modernizr = EXT:dp_theme/Resources/Public/js/modernizr.js
+  template = EXT:dp_theme/Resources/Public/js/script.min.js
 }
