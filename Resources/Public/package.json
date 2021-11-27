@@ -1,0 +1,26 @@
+{
+  "name": "theme-packes",
+  "version": "1.0.0",
+  "description": "Default Theme packes",
+  "author": "Dirk Persky",
+  "license": "AGLP",
+  "main": "index.js",
+  "scripts": {
+    "build": "node bin/prepare.js"
+  },
+  "dependencies": {
+    "@barba/core": "latest",
+    "@fancyapps/fancybox": "git+https://github.com/fancyapps/fancybox.git",
+    "@fortawesome/fontawesome-free": "latest",
+    "bootstrap": "latest",
+    "hamburgers": "latest",
+    "jquery": "latest",
+    "lazysizes": "latest",
+    "modernizr": "^3.11.3",
+    "popper.js": "latest",
+    "recursive-copy": "^2.0.13",
+    "rrssb": "latest",
+    "tether": "latest",
+    "waypoints": "latest"
+  }
+}

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Dirk" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" serverName="Dirk" autoUploadExternalChanges="true">
     <serverData>
       <paths name="Dirk">
         <serverdata>
           <mappings>
             <mapping deploy="/html/webs/dp-wired.de/htdocs/public/typo3conf/ext/dp_theme" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/Resources/Public/node_modules" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="Dockware">
@@ -24,6 +27,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

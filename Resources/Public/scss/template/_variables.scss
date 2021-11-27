@@ -1,0 +1,33 @@
+// main: ../style.scss
+
+//Font-Awesome Font Path
+$fa-font-path:        "#{$path}assets/vendor/@fortawesome" !default;
+
+// Set Height Fix of Buttons and Bars for Offcanvis
+$navbar-height: 							50px !default;
+$offcanvis-width: 							280px !default;
+$offcanvis-bg:								#fff !default;
+$offcanvis-overlay: 						0px !default;
+$offcanvis-overlay-height: 					$navbar-height !default;
+
+// Border Width-Color
+$style_border_width:        				1px !default;
+$style_border_color: 						#ccc !default;
+$style_color_dark: 							#333 !default;
+$font-size-base-calc:                       16px !default; // Assumes the browser default, typically `16px`
+
+// Bootstrap Overrides
+// $font-family-base:       "Open Sans Condensed",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
+// Hamburger
+$hamburger-padding-x                       : 5px !default;
+$hamburger-padding-y                       : 6px !default;
+$hamburger-layer-width                     : 20px !default;
+$hamburger-layer-height                    : 3px !default;
+$hamburger-layer-color                     : #000 !default;
+$hamburger-layer-border-radius             : 2px !default;
+$hamburger-layer-spacing                   : 4px !default;
+$hamburger-hover-opacity                   : 1 !default;
+// Onpage Element
+$bg-animation-speed:            40s !default;
+$bg-animation:                  (1960px, 961px)!default;
