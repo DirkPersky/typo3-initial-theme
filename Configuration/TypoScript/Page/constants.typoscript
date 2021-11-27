@@ -116,9 +116,9 @@ plugin.tx_indexedsearch {
     }
 
     view {
-        layoutRootPath = EXT:dp_theme/Resources/Private/Layout/plugins/tx_indexedsearch/
-        partialRootPath = EXT:dp_theme/Resources/Private/Partial/plugins/tx_indexedsearch/
-        templateRootPath = EXT:dp_theme/Resources/Private/Template/plugins/tx_indexedsearch/
+        layoutRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_indexedsearch/Layout/
+        partialRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_indexedsearch/Partial/
+        templateRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_indexedsearch/Template/
     }
 }
 
@@ -127,9 +127,9 @@ plugin.tx_indexedsearch {
 ###############
 plugin.tx_news {
     view {
-        layoutRootPath = EXT:dp_theme/Resources/Private/Layout/plugins/tx_news/
-        partialRootPath = EXT:dp_theme/Resources/Private/Partial/plugins/tx_news/
-        templateRootPath = EXT:dp_theme/Resources/Private/Template/plugins/tx_news/
+        layoutRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_news/Layout/
+        partialRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_news/Partial/
+        templateRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_news/Template/
     }
 }
 
@@ -167,8 +167,8 @@ plugin.tx_powermail {
   }
 
   view {
-     templateRootPath = EXT:dp_theme/Resources/Private/Template/plugins/tx_powermail/
-     partialRootPath = EXT:dp_theme/Resources/Private/Partial/plugins/tx_powermail/
-     layoutRootPath = EXT:dp_theme/Resources/Private/Layout/plugins/tx_powermail/
+     templateRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_powermail/Template/
+     partialRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_powermail/Partial/
+     layoutRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_powermail/Layout/
   }
 }

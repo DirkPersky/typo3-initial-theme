@@ -1,6 +1,6 @@
 tt_content.gridelements_pi1 {
-    partialRootPaths.99 = EXT:dp_theme/Resources/Private/Partial/plugins/tx_gridelements
-    templateRootPaths.99 = EXT:dp_theme/Resources/Private/Template/plugins/tx_gridelements
+    partialRootPaths.99 = EXT:dp_theme/Resources/Private/Plugins/tx_gridelements/Partial/
+    templateRootPaths.99 = EXT:dp_theme/Resources/Private/Plugins/tx_gridelements/Template/
 
     dataProcessing {
         10 {

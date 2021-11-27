@@ -70,6 +70,6 @@ lib.dynamicContent {
 #############################
 ### Override Fluid Styles ###
 #############################
-lib.contentElement.partialRootPaths.100 = EXT:dp_theme/Resources/Private/Partial/fluid_styled_content/
-lib.contentElement.templateRootPaths.100 = EXT:dp_theme/Resources/Private/Template/fluid_styled_content/
-lib.contentElement.layoutRootPaths.100 = EXT:dp_theme/Resources/Private/Layout/fluid_styled_content/
+lib.contentElement.partialRootPaths.100 = EXT:dp_theme/Resources/Private/Plugins/fluid_styled_content/Partial/
+lib.contentElement.templateRootPaths.100 = EXT:dp_theme/Resources/Private/Plugins/fluid_styled_content/Template/
+lib.contentElement.layoutRootPaths.100 = EXT:dp_theme/Resources/Private/Plugins/fluid_styled_content/Layout/

@@ -1,0 +1,44 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category TYPO3
+  ~
+  ~ @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <dirk.persky@gmail.com>
+  ~ @license    AGPL v3
+  -->
+
+<!-- Footer -->
+<footer id="bottom">
+    <div class="container">
+        <div class="row pl-lg-3">
+            <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5 bg-light">
+                <div class="footer--icon">
+                    <i class="fas fa-donate"></i>
+                </div>
+                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="14" />
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5">
+                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="15" />
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5">
+                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="16" />
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 pt-5 pb-5 gray-scale">
+                <f:cObject typoscriptObjectPath="lib.colContentSlide" data="18" />
+            </div>
+        </div>
+    </div>
+    <div class="sub-line">
+        <div class="container pb-2 pt-2">
+            <!-- Copyright -->
+            <div class="copyr">
+                <f:cObject typoscriptObjectPath="lib.copyr"/>
+            </div>
+            <!-- footer nav -->
+            <nav class="nav-footer">
+                <f:render partial="Navigation/Footer" arguments="{_all}"/>
+            </nav>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category TYPO3
+  ~
+  ~ @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <dirk.persky@gmail.com>
+  ~ @license    AGPL v3
+  -->
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{footerMenu}">
+    <ul class="nav">
+        <f:for each="{footerMenu}" as="item">
+            <f:render partial="Navigation/Elements/Item" arguments="{item: item}"/>
+        </f:for>
+    </ul>
+</f:if>
+
+
+</html>
