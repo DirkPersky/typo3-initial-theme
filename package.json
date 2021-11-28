@@ -25,5 +25,10 @@
     "swup": "latest",
     "tether": "latest",
     "waypoints": "latest"
+  },
+  "devDependencies": {
+    "clean-css": "latest",
+    "penthouse": "latest",
+    "request": "latest"
   }
 }

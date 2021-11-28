@@ -1,3 +1,7 @@
+@import 'EXT:dp_http2/Configuration/TypoScript/constants.txt'
+@import 'EXT:sourceopt/Configuration/TypoScript/constants.txt'
+@import 'EXT:scriptmerger/Configuration/TypoScript/constants.typoscript'
+
 ###################
 ### SCRIPTMEGER ###
 ###################
