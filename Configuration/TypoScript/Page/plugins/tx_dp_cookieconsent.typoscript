@@ -1,6 +1,4 @@
-# ================================================
-# FE-Plugin configuration for EXT:dp_cookieconsent
-# ================================================
+
 plugin.dp_cookieconsent {
     settings {
         overlay {
@@ -18,3 +16,8 @@ plugin.dp_cookieconsent {
         }
     }
 }
+
+# overwrite settings
+lib.dp_cookieconsent.settings < plugin.dp_cookieconsent.settings
+# Add Consent Config to Script
+page.footerData.998.20 < lib.dp_cookieconsent

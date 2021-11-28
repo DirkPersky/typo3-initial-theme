@@ -23,7 +23,7 @@ const _PACKGES_ = [
             'jquery/dist/jquery.min.map',
             'rrssb/js/rrssb.min.js',
             'lazysizes/lazysizes.min.js',
-            'swup/dist/swup.min.js',
+            'swup/dist/swup.js',
             'waypoints/lib/jquery.waypoints.js', // Waypoint Scrolling
             ['waypoints/lib/shortcuts/infinite.js', 'shortcuts'], // Waypoint Scrolling Modules (infinite...)
             ['waypoints/lib/shortcuts/inview.js', 'shortcuts'], // Waypoint Scrolling Modules (inview...)
