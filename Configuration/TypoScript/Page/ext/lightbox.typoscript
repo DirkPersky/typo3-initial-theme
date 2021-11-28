@@ -2,6 +2,6 @@ lib.contentElement.settings.media.popup {
   JSwindow = 0
   directImageLink = 1
   linkParams.ATagParams {
-    dataWrap = class = "fancybox" data-fancybox="group{file:current:uid_foreign}"
+    dataWrap = class = "fancybox" data-no-swup="true" data-fancybox="group{file:current:uid_foreign}"
   }
 }

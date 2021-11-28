@@ -12,6 +12,8 @@
     "@barba/core": "latest",
     "@fancyapps/fancybox": "git+https://github.com/fancyapps/fancybox.git",
     "@fortawesome/fontawesome-free": "latest",
+    "@swup/forms-plugin": "^1.1.1",
+    "@swup/overlay-theme": "latest",
     "bootstrap": "latest",
     "hamburgers": "latest",
     "jquery": "latest",

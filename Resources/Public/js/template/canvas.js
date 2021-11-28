@@ -1,9 +1,11 @@
 /*
- * Copyright (c) 2020.
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
  *
  * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
  * @author     Dirk Persky <dirk.persky@gmail.com>
- * @license    MIT
+ * @license    AGPL v3
  */
 $.fn.DPCanvas = function (options){
     /**
@@ -136,4 +138,9 @@ jQuery(function ($) {
 
         dropdownList.removeClass('pull-right');
     });
+});
+
+// init realod
+window.StateManager.attach('fancybox', function () {
+    jQuery(window).trigger('dp--canvas');
 });

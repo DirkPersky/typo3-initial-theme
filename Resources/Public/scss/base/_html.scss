@@ -1,3 +1,13 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
 // main: ../style.scss
 html {
   font-size: $font-size-base-calc;
@@ -293,45 +303,5 @@ p:last-child {
 	transform: none;
 	opacity: 1;
 	content-visibility: visible;
-  }
-}
-
-
-.barba-overlay {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  transition: all .3s ease-in-out;
-
-  opacity: 0;
-  visibility: hidden;
-
-  background-color: rgba(#000, .7);
-
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-
-  color: $primary;
-  font-size: 3rem;
-
-  @include media-breakpoint-up(md){
-	font-size: 4rem;
-  }
-  @include media-breakpoint-up(lg){
-	font-size: 6rem;
-  }
-
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &.show {
-	opacity: 1;
-	visibility: visible;
   }
 }

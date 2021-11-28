@@ -1,0 +1,36 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+.swup-transition-overlay {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  background: $primary !important;
+  background-attachment: fixed !important;
+
+  &:before {
+	@extend .fas;
+	@extend .fa-spinner;
+	@extend .fa-pulse;
+
+	font-size: 3rem;
+	color: #fff;
+  }
+}

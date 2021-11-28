@@ -1,3 +1,13 @@
+/*
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
 /**
  * Ajax Form Handling
  * @Author: Dirk Persky
@@ -104,6 +114,6 @@ $.fn.typo3form = function(options){
     });
 };
 
-jQuery(function($){
+window.StateManager.attach('forms', function () {
     jQuery('form[data-ajaxuri]').typo3form();
 });

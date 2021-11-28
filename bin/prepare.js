@@ -17,13 +17,15 @@ const _PACKGES_ = [
         'vendor': 'js/vendor/',
         'src': [
             '@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-              'bootstrap/dist/js/bootstrap.bundle.min.js',
+            'bootstrap/dist/js/bootstrap.bundle.min.js',
             'bootstrap/dist/js/bootstrap.bundle.min.js.map',
             'jquery/dist/jquery.min.js',
             'jquery/dist/jquery.min.map',
             'rrssb/js/rrssb.min.js',
             'lazysizes/lazysizes.min.js',
             'swup/dist/swup.js',
+            '@swup/overlay-theme/dist/SwupOverlayTheme.js',
+            '@swup/forms-plugin/dist/SwupFormsPlugin.js',
             'waypoints/lib/jquery.waypoints.js', // Waypoint Scrolling
             ['waypoints/lib/shortcuts/infinite.js', 'shortcuts'], // Waypoint Scrolling Modules (infinite...)
             ['waypoints/lib/shortcuts/inview.js', 'shortcuts'], // Waypoint Scrolling Modules (inview...)
