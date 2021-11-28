@@ -1,0 +1,330 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+#mainNavigation {
+  .nav--overlay {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: block;
+	background-color: rgba(#000, .8);
+	transition: all .5s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+
+	cursor: pointer;
+
+	&.is-active {
+	  visibility: visible;
+	  opacity: 1;
+	}
+  }
+  // main: ../style.scss
+  .navbar {
+	border-bottom: 1px solid darken($light, 30%);
+	background-color: $light;
+	box-shadow: none;
+	z-index: 1000;
+	padding: 0;
+	height: 60px;
+
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	-ms-transition: all .5s ease-out;
+	-o-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+
+	justify-content: flex-start;
+	@include media-breakpoint-up(md){
+	  justify-content: space-between;
+
+	}
+
+	// Brand/Logo
+	.navbar-brand {
+	  position: relative;
+	  margin: 0;
+
+	  @include media-breakpoint-up(sm) {
+		margin-right: 16px;
+	  }
+
+	  img {
+		max-width: 90%;
+
+		@include media-breakpoint-up(sm) {
+		  max-width: 80%;
+		}
+	  }
+	}
+
+	// Search & Toggle Btn
+	.navbar-toggler {
+	  display: flex;
+	  align-items: center;
+	  height: 100%;
+
+	  border-left: 1px solid darken($light, 30%);
+	  padding: 10px 2rem;
+	  margin: 0;
+	  border-radius: 0;
+
+	  transition: background-color 0.7s ease-in-out;
+	  color: $dark;
+	  text-transform: uppercase;
+	  font-size: 12px;
+
+	  &:focus {
+		outline: none;
+	  }
+
+	  .hamburger-box {
+		margin-top: 5px;
+
+		@include media-breakpoint-up(sm) {
+		  margin-right: 10px;
+		  margin-top: 0;
+		}
+
+		.hamburger-inner {
+		  background-color: $dark;
+
+		  &:before {
+			background-color: $dark;
+		  }
+
+		  &:after {
+			background-color: $dark;
+		  }
+		}
+	  }
+
+	  .menu-title {
+		margin-top: 3px;
+		display: none;
+
+		@include media-breakpoint-up(sm) {
+		  display: block;
+		}
+	  }
+
+	  &.is-active {
+		color: $light !important;
+		background-color: $primary !important;
+
+		.hamburger-box {
+		  .hamburger-inner {
+			background-color: $light !important;
+
+			&:before {
+			  background-color: $light !important;
+			}
+
+			&:after {
+			  background-color: $light !important;
+			}
+		  }
+		}
+	  }
+
+	  &:hover {
+		background-color: darken($light, 10%);
+	  }
+	}
+
+	.nav--center {
+	  height: 100%;
+	  display: flex;
+	  justify-content: flex-start;
+	  align-items: center;
+	  flex: 1 1 auto;
+
+	  position: relative;
+
+	  .nav--brand {
+		height: 100%;
+		display: inline-flex;
+		flex: 1 1 auto;
+		justify-content: center;
+		align-items: center;
+	  }
+	}
+	// brand
+	.dp--brand {
+	  height: 100%;
+	  padding: 0 10px;
+
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+
+	  .navbar-brand {
+		height: 80%;
+		margin-right: 0;
+
+		color: $dark;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		img {
+		  height: 100%;
+		  border-radius: 50%;
+		}
+	  }
+	}
+
+	// social Links
+	.icon--bar {
+	  background-color: $primary;
+	  height: 100%;
+	  padding: 0 1rem;
+
+	  &,
+	  .ce-bodytext {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+	  }
+
+	  p {
+		margin-bottom: 0;
+	  }
+
+	  a {
+		font-size: 1rem;
+		padding: .3rem .5rem;
+		color: $light;
+
+		&:hover {
+		  color: #000;
+		}
+	  }
+	}
+
+	.nav--container {
+	  position: absolute;
+	  z-index: 1000;
+	  top: 60px;
+	  bottom: 0;
+	  left: 0;
+	  overflow: auto;
+
+	  width: 320px;
+	  max-width: 100%;
+	  height: calc(100vh - 60px) !important;
+
+	  background-color: $light;
+	  border-right: 1px solid darken($light, 30%);
+	  transition: all .5s ease-in-out;
+
+	  transform: translateX(-320px);
+	  visibility: hidden;
+	  opacity: 0;
+
+	  .icon--bar {
+		height: 60px !important;
+	  }
+
+	  &.show {
+		transform: translateX(0);
+		visibility: visible;
+		opacity: 1;
+	  }
+
+	  .header-top-content{
+		padding: 1.5rem;
+
+		.image {
+		  a {
+			display: block;
+
+
+			img {
+			  border-radius: 50%;
+			  box-shadow: 0px 0px 3px 1px $dark;
+			  transition: all .3s ease-in-out;
+			}
+
+			&:hover {
+			  img {
+				box-shadow: 0px 0px 5px 2px $gray-900;
+			  }
+			}
+		  }
+		}
+
+		a {
+		  color: inherit;
+		}
+	  }
+
+	  .nav {
+		.nav-item {
+		  .nav-link {
+			padding: 1rem 1.5rem;
+			border-top: 1px solid darken($light, 30%);
+			color: $dark;
+			font-weight: bold;
+
+			.fa,.fas,.far {
+			  color: $primary;
+			  padding-right: .25rem;
+			}
+		  }
+
+		  &.active {
+			background-color: darken($light, 10%);
+		  }
+
+		  &:hover {
+			background-color: darken($light, 5%);
+		  }
+
+		  &:last-child {
+			.nav-link {
+			  border-bottom: 1px solid darken($light, 30%);
+			}
+		  }
+		}
+	  }
+	}
+  }
+}
+
+
+.canvis-logo{
+  .image {
+	a {
+	  display: block;
+
+
+	  img {
+		border-radius: 50%;
+		box-shadow: 0px 0px 3px 1px theme-color("dark");
+		transition: all .3s ease-in-out;
+	  }
+
+	  &:hover {
+		img {
+		  box-shadow: 0px 0px 5px 2px theme-color("gray-900");
+		}
+	  }
+	}
+  }
+
+  a {
+	color: inherit;
+  }
+}

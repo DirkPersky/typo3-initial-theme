@@ -48,5 +48,5 @@ mmenuPage.10 {
         }
     }
 
-	file = {$path.template}Private/Template/Navigation.html
+	file = EXT:dp_theme/Resources/Private/Template/Navigation.html
 }

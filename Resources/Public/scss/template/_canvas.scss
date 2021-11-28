@@ -222,9 +222,7 @@ html.nav--open {
   }
 }
 
-#mainNavigation, //navbar
-div[data-barba="wrapper"], // content
-footer#bottom, // footer
+*[data-canvis-side],
 .nav--backdrop {
   transition: transform .4s ease, -webkit-transform .4s ease !important;
 

@@ -1,0 +1,90 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Header">
+	<f:if condition="{gallery.position.noWrap} != 1">
+		<f:if condition="{data.layout} != 7">
+			<f:render partial="Header/All" arguments="{_all}" />
+		</f:if>
+	</f:if>
+</f:section>
+<f:section name="Main">
+	<f:switch expression="{data.layout}">
+		<f:case value="6">
+			<div
+					id="carousel-generic-{data.uid}"
+					class="carousel slide"
+					data-ride="carousel"
+					data-interval="{f:if(condition: "{data.subheader}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.subheader}')}", else: "3000")}"
+			data-wrap="true"
+			>
+			<f:if condition="{gallery.count.rows} > 1">
+				<!--- Indicators -->
+				<ol class="carousel-indicators">
+					<f:for each="{gallery.rows}" as="row" iteration="row_iteration" key="entrynumber">
+						<li data-target="#carousel-generic-{data.uid}" data-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} -1')}" class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}">
+						</li>
+					</f:for>
+				</ol>
+
+			</f:if>
+			<!-- Carousel Items -->
+			<div class="carousel-inner">
+				<f:render partial="Media/Gallery" arguments="{_all}" />
+			</div>
+			<f:if condition="{gallery.count.rows} > 1">
+				<!--- Direction navs -->
+				<a class="left carousel-control" href="#carousel-generic-{data.uid}" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel-generic-{data.uid}" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</f:if>
+			</div>
+		</f:case>#
+		<f:case value="7">
+			<div class="ce-textpic">
+				<f:if condition="{data.bodytext}">
+					<div class="ce-bodytext">
+						<div class="year">
+							<f:format.html>{data.header}</f:format.html>
+						</div>
+						<f:format.html>{data.bodytext}</f:format.html>
+					</div>
+				</f:if>
+			</div>
+		</f:case>
+		<f:defaultCase>
+			<div class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
+				<f:if condition="{gallery.position.vertical} != 'below'">
+					<f:render partial="Media/Gallery" arguments="{_all}" />
+				</f:if>
+
+				<f:if condition="{data.bodytext}">
+					<f:then>
+						<div class="ce-bodytext">
+							<f:if condition="{gallery.position.noWrap}">
+								<f:render partial="Header/All" arguments="{_all}" />
+							</f:if>
+							<f:format.html>{data.bodytext}</f:format.html>
+						</div>
+					</f:then>
+					<f:else>
+						<f:if condition="{gallery.position.noWrap}">
+							<f:if condition="{data.header}">
+								<div class="ce-bodytext">
+									<f:render partial="Header/All" arguments="{_all}" />
+								</div>
+							</f:if>
+						</f:if>
+					</f:else>
+				</f:if>
+
+				<f:if condition="{gallery.position.vertical} == 'below'">
+					<f:render partial="Media/Gallery" arguments="{_all}" />
+				</f:if>
+			</div>
+		</f:defaultCase>
+	</f:switch>
+</f:section>
+</html>

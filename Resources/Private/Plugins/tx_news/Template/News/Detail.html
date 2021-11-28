@@ -52,7 +52,6 @@
 				</n:simplePrevNext>
 			</f:if>
 			<div class="header">
-				ASASD
 				<h1 itemprop="headline"><f:format.raw>{newsItem.title}</f:format.raw></h1>
 			</div>
 			<n:renderMedia news="{newsItem}" imgClass="img-responsive" videoClass="video-wrapper" audioClass="audio-wrapper">
@@ -78,7 +77,7 @@
 
 			<f:if condition="{settings.backPid}">
 				<!-- Link Back -->
-				<div class="news-backlink-wrap">
+				<div class="news-backlink-wrap pt-4">
 					<f:link.page pageUid="{settings.backPid}" class="btn btn-primary">
 						<f:translate key="back-link" />
 					</f:link.page>

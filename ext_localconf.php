@@ -13,15 +13,7 @@ defined('TYPO3_MODE') or die();
 
 
 call_user_func(function ($ext_key) {
-# Check if ext:personnel is loaded and add TS constant
-//    $manager = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Package\PackageManager::class);
-//    echo '<pre>';
-//    var_dump(get_class_methods($manager));
-//die();
-    if (TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded($ext_key)) {
-//        die('loaded');
-    }
-
+    # Check if ext:personnel is loaded and add TS constant
     $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = true;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '*';

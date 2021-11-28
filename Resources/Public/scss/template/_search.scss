@@ -1,0 +1,184 @@
+/**
+ * Dynamic Form Loading
+ */
+div[search-loading] {
+
+  .search-toggleable {
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    height: 100% !important;
+    max-height: 100% !important;
+
+    background-color: darken($light, 5%);
+
+    display: flex !important;
+    transition: all .3s ease-in-out;
+
+    padding: .25rem 1rem .25rem 2.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  [form-input] {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+      width: 100%;
+    }
+
+    .focus-bar {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      overflow: hidden;
+      height: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:before {
+        content: '';
+        display: block;
+        background-color: $orange;
+        transition: all .4s ease-in-out;
+        height: 100%;
+        width: 0;
+      }
+    }
+
+    .form-control {
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      border-right: 0;
+      border-left: 0;
+      border-top: 0;
+
+      height: calc(2em + 0.75rem + 2px);
+      &:focus + .focus-bar:before {
+        width: 100%;
+      }
+    }
+
+    form {
+      position: relative;
+    }
+  }
+
+  .search-button {
+    button.btn {
+      position: relative;
+      z-index: 5;
+      width: 40px;
+    }
+  }
+}
+/**
+ * Default TX Search Layout
+ */
+.tx-indexedsearch-res {
+  padding-top: 30px;
+
+  h3 {
+    .tx-indexedsearch-percent {
+      float: right;
+    }
+  }
+
+  .tx-indexedsearch-info {
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      border-bottom: 1px solid #e1e1e1;
+      border-top: 1px solid #e1e1e1;
+      display: flex;
+      width: 100%;
+
+      @include media-breakpoint-up(md){
+        width: 50%;
+      }
+
+      @include media-breakpoint-up(lg){
+        width: 25%;
+      }
+
+      .tx-indexedserach-footer-headline {
+        font-weight: bold;
+        padding: 5px;
+
+      }
+      .tx-indexedserach-footer-wert {
+        padding: 5px;
+
+      }
+    }
+  }
+}
+
+
+.tx-indexedsearch-res {
+  background-color: $light;
+  padding:  1rem 2rem 1.5rem;
+  position: relative;
+  box-shadow: 1px 1px 3px #999;
+  margin-top: 1.5rem;
+
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    content: '';
+    z-index: 1;
+
+    border: 2rem solid $primary;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+
+  .tx-indexedsearch-icon {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    padding: .2rem 0 0 .75rem;
+    text-align: center;
+  }
+
+  .tx-indexedsearch-title {
+    padding-left: 1rem;
+  }
+
+  .tx-indexedserach-footer-wert {
+    white-space: nowrap;
+    overflow: hidden;
+
+    p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  + .tx-indexedsearch-browsebox {
+    padding-top: 1.5rem;
+  }
+}

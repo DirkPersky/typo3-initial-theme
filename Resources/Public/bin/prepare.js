@@ -15,10 +15,8 @@ const _PACKGES_ = [
     {
         'vendor': 'js/vendor/',
         'src': [
-            '@barba/core/dist/barba.umd.js',
-            '@barba/core/dist/barba.umd.js.map',
             '@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-            'bootstrap/dist/js/bootstrap.bundle.min.js',
+              'bootstrap/dist/js/bootstrap.bundle.min.js',
             'bootstrap/dist/js/bootstrap.bundle.min.js.map',
             'jquery/dist/jquery.min.js',
             'jquery/dist/jquery.min.map',
