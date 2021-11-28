@@ -1,15 +1,21 @@
-
-.main--content {
-  padding-top: 60px;
-  min-height: calc(100vh - 60px);
-}
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
 
 .content {
   padding-top: 1.5rem;
 }
 
-
 .main--content {
+  overflow: hidden;
+  min-height: calc(100vh - 60px);
+  padding-top: 60px;
   padding-bottom: 2rem;
 
   .container-full,

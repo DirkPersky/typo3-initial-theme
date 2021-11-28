@@ -26,6 +26,7 @@ const _PACKGES_ = [
             'swup/dist/swup.js',
             '@swup/overlay-theme/dist/SwupOverlayTheme.js',
             '@swup/forms-plugin/dist/SwupFormsPlugin.js',
+            '@swup/scroll-plugin/dist/SwupScrollPlugin.js',
             'waypoints/lib/jquery.waypoints.js', // Waypoint Scrolling
             ['waypoints/lib/shortcuts/infinite.js', 'shortcuts'], // Waypoint Scrolling Modules (infinite...)
             ['waypoints/lib/shortcuts/inview.js', 'shortcuts'], // Waypoint Scrolling Modules (inview...)
