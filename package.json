@@ -16,10 +16,10 @@
     "hamburgers": "latest",
     "jquery": "latest",
     "lazysizes": "latest",
-    "modernizr": "^3.11.3",
     "popper.js": "latest",
-    "recursive-copy": "^2.0.13",
+    "recursive-copy": "latest",
     "rrssb": "latest",
+    "swup": "latest",
     "tether": "latest",
     "waypoints": "latest"
   }

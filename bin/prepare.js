@@ -7,7 +7,8 @@
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
-
+const _DIR_ = process.argv.slice(2);
+// load packages
 const fs = require('fs');
 const copy = require('recursive-copy');
 
@@ -22,6 +23,7 @@ const _PACKGES_ = [
             'jquery/dist/jquery.min.map',
             'rrssb/js/rrssb.min.js',
             'lazysizes/lazysizes.min.js',
+            'swup/dist/swup.min.js',
             'waypoints/lib/jquery.waypoints.js', // Waypoint Scrolling
             ['waypoints/lib/shortcuts/infinite.js', 'shortcuts'], // Waypoint Scrolling Modules (infinite...)
             ['waypoints/lib/shortcuts/inview.js', 'shortcuts'], // Waypoint Scrolling Modules (inview...)
@@ -35,7 +37,6 @@ const _PACKGES_ = [
             '@fortawesome/fontawesome-free/scss',
             'bootstrap/scss',
             'hamburgers/_sass',
-            'rrssb/scss/rrssb.scss'
         ]
     },
     {
@@ -49,6 +50,8 @@ const _PACKGES_ = [
 
 _PACKGES_.map((package) => {
     package.src.map((src) => {
+        console.log(_DIR_)
+        return;
         // dir extend
         let _subDir = false;
         // is is array
@@ -80,15 +83,15 @@ _PACKGES_.map((package) => {
             dest += name;
         }
         //copy now
-        copy(from, dest, {
-            overwrite: true,
-        }, function(error, results) {
-            if (error) {
-                console.error('Copy failed: ' + error);
-            } else {
-                console.info('Copied ' + results.length + ' files');
-            }
-        });
+        // copy(from, dest, {
+        //     overwrite: true,
+        // }, function(error, results) {
+        //     if (error) {
+        //         console.error('Copy failed: ' + error);
+        //     } else {
+        //         console.info('Copied ' + results.length + ' files');
+        //     }
+        // });
 
     });
 })

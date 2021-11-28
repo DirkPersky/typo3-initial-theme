@@ -9,16 +9,18 @@
 # @author     Dirk Persky <dirk.persky@gmail.com>
 # @license    AGPL v3
 #
+PUBLIC_DIR="Resources/Public"
+
 echo "Clear old vendors"
-rm -rf assets/vendor
-rm -rf scss/vendor
-rm -rf js/vendor
+rm -rf $PUBLIC_DIR"/assets/vendor"
+rm -rf $PUBLIC_DIR"/scss/vendor"
+rm -rf $PUBLIC_DIR"/js/vendor"
 
 echo "Prepare and install NPM Packages"
 npm i
 
 echo "Copy NPM files for Working"
-node bin/prepare.js
+node bin/prepare.js "$PUBLIC_DIR"
 
 echo "Remove all Packages"
 rm -rf node_modules

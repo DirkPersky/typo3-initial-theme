@@ -8,19 +8,18 @@
  * @license    AGPL v3
  */
 /* Variablen */
-@import "template/variables";
+@import "abstracts/_abstracts-dir";
 /* Load Bootstrap */
 @import "vendor/bootstrap/bootstrap";
 /* Menu Button Hambugers */
 @import "vendor/hamburgers/hamburgers/hamburgers";
 /* Fonts */
 @import "vendor/@fortawesome/fontawesome";
-@import "fonts/fontawesome";
-@import "fonts/roboto";
-@import "fonts/webfont";
 /* Import Fancybox css */
 @import "vendor/@fancyapps/jquery.fancybox.min";
-/* Social Share */
-@import "vendor/rrssb/rrssb";
-/* load Template */
-@import "template/style";
+/* Base */
+@import "base/_base-dir";
+/* Components */
+@import "components/_components-dir";
+/* Layout */
+@import "layouts/_layouts-dir";
