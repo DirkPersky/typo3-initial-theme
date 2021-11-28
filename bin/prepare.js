@@ -50,8 +50,6 @@ const _PACKGES_ = [
 
 _PACKGES_.map((package) => {
     package.src.map((src) => {
-        console.log(_DIR_)
-        return;
         // dir extend
         let _subDir = false;
         // is is array
@@ -82,16 +80,18 @@ _PACKGES_.map((package) => {
             // add to dest
             dest += name;
         }
+        // public dir
+        if(typeof _DIR_ != 'undefined' && _DIR_.length > 0) dest = _DIR_+'/'+dest;
         //copy now
-        // copy(from, dest, {
-        //     overwrite: true,
-        // }, function(error, results) {
-        //     if (error) {
-        //         console.error('Copy failed: ' + error);
-        //     } else {
-        //         console.info('Copied ' + results.length + ' files');
-        //     }
-        // });
+        copy(from, dest, {
+            overwrite: true,
+        }, function(error, results) {
+            if (error) {
+                console.error('Copy failed: ' + error);
+            } else {
+                console.info('Copied ' + results.length + ' files');
+            }
+        });
 
     });
 })
