@@ -1,17 +1,10 @@
 config {
-    compressCss = 1
-    concatenateCss = 1
-    compressJs = 1
-    concatenateJs = 1
-
     moveJsFromHeaderToFooter = 1
 }
 
 plugin.tx_scriptmerger {
-    # move CSS to footer
     css.enable = 1
-    # disabled for now
-    javascript.enable = 0
+    javascript.enable = 1
 }
 
 page {
@@ -23,14 +16,14 @@ page {
 
         110 = FLUIDTEMPLATE
         110 {
-            stdWrap.wrap = <style type="text/css" media="(max-width: 991px)" data-ignore="1">|</style>
+            stdWrap.wrap = <style type="text/css" media="(max-width: 991px)" data-ignore="1" data-abovethefold="1">|</style>
             file = EXT:dp_theme/Resources/Public/assets/abovethefold-xs.css
         }
 
         # Inline CSS::__Above the fold__::Desktop
         120 = FLUIDTEMPLATE
         120 {
-            stdWrap.wrap = <style type="text/css" media="(min-width: 992px)" data-ignore="1">|</style>
+            stdWrap.wrap = <style type="text/css" media="(min-width: 992px)" data-ignore="1" data-abovethefold="1">|</style>
             file = EXT:dp_theme/Resources/Public/assets/abovethefold.css
         }
     }

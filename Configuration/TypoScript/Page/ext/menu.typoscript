@@ -1,3 +1,13 @@
+[request.getQueryParams()['type'] == '22']
+    plugin.tx_scriptmerger {
+        css.enable = 0
+        javascript.enable = 0
+    }
+
+    config.sourceopt.enabled = 0
+
+[end]
+
 mmenuPage = PAGE
 mmenuPage {
     typeNum = 22

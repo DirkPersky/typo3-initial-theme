@@ -1,5 +1,7 @@
-@import 'EXT:dp_http2/Configuration/TypoScript/setup.txt'
-@import 'EXT:sourceopt/Configuration/TypoScript/setup.txt'
-@import 'EXT:scriptmerger/Configuration/TypoScript/setup.typoscript'
+[request.getQueryParams()['type'] != '22']
+    @import 'EXT:sourceopt/Configuration/TypoScript/setup.txt'
+    @import 'EXT:scriptmerger/Configuration/TypoScript/setup.typoscript'
+    @import 'EXT:dp_http2/Configuration/TypoScript/setup.txt'
+[end]
 
 @import 'EXT:dp_theme/Configuration/TypoScript/Performance/ext/scriptmeger.typoscript'
