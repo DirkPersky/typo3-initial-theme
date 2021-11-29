@@ -1,0 +1,79 @@
+rootPageId: 1
+base: /
+baseVariants: { }
+languages:
+  - title: Deutsch
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: German
+    hreflang: de-DE
+    direction: ltr
+    flag: de
+errorHandling:
+  - errorCode: '404'
+    errorHandler: Fluid
+    errorFluidTemplate: fileadmin/Mysite4/app/Resources/Private/Layout/400.html
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  - errorCode: '500'
+    errorHandler: Fluid
+    errorFluidTemplate: fileadmin/Mysite4/app/Resources/Private/Layout/500.html
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+routes:
+  - route: robots.txt
+    type: staticText
+    content: "User-Agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\nAllow: /typo3temp/\r\n\r\n# parameters\r\nDisallow: /*?id=*               # non-realurl URLs\r\nDisallow: /*cHash               # no cHash\r\nDisallow: /*tx_powermail_pi1    # no powermail thanks pages\r\nDisallow: /*tx_form_formframework    # no forms\r\n\r\n# sitemap\r\nSitemap: http://example.com/sitemap.xml"
+  - route: sitemap.xml
+    type: uri
+    source: 'http://example.com/?type=1533906435'
+routeEnhancers:
+  News:
+    type: Extbase
+    extension: News
+    plugin: Pi1
+    routes:
+      - routePath: '/'
+        _controller: 'News::list'
+      - routePath: '/page-{page}'
+        _controller: 'News::list'
+        _arguments:
+          page: 'currentPage'
+      - routePath: '/{news-title}'
+        _controller: 'News::detail'
+        _arguments:
+          news-title: news
+      - routePath: '/{category-name}'
+        _controller: 'News::list'
+        _arguments:
+          category-name: overwriteDemand/categories
+      - routePath: '/{tag-name}'
+        _controller: 'News::list'
+        _arguments:
+          tag-name: overwriteDemand/tags
+    defaultController: 'News::list'
+    defaults:
+      page: '0'
+    aspects:
+      news-title:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+      category-name:
+        type: PersistedAliasMapper
+        tableName: sys_category
+        routeFieldName: slug
+      tag-name:
+        type: PersistedAliasMapper
+        tableName: tx_news_domain_model_tag
+        routeFieldName: slug

@@ -31,4 +31,14 @@ call_user_func(function ($ext_key) {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['sqlDebug'] = '1';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['extCache'] = '0';
 
+
+    /**
+     * Remove Chash
+     */
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'] = array_merge(
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'],
+        [
+            'tx_news_pi1[@widget_0][currentPage]'
+        ]
+    );
 }, 'dp_theme');

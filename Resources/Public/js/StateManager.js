@@ -67,6 +67,19 @@ _StateManager.prototype.fireEvent = function (name) {
     document.dispatchEvent(event);
 };
 
+_StateManager.prototype.callByName = function (name) {
+    try {
+        this.callbacks.map((callback, index) => {
+            // run callback by name
+            if (callback.name == name) {
+                this.run(callback);
+            }
+        });
+    } catch (e) {
+        console.log(e);
+    }
+};
+
 window.StateManager = new _StateManager();
 
 jQuery(function ($) {
