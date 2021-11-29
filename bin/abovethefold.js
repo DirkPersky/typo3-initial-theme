@@ -24,7 +24,7 @@ const urls = [
  * CSS LIVE URL
  * @type {string}
  */
-const CSS_URL = 'https://dp-wired.de/typo3temp/scriptmerger/uncompressed/head-eb509295c13f684d50fe4a6e6421f500.merged.css';
+const CSS_URL = '##REMOTE_CSS_LINK###';
 /** urls for Mobile **/
 const mobileUrls = [
     ...urls
