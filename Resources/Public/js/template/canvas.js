@@ -141,6 +141,6 @@ jQuery(function ($) {
 });
 
 // init realod
-window.StateManager.attach('fancybox', function () {
+window.StateManager.attach('dp--canvas', function () {
     jQuery(window).trigger('dp--canvas');
 });

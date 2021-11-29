@@ -11,7 +11,7 @@
 /**
  * Update Analytics on Swup Reload
  */
-window.Statemanager.attach('analytics-update', function () {
+window.StateManager.attach('analytics-update', function () {
     if (typeof window.dataLayer != 'function' && typeof window.dataLayer != 'undefined') {
         window.dataLayer.some(set => {
             if (set[0] == 'config') {

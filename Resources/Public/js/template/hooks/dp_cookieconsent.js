@@ -8,7 +8,7 @@
  * @license    AGPL v3
  */
 
-window.Statemanager.attach('dp-cookieconsent-hooks', function () {
+window.StateManager.attach('dp-cookieconsent-hooks', function () {
     /**
      * Bin Consent Handling for Content Elements
      */
