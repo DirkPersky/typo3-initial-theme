@@ -112,7 +112,10 @@ page{
   bodyTag >
   bodyTagCObject = TEXT
   bodyTagCObject.field = uid
-  bodyTagCObject.wrap = <body id="page-|" class="body">
+  bodyTagCObject.stdWrap.wrap = <body id="page-|" class="body">
+  
+  bodyTagCObject.stdWrap.append = TEXT
+  bodyTagCObject.stdWrap.append.value ()
 }
 
 #######################
