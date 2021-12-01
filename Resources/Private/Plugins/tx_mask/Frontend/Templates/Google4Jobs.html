@@ -1,0 +1,37 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category TYPO3
+  ~
+  ~ @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <dirk.persky@gmail.com>
+  ~ @license    AGPL v3
+  -->
+
+<f:variable name="filter" value="{data.tx_mask_filter}"/>
+<f:if condition="{data.tx_mask_skills}">
+    {data.tx_mask_skills}
+</f:if>
+<f:if condition="{data.tx_mask_description}">
+    {data.tx_mask_description -> f:format.html()}
+</f:if>
+<f:if condition="{data.tx_mask_hiring_name}">
+    {data.tx_mask_hiring_name}
+</f:if>
+<f:if condition="{data.tx_mask_street}">
+    {data.tx_mask_street}
+</f:if>
+<f:if condition="{data.tx_mask_zip}">
+    {data.tx_mask_zip}
+</f:if>
+<f:if condition="{data.tx_mask_city}">
+    {data.tx_mask_city}
+</f:if>
+<f:if condition="{data.tx_mask_region}">
+    {data.tx_mask_region}
+</f:if>
+<f:if condition="{data.tx_mask_value}">
+    {data.tx_mask_value}
+</f:if>
+<f:variable name="currency" value="{data.tx_mask_currency}"/>
+<f:variable name="einheit" value="{data.tx_mask_einheit}"/>

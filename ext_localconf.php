@@ -11,7 +11,6 @@
 
 defined('TYPO3_MODE') or die();
 
-
 call_user_func(function ($ext_key) {
     # Check if ext:personnel is loaded and add TS constant
     $GLOBALS['TYPO3_CONF_VARS']['BE']['debug'] = true;
@@ -30,7 +29,6 @@ call_user_func(function ($ext_key) {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = 'console';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['sqlDebug'] = '1';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['extCache'] = '0';
-
 
     /**
      * Remove Chash
