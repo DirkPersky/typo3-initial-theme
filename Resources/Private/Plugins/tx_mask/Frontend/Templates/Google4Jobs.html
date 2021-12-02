@@ -1,37 +1,42 @@
-<!--
-  ~ Copyright (c) 2021.
-  ~
-  ~ @category TYPO3
-  ~
-  ~ @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
-  ~ @author     Dirk Persky <dirk.persky@gmail.com>
-  ~ @license    AGPL v3
-  -->
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+        xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+        data-namespace-typo3-fluid="true">
 
-<f:variable name="filter" value="{data.tx_mask_filter}"/>
-<f:if condition="{data.tx_mask_skills}">
-    {data.tx_mask_skills}
-</f:if>
-<f:if condition="{data.tx_mask_description}">
-    {data.tx_mask_description -> f:format.html()}
-</f:if>
-<f:if condition="{data.tx_mask_hiring_name}">
-    {data.tx_mask_hiring_name}
-</f:if>
-<f:if condition="{data.tx_mask_street}">
-    {data.tx_mask_street}
-</f:if>
-<f:if condition="{data.tx_mask_zip}">
-    {data.tx_mask_zip}
-</f:if>
-<f:if condition="{data.tx_mask_city}">
-    {data.tx_mask_city}
-</f:if>
-<f:if condition="{data.tx_mask_region}">
-    {data.tx_mask_region}
-</f:if>
-<f:if condition="{data.tx_mask_value}">
-    {data.tx_mask_value}
-</f:if>
-<f:variable name="currency" value="{data.tx_mask_currency}"/>
-<f:variable name="einheit" value="{data.tx_mask_einheit}"/>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "JobPosting",
+    "title": "<f:format.raw>{data.tx_mask_title}</f:format.raw>",
+    "description": "<f:format.raw><v:format.replace substring='"' replacement='\"'>{data.tx_mask_description}</v:format.replace></f:format.raw>",
+    "hiringOrganization" : {
+        "@type": "Organization",
+        "name": "<f:format.raw>{data.tx_mask_hiring_name}</f:format.raw>",
+        "sameAs": "<f:uri.typolink parameter="{data.pid}" absolute="1"/>"
+    },
+    "employmentType": "{data.tx_mask_filter}",
+    "datePosted": "<f:format.date format="Y-m-d">{data.tstamp}</f:format.date>",
+    <f:if condition="{data.tx_mask_zip}">"jobLocation": {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "<f:format.raw>{data.tx_mask_street}</f:format.raw>",
+            "addressLocality": "<f:format.raw>{data.tx_mask_city}</f:format.raw>",
+            "postalCode": "<f:format.raw>{data.tx_mask_zip}</f:format.raw>",
+            "addressCountry": "<f:format.raw>{data.tx_mask_country}</f:format.raw>",
+            "addressRegion": "<f:format.raw>{data.tx_mask_region}</f:format.raw>"
+        }
+    }</f:if>
+    <f:if condition="{data.tx_mask_skills}">,"skills": "<f:format.raw>{data.tx_mask_skills}</f:format.raw>"</f:if>
+    <f:if condition="{data.tx_mask_value}">,"baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "<f:format.raw>{data.tx_mask_currency}</f:format.raw>",
+        "value": {
+            "@type": "QuantitativeValue",
+            "value": <f:format.raw>{data.tx_mask_value}</f:format.raw>,
+            "unitText": "<f:format.raw>{data.tx_mask_einheit}</f:format.raw>"
+        }
+    }</f:if>
+}
+</script>
+
+</html>

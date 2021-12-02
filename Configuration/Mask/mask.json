@@ -294,11 +294,11 @@
           "items": [
             [
               "Vollzeit",
-              " FULL_TIME"
+              "FULL_TIME"
             ],
             [
               "Teilzeit",
-              " PART_TIME"
+              "PART_TIME"
             ]
           ],
           "renderType": "selectSingle",
