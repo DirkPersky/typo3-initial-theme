@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" lang="en"
+>
+
+<div class="item {f:if(condition:'{data.tx_mask_title}',then:' has--headline')}{f:if(condition:'{data.tx_mask_content}',then:' has--content')}">
+    <div class="icon">
+        <f:if condition="{data.tx_mask_link}">
+            <f:then>
+                <f:link.typolink parameter="{data.tx_mask_link}">
+                    <f:render section="RenderHeader" arguments="{_all}"/>
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <f:render section="RenderHeader" arguments="{_all}"/>
+            </f:else>
+        </f:if>
+    </div>
+    <f:if condition="{data.tx_mask_content}">
+        <div class="item-body">
+            <f:for each="{data.tx_mask_content}" as="data_item">
+                <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item.uid}</f:cObject>
+            </f:for>
+        </div>
+    </f:if>
+</div>
+
+<f:section name="RenderHeader">
+    <f:if condition="{data.tx_mask_icon}">
+        <f:then>
+            <div class="icon-fa">
+                <i class="{data.tx_mask_icon -> f:format.raw()}"></i>
+            </div>
+        </f:then>
+        <f:else>
+            <f:if condition="{data.tx_mask_image}">
+                <div class="icon-fa">
+                    <div class="inline-icon"
+                         style="background-image:url({f:uri.image(image: file, maxWidth: 480, cropVariant: mobile)});"></div>
+                </div>
+            </f:if>
+        </f:else>
+    </f:if>
+    <f:if condition="{data.tx_mask_title}">
+        <div class="icon-headline">
+            <f:format.raw>{data.tx_mask_title}</f:format.raw>
+        </div>
+    </f:if>
+</f:section>
+</html>

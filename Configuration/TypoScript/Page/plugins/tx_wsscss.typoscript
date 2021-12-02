@@ -4,4 +4,5 @@ plugin.tx_wsscss.variables {
     path = TEXT
     path.data = path:EXT:dp_theme/Resources/Public/.dir
     path.stdWrap.substring = 0,-4
+    path.wrap = /|
 }
