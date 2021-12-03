@@ -30,7 +30,12 @@ class JavaScriptViewHelper extends AbstractViewHelper
 
     use CompileWithRenderStatic;
 
-
+    /**
+     * @param array $arguments
+     * @param Closure $renderChildrenClosure
+     * @param RenderingContextInterface $renderingContext
+     * @return void
+     */
     public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
         // if path is set
@@ -88,6 +93,11 @@ class JavaScriptViewHelper extends AbstractViewHelper
 
     }
 
+    /**
+     * @param $path
+     * @param $match
+     * @return Generator
+     */
     protected static function getFiles($path, $match): Generator
     {
         if (!is_dir($path)) {
@@ -110,8 +120,6 @@ class JavaScriptViewHelper extends AbstractViewHelper
     {
         $this->registerArgument('dir', 'string', 'Path to JS Files', true);
         $this->registerArgument('files', 'string', 'Matching File Extension', true);
-
-
     }
 
 }

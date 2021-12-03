@@ -1,0 +1,28 @@
+/*
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+.t3-page-ce .t3-page-column-header {
+    margin-top: -10px;
+    position: relative;
+}
+.t3-page-ce .t3-page-column-header:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: #F96332;
+
+    pointer-events: none;
+    display: block;
+    content: '';
+    opacity: .2;
+}

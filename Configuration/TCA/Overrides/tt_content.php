@@ -23,8 +23,7 @@ defined('TYPO3_MODE') || die();
             ]
         ] // grid configuration
     ))->setFlexformDS('FILE:EXT:dp_theme/Configuration/FlexForms/bs3-grid-2.xml')
-// set an optional icon configuration
-//    ->setIcon('EXT:container_example/Resources/Public/Icons/b13-2cols-with-header-container.svg')
+        ->setIcon('EXT:dp_theme/Resources/Public/assets/icons/grid-2.png')
 );
 
 \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -40,6 +39,7 @@ defined('TYPO3_MODE') || die();
             ]
         ] // grid configuration
     ))->setFlexformDS('FILE:EXT:dp_theme/Configuration/FlexForms/bs3-grid-3.xml')
+        ->setIcon('EXT:dp_theme/Resources/Public/assets/icons/grid-3.png')
 );
 
 \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -56,6 +56,7 @@ defined('TYPO3_MODE') || die();
             ]
         ] // grid configuration
     ))->setFlexformDS('FILE:EXT:dp_theme/Configuration/FlexForms/bs3-grid-4.xml')
+        ->setIcon('EXT:dp_theme/Resources/Public/assets/icons/grid-4.png')
 );
 
 \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -74,6 +75,7 @@ defined('TYPO3_MODE') || die();
             ]
         ] // grid configuration
     ))->setFlexformDS('FILE:EXT:dp_theme/Configuration/FlexForms/bs3-grid-6.xml')
+        ->setIcon('EXT:dp_theme/Resources/Public/assets/icons/grid-6.png')
 );
 
 \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -87,4 +89,5 @@ defined('TYPO3_MODE') || die();
             ]
         ] // grid configuration
     ))->setFlexformDS('FILE:EXT:dp_theme/Configuration/FlexForms/css.xml')
+        ->setIcon('EXT:dp_theme/Resources/Public/assets/icons/container.png')
 );
