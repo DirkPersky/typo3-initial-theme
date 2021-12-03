@@ -12,6 +12,8 @@
 defined('TYPO3_MODE') or die();
 
 call_user_func(function ($ext_key) {
+    // increase log level to stop massiv PHP8 notices
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['belogErrorReporting'] = 'E_ERROR';
     // WebP Handling
     $GLOBALS['TYPO3_CONF_VARS']['GFX']['gdlib'] = true;
     $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'] = 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp';
