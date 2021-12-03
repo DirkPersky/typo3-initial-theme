@@ -26,16 +26,6 @@ $options = [
     'partials' => 'typo3conf/ext/dp_theme/Resources/Private/Plugins/tx_mask/Frontend/Partials/',
     'partials_backend' => 'typo3conf/ext/dp_theme/Resources/Private/Plugins/tx_mask/Backend/Partials/',
     'preview' => 'typo3conf/ext/dp_theme/Resources/Public/Mask/',
-
-//    "backend" => "typo3conf/ext/mask_project/Resources/Private/Mask/Backend/Templates/",
-//    "backendlayout_pids" => "0,1",
-//    "content" => "typo3conf/ext/mask_project/Resources/Private/Mask/Frontend/Templates/",
-//    "json" => "typo3conf/ext/mask_project/Configuration/Mask/mask.json",
-//    "layouts" => "typo3conf/ext/mask_project/Resources/Private/Mask/Frontend/Layouts/",
-//    "layouts_backend" => "typo3conf/ext/mask_project/Resources/Private/Mask/Backend/Layouts/",
-//    "partials" => "typo3conf/ext/mask_project/Resources/Private/Mask/Frontend/Partials/",
-//    "partials_backend" => "typo3conf/ext/mask_project/Resources/Private/Mask/Backend/Partials/",
-//    "preview"=> "typo3conf/ext/mask_project/Resources/Public/Mask/"
 ];
 /**
  * Update Plugin Configs
