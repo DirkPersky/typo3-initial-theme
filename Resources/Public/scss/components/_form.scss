@@ -222,3 +222,94 @@
 
   }
 }
+
+
+.frame-type-form_formframework {
+  .form-group {
+    padding-bottom: .75rem;
+  }
+
+  .form-check {
+    padding-left: 0;
+  }
+
+  > div,
+  form {
+    background-color: $light;
+    padding:  1rem 1.5rem 1.5rem;
+    position: relative;
+    box-shadow: 1px 1px 3px #999;
+
+    h2,legend {
+      padding-left: 1.5rem;
+      font-weight: 300;
+    }
+
+    .error.help-block {
+      @extend .alert;
+      @extend .alert-danger;
+
+      display: inline-block;
+      margin-top: .25rem;
+    }
+
+    &:before {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 0;
+
+      padding: .75rem 0 0 .75rem;
+      text-align: center;
+
+      color: #fff;
+
+      @extend .far;
+      @extend .fa-envelope;
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      content: '';
+
+      display: block;
+      z-index: 1;
+
+      border: 2rem solid $primary;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
+
+  }
+
+  .form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .toolbar--steps {
+      font-size: .9rem;
+      opacity: .7;
+
+      span {
+        display: inline-block;
+
+        + span {
+          &:before {
+            content: '/';
+            display: inline-block;
+
+            padding: 0 .25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-cancel {
+  @include button-variant(darken($light, 10%), darken($light, 10%));
+}

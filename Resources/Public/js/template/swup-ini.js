@@ -15,7 +15,7 @@ jQuery(function ($) {
         debugMode: true,
         plugins: [
             new SwupOverlayTheme(),
-            new SwupFormsPlugin({formSelector: 'form'}),
+            new SwupFormsPlugin({formSelector: 'form:not([data-ajax-form])'}),
             new SwupScrollPlugin({
                 doScrollingRightAway: false,
                 animateScroll: true,

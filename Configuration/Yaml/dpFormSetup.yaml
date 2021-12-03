@@ -1,0 +1,14 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Template/'
+                partialRootPaths:
+                  20: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Partial/'
+                layoutRootPaths:
+                  20: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Layout/'
