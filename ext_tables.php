@@ -24,4 +24,5 @@ call_user_func(function ($ext_key) {
             ];
         }
     }
+
 }, 'dp_theme');
