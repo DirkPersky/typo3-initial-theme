@@ -23,7 +23,11 @@ jQuery(function ($) {
                 scrollAcceleration: 0.04,
                 offset: $offset // offset when anchor scroll
             })
-        ]
+        ],
+        linkSelector:
+            'a[href^="' +
+            window.location.origin +
+            '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup]), a:not([data-mailto-token])'
     });
     // call Statemanager
     window.swupLoad.on('contentReplaced', function () {
@@ -37,6 +41,7 @@ jQuery(function ($) {
         }
     });
 });
+
 
 
 
