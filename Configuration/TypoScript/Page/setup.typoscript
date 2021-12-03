@@ -5,7 +5,6 @@ page = PAGE
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_dp_cookieconsent.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_indexedsearch.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_news.typoscript'
-@import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_gridElements.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_wsscss.typoscript'
 
 ###########################
@@ -22,4 +21,5 @@ page = PAGE
 #####################
 ### Load Template ###
 #####################
+@import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_container.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/template.typoscript'

@@ -1,0 +1,13 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<div class="{v:format.trim(content: "row {flexform.class} {flexform.valign} {f:if(condition:'{data.space_before_class}', then:'frame-space-before-{data.space_before_class}')} {f:if(condition:'{data.space_after_class}', then:'frame-space-after-{data.space_after_class}')}")}">
+    <f:render partial="Grid" arguments="{contents: children_201, data: data, col: 1, flexform: flexform }" />
+    <f:render partial="Grid" arguments="{contents: children_202, data: data, col: 2, flexform: flexform }" />
+    <f:render partial="Grid" arguments="{contents: children_203, data: data, col: 3, flexform: flexform }" />
+    <f:render partial="Grid" arguments="{contents: children_205, data: data, col: 5, flexform: flexform }" />
+    <f:render partial="Grid" arguments="{contents: children_206, data: data, col: 6, flexform: flexform }" />
+</div>
+</html>

@@ -4,7 +4,6 @@
 @import 'EXT:dp_theme/Configuration/TSconfig/ext/rte.tsconfig'
 @import 'EXT:dp_theme/Configuration/TSconfig/ext/be_layout.tsconfig'
 @import 'EXT:dp_theme/Configuration/TSconfig/ext/ident.tsconfig'
-@import 'EXT:dp_theme/Configuration/TSconfig/ext/gridelements.tsconfig'
 @import 'EXT:dp_theme/Configuration/TSconfig/ext/image.tsconfig'
 
 #######################

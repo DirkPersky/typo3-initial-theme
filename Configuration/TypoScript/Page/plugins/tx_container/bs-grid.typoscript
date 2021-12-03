@@ -1,0 +1,64 @@
+
+tt_content.bs3-grid2 =< lib.containerElementFlexform
+tt_content.bs3-grid2 {
+    templateName = bs3-grid2
+
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = children_201
+        }
+        202 = B13\Container\DataProcessing\ContainerProcessor
+        202 {
+            colPos = 202
+            as = children_202
+        }
+
+    }
+}
+
+tt_content.bs3-grid3 < tt_content.bs3-grid2
+tt_content.bs3-grid3 {
+    templateName = bs3-grid3
+
+    dataProcessing {
+        203 = B13\Container\DataProcessing\ContainerProcessor
+        203 {
+            colPos = 203
+            as = children_203
+        }
+    }
+}
+
+tt_content.bs3-grid4 < tt_content.bs3-grid3
+tt_content.bs3-grid4 {
+    templateName = bs3-grid4
+
+    dataProcessing {
+        204 = B13\Container\DataProcessing\ContainerProcessor
+        204 {
+            colPos = 204
+            as = children_204
+        }
+    }
+}
+
+tt_content.bs3-grid6 < tt_content.bs3-grid4
+tt_content.bs3-grid6 {
+    templateName = bs3-grid6
+
+    dataProcessing {
+        205 = B13\Container\DataProcessing\ContainerProcessor
+        205 {
+            colPos = 205
+            as = children_205
+        }
+
+        206 = B13\Container\DataProcessing\ContainerProcessor
+        206 {
+            colPos = 206
+            as = children_206
+        }
+    }
+}

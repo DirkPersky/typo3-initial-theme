@@ -28,7 +28,7 @@ $EM_CONF[$_EXTKEY] = [
             'dp_cookieconsent' => '11.1.0-12.0.0',
             'vhs' => '6.0.5-6.99.99',
             'sourceopt' => '4.0.0-4.9.99',
-            'gridelements' => '10.0.0-11.9.99',
+            'container' => '1.4.2-2.0.0',
             'mask' => '7.0.29-7.9.99'
         ],
         'conflicts' => [
@@ -38,7 +38,7 @@ $EM_CONF[$_EXTKEY] = [
             'typo3_console' => '7.0.0-7.9.99',
             'typoscript_rendering' => '2.3.1-2.9.99',
             'powermail' => '8.4.0-9.9.99',
-
+            'scriptmerger' => '7.1.0-8.9.99',
         ],
     ],
 ];

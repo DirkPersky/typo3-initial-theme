@@ -39,4 +39,14 @@ call_user_func(function ($ext_key) {
             'tx_news_pi1[@widget_0][currentPage]'
         ]
     );
+
+    // overwrite Container to add Flexforms
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\B13\Container\Tca\ContainerConfiguration::class] = [
+        'className' => \DirkPersky\Theme\Tca\ContainerConfiguration::class
+    ];
+    // registry calss
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\B13\Container\Tca\Registry::class] = [
+        'className' => \DirkPersky\Theme\Tca\Registry::class
+    ];
+
 }, 'dp_theme');

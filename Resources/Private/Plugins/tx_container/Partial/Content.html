@@ -1,0 +1,3 @@
+<f:for each="{contents}" as="content" iteration="row_iteration">
+        <f:cObject typoscriptObjectPath="tt_content.{content.CType}" data="{content}" table="tt_content" />
+</f:for>

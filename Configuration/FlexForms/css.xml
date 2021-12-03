@@ -152,6 +152,11 @@
                                         <numIndex index="0">BG: Full Overlay</numIndex>
                                         <numIndex index="1">bg-op</numIndex>
                                     </numIndex>
+
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">Animation</numIndex>
+                                        <numIndex index="1">animate</numIndex>
+                                    </numIndex>
                                 </items>
                                 <maxitems>5</maxitems>
                                 <size>5</size>

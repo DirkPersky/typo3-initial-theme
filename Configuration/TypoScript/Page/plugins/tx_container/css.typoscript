@@ -1,0 +1,13 @@
+
+tt_content.dp-css =< lib.containerElementFlexform
+tt_content.dp-css {
+    templateName = css
+
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = children_201
+        }
+    }
+}
