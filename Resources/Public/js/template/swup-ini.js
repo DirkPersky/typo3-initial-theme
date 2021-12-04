@@ -27,7 +27,7 @@ jQuery(function ($) {
         linkSelector:
             'a[href^="' +
             window.location.origin +
-            '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup]), a:not([data-mailto-token])'
+            '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])'
     });
     // call Statemanager
     window.swupLoad.on('contentReplaced', function () {

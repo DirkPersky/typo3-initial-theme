@@ -46,7 +46,7 @@ config  {
   uniqueLinkVars = 1
   linkVars = L
   
-  spamProtectEmailAddresses = 2
+  spamProtectEmailAddresses = 0
   spamProtectEmailAddresses_atSubst = <span>@</span>
 }
 
