@@ -9,5 +9,10 @@ tt_content.dp-css {
             colPos = 201
             as = children_201
         }
+
+        20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        20 {
+            references.fieldName = image
+        }
     }
 }

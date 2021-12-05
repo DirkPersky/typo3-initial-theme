@@ -23,6 +23,9 @@ const _PACKGES_ = [
             'jquery/dist/jquery.min.map',
             'rrssb/js/rrssb.min.js',
             'lazysizes/lazysizes.min.js',
+            ['lazysizes/plugins/print/ls.print.js', 'plugins'], // LazyLoading for Print
+            ['lazysizes/plugins/respimg/ls.respimg.js', 'plugins'], // LazyLoading for Responsive Images
+            ['lazysizes/plugins/bgset/ls.bgset.js', 'plugins'], // LazyLoading for Background-Images
             'swup/dist/swup.js',
             '@swup/overlay-theme/dist/SwupOverlayTheme.js',
             '@swup/forms-plugin/dist/SwupFormsPlugin.js',
