@@ -47,6 +47,21 @@
                     "Bezahlung"
                 ],
                 "shortLabel": ""
+            },
+            "social_share": {
+                "color": "#f96332",
+                "columns": [
+                    "tx_mask_d46e8ca6ca128"
+                ],
+                "description": "Social Share buttons",
+                "hidden": 1,
+                "icon": "fa-share-alt-square",
+                "key": "social_share",
+                "label": "Social Share",
+                "labels": [
+                    ""
+                ],
+                "shortLabel": "Social Share"
             }
         },
         "palettes": {
@@ -88,6 +103,17 @@
                     "tx_mask_region",
                     "tx_mask_country"
                 ]
+            },
+            "tx_mask_d46e8ca6ca128": {
+                "label": "",
+                "showitem": [
+                    "tx_mask_email",
+                    "tx_mask_facebook",
+                    "tx_mask_xing",
+                    "tx_mask_linkedin",
+                    "tx_mask_twitter",
+                    "tx_mask_whatsap"
+                ]
             }
         },
         "sql": {
@@ -121,6 +147,16 @@
                     "tx_mask_einheit": "varchar(255) DEFAULT '' NOT NULL"
                 }
             },
+            "tx_mask_email": {
+                "tt_content": {
+                    "tx_mask_email": "int(11) DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_facebook": {
+                "tt_content": {
+                    "tx_mask_facebook": "int(11) DEFAULT '0' NOT NULL"
+                }
+            },
             "tx_mask_filter": {
                 "tt_content": {
                     "tx_mask_filter": "varchar(255) DEFAULT '' NOT NULL"
@@ -146,6 +182,11 @@
                     "tx_mask_link": "varchar(255) DEFAULT '' NOT NULL"
                 }
             },
+            "tx_mask_linkedin": {
+                "tt_content": {
+                    "tx_mask_linkedin": "int(11) DEFAULT '0' NOT NULL"
+                }
+            },
             "tx_mask_region": {
                 "tt_content": {
                     "tx_mask_region": "varchar(255) DEFAULT '' NOT NULL"
@@ -166,9 +207,24 @@
                     "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
                 }
             },
+            "tx_mask_twitter": {
+                "tt_content": {
+                    "tx_mask_twitter": "int(11) DEFAULT '0' NOT NULL"
+                }
+            },
             "tx_mask_value": {
                 "tt_content": {
                     "tx_mask_value": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_whatsap": {
+                "tt_content": {
+                    "tx_mask_whatsap": "int(11) DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_xing": {
+                "tt_content": {
+                    "tx_mask_xing": "int(11) DEFAULT '0' NOT NULL"
                 }
             },
             "tx_mask_zip": {
@@ -372,6 +428,14 @@
                     "google_4_jobs": 2
                 }
             },
+            "tx_mask_d46e8ca6ca128": {
+                "config": {
+                    "type": "palette"
+                },
+                "description": "",
+                "key": "d46e8ca6ca128",
+                "name": "palette"
+            },
             "tx_mask_description": {
                 "config": {
                     "enableRichtext": 1,
@@ -421,6 +485,46 @@
                 "name": "select",
                 "order": {
                     "google_4_jobs": 3
+                }
+            },
+            "tx_mask_email": {
+                "config": {
+                    "renderType": "checkboxToggle",
+                    "type": "check"
+                },
+                "description": "",
+                "inPalette": 1,
+                "inlineParent": {
+                    "social_share": "tx_mask_d46e8ca6ca128"
+                },
+                "key": "email",
+                "l10n_mode": "exclude",
+                "label": {
+                    "social_share": "EMail"
+                },
+                "name": "check",
+                "order": {
+                    "social_share": 1
+                }
+            },
+            "tx_mask_facebook": {
+                "config": {
+                    "renderType": "checkboxToggle",
+                    "type": "check"
+                },
+                "description": "",
+                "inPalette": 1,
+                "inlineParent": {
+                    "social_share": "tx_mask_d46e8ca6ca128"
+                },
+                "key": "facebook",
+                "l10n_mode": "exclude",
+                "label": {
+                    "social_share": "Facebook"
+                },
+                "name": "check",
+                "order": {
+                    "social_share": 2
                 }
             },
             "tx_mask_filter": {
@@ -531,6 +635,26 @@
                     "flyout": 2
                 }
             },
+            "tx_mask_linkedin": {
+                "config": {
+                    "renderType": "checkboxToggle",
+                    "type": "check"
+                },
+                "description": "",
+                "inPalette": 1,
+                "inlineParent": {
+                    "social_share": "tx_mask_d46e8ca6ca128"
+                },
+                "key": "linkedin",
+                "l10n_mode": "exclude",
+                "label": {
+                    "social_share": "LinkedIn"
+                },
+                "name": "check",
+                "order": {
+                    "social_share": 4
+                }
+            },
             "tx_mask_region": {
                 "config": {
                     "default": "NRW",
@@ -618,6 +742,26 @@
                     "google_4_jobs": 1
                 }
             },
+            "tx_mask_twitter": {
+                "config": {
+                    "renderType": "checkboxToggle",
+                    "type": "check"
+                },
+                "description": "",
+                "inPalette": 1,
+                "inlineParent": {
+                    "social_share": "tx_mask_d46e8ca6ca128"
+                },
+                "key": "twitter",
+                "l10n_mode": "exclude",
+                "label": {
+                    "social_share": "Twitter"
+                },
+                "name": "check",
+                "order": {
+                    "social_share": 5
+                }
+            },
             "tx_mask_value": {
                 "config": {
                     "default": "",
@@ -638,6 +782,46 @@
                 "name": "string",
                 "order": {
                     "google_4_jobs": 1
+                }
+            },
+            "tx_mask_whatsap": {
+                "config": {
+                    "renderType": "checkboxToggle",
+                    "type": "check"
+                },
+                "description": "",
+                "inPalette": 1,
+                "inlineParent": {
+                    "social_share": "tx_mask_d46e8ca6ca128"
+                },
+                "key": "whatsap",
+                "l10n_mode": "exclude",
+                "label": {
+                    "social_share": "Whatsapp"
+                },
+                "name": "check",
+                "order": {
+                    "social_share": 6
+                }
+            },
+            "tx_mask_xing": {
+                "config": {
+                    "renderType": "checkboxToggle",
+                    "type": "check"
+                },
+                "description": "",
+                "inPalette": 1,
+                "inlineParent": {
+                    "social_share": "tx_mask_d46e8ca6ca128"
+                },
+                "key": "xing",
+                "l10n_mode": "exclude",
+                "label": {
+                    "social_share": "Xing"
+                },
+                "name": "check",
+                "order": {
+                    "social_share": 3
                 }
             },
             "tx_mask_zip": {

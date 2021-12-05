@@ -1,0 +1,77 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
+>
+
+<div class="share-container">
+    <ul class="rrssb-buttons">
+        <f:if condition="{data.tx_mask_email}">
+            <li class="rrssb-email">
+                <!-- Replace subject with your message using URL Encoding: http://meyerweb.com/eric/tools/dencoder/ -->
+                <a href="mailto:?Subject={db:meta(field:'seo_title') -> f:format.urlencode()}">
+                    <span class="rrssb-icon">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="rrssb-text">EMail</span>
+                </a>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_facebook}">
+            <li class="rrssb-facebook">
+                <!--  Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header:
+                      https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u={db:meta(field:'url') -> f:format.urlencode()}" class="popup" >
+                    <span class="rrssb-icon">
+                        <i class="fab fa-facebook-square"></i>
+                    </span>
+                    <span class="rrssb-text">Facebook</span>
+                </a>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_linkedin}">
+            <li class="rrssb-linkedin">
+                <!-- Replace href with your meta and URL information -->
+                <a href="http://www.linkedin.com/shareArticle?mini=true&url={db:meta(field:'url') -> f:format.urlencode()}&title={db:meta(field:'seo_title') -> f:format.urlencode()}&summary={db:meta(field:'description') -> f:format.urlencode()}" class="popup">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </span>
+                    <span class="rrssb-text">LinkedIn</span>
+                </a>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_xing}">
+            <li class="rrssb-xing">
+                <!-- Replace href with your meta and URL information.  -->
+                <a href="https://www.xing.com/spi/shares/new?url={db:meta(field:'url') -> f:format.urlencode()}" class="popup">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-xing"></i>
+                    </span>
+                    <span class="rrssb-text">Xing</span>
+                </a>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_twitter}">
+            <li class="rrssb-twitter">
+                <!-- Replace href with your Meta and URL information  -->
+                <a href="https://twitter.com/intent/tweet?text={db:meta(field:'url') -> f:format.urlencode()}"
+                   class="popup">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                    <span class="rrssb-text">Twitter</span>
+                </a>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_whatsap}">
+            <li class="rrssb-whatsapp">
+                <a href="whatsapp://send?text={db:meta(field:'url') -> f:format.urlencode()}" data-action="share/whatsapp/share">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </span>
+                    <span class="rrssb-text">WhatsApp</span>
+                </a>
+            </li>
+        </f:if>
+    </ul>
+</div>
+</html>

@@ -115,6 +115,10 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 		top: 0;
 		width: 10%;
 
+		i {
+		  font-size: 17px;
+		  color: $rrssb-txt;
+		}
 		svg {
 		  height: 17px;
 		  width: 17px;
@@ -163,21 +167,6 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 	  a {
 		backface-visibility: hidden;
 		border-radius: 0.2em;
-		padding: 8.5% 0 8.5% 12%;
-
-		.rrssb-icon {
-		  height: 100%;
-		  left: 7%;
-		  padding-top: 0;
-		  width: 12%;
-
-		  svg {
-			height: 100%;
-			position: absolute;
-			top: 0;
-			width: 100%;
-		  }
-		}
 
 		.rrssb-text {
 		  backface-visibility: hidden;
@@ -188,25 +177,6 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
   &.small-format {
 	padding-top: 5px;
-
-	li {
-	  height: 80%;
-	  padding: 0 1px;
-
-	  a {
-		.rrssb-icon {
-		  height: 100%;
-		  padding-top: 0;
-
-		  svg {
-			height: 48%;
-			position: relative;
-			top: 6px;
-			width: 80%;
-		  }
-		}
-	  }
-	}
   }
 
   &.tiny-format {

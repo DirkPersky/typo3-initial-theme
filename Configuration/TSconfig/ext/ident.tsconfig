@@ -20,6 +20,8 @@ TCEFORM.tt_content.header_layout {
 	#addItems.8 = H3 Underline
 	#addItems.9 = H4 Underline
 	#addItems.10 = H5 Underline
+
+    addItems.15 = Subline
 }
 
 TCEFORM.tt_content.layout {
