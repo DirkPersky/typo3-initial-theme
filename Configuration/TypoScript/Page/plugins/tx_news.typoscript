@@ -48,3 +48,30 @@ plugin.tx_news {
     }
   }
 }
+
+plugin.tx_seo.config {
+    xmlSitemap {
+        sitemaps {
+            news {
+                provider = GeorgRinger\News\Seo\NewsXmlSitemapDataProvider
+                config {
+                    pid = {$plugin.tx_csseo.sitemap.extensions.news.storagePid}
+                    recursive = 2
+
+                    url {
+                        pageId = {$plugin.tx_csseo.sitemap.extensions.news.detailPid}
+
+                         fieldToParameterMap {
+                            uid = tx_news_pi1[news]
+                        }
+
+                        additionalGetParameters {
+                            tx_news_pi1.controller = News
+                            tx_news_pi1.action = detail
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

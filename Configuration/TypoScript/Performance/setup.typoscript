@@ -5,3 +5,5 @@
 [end]
 
 @import 'EXT:dp_theme/Configuration/TypoScript/Performance/ext/scriptmeger.typoscript'
+@import 'EXT:dp_theme/Configuration/TypoScript/Performance/ext/sitemap.typoscript'
+
