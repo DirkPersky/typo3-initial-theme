@@ -8,7 +8,7 @@
  * @license    AGPL v3
  */
 
-window.StateManager.attach('news-paging', function () {
+window.StateManager.attach('rssbb-init', function () {
     // reinit
     rrssbInit();
 });

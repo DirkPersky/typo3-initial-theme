@@ -34,6 +34,8 @@ jQuery.fn.NewsAjaxPaging = function (options) {
     this.map(function (index, element) {
         var $el = jQuery(element),
             $url = $el.data('news-next');
+        // remove Content
+        $el.html('');
         // mark as loaded
         $el.removeAttr('data-news-next');
         // ajax load

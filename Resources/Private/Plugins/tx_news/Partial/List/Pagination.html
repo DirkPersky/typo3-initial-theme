@@ -1,5 +1,7 @@
 <f:if condition="{settings.list.paginate.insertBelow}">
     <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
-        <div data-news-next="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}"></div>
+        <div data-news-next="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}">
+            <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}">{pagination.nextPageNumber}</a>
+        </div>
     </f:if>
 </f:if>
