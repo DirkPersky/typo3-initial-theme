@@ -1,3 +1,13 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
 .canvas--menu {
   // Backdrop Style
   .nav--backdrop {
@@ -25,7 +35,68 @@
 	  //}
 	}
   }
+
+  .canvis-logo {
+	p {
+	  font-weight: bold;
+	}
+
+	a {
+	  font-weight: normal;
+	}
+
+	.image {
+	  a {
+		display: block;
+
+		img {
+		  transition: all .3s ease-in-out;
+		  border-radius: 50%;
+		  box-shadow: 0px 0px 3px 1px $dark;
+		}
+
+		&:hover {
+		  img {
+			box-shadow: 0px 0px 5px 2px $gray-900;
+		  }
+		}
+	  }
+	}
+
+	a {
+	  color: inherit;
+	}
+  }
+
+  .canvis-icon--bar {
+	height: 100%;
+	margin: 0 -15px;
+	padding: 0 1rem;
+
+	&,
+	.ce-bodytext {
+	  display: flex;
+	  align-items: center;
+	  flex-wrap: nowrap;
+	  justify-content: center;
+	}
+
+	p {
+	  margin-bottom: 0;
+	}
+
+	a {
+	  font-size: 1.3rem;
+	  display: block;
+	  padding: .3rem .5rem;
+
+	  &:hover {
+		opacity: .8;
+	  }
+	}
+  }
 }
+
 .canvas--nav {
   position: fixed;
   z-index: 1040;

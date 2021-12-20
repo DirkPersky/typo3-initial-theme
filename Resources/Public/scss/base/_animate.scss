@@ -1,0 +1,27 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+.animate {
+  visibility: hidden;
+  transition: all .4s ease-in-out;
+
+  transform: scale(0.5);
+  opacity: 0;
+  content-visibility: hidden;
+  contain-intrinsic-size: 30vh;
+
+  .no-js &,
+  &.animated-show {
+	visibility: visible;
+	transform: none;
+	opacity: 1;
+	content-visibility: visible;
+  }
+}

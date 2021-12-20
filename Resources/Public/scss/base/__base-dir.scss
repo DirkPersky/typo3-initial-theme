@@ -6,11 +6,13 @@
  * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
- *
- * @description Import all Custom Reset/Normalize | Typography Rules
  */
 
 @import "html";
 @import "typo3_images";
 @import "content";
 @import "rrssb";
+@import "animate";
+@import "arcordion";
+@import "spaces";
+@import "text";

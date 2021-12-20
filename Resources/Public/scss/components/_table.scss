@@ -7,10 +7,11 @@
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
-@import "variables";
-@import "mixins/mixins";
 
-@import "fontawesome";
-@import "roboto";
-@import "webfont";
-@import "normalize";
+.ce-table {
+  @extend .table;
+}
+
+.ce-table-striped {
+  @extend .table-striped;
+}

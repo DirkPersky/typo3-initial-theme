@@ -1,0 +1,47 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+.card.card-accordion {
+  margin-bottom: .5rem;
+
+  .card-header {
+	position: relative;
+	display: block;
+	padding: .3rem 2rem .3rem .5rem;
+	text-decoration: none;
+	/** Define Toggle Icon **/
+	.icon {
+	  @extend .fas;
+
+	  position: absolute;
+	  top: 0;
+	  right: .5rem;
+
+	  bottom: 0;
+	  display: block;
+	  display: flex;
+	  overflow: visible !important;
+
+	  align-items: center;
+	  justify-content: center;
+	  height: auto !important;
+
+	  &:before {
+		@extend .fa-angle-down;
+	  }
+
+	  &.in {
+		&:before {
+		  @extend .fa-angle-up;
+		}
+	  }
+	}
+  }
+}

@@ -1,3 +1,13 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
 // main: ../style.scss
 footer#bottom {
 	border-top: 1px solid darken($light, 30%);
@@ -98,25 +108,4 @@ footer#bottom {
 		}
 	}
 
-}
-
-.frame-layout-8,
-.gray-scale {
-	figure {
-
-		img {
-			filter: grayscale(100%);
-			transition: all .3s ease-in-out;
-		}
-
-		a {
-			display: inline-block;
-		}
-
-		&:hover {
-			img {
-				filter: none;
-			}
-		}
-	}
 }

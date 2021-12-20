@@ -1,0 +1,104 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+/**
+* Space before and after
+*/
+.frame-space- {
+  &after- {
+	&extra-small {
+	  padding-bottom: 15px;
+	}
+
+	&small {
+	  padding-bottom: 30px;
+	}
+
+	&medium {
+	  padding-bottom: 45px;
+	}
+
+	&large {
+	  padding-bottom: 60px;
+	}
+
+	&extra-large {
+	  padding-bottom: 75px;
+	}
+  }
+
+  &before- {
+	&extra-small {
+	  padding-top: 15px;
+	}
+
+	&small {
+	  padding-top: 30px;
+	}
+
+	&medium {
+	  padding-top: 45px;
+	}
+
+	&large {
+	  padding-top: 60px;
+	}
+
+	&extra-large {
+	  padding-top: 75px;
+	}
+  }
+}
+
+.css-space- {
+  &after- {
+	&extra-small {
+	  margin-bottom: 15px;
+	}
+
+	&small {
+	  margin-bottom: 30px;
+	}
+
+	&medium {
+	  margin-bottom: 45px;
+	}
+
+	&large {
+	  margin-bottom: 60px;
+	}
+
+	&extra-large {
+	  margin-bottom: 75px;
+	}
+  }
+
+  &before- {
+	&extra-small {
+	  margin-top: 15px;
+	}
+
+	&small {
+	  margin-top: 30px;
+	}
+
+	&medium {
+	  margin-top: 45px;
+	}
+
+	&large {
+	  margin-top: 60px;
+	}
+
+	&extra-large {
+	  margin-top: 75px;
+	}
+  }
+}
