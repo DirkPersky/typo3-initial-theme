@@ -46,6 +46,15 @@ $.fn.typo3form = function(options){
             formData.set(btn.prop('name'), btn.prop('value'));
             // disable Fieldset
             form.find('fieldset').attr('disabled','disabled');
+            // offset saver
+            window.formScrollOffset = form.offset().top;
+            // add scroll handler
+            window.formScroll = function ($offset) {
+                window.swupLoad.scrollTo(window.formScrollOffset - $offset);
+                // clear handler
+                window.formScroll = undefined;
+                window.formScrollOffset = undefined;
+            };
             // perform request
             window.swupLoad.loadPage({
                 url: form.data('ajax-form'), // route of request (defaults to current url)
