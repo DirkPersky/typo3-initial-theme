@@ -39,6 +39,8 @@ jQuery(function ($) {
         if (window.location.href.indexOf('#') == -1 && jQuery('div[data-swup-scroll]').length > 0) {
             window.swupLoad.scrollTo(jQuery('div[data-swup-scroll]').offset().top - $offset);
         }
+        // form scroll
+        if(typeof window.formScroll != "undefined") window.formScroll($offset);
     });
 });
 
