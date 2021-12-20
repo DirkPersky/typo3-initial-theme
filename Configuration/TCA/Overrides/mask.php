@@ -17,15 +17,21 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * Plugin Reconfiguration Options
  */
 $options = [
-    'backend' => 'typo3conf/ext/dp_theme/Resources/Private/Plugins/tx_mask/Backend/Templates/',
+    'backend' => 'EXT:dp_theme/Resources/Private/Plugins/tx_mask/Backend/Templates/',
+    'layouts_backend' => 'EXT:dp_theme/Resources/Private/Plugins/tx_mask/Backend/Layouts/',
+    'partials_backend' => 'EXT:dp_theme/Resources/Private/Plugins/tx_mask/Backend/Partials/',
+
+    'content' => 'EXT:dp_theme/Resources/Private/Plugins/tx_mask/Frontend/Templates/',
+    'layouts' => 'EXT:dp_theme/Resources/Private/Plugins/tx_mask/Frontend/Layouts/',
+    'partials' => 'EXT:dp_theme/Resources/Private/Plugins/tx_mask/Frontend/Partials/',
     'backendlayout_pids' => '0,1',
-    'content' => 'typo3conf/ext/dp_theme/Resources/Private/Plugins/tx_mask/Frontend/Templates/',
-    'json' => 'typo3conf/ext/dp_theme/Configuration/Mask/mask.json',
-    'layouts' => 'typo3conf/ext/dp_theme/Resources/Private/Plugins/tx_mask/Frontend/Layouts/',
-    'layouts_backend' => 'typo3conf/ext/dp_theme/Resources/Private/Plugins/tx_mask/Backend/Layouts/',
-    'partials' => 'typo3conf/ext/dp_theme/Resources/Private/Plugins/tx_mask/Frontend/Partials/',
-    'partials_backend' => 'typo3conf/ext/dp_theme/Resources/Private/Plugins/tx_mask/Backend/Partials/',
-    'preview' => 'typo3conf/ext/dp_theme/Resources/Public/Mask/',
+
+    'json' => 'EXT:dp_theme/Configuration/Mask/mask.json',
+    'preview' => 'EXT:dp_theme/Resources/Public/Mask/',
+
+    'loader_identifier ' => 'json-split',
+    'content_elements_folder ' => 'EXT:dp_theme/Configuration/Mask/Frontend',
+    'backend_layouts_folder  ' => 'EXT:dp_theme/Configuration/Mask/Backend'
 ];
 /**
  * Update Plugin Configs

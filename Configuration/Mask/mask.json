@@ -54,7 +54,7 @@
                     "tx_mask_d46e8ca6ca128"
                 ],
                 "description": "Social Share buttons",
-                "hidden": 1,
+                "hidden": 0,
                 "icon": "fa-share-alt-square",
                 "key": "social_share",
                 "label": "Social Share",

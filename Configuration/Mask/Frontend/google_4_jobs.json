@@ -1,0 +1,503 @@
+{
+    "tt_content": {
+        "elements": {
+            "google_4_jobs": {
+                "key": "google_4_jobs",
+                "label": "Google 4 Jobs",
+                "description": "",
+                "shortLabel": "",
+                "color": "#000000",
+                "icon": "fa-address-card-o",
+                "columns": [
+                    "tx_mask_07deffe4dae05",
+                    "tx_mask_9cdff6bd61902",
+                    "tx_mask_4bd5eb2820cff"
+                ],
+                "labels": [
+                    "Job Beschreibung",
+                    "Firma",
+                    "Bezahlung"
+                ],
+                "descriptions": [],
+                "sorting": 1,
+                "hidden": 1
+            }
+        },
+        "sql": {
+            "tx_mask_title": {
+                "tt_content": {
+                    "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_filter": {
+                "tt_content": {
+                    "tx_mask_filter": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_skills": {
+                "tt_content": {
+                    "tx_mask_skills": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_description": {
+                "tt_content": {
+                    "tx_mask_description": "mediumtext"
+                }
+            },
+            "tx_mask_hiring_name": {
+                "tt_content": {
+                    "tx_mask_hiring_name": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_street": {
+                "tt_content": {
+                    "tx_mask_street": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_zip": {
+                "tt_content": {
+                    "tx_mask_zip": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_city": {
+                "tt_content": {
+                    "tx_mask_city": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_region": {
+                "tt_content": {
+                    "tx_mask_region": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_country": {
+                "tt_content": {
+                    "tx_mask_country": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_value": {
+                "tt_content": {
+                    "tx_mask_value": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_currency": {
+                "tt_content": {
+                    "tx_mask_currency": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            },
+            "tx_mask_einheit": {
+                "tt_content": {
+                    "tx_mask_einheit": "varchar(255) DEFAULT '' NOT NULL"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_07deffe4dae05": {
+                "config": {
+                    "type": "palette"
+                },
+                "key": "07deffe4dae05",
+                "fullKey": "tx_mask_07deffe4dae05",
+                "type": "palette"
+            },
+            "tx_mask_title": {
+                "config": {
+                    "type": "input"
+                },
+                "key": "title",
+                "fullKey": "tx_mask_title",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "flyout": "tx_mask_8a349a58e970b",
+                    "google_4_jobs": "tx_mask_07deffe4dae05"
+                },
+                "label": {
+                    "flyout": "Title",
+                    "google_4_jobs": "Job Title"
+                },
+                "order": {
+                    "flyout": 1,
+                    "google_4_jobs": 1
+                }
+            },
+            "tx_mask_filter": {
+                "config": {
+                    "items": [
+                        [
+                            "Vollzeit",
+                            "FULL_TIME"
+                        ],
+                        [
+                            "Teilzeit",
+                            "PART_TIME"
+                        ]
+                    ],
+                    "renderType": "selectSingle",
+                    "type": "select"
+                },
+                "l10n_mode": "exclude",
+                "key": "filter",
+                "fullKey": "tx_mask_filter",
+                "type": "select",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_07deffe4dae05"
+                },
+                "label": {
+                    "google_4_jobs": "Arbeitszeiten"
+                },
+                "order": {
+                    "google_4_jobs": 2
+                }
+            },
+            "tx_mask_skills": {
+                "config": {
+                    "eval": "trim",
+                    "placeholder": "skill1,skill2,skill3",
+                    "type": "input"
+                },
+                "key": "skills",
+                "fullKey": "tx_mask_skills",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_07deffe4dae05"
+                },
+                "label": {
+                    "google_4_jobs": "Skills"
+                },
+                "order": {
+                    "google_4_jobs": 3
+                }
+            },
+            "tx_mask_a88087ee4ddde": {
+                "config": {
+                    "type": "linebreak"
+                },
+                "key": "a88087ee4ddde",
+                "fullKey": "tx_mask_a88087ee4ddde",
+                "type": "linebreak",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_07deffe4dae05"
+                },
+                "label": {
+                    "google_4_jobs": ""
+                },
+                "order": {
+                    "google_4_jobs": 4
+                }
+            },
+            "tx_mask_description": {
+                "config": {
+                    "richtextConfiguration": "minimal",
+                    "type": "text",
+                    "enableRichtext": 1
+                },
+                "key": "description",
+                "fullKey": "tx_mask_description",
+                "type": "richtext",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_07deffe4dae05"
+                },
+                "label": {
+                    "google_4_jobs": "Beschreibung"
+                },
+                "order": {
+                    "google_4_jobs": 5
+                }
+            },
+            "tx_mask_9cdff6bd61902": {
+                "config": {
+                    "type": "palette"
+                },
+                "key": "9cdff6bd61902",
+                "fullKey": "tx_mask_9cdff6bd61902",
+                "type": "palette"
+            },
+            "tx_mask_hiring_name": {
+                "config": {
+                    "eval": "trim",
+                    "type": "input"
+                },
+                "l10n_mode": "exclude",
+                "key": "hiring_name",
+                "fullKey": "tx_mask_hiring_name",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                },
+                "label": {
+                    "google_4_jobs": "Name"
+                },
+                "description": "hiringOrganization",
+                "order": {
+                    "google_4_jobs": 1
+                }
+            },
+            "tx_mask_095b88929a698": {
+                "config": {
+                    "type": "linebreak"
+                },
+                "key": "095b88929a698",
+                "fullKey": "tx_mask_095b88929a698",
+                "type": "linebreak",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                },
+                "label": {
+                    "google_4_jobs": ""
+                },
+                "order": {
+                    "google_4_jobs": 2
+                }
+            },
+            "tx_mask_street": {
+                "l10n_mode": "exclude",
+                "config": {
+                    "type": "input"
+                },
+                "key": "street",
+                "fullKey": "tx_mask_street",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                },
+                "label": {
+                    "google_4_jobs": "Stra\u00dfe"
+                },
+                "description": "jobLocation",
+                "order": {
+                    "google_4_jobs": 3
+                }
+            },
+            "tx_mask_zip": {
+                "l10n_mode": "exclude",
+                "config": {
+                    "type": "input"
+                },
+                "key": "zip",
+                "fullKey": "tx_mask_zip",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                },
+                "label": {
+                    "google_4_jobs": "PLZ"
+                },
+                "description": "jobLocation",
+                "order": {
+                    "google_4_jobs": 4
+                }
+            },
+            "tx_mask_city": {
+                "l10n_mode": "exclude",
+                "config": {
+                    "type": "input"
+                },
+                "key": "city",
+                "fullKey": "tx_mask_city",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                },
+                "label": {
+                    "google_4_jobs": "Ort"
+                },
+                "description": "jobLocation",
+                "order": {
+                    "google_4_jobs": 5
+                }
+            },
+            "tx_mask_9ca99b988b64": {
+                "config": {
+                    "type": "linebreak"
+                },
+                "key": "9ca99b988b64",
+                "fullKey": "tx_mask_9ca99b988b64",
+                "type": "linebreak",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                },
+                "label": {
+                    "google_4_jobs": ""
+                },
+                "order": {
+                    "google_4_jobs": 6
+                }
+            },
+            "tx_mask_region": {
+                "config": {
+                    "default": "NRW",
+                    "type": "input"
+                },
+                "l10n_mode": "exclude",
+                "key": "region",
+                "fullKey": "tx_mask_region",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                },
+                "label": {
+                    "google_4_jobs": "Bundesland"
+                },
+                "description": "addressRegion",
+                "order": {
+                    "google_4_jobs": 7
+                }
+            },
+            "tx_mask_country": {
+                "config": {
+                    "default": "DE",
+                    "type": "input"
+                },
+                "key": "country",
+                "fullKey": "tx_mask_country",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                },
+                "label": {
+                    "google_4_jobs": "Land"
+                },
+                "description": "addressCountry",
+                "order": {
+                    "google_4_jobs": 8
+                }
+            },
+            "tx_mask_4bd5eb2820cff": {
+                "config": {
+                    "type": "palette"
+                },
+                "key": "4bd5eb2820cff",
+                "fullKey": "tx_mask_4bd5eb2820cff",
+                "type": "palette"
+            },
+            "tx_mask_value": {
+                "config": {
+                    "mode": 0,
+                    "type": "input"
+                },
+                "l10n_mode": "exclude",
+                "key": "value",
+                "fullKey": "tx_mask_value",
+                "type": "string",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_4bd5eb2820cff"
+                },
+                "label": {
+                    "google_4_jobs": "Gehalt"
+                },
+                "order": {
+                    "google_4_jobs": 1
+                }
+            },
+            "tx_mask_currency": {
+                "config": {
+                    "items": [
+                        [
+                            "EUR \u20ac",
+                            "EUR"
+                        ],
+                        [
+                            "USD $",
+                            "USD"
+                        ]
+                    ],
+                    "renderType": "selectSingle",
+                    "type": "select"
+                },
+                "l10n_mode": "exclude",
+                "key": "currency",
+                "fullKey": "tx_mask_currency",
+                "type": "select",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_4bd5eb2820cff"
+                },
+                "label": {
+                    "google_4_jobs": "W\u00e4hrung"
+                },
+                "order": {
+                    "google_4_jobs": 2
+                }
+            },
+            "tx_mask_einheit": {
+                "config": {
+                    "items": [
+                        [
+                            "pro Monat",
+                            "MONTH"
+                        ],
+                        [
+                            "pro Jahr",
+                            "YEAR"
+                        ]
+                    ],
+                    "renderType": "selectSingle",
+                    "type": "select"
+                },
+                "l10n_mode": "exclude",
+                "key": "einheit",
+                "fullKey": "tx_mask_einheit",
+                "type": "select",
+                "inPalette": 1,
+                "inlineParent": {
+                    "google_4_jobs": "tx_mask_4bd5eb2820cff"
+                },
+                "label": {
+                    "google_4_jobs": "Referenz"
+                },
+                "order": {
+                    "google_4_jobs": 3
+                }
+            }
+        },
+        "palettes": {
+            "tx_mask_07deffe4dae05": {
+                "label": "Job Beschreibung",
+                "description": "",
+                "showitem": [
+                    "tx_mask_title",
+                    "tx_mask_filter",
+                    "tx_mask_skills",
+                    "tx_mask_a88087ee4ddde",
+                    "tx_mask_description"
+                ]
+            },
+            "tx_mask_9cdff6bd61902": {
+                "label": "Firma",
+                "description": "",
+                "showitem": [
+                    "tx_mask_hiring_name",
+                    "tx_mask_095b88929a698",
+                    "tx_mask_street",
+                    "tx_mask_zip",
+                    "tx_mask_city",
+                    "tx_mask_9ca99b988b64",
+                    "tx_mask_region",
+                    "tx_mask_country"
+                ]
+            },
+            "tx_mask_4bd5eb2820cff": {
+                "label": "Bezahlung",
+                "description": "",
+                "showitem": [
+                    "tx_mask_value",
+                    "tx_mask_currency",
+                    "tx_mask_einheit"
+                ]
+            }
+        }
+    }
+}
