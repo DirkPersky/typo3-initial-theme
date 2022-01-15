@@ -1,0 +1,104 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category TYPO3
+  ~
+  ~ @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <dirk.persky@gmail.com>
+  ~ @license    AGPL v3
+  -->
+
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:switch expression="{layout}">
+    <f:case value="1">
+        <h1 class="{positionClass}">
+            <f:link.typolink parameter="{link}">
+                <div class="subline">
+                    <f:format.raw>{subheader}</f:format.raw>
+                </div>
+                <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
+                <f:format.raw>{header}</f:format.raw>
+            </f:link.typolink>
+        </h1>
+    </f:case>
+    <f:case value="2">
+        <h2 class="{positionClass}">
+            <f:link.typolink parameter="{link}">
+                <div class="subline">
+                    <f:format.raw>{subheader}</f:format.raw>
+                </div>
+                <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
+                <f:format.raw>{header}</f:format.raw>
+            </f:link.typolink>
+        </h2>
+    </f:case>
+    <f:case value="3">
+        <h3 class="{positionClass}">
+            <f:link.typolink parameter="{link}">
+                <div class="subline">
+                    <f:format.raw>{subheader}</f:format.raw>
+                </div>
+                <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
+                <f:format.raw>{header}</f:format.raw>
+            </f:link.typolink>
+        </h3>
+    </f:case>
+    <f:case value="4">
+        <h4 class="{positionClass}">
+            <f:link.typolink parameter="{link}">
+                <div class="subline">
+                    <f:format.raw>{subheader}</f:format.raw>
+                </div>
+                <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
+                <f:format.raw>{header}</f:format.raw>
+            </f:link.typolink>
+        </h4>
+    </f:case>
+    <f:case value="5">
+        <h5 class="{positionClass}">
+            <f:link.typolink parameter="{link}">
+                <div class="subline">
+                    <f:format.raw>{subheader}</f:format.raw>
+                </div>
+                <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
+                <f:format.raw>{header}</f:format.raw>
+            </f:link.typolink>
+        </h5>
+    </f:case>
+    <f:case value="6">
+        <h6 class="{positionClass}">
+            <f:link.typolink parameter="{link}">
+                <div class="subline">
+                    <f:format.raw>{subheader}</f:format.raw>
+                </div>
+                <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
+                <f:format.raw>{header}</f:format.raw>
+            </f:link.typolink>
+        </h6>
+    </f:case>
+    <f:case value="15">
+        <div class="subline {positionClass}">
+            <f:link.typolink parameter="{link}">
+                <div class="subline">
+                    <f:format.raw>{subheader}</f:format.raw>
+                </div>
+                <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
+                <f:format.raw>{header}</f:format.raw>
+            </f:link.typolink>
+        </div>
+    </f:case>
+    <f:case value="100">
+        <f:comment> -- do not show header --</f:comment>
+    </f:case>
+    <f:defaultCase>
+        <f:if condition="{default}">
+            <f:render arguments="{
+				header: header,
+                subheader: subheader,
+				layout: default,
+				positionClass: positionClass,
+				link: link}" partial="Header/TopHeader"/>
+        </f:if>
+    </f:defaultCase>
+</f:switch>
+</html>
