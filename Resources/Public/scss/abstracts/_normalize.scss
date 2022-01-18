@@ -8,28 +8,7 @@
  * @license    AGPL v3
  */
 
-.breadcrumb {
-  position: relative;
-  display: none;
-  margin-bottom: 15px;
-  padding-right: 0;
-  padding-left: 0;
 
-  @include font-size(13px);
-
-  background-color: transparent;
-  @include media-breakpoint-up(md) {
-	display: flex;
-  }
-
-  a {
-	// color: ;
-  }
-
-  .active {
-	// color: ;
-  }
-}
 
 p:last-child {
   margin-bottom: 0;

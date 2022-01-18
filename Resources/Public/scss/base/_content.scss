@@ -69,25 +69,21 @@
 #c18 .ce-column {
   transition: all .4s ease-in-out;
 
-  opacity: 0;
-  visibility: hidden;
-
-  &:nth-child(3n - 3) {
-	transform: translateX(100%);
-  }
-
-  &:nth-child(3n - 1) {
-	transform: scale(.7);
-  }
-
-  &:nth-child(3n - 2) {
-	transform: translateX(-100%);
-  }
-
   &.animated-show {
-	transform: none;
-	opacity: 1;
-	visibility: visible;
+	visibility: hidden;
+	opacity: 0;
+
+	&:nth-child(3n - 3) {
+	  transform: translateX(100%);
+	}
+
+	&:nth-child(3n - 1) {
+	  transform: scale(.7);
+	}
+
+	&:nth-child(3n - 2) {
+	  transform: translateX(-100%);
+	}
   }
 }
 
