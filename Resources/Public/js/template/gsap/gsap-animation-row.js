@@ -10,8 +10,6 @@
 
 
 window.GSAPManager.attach('animation-row', function () {
-    var $rowElements = $('.row.animate');
-
     // enter animation
     function onEnter(element) {
         var $element = $(element),
@@ -45,7 +43,7 @@ window.GSAPManager.attach('animation-row', function () {
         });
     }
 
-    ScrollTrigger.batch($rowElements, {
+    ScrollTrigger.batch('.row.animate', {
         start: 'top bottom-=100px',
         end: 'bottom top+=100px',
         // once: false,
