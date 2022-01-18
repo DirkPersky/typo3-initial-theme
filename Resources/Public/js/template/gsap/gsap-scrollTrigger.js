@@ -21,8 +21,8 @@ window.GSAPManager.attach('scroll-trigger', function () {
         // init Scroltrigger
         var trigger = ScrollTrigger.create({
             trigger: element,
-            start: 'top bottom-=150px',
-            end: 'bottom top+=150px',
+            start: 'top bottom-=100px',
+            end: 'bottom top+=100px',
             scrub: 1,
             onEnter: e => element.classList.remove('animated-show'),
             onEnterBack: e => element.classList.remove('animated-show'),

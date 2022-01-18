@@ -15,16 +15,20 @@ window.GSAPManager.attach('animation-row', function () {
     // enter animation
     function onEnter(element) {
         var $element = $(element),
-            timeLine = gsap.timeline();
+            timeLine = gsap.timeline({
+                autoRemoveChildren: true,
+            });
         // get left col Header
         var sliderText = new SplitType($element.find('> div:first-child header').find('*'), {types: "words, chars"});
+        timeLine.delay(.3);
+        // animate rows
         timeLine.from($element.find('> div:not(:first-child)'), {
             duration: 0.6,
             x: 100,
             autoAlpha: 0,
             ease: "back",
             stagger: 0.02
-        }, 1);
+        }, 0);
         // animation def
         timeLine.from(sliderText.chars, {
             duration: 0.4,
@@ -34,7 +38,7 @@ window.GSAPManager.attach('animation-row', function () {
             transformOrigin: "100% 50%",
             ease: "back",
             stagger: 0.02
-        }, 1);
+        }, 0);
         // complete callback
         timeLine.then(e => {
             sliderText.revert(); // rese to normal text
@@ -42,8 +46,8 @@ window.GSAPManager.attach('animation-row', function () {
     }
 
     ScrollTrigger.batch($rowElements, {
-        start: 'top bottom-=150px',
-        end: 'bottom top+=150px',
+        start: 'top bottom-=100px',
+        end: 'bottom top+=100px',
         // once: false,
         onEnter: onEnter,
         onEnterBack: onEnter,
