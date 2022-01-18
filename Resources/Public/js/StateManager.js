@@ -86,3 +86,15 @@ jQuery(function ($) {
     window.StateManager.call();
 });
 
+
+// new Statemanager for GASP
+window.AnimateManager = new _StateManager();
+// attach to Statemanager
+window.StateManager.attach('animate-trigger', function () {
+    // init GSAP Animations
+    window.AnimateManager.call();
+    // refersh for Swup relase
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 1000);
+});

@@ -8,7 +8,8 @@
  * @license    AGPL v3
  */
 
-window.GSAPManager.attach('slider-text', function () {
+window.AnimateManager.attach('slider-text', function () {
+    return;
     $("section.slider .carousel-caption").map((i, element) => {
         var sliderText = new SplitType(element, {types: "words, chars"}),
             timeLine = gsap.timeline();

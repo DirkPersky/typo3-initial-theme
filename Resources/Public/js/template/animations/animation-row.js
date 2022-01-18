@@ -9,7 +9,9 @@
  */
 
 
-window.GSAPManager.attach('animation-row', function () {
+window.AnimateManager.attach('animation-row', function () {
+    return;
+
     // enter animation
     function onEnter(element) {
         var $element = $(element),
@@ -19,31 +21,21 @@ window.GSAPManager.attach('animation-row', function () {
         // get left col Header
         var sliderText = new SplitType($element.find('> div:first-child header').find('*'), {types: "words, chars"});
         timeLine.delay(.3);
-        // animate rows
-        timeLine.from($element.find('> div:not(:first-child)'), {
-            duration: 0.6,
-            x: 100,
-            autoAlpha: 0,
-            ease: "back",
-            stagger: 0.02
-        }, 0);
+        $element.find('> div:not(:first-child)').addClass('animated bounceInRight');
         // animation def
-        timeLine.from(sliderText.chars, {
-            duration: 0.4,
-            scale: 4,
-            autoAlpha: 0,
-            rotationX: -180,
-            transformOrigin: "100% 50%",
-            ease: "back",
-            stagger: 0.02
-        }, 0);
-        // complete callback
-        timeLine.then(e => {
-            sliderText.revert(); // rese to normal text
-        });
+        sliderText.chars.map((e, i) => {
+            e.classList.add('animated');
+            e.classList.add('textBounceLeft');
+            e.style.animationDelay = (0.02 * i) + "s";
+            console.log(e, i);
+        })
+        // // complete callback
+        // timeLine.then(e => {
+        //     sliderText.revert(); // rese to normal text
+        // });
     }
 
-    ScrollTrigger.batch('.row.animate', {
+    window.DPAnimate.scrollTrigger('.row.animate', {
         start: 'top bottom-=100px',
         end: 'bottom top+=100px',
         // once: false,

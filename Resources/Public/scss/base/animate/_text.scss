@@ -1,0 +1,36 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+
+@keyframes textBounceLeft {
+  from {
+	opacity: 0;
+	transform: translate3d(-3000px, 0, 0) scale(4);
+  }
+
+  60% {
+	opacity: .3;
+  }
+
+  85% {
+	opacity: .5;
+	transform: translate3d(10px, 0, 0) scale(1) rotateX(0);
+  }
+
+  to {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+  }
+}
+
+.textBounceLeft {
+  transform-origin: 100% 50%;
+  animation-name: textBounceLeft;
+}

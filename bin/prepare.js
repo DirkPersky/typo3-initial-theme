@@ -40,15 +40,9 @@ const _PACKGES_ = [
             {src: '@swup/scroll-plugin/dist/SwupScrollPlugin.js', dir: 'swup/plugin'},
 
             /**
-             * GSAP
+             * SplitText
              */
-            {src: 'gsap/dist/gsap.js', dir: 'gasp'}, // gsap
-            {src: 'gsap/dist/ScrollTrigger.js', dir: 'gasp/plugin', name: 'ScrollTrigger.js'}, // GSAP Plugins
-            {src: 'split-type/umd/index.min.js', dir: 'gasp/plugin', name: 'SplitType.js'},
-            // {src: 'gsap/dist/PixiPlugin.js',                   dir: 'gasp/plugin', name: 'PixiPlugin.js'}, // GSAP Plugins
-            // {src: 'three/build/three.min.js',                  dir: 'gasp/module', name: 'three.min.js'}, // three.js
-            // {src: 'hover-effect/dist/hover-effect.umd.js',     dir: 'gasp/hover-effekt', name: 'hover-effect.umd.js'}, // hover effect
-            // {src: 'hover-effect/dist/hover-effect.umd.js.map', dir: 'gasp/hover-effekt'}, // hover effect
+            {src: 'split-type/umd/index.min.js', name: 'SplitType.js'},
         ]
     },
     {

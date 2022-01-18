@@ -8,14 +8,6 @@
  * @license    AGPL v3
  */
 
-.animate {
-  transition: all .4s ease-in-out;
-  contain-intrinsic-size: 30vh;
-
-  &.animated-show {
-	visibility: hidden;
-	transform: scale(0.5);
-	opacity: 0;
-	content-visibility: hidden;
-  }
-}
+@import "base";
+@import "bounce";
+@import "text";

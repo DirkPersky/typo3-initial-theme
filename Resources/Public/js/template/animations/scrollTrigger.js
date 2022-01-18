@@ -8,7 +8,8 @@
  * @license    AGPL v3
  */
 
-window.GSAPManager.attach('scroll-trigger', function () {
+window.AnimateManager.attach('scroll-trigger', function () {
+    return;
     // check if ScrollTrigger exist
     if (typeof ScrollTrigger == 'undefined') return;
     // get elements

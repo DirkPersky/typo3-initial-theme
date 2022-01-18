@@ -70,7 +70,7 @@ jQuery.fn.NewsAjaxPaging = function (options) {
                 // remove old element
                 $el.remove();
                 // run scripts
-                window.StateManager.callByName('gsap-scrollTrigger');
+                window.StateManager.callByName('animate-trigger');
                 window.StateManager.callByName('news-paging');
             }, function (error) {
             });

@@ -1,0 +1,29 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+@keyframes bounceInRight {
+  from {
+	opacity: 0;
+	transform: translate3d(3000px, 0, 0) scaleX(3);
+  }
+
+  80% {
+	opacity: 1;
+	transform: translate3d(-10px, 0, 0) scaleX(1);
+  }
+
+  to {
+	transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInRight {
+  animation-name: bounceInRight;
+}
