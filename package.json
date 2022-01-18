@@ -16,15 +16,18 @@
     "@swup/overlay-theme": "latest",
     "@swup/scroll-plugin": "latest",
     "bootstrap": "latest",
+    "gsap": "latest",
     "hamburgers": "latest",
+    "hover-effect": "latest",
     "jquery": "latest",
     "lazysizes": "latest",
     "popper.js": "latest",
     "recursive-copy": "latest",
     "rrssb": "latest",
+    "split-type": "latest",
     "swup": "latest",
     "tether": "latest",
-    "waypoints": "latest"
+    "three": "latest"
   },
   "devDependencies": {
     "clean-css": "latest",

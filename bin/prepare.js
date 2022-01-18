@@ -16,24 +16,39 @@ const _PACKGES_ = [
     {
         'vendor': 'js/vendor/',
         'src': [
-            '@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-            'bootstrap/dist/js/bootstrap.bundle.min.js',
-            'bootstrap/dist/js/bootstrap.bundle.min.js.map',
-            'jquery/dist/jquery.min.js',
-            'jquery/dist/jquery.min.map',
-            'rrssb/js/rrssb.min.js',
-            'lazysizes/lazysizes.min.js',
-            ['lazysizes/plugins/print/ls.print.js', 'plugins'], // LazyLoading for Print
-            ['lazysizes/plugins/respimg/ls.respimg.js', 'plugins'], // LazyLoading for Responsive Images
-            ['lazysizes/plugins/bgset/ls.bgset.js', 'plugins'], // LazyLoading for Background-Images
-            'swup/dist/swup.js',
-            '@swup/overlay-theme/dist/SwupOverlayTheme.js',
-            '@swup/forms-plugin/dist/SwupFormsPlugin.js',
-            '@swup/scroll-plugin/dist/SwupScrollPlugin.js',
-            'waypoints/lib/jquery.waypoints.js', // Waypoint Scrolling
-            ['waypoints/lib/shortcuts/infinite.js', 'shortcuts'], // Waypoint Scrolling Modules (infinite...)
-            ['waypoints/lib/shortcuts/inview.js', 'shortcuts'], // Waypoint Scrolling Modules (inview...)
-            ['waypoints/lib/shortcuts/sticky.js', 'shortcuts'], // Waypoint Scrolling Modules (sticky...)
+            {src: '@fancyapps/fancybox/dist/jquery.fancybox.min.js'},
+            {src: 'bootstrap/dist/js/bootstrap.bundle.min.js'},
+            {src: 'bootstrap/dist/js/bootstrap.bundle.min.js.map'},
+            {src: 'jquery/dist/jquery.min.js'},
+            {src: 'jquery/dist/jquery.min.map'},
+            {src: 'rrssb/js/rrssb.min.js'},
+
+            /**
+             * Responsive Images
+             */
+            {src: 'lazysizes/lazysizes.min.js'},
+            {src: 'lazysizes/plugins/print/ls.print.js', dir: 'lazysizes/plugin'}, // LazyLoading for Print
+            {src: 'lazysizes/plugins/respimg/ls.respimg.js', dir: 'lazysizes/plugin'}, // LazyLoading for Responsive Images
+            {src: 'lazysizes/plugins/bgset/ls.bgset.js', dir: 'lazysizes/plugin'}, // LazyLoading for Background-Images
+
+            /**
+             * Swup
+             */
+            {src: 'swup/dist/swup.js', dir: 'swup'},
+            {src: '@swup/overlay-theme/dist/SwupOverlayTheme.js', dir: 'swup/plugin'},
+            {src: '@swup/forms-plugin/dist/SwupFormsPlugin.js', dir: 'swup/plugin'},
+            {src: '@swup/scroll-plugin/dist/SwupScrollPlugin.js', dir: 'swup/plugin'},
+
+            /**
+             * GSAP
+             */
+            {src: 'gsap/dist/gsap.js', dir: 'gasp'}, // gsap
+            {src: 'gsap/dist/ScrollTrigger.js', dir: 'gasp/plugin', name: 'ScrollTrigger.js'}, // GSAP Plugins
+            {src: 'split-type/umd/index.min.js', dir: 'gasp/plugin', name: 'SplitType.js'},
+            // {src: 'gsap/dist/PixiPlugin.js',                   dir: 'gasp/plugin', name: 'PixiPlugin.js'}, // GSAP Plugins
+            // {src: 'three/build/three.min.js',                  dir: 'gasp/module', name: 'three.min.js'}, // three.js
+            // {src: 'hover-effect/dist/hover-effect.umd.js',     dir: 'gasp/hover-effekt', name: 'hover-effect.umd.js'}, // hover effect
+            // {src: 'hover-effect/dist/hover-effect.umd.js.map', dir: 'gasp/hover-effekt'}, // hover effect
         ]
     },
     {
@@ -58,40 +73,45 @@ _PACKGES_.map((package) => {
     package.src.map((src) => {
         // dir extend
         let _subDir = false;
-        // is is array
-        if(typeof src != 'string'){
-            _subDir = src[1];
-            src = src[0];
+        let _rename = false;
+        // modify
+        if (typeof src == 'object') {
+            // is is array
+            if (typeof src['name'] != 'undefined') _rename = src['name'];
+            if (typeof src['dir'] != 'undefined') _subDir = src['dir'];
+            src = src['src'];
         }
         // build src path
-        let  from = 'node_modules/' + src;
+        let from = 'node_modules/' + src;
         // build dest path
-        let  dest = package.vendor;
+        let dest = package.vendor;
         // Split src to get vendor name
-        let  split = src.split('/');
-        // add to des path
-        dest += split[0]+'/';
+        let split = src.split('/');
         // add sub path
-        if(_subDir){
-            dest += _subDir+'/';
+        if (_subDir) {
+            dest += _subDir + '/';
+        } else {
+            dest += split[0] + '/';
         }
         // is filename
-        if(fs.existsSync(from) && fs.lstatSync(from).isFile()){
+        if (fs.existsSync(from) && fs.lstatSync(from).isFile()) {
             // add file name do dest
             let name = split.pop();
             var fileExt = name.split('.').pop();
-            if(fileExt == 'css'){
+            if (fileExt == 'css') {
                 name = name.replace('.css', '.scss');
             }
+            // change name if set
+            if (_rename) name = _rename; // not Working
             // add to dest
             dest += name;
         }
         // public dir
-        if(typeof _DIR_ != 'undefined' && _DIR_.length > 0) dest = _DIR_+'/'+dest;
+        if (typeof _DIR_ != 'undefined' && _DIR_.length > 0) dest = _DIR_ + '/' + dest;
         //copy now
         copy(from, dest, {
             overwrite: true,
-        }, function(error, results) {
+        }, function (error, results) {
             if (error) {
                 console.error('Copy failed: ' + error);
             } else {

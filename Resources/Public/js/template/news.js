@@ -38,12 +38,13 @@ jQuery.fn.NewsAjaxPaging = function (options) {
         $el.html('');
         // mark as loaded
         $el.removeAttr('data-news-next');
-        // ajax load
-        var $waypoint = $el.waypoint(function (direction) {
-            // load page
-            loadPage($el);
-        }, {
-            offset: '95%' // Way to top of Page
+
+        const $waypoint = ScrollTrigger.create({
+            trigger: element,
+            start: 'top bottom-=100px',
+            onEnter: (e) => {
+                loadPage($el);
+            },
         });
 
         function loadPage($el) {
@@ -55,7 +56,7 @@ jQuery.fn.NewsAjaxPaging = function (options) {
             // handle Response
             response.then(function (data) {
                 // destroy old binding
-                $waypoint[0].destroy();
+                $waypoint.kill();
                 // find news list
                 var _html = jQuery(data);
                 // find parent id
@@ -69,7 +70,7 @@ jQuery.fn.NewsAjaxPaging = function (options) {
                 // remove old element
                 $el.remove();
                 // run scripts
-                window.StateManager.callByName('waypoints');
+                window.StateManager.callByName('gsap-scrollTrigger');
                 window.StateManager.callByName('news-paging');
             }, function (error) {
             });
