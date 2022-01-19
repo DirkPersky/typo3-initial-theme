@@ -9,26 +9,50 @@
  */
 
 window.AnimateManager.attach('scroll-trigger', function () {
-    return;
-    // check if ScrollTrigger exist
-    if (typeof ScrollTrigger == 'undefined') return;
-    // get elements
-    var items = jQuery('#c18 .ce-column, .frame-layout-7, .news-list-2 .article, .animate');
-    // if no items abort
-    if (items.length == 0) return;
-    // loop items
-    items.map((i, element) => {
-        element.classList.add('animated-show')
-        // init Scroltrigger
-        var trigger = ScrollTrigger.create({
-            trigger: element,
-            start: 'top bottom-=100px',
-            end: 'bottom top+=100px',
-            scrub: 1,
-            onEnter: e => element.classList.remove('animated-show'),
-            onEnterBack: e => element.classList.remove('animated-show'),
-            onLeave: e => element.classList.add('animated-show'),
-            onLeaveBack: e => element.classList.add('animated-show')
+    // enter animation
+    function onEnter(element) {
+        window.DPAnimate.animate(element, {
+            class: 'animated fast fadeIn',
         });
+    }
+
+    // bind Scroll handler
+    window.DPAnimate.scrollTrigger('.animate:not(.row)', {
+        start: 'top bottom-=10px',
+        end: 'bottom top+=100px',
+        once: true,
+        onEnter: onEnter,
+        onEnterBack: onEnter,
+    });
+
+    // enter animation
+    function onEnter2(element) {
+        window.DPAnimate.animate(element, {
+            class: 'animated fast animated-show',
+            onComplete: (e) => {
+                element.style.removeProperty('visibility');
+            }
+        });
+    }
+
+    function onLeave2(element) {
+        window.DPAnimate.animate(element, {
+            class: 'animated fast animated-show',
+            onComplete: (e) => {
+                element.style.visibility = 'hidden';
+            }
+        });
+    }
+
+    // hide all by default
+    $('.frame-layout-7').css({'visibility': 'hidden'})
+    // bind Scroll handler
+    window.DPAnimate.scrollTrigger('#c18 .ce-column, .frame-layout-7, .news-list-2 .article', {
+        start: 'top bottom-=100px',
+        end: 'bottom top+=150px',
+        onEnter: onEnter2,
+        onEnterBack: onEnter2,
+        onLeave: onLeave2,
+        onLeaveBack: onLeave2,
     });
 });

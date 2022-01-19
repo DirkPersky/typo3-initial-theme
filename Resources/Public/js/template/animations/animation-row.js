@@ -15,22 +15,24 @@ window.AnimateManager.attach('animation-row', function () {
         var $element = $(element);
         // get left col Header
         var sliderText = new SplitType($element.find('> div:first-child header').find('*'), {types: "words, chars"});
-        $element.find('> div:not(:first-child)').addClass('animated bounceInRight');
-        // animation def
-        sliderText.chars.map((e, i) => {
-            e.classList.add('animated');
-            e.classList.add('textBounceLeft');
-            e.style.animationDelay = (0.02 * i) + "s";
-        })
-        // // complete callback
-        // timeLine.then(e => {
-        //     sliderText.revert(); // rese to normal text
-        // });
+        // animate right col
+        window.DPAnimate.animate($element.find('> div:not(:first-child)'), {
+            class: 'animated bounceInRight',
+            delay: .3,
+        });
+        // inimate Text
+        window.DPAnimate.animate(sliderText.chars, {
+            class: 'animated textBounceLeft',
+            stagger: 0.02,
+            delay: .3,
+            onComplete: e => sliderText.revert()
+        });
     }
 
-    $trigger = window.DPAnimate.scrollTrigger('.row.animate', {
+    // bind Scroll handler
+    window.DPAnimate.scrollTrigger('.row.animate', {
         start: 'top bottom-=100px',
-        end: 'bottom top+=100px',
+        end: 'bottom top+=150px',
         // once: false,
         onEnter: onEnter,
         onEnterBack: onEnter,

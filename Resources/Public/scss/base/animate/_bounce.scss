@@ -27,3 +27,43 @@
 .bounceInRight {
   animation-name: bounceInRight;
 }
+
+@keyframes bounceInRight {
+  from {
+	opacity: 0;
+	transform: translate3d(3000px, 0, 0) scaleX(3);
+  }
+
+  80% {
+	opacity: 1;
+	transform: translate3d(-10px, 0, 0) scaleX(1);
+  }
+
+  to {
+	transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+	visibility: hidden;
+	transform: scale(0.5);
+	opacity: 0;
+	content-visibility: hidden;
+  }
+
+  80% {
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1.05);
+
+  }
+
+  to {
+	transform: scale(1);
+  }
+}
+
+.bounceIn {
+  animation-name: bounceIn;
+}

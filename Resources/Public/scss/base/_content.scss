@@ -67,22 +67,20 @@
 
 .news-list-2 .article,
 #c18 .ce-column {
-  transition: all .4s ease-in-out;
 
   &.animated-show {
-	visibility: hidden;
-	opacity: 0;
 
 	&:nth-child(3n - 3) {
-	  transform: translateX(100%);
+	  @extend .fadeInRight;
 	}
 
 	&:nth-child(3n - 1) {
-	  transform: scale(.7);
+	  @extend .fadeIn;
 	}
 
 	&:nth-child(3n - 2) {
-	  transform: translateX(-100%);
+	  @extend .fadeInLeft;
+
 	}
   }
 }

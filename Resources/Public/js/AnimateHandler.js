@@ -118,7 +118,7 @@
             // get triggerpoint
             startTrigger[1] = replaceTriggerPosition(startTrigger[1], element);
             endTrigger[1] = replaceTriggerPosition(endTrigger[1], element);
-            // prepare for Callbacks
+
             if (scrollDirection == 'down') {
                 // onLeave callback
                 if (isActive(element) && endTrigger[0] < endTrigger[1]) {
@@ -175,7 +175,7 @@
          */
         function isActive(element) {
             // if not defined or not right say inactive
-            if (typeof element.dataset.dpAnimate == 'undefined' || element.dataset.dpAnimate != 1) return false
+            if (typeof element.dataset.dpScroll == 'undefined' || element.dataset.dpScroll != 1) return false
             return true;
         }
 
@@ -184,7 +184,7 @@
          * @param element
          */
         function setActive(element) {
-            element.dataset.dpAnimate = 1;
+            element.dataset.dpScroll = 1;
         }
 
         /**
@@ -192,7 +192,7 @@
          * @param element
          */
         function unsetActive(element) {
-            element.dataset.dpAnimate = 0;
+            element.dataset.dpScroll = 0;
         }
 
         /**
@@ -276,9 +276,8 @@
 
             }
         };
-
         // init trigger
-        function ScrollTrigger(element, options) {
+        function ScrollTrigger() {
             // set options to default
             util.deepExtend((this.options = {}), defaultOptions);
             // merge in user options
@@ -288,12 +287,19 @@
             // add to Class
             this.element = element;
             // cast to array
-            if (this.element instanceof NodeList) {
+            if (!(this.element instanceof Array) && !(this.element instanceof HTMLDivElement) || this.element instanceof NodeList) {
                 var _array = new DPNodeList();
                 // loop elements
-                this.element.forEach((e, i) => {
-                    _array.push(e)
-                });
+                if (this.element instanceof NodeList) {
+                    this.element.forEach((e, i) => {
+                        _array.push(e)
+                    });
+                } else {
+                    this.element.map((e, i) => {
+                        if (i instanceof HTMLDivElement) _array.push(i);
+                        else _array.push(e);
+                    });
+                }
 
                 this.element = _array;
             }
@@ -310,11 +316,146 @@
             ScrollTriggerHandler.apply(this);
         }
         // init trigger
-        let _trigger = new ScrollTrigger(element, options);
+        let _trigger = new ScrollTrigger();
         // add scroll Trigger to Handler
         _trigger.apply();
         // return trigger to user
         return _trigger;
+    };
+    // Animation Handler
+    DPAnimate.animate = function (element, options) {
+        var defaultOptions = {
+            class: 'animated',
+            stagger: 0,
+            delay: 0,
+            repeat: 0,
+            duration: 0,
+            onComplete: function () {
+            }
+        };
+
+        /**
+         * Private: get classes
+         * @returns {string[]}
+         */
+        function getClasses(classString) {
+            return classString.split(' ');
+        }
+
+        function InitAnimation(_DPAnimate, element, delay) {
+            // only start if no animation in Progress
+            if (_DPAnimate.cbkCounter != 0) return;
+            // get class to add
+            var $classes = getClasses(_DPAnimate.options.class);
+            // set delay to element
+            element.style.animationDelay = delay + "s";
+            // define repat
+            if (_DPAnimate.options.repeat) {
+                // set repat to infinite
+                if (_DPAnimate.options.repeat == -1) {
+                    element.style.animationIterationCount = 'infinite';
+                }
+                // set repeat time
+                if (_DPAnimate.options.repeat > 0) {
+                    element.style.animationIterationCount = _DPAnimate.options.repeat;
+                }
+            }
+            // define duration
+            if (_DPAnimate.options.duration && _DPAnimate.options.duration > 0) {
+                element.style.animationDuration = _DPAnimate.options.duration + 's';
+            }
+
+            // eventHandler
+            function wrapper() {
+                // remove Listener
+                element.removeEventListener("mousedown", wrapper, true);
+                _DPAnimate.cbkCounter += 1;
+                if (_DPAnimate.cbkCounter == _DPAnimate.element.length) {
+                    //cbk
+                    var cbk = _DPAnimate.options.onComplete.bind(_DPAnimate);
+                    cbk(element);
+                    // reset classes
+                    _DPAnimate.stop();
+                    // reset for new start
+                    setTimeout(() => {
+                        _DPAnimate.cbkCounter = 0;
+                    }, 10)
+                }
+            }
+
+            // add callback
+            element.addEventListener('animationend', wrapper, true);
+            // add Classes and start animation
+            $classes.map(e => {
+                element.classList.add(e);
+            });
+        }
+
+        /**
+         * @constructor
+         */
+        function DPAnimate() {
+            this.cbkCounter = 0;
+            // set options to default
+            util.deepExtend((this.options = {}), defaultOptions);
+            // merge in user options
+            if (typeof options === 'object') util.deepExtend(this.options, options);
+            // if type == string get element
+            if (typeof element == 'string') element = document.querySelectorAll(element);
+            // add to Class
+            this.element = element;
+            if (this.element instanceof HTMLDivElement) {
+                var _array = new DPNodeList();
+                _array.push(this.element);
+                this.element = _array;
+            }
+            // cast to arraylist
+            if (!(this.element instanceof Array) || this.element instanceof NodeList) {
+                var _array = new DPNodeList();
+                // loop elements
+                if (this.element instanceof NodeList) {
+                    this.element.forEach((e, i) => {
+                        _array.push(e)
+                    });
+                } else {
+                    this.element.map((e, i) => {
+                        if (i instanceof HTMLDivElement) _array.push(i);
+                        else _array.push(e);
+                    });
+                }
+
+                this.element = _array;
+            }
+            // start animation
+            this.run();
+        }
+
+        /**
+         * Start Animation
+         */
+        DPAnimate.prototype.run = function () {
+            // set delay
+            var delay = this.options.delay;
+            // check by type
+            this.element.map((element, i) => {
+                var stagger = i * this.options.stagger;
+                InitAnimation(this, element, (delay + stagger));
+            });
+        }
+
+        /**
+         * remove Class from Elements
+         */
+        DPAnimate.prototype.stop = function () {
+            var $classes = getClasses(this.options.class);
+            this.element.forEach((element, i) => {
+                $classes.map(e => {
+                    element.classList.remove(e);
+                });
+            })
+        }
+        // return new Object
+        return new DPAnimate();
     };
     // mark as inet
     DPAnimate.hasInitialised = true;

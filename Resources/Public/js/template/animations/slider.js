@@ -9,27 +9,25 @@
  */
 
 window.AnimateManager.attach('slider-text', function () {
-    return;
-    $("section.slider .carousel-caption").map((i, element) => {
-        var sliderText = new SplitType(element, {types: "words, chars"}),
-            timeLine = gsap.timeline();
-        // set perspetive
-        gsap.set(element, {perspective: 400});
-        // wait 1 sec befor stat animations
-        timeLine.delay(1);
-        // animation def
-        timeLine.from(sliderText.chars, {
-            duration: 0.6,
-            scale: 4,
-            autoAlpha: 0,
-            rotationX: -180,
-            transformOrigin: "100% 50%",
-            ease: "back",
-            stagger: 0.02
+    function onEnter(element) {
+        // get left col Header
+        var sliderText = new SplitType('section.slider .carousel-caption', {types: "words, chars"});
+        // inimate Text
+        window.DPAnimate.animate(sliderText.chars, {
+            class: 'animated textBounceLeft',
+            stagger: 0.02,
+            delay: .3,
+            onComplete: e => sliderText.revert()
         });
-        // complete callback
-        timeLine.then(e => {
-            sliderText.revert(); // rese to normal text
-        })
+    }
+
+    // bind Scroll handler
+    window.DPAnimate.scrollTrigger('#swup.main--content', {
+        start: 'top top',
+        end: 'top top-=150',
+        once: true,
+        onEnter: onEnter,
+        onEnterBack: onEnter,
     });
+
 });
