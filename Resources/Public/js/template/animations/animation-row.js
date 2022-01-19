@@ -10,24 +10,17 @@
 
 
 window.AnimateManager.attach('animation-row', function () {
-    return;
-
     // enter animation
     function onEnter(element) {
-        var $element = $(element),
-            timeLine = gsap.timeline({
-                autoRemoveChildren: true,
-            });
+        var $element = $(element);
         // get left col Header
         var sliderText = new SplitType($element.find('> div:first-child header').find('*'), {types: "words, chars"});
-        timeLine.delay(.3);
         $element.find('> div:not(:first-child)').addClass('animated bounceInRight');
         // animation def
         sliderText.chars.map((e, i) => {
             e.classList.add('animated');
             e.classList.add('textBounceLeft');
             e.style.animationDelay = (0.02 * i) + "s";
-            console.log(e, i);
         })
         // // complete callback
         // timeLine.then(e => {
@@ -35,7 +28,7 @@ window.AnimateManager.attach('animation-row', function () {
         // });
     }
 
-    window.DPAnimate.scrollTrigger('.row.animate', {
+    $trigger = window.DPAnimate.scrollTrigger('.row.animate', {
         start: 'top bottom-=100px',
         end: 'bottom top+=100px',
         // once: false,
