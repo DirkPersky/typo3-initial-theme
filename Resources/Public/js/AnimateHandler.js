@@ -368,7 +368,7 @@
             // eventHandler
             function wrapper() {
                 // remove Listener
-                element.removeEventListener("mousedown", wrapper, true);
+                element.removeEventListener("animationend", wrapper, true);
                 _DPAnimate.cbkCounter += 1;
                 if (_DPAnimate.cbkCounter == _DPAnimate.element.length) {
                     //cbk

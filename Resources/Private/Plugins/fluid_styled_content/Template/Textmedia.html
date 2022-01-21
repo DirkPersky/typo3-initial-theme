@@ -1,3 +1,13 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category TYPO3
+  ~
+  ~ @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <dirk.persky@gmail.com>
+  ~ @license    AGPL v3
+  -->
+
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="Header">
@@ -13,18 +23,22 @@
 			<div
 					id="carousel-generic-{data.uid}"
 					class="carousel slide"
-					data-ride="carousel"
-					data-interval="{f:if(condition: "{data.subheader}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.subheader}')}", else: "3000")}"
-			data-wrap="true"
+					data-bs-interval="{f:if(condition: "
+					data-bs-ride="carousel" {data.subheader}
+			", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.subheader}')}", else: "3000")}"
+			data-bs-wrap="true"
 			>
 			<f:if condition="{gallery.count.rows} > 1">
 				<!--- Indicators -->
-				<ol class="carousel-indicators">
+				<div class="carousel-indicators">
 					<f:for each="{gallery.rows}" as="row" iteration="row_iteration" key="entrynumber">
-						<li data-target="#carousel-generic-{data.uid}" data-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} -1')}" class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}">
-						</li>
+						<button aria-current="true"
+								aria-label="Slide {f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber}')}"
+								class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}"
+								data-bs-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} -1')}"
+								data-bs-target="#carousel-generic-{data.uid}" type="button"></button>
 					</f:for>
-				</ol>
+				</div>
 
 			</f:if>
 			<!-- Carousel Items -->
@@ -33,12 +47,16 @@
 			</div>
 			<f:if condition="{gallery.count.rows} > 1">
 				<!--- Direction navs -->
-				<a class="left carousel-control" href="#carousel-generic-{data.uid}" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-				<a class="right carousel-control" href="#carousel-generic-{data.uid}" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
+				<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carousel-generic-{data.uid}"
+						type="button">
+					<span aria-hidden="true" class="carousel-control-prev-icon"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carousel-generic-{data.uid}"
+						type="button">
+					<span aria-hidden="true" class="carousel-control-next-icon"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
 			</f:if>
 			</div>
 		</f:case>#

@@ -11,7 +11,7 @@
 window.AnimateManager.attach('slider-text', function () {
     function onEnter(element) {
         // get left col Header
-        var sliderText = new SplitType('section.slider .carousel-caption', {types: "words, chars"});
+        var sliderText = new SplitType('section.slider .carousel-item.active .carousel-caption', {types: "words, chars"});
         // inimate Text
         window.DPAnimate.animate(sliderText.chars, {
             class: 'animated textBounceLeft',
