@@ -7,6 +7,7 @@ page = PAGE
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_news.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_wsscss.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_form.typoscript'
+@import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_chart.typoscript'
 
 ###########################
 ### load Plugin Modules ###

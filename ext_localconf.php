@@ -35,5 +35,12 @@ call_user_func(function ($ext_key) {
         'className' => \DirkPersky\Theme\Tca\Registry::class
     ];
 
+
+    if(class_exists(\Hoogi91\Charts\DataProcessing\Charts\LibraryRegistry::class)){
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\Hoogi91\Charts\DataProcessing\Charts\Library\ChartJs::class] = [
+            'className' => \DirkPersky\Theme\DataProcessing\Charts\Library\ChartJs::class
+        ];
+    }
+
 }, 'dp_theme');
 

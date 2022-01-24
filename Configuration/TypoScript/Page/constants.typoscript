@@ -172,3 +172,14 @@ plugin.tx_powermail {
      layoutRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_powermail/Layout/
   }
 }
+
+##############
+### Charts ###
+##############
+plugin.tx_charts {
+  view {
+     templateRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_charts/Template/
+     partialRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_charts/Partial/
+     layoutRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_charts/Layout/
+  }
+}
