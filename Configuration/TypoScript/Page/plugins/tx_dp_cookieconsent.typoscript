@@ -1,5 +1,5 @@
 
-plugin.dp_cookieconsent {
+plugin.tx_dpcookieconsent {
     settings {
         overlay {
             button {
@@ -18,6 +18,6 @@ plugin.dp_cookieconsent {
 }
 
 # overwrite settings
-lib.dp_cookieconsent.settings < plugin.dp_cookieconsent.settings
+lib.dp_cookieconsent.settings < plugin.tx_dpcookieconsent.settings
 # Add Consent Config to Script
 page.footerData.998.20 < lib.dp_cookieconsent
