@@ -29,16 +29,19 @@ $EM_CONF[$_EXTKEY] = [
             'vhs' => '6.0.5-6.99.99',
             'sourceopt' => '4.0.0-4.9.99',
             'container' => '1.4.2-2.0.0',
-            'mask' => '7.0.29-7.9.99'
+            'mask' => '7.0.29-7.9.99',
+            'news' => '9.2.0-9.9.99'
         ],
         'conflicts' => [
         ],
         'suggests' => [
-            'news' => '9.1.0-9.9.99',
+            'eventnews ' => '5.0.0-5.9.99',
             'typo3_console' => '7.0.0-7.9.99',
             'typoscript_rendering' => '2.3.1-2.9.99',
             'powermail' => '8.4.0-9.9.99',
             'scriptmerger' => '7.1.0-8.9.99',
+            'charts' => '1.1.0-2.9.99',
+            'spreadsheets' => '3.2.0-3.9.99',
         ],
     ],
 ];
