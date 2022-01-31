@@ -1,3 +1,3 @@
-<div class="{v:format.trim(content:'{flexform.width_column_xs_{col}} {flexform.width_column_sm_{col}} {flexform.width_column_md_{col}} {flexform.width_column_lg_{col}} {flexform.width_column_xl_{col}} {flexform.visibility_col_{col}} {flexform.class_col{col}}')}">
+<div class="{v:format.trim(content:"{flexform.width_column_xs_{col}} {flexform.width_column_sm_{col}} {flexform.width_column_md_{col}} {flexform.width_column_lg_{col}} {flexform.width_column_xl_{col}} {flexform.visibility_col_{col}} {flexform.class_col{col}} {f:if(condition:'{data.space_before_class}', then:'frame-space-before-{data.space_before_class}')} {f:if(condition:'{data.space_after_class}', then:'frame-space-after-{data.space_after_class}')}")}">
     <f:render partial="Content" arguments="{contents: contents }" />
 </div>
