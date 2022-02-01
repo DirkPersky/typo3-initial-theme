@@ -45,3 +45,57 @@ pageNewsRSS {
 }
 
 [end]
+
+[request.getQueryParams()['type'] == '1533906436']
+config {
+    sourceopt.enabled = 0
+}
+
+plugin.tx_seo.config {
+    xmlSitemap {
+        sitemaps {
+            news {
+                provider = GeorgRinger\News\Seo\NewsXmlSitemapDataProvider
+                config {
+                    additionalWhere = pid = 20
+                    pid = {$plugin.tx_csseo.sitemap.extensions.news.storagePid}
+                    recursive = 2
+
+                    url {
+                        pageId = {$plugin.tx_csseo.sitemap.extensions.news.detailPid}
+
+                         fieldToParameterMap {
+                            uid = tx_news_pi1[news]
+                        }
+
+                        additionalGetParameters {
+                            tx_news_pi1.controller = News
+                            tx_news_pi1.action = detail
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    googleNewsSitemap {
+        sitemaps {
+            news < plugin.tx_seo.config.xmlSitemap.sitemaps.news
+            news {
+               config {
+                  template = GoogleNews.xml
+                  googleNews = 1
+               }
+            }
+        }
+    }
+}
+
+plugin.tx_seo.view.templateRootPaths.20 = EXT:dp_theme/Resources/Private/Plugins/tx_news/Template/
+
+seo_sitemap_news < seo_sitemap
+seo_sitemap_news {
+   typeNum = 1533906436
+   10.sitemapType = googleNewsSitemap
+}
+[end]
