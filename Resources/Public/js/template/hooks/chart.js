@@ -60,7 +60,7 @@
 
             if (typeof datasets === 'object' && datasets.length > 0) {
                 for (var i = 0; i < datasets.length; ++i) {
-                    var set = keyValueMapping(datasets[i]);
+                    var set = keyValueMapping(datasets[i], i);
                     processedDatasets.push(set);
                 }
             }
@@ -255,12 +255,12 @@
                     type: 'line',
                     data: {
                         labels: labels,
-                        datasets: util.createDatasets(datasets, function (set) {
+                        datasets: util.createDatasets(datasets, function (set, i) {
                             return {
                                 label: set['label'],
                                 data: set['data'],
-                                backgroundColor: typeof set['border'] === 'object' ? set['border'][0] : '',
-                                borderColor: typeof set['background'] === 'object' ? set['background'][0] : '',
+                                backgroundColor: typeof set['border'] === 'object' ? set['border'][i] : '',
+                                borderColor: typeof set['background'] === 'object' ? set['background'][i] : '',
                                 fill: util.getKeyOfObject(options, 'line.fill', 0) === '1',
                             }
                         })
