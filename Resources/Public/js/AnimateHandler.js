@@ -333,6 +333,8 @@
             onComplete: function () {
             }
         };
+        // abort if not exists
+        if(typeof element == 'undefined') return;
 
         /**
          * Private: get classes

@@ -38,9 +38,10 @@ jQuery.fn.NewsAjaxPaging = function (options) {
         $el.html('');
         // mark as loaded
         $el.removeAttr('data-news-next');
+        element.classList.add('news-loading');
 
-        const $waypoint = ScrollTrigger.create({
-            trigger: element,
+
+        const $waypoint = window.DPAnimate.scrollTrigger(element, {
             start: 'top bottom-=100px',
             onEnter: (e) => {
                 loadPage($el);

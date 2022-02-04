@@ -6,4 +6,5 @@ services:
 
   DirkPersky\Theme\:
     resource: '../Classes/*'
+    exclude:  '../Classes/Domain/Model/*'
 
