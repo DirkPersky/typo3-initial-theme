@@ -29,11 +29,13 @@ errorHandling:
 routes:
   - route: robots.txt
     type: staticText
-    content: "User-Agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\nAllow: /typo3temp/\r\n\r\n# parameters\r\nDisallow: /*?id=*               # non-realurl URLs\r\nDisallow: /*cHash               # no cHash\r\nDisallow: /*tx_powermail_pi1    # no powermail thanks pages\r\nDisallow: /*tx_form_formframework    # no forms\r\n\r\n# sitemap\r\nSitemap: http://example.com/sitemap.xml"
-  - route: sitemap.xml
-    type: uri
-    source: 'http://example.com/?type=1533906435'
+    content: "User-Agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\nAllow: /typo3temp/\r\n\r\n# parameters\r\nDisallow: /*?id=*               # non-realurl URLs\r\nDisallow: /*cHash               # no cHash\r\nDisallow: /*tx_powermail_pi1    # no powermail thanks pages\r\nDisallow: /*tx_form_formframework    # no forms\r\n# Aussperren von allen MP4-Dateien\r\nDisallow: /*.mp4\r\n\r\n# allow sitemap chash\r\nAllow: /sitemap.xml*\r\n# sitemap\r\nSitemap: https://example.de/sitemap.xml"
 routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    map:
+      /: 0
+      sitemap.xml: 1533906435
   News:
     type: Extbase
     extension: News
