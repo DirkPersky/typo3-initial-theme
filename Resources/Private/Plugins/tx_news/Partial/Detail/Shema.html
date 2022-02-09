@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <!-- News Shema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "<f:format.raw>{db:meta(field:'url')}</f:format.raw>"
+            },
+            "url": "<f:format.raw>{db:meta(field:'url')}</f:format.raw>",
+            "headline": "<f:format.stripTags>{newsItem.title}</f:format.stripTags>",
+            "description": "<f:format.stripTags>{newsItem.teaser}</f:format.stripTags>",
+            "inLanguage" : "de-DE",
+            "name": "<f:format.stripTags>{newsItem.title}</f:format.stripTags>",
+            <f:if condition="{newsItem.mediaPreviews}">
+            "image": "<f:uri.image image="{newsItem.mediaPreviews.0}" maxWidth="1200" absolute="1" />",
+            </f:if>
+            "author": {
+                <f:if condition="{newsItem.author}">
+                <f:then>
+                "@type": "Person",
+                "name": "<f:format.stripTags>{newsItem.author}</f:format.stripTags>"
+                </f:then>
+                <f:else>
+                "@type": "Organization",
+                "name": "<f:format.raw>{db:meta(field:'site_websiteTitle')}</f:format.raw>"
+                </f:else>
+                </f:if>
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "<f:format.raw>{db:meta(field:'site_websiteTitle')}</f:format.raw>",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://lh3.googleusercontent.com/DF61dkasudzos8KQsjO9c-bNhg1ycnMM_c_QPiyWfpJDHG6hHhQt2FvP-FGUpDw-PZGDo579lbw"
+                }
+            },
+            <f:if condition="{newsItem.contentElements}">
+            <f:then>
+            "articleBody": "<f:format.cdata><f:format.html><v:format.trim><f:format.stripTags><f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject></f:format.stripTags></v:format.trim></f:format.html></f:format.cdata>",
+            </f:then>
+            <f:else>
+            "articleBody": "<f:format.cdata><f:format.html>{newsItem.bodytext}</f:format.html></f:format.cdata>",
+            </f:else>
+            </f:if>
+            "datePublished": "{f:format.date(date:newsItem.datetime, format:'Y-m-d')}",
+            "dateModified": "{f:format.date(date:newsItem.tstamp, format:'Y-m-d')}"
+        }
+    </script>
+</html>

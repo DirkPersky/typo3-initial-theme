@@ -24,11 +24,15 @@ plugin.tx_news {
 
       media {
         image {
-          # set Fancybox as lightbox
-          lightbox = fancybox
+            lightbox {
+              # set Fancybox as lightbox
+              class = fancybox
+              # enable lightbox
+              enabled = 1
+            }
 
-          # Override Image width
-          maxWidth = 800
+            # Override Image width
+            maxWidth = 800
         }
       }
     }

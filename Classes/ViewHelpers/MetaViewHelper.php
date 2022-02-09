@@ -44,15 +44,38 @@ class MetaViewHelper extends AbstractViewHelper
         $option = null;
         // if path is set
         if ($arguments['field'] !== '') {
-            // switch between options
-            switch ($arguments['field']) {
-                case 'url':
-                    $request = $renderingContext->getRequest();
-                    $option = $request->getRequestUri();
-                    break;
-                default:
-                    // get Page Value
-                    $option = $GLOBALS['TSFE']->page[$arguments['field']];
+            // is Sie key?
+            if(strpos($arguments['field'], 'site_') !== FALSE ) {
+                $arguments['field'] = str_replace('site_', '', $arguments['field']);
+                $configs = $GLOBALS['TSFE']->site->getConfiguration();
+                // get Page Value
+                $option = $configs[$arguments['field']];
+            } else {
+                // switch between options
+                switch ($arguments['field']) {
+                    case 'url':
+                        $request = $renderingContext->getRequest();
+                        $option = $request->getRequestUri();
+                        break;
+                    default:
+                        // get Page Value
+                        $option = $GLOBALS['TSFE']->page[$arguments['field']];
+                }
+                // if empty get from OG
+                if( empty($option) ) {
+                    $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+                    $arguments['field'] = str_replace([
+                        'seo_title'
+                    ],[
+                        'og:title',
+                    ], $arguments['field']);
+                    // get meta
+                    $meta = $pageRenderer->getMetaTag('content', $arguments['field']);
+                    // extraxt from meta
+                    if(!empty($meta)){
+                        $option = $meta['content'];
+                    }
+                }
             }
         }
         // return options
