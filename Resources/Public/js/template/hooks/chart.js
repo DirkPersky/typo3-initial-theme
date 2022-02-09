@@ -11,10 +11,30 @@
 (function (Hoogi91) {
     // stop from running again, if accidently included more than once.
     if (typeof Hoogi91.hasInitialised != 'undefined') return
+
     /**
      * define helper functions
      */
     var util = {
+
+        detectRobot : function(userAgent) {
+            const robots = new RegExp([
+                /Chrome-Lighthouse/,
+                /bot/,/spider/,/crawl/,                            // GENERAL TERMS
+                /APIs-Google/,/AdsBot/,/Googlebot/,                // GOOGLE ROBOTS
+                /mediapartners/,/Google Favicon/,
+                /FeedFetcher/,/Google-Read-Aloud/,
+                /DuplexWeb-Google/,/googleweblight/,
+                /bing/,/yandex/,/baidu/,/duckduck/,/yahoo/,        // OTHER ENGINES
+                /ecosia/,/ia_archiver/,
+                /facebook/,/instagram/,/pinterest/,/reddit/,       // SOCIAL MEDIA
+                /slack/,/twitter/,/whatsapp/,/youtube/,
+                /semrush/,                                         // OTHER
+            ].map((r) => r.source).join("|"),"i");               // BUILD REGEXP + "i" FLAG
+
+            return robots.test(userAgent);
+        },
+
         /**
          * get chart data by key
          *
@@ -134,6 +154,8 @@
              * initialize all charts that can be found if available options are filled
              */
             init: function () {
+                if(util.detectRobot(navigator.userAgent)) return;
+
                 chartsContainer = document.querySelectorAll('.chart-container > .chart');
                 if (chartsContainer.length > 0 ) {
                     for (var i = 0; i < chartsContainer.length; ++i) {

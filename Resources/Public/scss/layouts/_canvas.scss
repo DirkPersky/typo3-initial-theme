@@ -284,11 +284,10 @@ html.nav--open {
   &,
   body {
 	overflow: hidden;
-	height: 100vh;
+	height: auto;
 
 	@include media-breakpoint-up(lg) {
 	  overflow: visible;
-	  height: auto;
 	}
   }
 }
