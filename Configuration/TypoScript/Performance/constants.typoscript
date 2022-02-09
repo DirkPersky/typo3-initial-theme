@@ -9,8 +9,14 @@ plugin.tx_scriptmerger {
     javascript {
         mergedHeadFilePosition = </body>
         compress.enable = 0
-	    minify.ignore >
 	    merge.ignore >
+
+	    minify {
+	        enable = 1
+	        useJSMinPlus = 1
+	        useJShrink = 1
+	    }
+
         parseBody = 1
     }
     css {

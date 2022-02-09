@@ -11,6 +11,9 @@
 window.AnimateManager.attach('scroll-trigger', function () {
     // enter animation
     function onEnter(element) {
+        // disable if not desktop
+        if(!window.matchMedia('(min-width: 768px)').matches) return;
+        // handle animation
         window.DPAnimate.animate(element, {
             class: 'animated fast fadeIn',
         });
@@ -27,6 +30,9 @@ window.AnimateManager.attach('scroll-trigger', function () {
 
     // enter animation
     function onEnter2(element) {
+        // disable if not desktop
+        if(!window.matchMedia('(min-width: 768px)').matches) return;
+        // handle animation
         window.DPAnimate.animate(element, {
             class: 'animated fast animated-show',
             onComplete: (e) => {
@@ -36,6 +42,9 @@ window.AnimateManager.attach('scroll-trigger', function () {
     }
 
     function onLeave2(element) {
+        // disable if not desktop
+        if(!window.matchMedia('(min-width: 768px)').matches) return;
+        // handle animation
         window.DPAnimate.animate(element, {
             class: 'animated fast animated-show',
             onComplete: (e) => {
@@ -45,7 +54,7 @@ window.AnimateManager.attach('scroll-trigger', function () {
     }
 
     // hide all by default
-    $('.frame-layout-7').css({'visibility': 'hidden'})
+    if(window.matchMedia('(min-width: 768px)').matches) $('.frame-layout-7').css({'visibility': 'hidden'});
     // bind Scroll handler
     window.DPAnimate.scrollTrigger('#c18 .ce-column, .frame-layout-7, .news-list-2 .article', {
         start: 'top bottom-=100px',

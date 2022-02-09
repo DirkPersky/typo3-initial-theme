@@ -18,13 +18,10 @@
     "bootstrap": "latest",
     "hamburgers": "latest",
     "jquery": "latest",
-    "lazysizes": "latest",
-    "popper.js": "latest",
     "recursive-copy": "latest",
     "rrssb": "latest",
     "split-type": "latest",
-    "swup": "latest",
-    "tether": "latest"
+    "swup": "latest"
   },
   "devDependencies": {
     "clean-css": "latest",

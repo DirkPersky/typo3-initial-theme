@@ -12,6 +12,8 @@
 window.AnimateManager.attach('animation-row', function () {
     // enter animation
     function onEnter(element) {
+        // disable if not desktop
+        if(!window.matchMedia('(min-width: 768px)').matches) return;
         var $element = $(element);
         // get left col Header
         var sliderText = new SplitType($element.find('> div:first-child header').find('*'), {types: "words, chars"});

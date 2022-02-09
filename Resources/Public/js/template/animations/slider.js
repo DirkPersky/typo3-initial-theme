@@ -10,6 +10,8 @@
 
 window.AnimateManager.attach('slider-text', function () {
     function onEnter(element) {
+        // disable if not desktop
+        if(!window.matchMedia('(min-width: 768px)').matches) return;
         // get left col Header
         var sliderText = new SplitType('section.slider .carousel-item.active .carousel-caption', {types: "words, chars"});
         // inimate Text

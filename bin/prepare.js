@@ -17,19 +17,11 @@ const _PACKGES_ = [
         'vendor': 'js/vendor/',
         'src': [
             {src: '@fancyapps/fancybox/dist/jquery.fancybox.min.js'},
-            {src: 'bootstrap/dist/js/bootstrap.bundle.min.js'},
-            {src: 'bootstrap/dist/js/bootstrap.bundle.min.js.map'},
+            {src: 'bootstrap/dist/js/bootstrap.min.js'},
+            {src: 'bootstrap/dist/js/bootstrap.min.js.map'},
             {src: 'jquery/dist/jquery.min.js'},
             {src: 'jquery/dist/jquery.min.map'},
             {src: 'rrssb/js/rrssb.min.js'},
-
-            /**
-             * Responsive Images
-             */
-            {src: 'lazysizes/lazysizes.min.js'},
-            {src: 'lazysizes/plugins/print/ls.print.js', dir: 'lazysizes/plugin'}, // LazyLoading for Print
-            {src: 'lazysizes/plugins/respimg/ls.respimg.js', dir: 'lazysizes/plugin'}, // LazyLoading for Responsive Images
-            {src: 'lazysizes/plugins/bgset/ls.bgset.js', dir: 'lazysizes/plugin'}, // LazyLoading for Background-Images
 
             /**
              * Swup
