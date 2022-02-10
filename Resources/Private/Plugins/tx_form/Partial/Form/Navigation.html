@@ -3,7 +3,6 @@
 		xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <nav class="form-navigation">
 	<div class="btn-toolbar" role="toolbar">
-		<f:form.hidden property="__currentPage" value="{form.nextPage.index}"/>
 		<div class="btn-group" role="group">
 			<f:if condition="{form.previousPage}">
 				<span class="btn-group previous">
@@ -19,15 +18,26 @@
 			</f:if>
 			<f:if condition="{form.nextPage}">
 				<f:then>
+					<f:form.hidden property="__currentPage" value="{form.nextPage.index}"/>
+				</f:then>
+				<f:else>
+					<f:if condition="{form.previousPage}">
+						<f:form.hidden property="__currentPage" value="{form.previousPage.index}"/>
+					</f:if>
+				</f:else>
+			</f:if>
+
+			<f:if condition="{form.nextPage}">
+				<f:then>
 					<span class="btn-group next">
-						<f:form.button type="submit" class="btn btn-primary" property="__currentPage" value="{form.nextPage.index}">
+						<f:form.button type="submit" class="btn btn-default" property="__currentPage" value="{form.nextPage.index}">
 							{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}
 						</f:form.button>
 					</span>
 				</f:then>
 				<f:else>
 					<span class="btn-group next submit">
-						<f:form.button type="submit" class="btn btn-primary" property="__currentPage" value="{form.pages -> f:count()}">
+						<f:form.button type="submit" class="btn btn-default" property="__currentPage" value="{form.pages -> f:count()}">
 							{formvh:translateElementProperty(element: form, renderingOptionProperty: 'submitButtonLabel')}
 						</f:form.button>
 					</span>
