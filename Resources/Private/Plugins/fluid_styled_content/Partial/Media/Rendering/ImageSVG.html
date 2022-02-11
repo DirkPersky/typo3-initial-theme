@@ -1,0 +1,12 @@
+<html xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>
+    <!-- Original Link -->
+    <f:media class="image-embed-item" file="{file}" width="{data.imagewidth}" height="{data.imageheight}" alt="{file.alternative}" title="{file.title}" />
+    <f:image class="image-embed-item" image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" />
+    <f:uri.image image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="specialMobile"  />
+</f:comment>
+<picture>
+    <img alt="{file.alternative -> f:format.stripTags()}" src="{f:uri.image(image:file)}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" style="max-width:{dimensions.width}px" lazyload="true" />
+</picture>
+</html>

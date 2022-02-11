@@ -17,7 +17,21 @@
 </f:switch>
 
 <f:section name="pictureTag">
+	<f:switch expression="{file.extension}">
+		<f:case value="gif">
+			<f:render partial="Media/Rendering/ImageGif" arguments="{file: file, dimensions: dimensions, settings: settings, data:data}" />
+		</f:case>
+		<f:case value="svg">
+			<f:render partial="Media/Rendering/ImageSVG" arguments="{file: file, dimensions: dimensions, settings: settings, data:data}" />
+		</f:case>
+		<f:defaultCase>
+			<f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings, data:data}" />
+		</f:defaultCase>
+	</f:switch>
+
+
 	<f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings, data:data}" />
+
 </f:section>
 <f:section name="defaultImage">
 	<f:if condition="{file.link}">
