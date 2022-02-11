@@ -42,5 +42,7 @@ call_user_func(function ($ext_key) {
         ];
     }
 
+    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets'][$ext_key] = "EXT:{$ext_key}/Configuration/RTE/RTE.yaml";
+
 }, 'dp_theme');
 
