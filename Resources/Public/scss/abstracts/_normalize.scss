@@ -54,3 +54,8 @@ header {
 	color: $primary;
   }
 }
+
+figure.image a {
+  color: inherit;
+  text-decoration: none;
+}

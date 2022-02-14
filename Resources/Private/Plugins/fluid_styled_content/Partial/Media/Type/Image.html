@@ -6,12 +6,6 @@
 	<f:defaultCase>
 		<figure class="image">
 			<f:render section="defaultImage" arguments="{_all}" />
-
-			<f:if condition="{file.description}">
-				<figcaption class="image-caption">
-					<f:format.raw>{file.description}</f:format.raw>
-				</figcaption>
-			</f:if>
 		</figure>
 	</f:defaultCase>
 </f:switch>
@@ -34,6 +28,12 @@
 		<f:then>
 			<f:link.typolink parameter="{file.link}" title="{file.title}">
 				<f:render section="pictureTag" arguments="{_all}" />
+
+				<f:if condition="{file.description}">
+					<figcaption class="image-caption">
+						<f:format.raw>{file.description}</f:format.raw>
+					</figcaption>
+				</f:if>
 			</f:link.typolink>
 		</f:then>
 		<f:else>
@@ -46,10 +46,22 @@
 		<f:then>
 			<ce:link.clickEnlarge image="{file}" configuration="{settings.media.popup}">
 				<f:render section="pictureTag" arguments="{_all}" />
+
+				<f:if condition="{file.description}">
+					<figcaption class="image-caption">
+						<f:format.raw>{file.description}</f:format.raw>
+					</figcaption>
+				</f:if>
 			</ce:link.clickEnlarge>
 		</f:then>
 		<f:else>
 			<f:render section="pictureTag" arguments="{_all}" />
+
+			<f:if condition="{file.description}">
+				<figcaption class="image-caption">
+					<f:format.raw>{file.description}</f:format.raw>
+				</figcaption>
+			</f:if>
 		</f:else>
 	</f:if>
 </f:section>
