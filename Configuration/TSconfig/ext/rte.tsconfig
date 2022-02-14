@@ -14,3 +14,5 @@ RTE.default.buttons {
 	 link.properties.class.allowedClasses := addToList(btn btn-default btn-xs)
 	 link.properties.class.allowedClasses := addToList(btn btn-default btn-block)
 }
+
+RTE.default.preset = dp_theme
