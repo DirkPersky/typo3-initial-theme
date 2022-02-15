@@ -5,11 +5,6 @@
     display: flex;
     flex-wrap: wrap;
 
-    &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
     // Center Images
     .ce-center & {
       justify-content: center;
