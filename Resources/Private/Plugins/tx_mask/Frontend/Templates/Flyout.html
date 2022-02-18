@@ -2,7 +2,7 @@
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" lang="en"
 >
 
-<div class="item {f:if(condition:'{data.tx_mask_title}',then:' has--headline')}{f:if(condition:'{data.tx_mask_content}',then:' has--content')}">
+<div class="item {f:if(condition:'{data.header}',then:' has--headline')}{f:if(condition:'{data.tx_mask_content}',then:' has--content')}">
     <div class="icon">
         <f:if condition="{data.tx_mask_link}">
             <f:then>
@@ -40,10 +40,10 @@
             </f:if>
         </f:else>
     </f:if>
-    <f:if condition="{data.tx_mask_title}">
-        <div class="icon-headline">
-            <f:format.raw>{data.tx_mask_title}</f:format.raw>
-        </div>
-    </f:if>
+    <div class="icon-headline">
+        <f:if condition="{data.header}">
+            <f:format.raw>{data.header}</f:format.raw>
+        </f:if>
+    </div>
 </f:section>
 </html>

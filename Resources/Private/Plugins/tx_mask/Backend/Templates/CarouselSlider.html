@@ -1,0 +1,24 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category TYPO3
+  ~
+  ~ @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <dirk.persky@gmail.com>
+  ~ @license    AGPL v3
+  -->
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+>
+<div>
+    <div>{data.header -> f:format.html()}</div>
+    <f:if condition="{data.tx_mask_item}">
+        <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
+            <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
+                <f:image image="{file}" width="200" />
+            </f:for>
+        </f:for>
+    </f:if>
+</div>
+</html>

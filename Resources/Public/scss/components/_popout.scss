@@ -1,0 +1,150 @@
+// main: ../style.scss
+.popout {
+  $icon-width: 40px !default;
+  $popout-width: 280px !default;
+
+  display: none;
+
+  @include media-breakpoint-up(md) {
+	position: fixed;
+	z-index: 1125;
+	right: 0;
+	top: 15%;
+
+	display: block;
+  }
+
+  width: $icon-width;
+
+  .item {
+	position: relative;
+	left: 0;
+
+	overflow: hidden;
+
+	width: $icon-width;
+	padding-bottom: 10px;
+
+	transition: all 0.6s;
+	color: inherit;
+
+	/** open on big screens **/
+	//@media (min-width: #{(map-get($grid-breakpoints,'xl') + $popout-width + ($icon-width*3))}) {
+	//  left: -($popout-width - ($icon-width*2) );
+	//  width: ($popout-width - ($icon-width));
+	//}
+
+	.icon {
+	  position: relative;
+	  width: $popout-width;
+	  height: $icon-width;
+	  padding-left: $icon-width;
+	  vertical-align: middle;
+
+	  @include font-size(16px);
+
+	  .icon-headline {
+		display: block;
+		position: relative;
+		background-color: #f8f8f8;
+		border-top: 1px solid #999;
+		border-bottom: 1px solid #999;
+
+		height: $icon-width;
+		line-height: $icon-width;
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-left: 5px;
+	  }
+
+	  .icon-fa {
+		font-size: 1.3rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: $icon-width;
+		height: $icon-width;
+
+		color: $primary;
+		background-color: #f8f8f8;
+		transform: skewY(-10deg);
+		transform-origin: 100% 0%;
+
+		border-top: 1px solid #999;
+		border-left: 1px solid #999;
+		border-bottom: 1px solid #999;
+
+		> * {
+		  transform: skewY(10deg);
+		  transform-origin: 50% 50%;
+		}
+
+		.inline-icon {
+		  display: block;
+		  width: 80%;
+		  height: 80%;
+		  background-repeat: no-repeat;
+		  background-position: center;
+		  background-size: contain;
+		}
+	  }
+
+	  a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		padding-left: $icon-width;
+		text-decoration: none;
+	  }
+	}
+
+	.item-body {
+	  background-color: transparent;
+	  width: $popout-width;
+	  padding-left: 5px;
+	  margin-left: $icon-width;
+
+	  -webkit-transition: max-height 0.6s; /* Safari */
+	  transition: max-height 0.6s;
+
+	  max-height: 0;
+	  overflow-y: auto;
+
+	  color: transparent;
+	}
+
+	&:hover,
+	&.on {
+	  width: $popout-width;
+
+	  position: relative;
+	  left: -15px;
+
+	  &.has--content,
+	  &.has--headline {
+		left: -($popout-width - $icon-width);
+	  }
+	  &.has--content {
+		.icon-headline {
+		  border-bottom: 0;
+		}
+	  }
+
+	  .item-body {
+		background-color: #f8f8f8;
+		max-height: 320px;
+		padding-bottom: 0.25rem;
+		border-left: 1px solid #999;
+		border-bottom: 1px solid #999;
+		color: inherit;
+	  }
+	}
+  }
+}

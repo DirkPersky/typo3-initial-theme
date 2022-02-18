@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{data.tx_mask_item}">
+    <div
+        id="carousel-generic-{data.uid}"
+        class="carousel slide"
+        data-interval="{data.tx_mask_interval}"
+        data-ride="carousel"
+        data-wrap="true"
+        >
+
+        <f:if condition="{data.tx_mask_item -> f:count()} > 1">
+            <!--- Indicators -->
+            <div class="carousel-indicators">
+                <div class="scroll-down"><i class="fa-solid fa-angles-down"></i> Scroll down</div>
+                <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
+                    <button aria-current="true"
+                            aria-label="Slide {f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} + 1')}"
+                            class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}"
+                            data-bs-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber}')}"
+                            data-bs-target="#carousel-generic-{data.uid}" type="button"
+                    >
+                        <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
+                            <div style="background-image:url({f:uri.image(image:file, width:360, cropVariant:'default')})"></div>
+                        </f:for>
+                    </button>
+                </f:for>
+            </div>
+        </f:if>
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+            <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
+                <div class="carousel-item {f:if(condition:'{row_iteration.isFirst}',then:'active')}">
+                    <div class="carousel-item-medias">
+                        <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
+                            <div class="carousel-item-media" data-mediaload="row{row_iteration.index}-item{column_iteration.index}">
+                                <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings}" />
+                            </div>
+                        </f:for>
+                    </div>
+                    <!-- Carousel caption -->
+                    <f:if condition="{row.tx_mask_text}">
+                        <div class="carousel-inner-wrap">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <f:format.raw>{row.tx_mask_text}</f:format.raw>
+                                </div>
+                            </div>
+                        </div>
+                    </f:if>
+                </div>
+            </f:for>
+        </div>
+        <f:if condition="{data.tx_mask_item -> f:count()} > 1">
+            <!--- Direction navs -->
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carousel-generic-{data.uid}"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carousel-generic-{data.uid}"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </f:if>
+    </div>
+</f:if>
+</html>

@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:switch expression="{file.type}">
+        <f:case value="4">
+        </f:case>
+        <f:defaultCase>
+            <f:render section="pictureTag" arguments="{_all}" />
+        </f:defaultCase>
+    </f:switch>
+
+    <f:section name="pictureTag">
+        <f:switch expression="{file.extension}">
+            <f:case value="gif">
+                <f:render partial="Media/Rendering/ImageGif" arguments="{file: file, dimensions: dimensions, settings: settings, data:data}" />
+            </f:case>
+            <f:case value="svg">
+                <f:render partial="Media/Rendering/ImageSVG" arguments="{file: file, dimensions: dimensions, settings: settings, data:data}" />
+            </f:case>
+            <f:defaultCase>
+                <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings, data:data}" />
+            </f:defaultCase>
+        </f:switch>
+    </f:section>
+</html>
