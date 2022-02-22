@@ -11,3 +11,5 @@ editor:
       - { name: "BTN Default",  element: "a", attributes: { class: "btn btn-default"} }
       - { name: "BTN Primary",  element: "a", attributes: { class: "btn btn-primary"} }
       - { name: "BTN BIG",      element: "a", attributes: { class: "btn btn-primary btn-lg"} }
+      - { name: "Text Fett",    element: "p", attributes: { class: "fw-bold" } }
+

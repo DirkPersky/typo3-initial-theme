@@ -21,3 +21,7 @@
     border-radius: 0.5rem;
     text-align: center;
 }
+
+.fw-bold {
+    font-weight: bold;
+}
