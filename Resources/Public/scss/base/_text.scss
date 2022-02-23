@@ -34,3 +34,14 @@
 .align-center {
   text-align: center;
 }
+
+.ce-bodytext {
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

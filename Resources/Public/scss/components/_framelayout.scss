@@ -1,0 +1,12 @@
+.frame-layout-1 {
+  .ce-textpic.ce-intext.ce-nowrap {
+	display: flex;
+
+	.ce-gallery {
+	  padding-bottom: 0;
+	  padding-right: 10px;
+	  flex: 0 0 auto;
+	  float: none;
+	}
+  }
+}

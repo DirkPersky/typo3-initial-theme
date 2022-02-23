@@ -39,4 +39,29 @@ window.AnimateManager.attach('animation-row', function () {
         onEnter: onEnter,
         onEnterBack: onEnter,
     });
+
+
+    function onEnterCustom(element) {
+        // disable if not desktop
+        if(!window.matchMedia('(min-width: 768px)').matches) return;
+
+        element.classList.forEach((key) => {
+            if( key.indexOf('animate-') != -1){
+                console.log(key.replace('animate-', 'animated '));
+                // inimate Text
+                window.DPAnimate.animate(element, {
+                    class: key.replace('animate-', 'animated '),
+                    stagger: 0.02,
+                    delay: .3
+                });
+            }
+        });
+    }
+    window.DPAnimate.scrollTrigger('div[class*="animate-"]', {
+        start: 'top bottom-=50px',
+        end: 'bottom top+=150px',
+        once: true,
+        onEnter: onEnterCustom,
+        onEnterBack: onEnterCustom,
+    });
 })

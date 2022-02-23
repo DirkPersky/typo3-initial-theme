@@ -1,3 +1,6 @@
-<div class="{v:format.trim(content:"{flexform.width_column_xs_{col}} {flexform.width_column_sm_{col}} {flexform.width_column_md_{col}} {flexform.width_column_lg_{col}} {flexform.width_column_xl_{col}} {flexform.visibility_col_{col}} {flexform.class_col{col}}")}">
+<html xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="{v:format.trim(content:"{flexform.width_column_xs_{col}} {flexform.width_column_sm_{col}} {flexform.width_column_md_{col}} {flexform.width_column_lg_{col}} {flexform.width_column_xl_{col}} {v:format.replace(content:'{flexform.visibility_col{col}}', substring:',', replacement:' ')} {flexform.class_col{col}}")}">
     <f:render partial="Content" arguments="{contents: contents }" />
 </div>
+</html>
