@@ -1,25 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:switch expression="{data.layout}">
-	<f:case value="6">
-		<f:for each="{gallery.rows}" as="row" iteration="row_iteration">
-			<div class="carousel-item {f:if(condition:'{row_iteration.isFirst}',then:'active')}">
-				<div class="carousel-item-medias">
-					<f:for each="{row.columns}" as="column" iteration="column_iteration">
-						<div class="carousel-item-media" data-mediaload="row{row_iteration.index}-item{column_iteration.index}">
-							<f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
-							<f:if condition="{column.media.description}">
-								<div class="carousel-inner-wrap">
-									<div class="carousel-caption">
-										<f:format.raw>{column.media.description}</f:format.raw>
-									</div>
-								</div>
-							</f:if>
-						</div>
-					</f:for>
-				</div>
-			</div>
-		</f:for>
-	</f:case>
 	<f:defaultCase>
 
 		<f:if condition="{gallery.rows}">

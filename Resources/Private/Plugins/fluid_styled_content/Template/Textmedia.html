@@ -19,58 +19,6 @@
 </f:section>
 <f:section name="Main">
 	<f:switch expression="{data.layout}">
-		<f:case value="6">
-			<div
-					id="carousel-generic-{data.uid}"
-					class="carousel slide"
-					data-interval="{f:if(condition: "{data.subheader}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.subheader}')}", else: "3000")}"
-					data-ride="carousel"
-					data-wrap="true"
-			>
-			<f:if condition="{gallery.count.rows} > 1">
-				<!--- Indicators -->
-				<div class="carousel-indicators">
-					<f:for each="{gallery.rows}" as="row" iteration="row_iteration" key="entrynumber">
-						<button aria-current="true"
-								aria-label="Slide {f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber}')}"
-								class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}"
-								data-bs-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} -1')}"
-								data-bs-target="#carousel-generic-{data.uid}" type="button"></button>
-					</f:for>
-				</div>
-
-			</f:if>
-			<!-- Carousel Items -->
-			<div class="carousel-inner">
-				<f:render partial="Media/Gallery" arguments="{_all}" />
-			</div>
-			<f:if condition="{gallery.count.rows} > 1">
-				<!--- Direction navs -->
-				<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carousel-generic-{data.uid}"
-						type="button">
-					<span aria-hidden="true" class="carousel-control-prev-icon"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carousel-generic-{data.uid}"
-						type="button">
-					<span aria-hidden="true" class="carousel-control-next-icon"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</f:if>
-			</div>
-		</f:case>#
-		<f:case value="7">
-			<div class="ce-textpic">
-				<f:if condition="{data.bodytext}">
-					<div class="ce-bodytext">
-						<div class="year">
-							<f:format.html>{data.header}</f:format.html>
-						</div>
-						<f:format.html>{data.bodytext}</f:format.html>
-					</div>
-				</f:if>
-			</div>
-		</f:case>
 		<f:defaultCase>
 			<div class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
 				<f:if condition="{gallery.position.vertical} != 'below'">

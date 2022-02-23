@@ -7,6 +7,6 @@
     <f:uri.image image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="specialMobile"  />
 </f:comment>
 <picture>
-    <img alt="{file.alternative -> f:format.stripTags()}" src="{f:uri.image(image:file)}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" style="max-width:{dimensions.width}px" lazyload="true" />
+    <img alt="{file.alternative -> f:format.stripTags()}" src="{f:uri.image(image:file)}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" style="width:{dimensions.width}px" lazyload="true" />
 </picture>
 </html>

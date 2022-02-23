@@ -27,9 +27,8 @@ TCEFORM.tt_content.header_layout {
 TCEFORM.tt_content.layout {
 
     altLabels  {
-        6 = Carousel(Slider)
-        7 = Carousel(Slider-Startseite)
-        8 = Menu - include not in menu
+        6 = Layout 4
+        7 = Layout 5
         9 = ToP Header
     }
 
@@ -44,7 +43,7 @@ TCEFORM.tt_content.layout {
         }
 
         menu_pages {
-            addItems.8 = 8
+
         }
     }
 }
