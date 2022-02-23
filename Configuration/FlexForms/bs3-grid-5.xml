@@ -1885,7 +1885,7 @@
                                 </items>
                                 <maxitems>6</maxitems>
                                 <size>10</size>
-                                <default>d-block</default>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </visibility_col1>
@@ -1940,7 +1940,7 @@
                                 </items>
                                 <maxitems>6</maxitems>
                                 <size>10</size>
-                                <default>d-block</default>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </visibility_col2>
@@ -1995,7 +1995,7 @@
                                 </items>
                                 <maxitems>6</maxitems>
                                 <size>10</size>
-                                <default>d-block</default>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </visibility_col3>
@@ -2050,7 +2050,7 @@
                                 </items>
                                 <maxitems>6</maxitems>
                                 <size>10</size>
-                                <default>d-block</default>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </visibility_col4>
@@ -2105,7 +2105,7 @@
                                 </items>
                                 <maxitems>6</maxitems>
                                 <size>10</size>
-                                <default>d-block</default>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </visibility_col5>
