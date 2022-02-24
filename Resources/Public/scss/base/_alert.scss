@@ -1,0 +1,19 @@
+.frame-alert-success {
+  @extend .alert;
+  @extend .alert-success;
+}
+
+.frame-alert-info {
+  @extend .alert;
+  @extend .alert-info;
+}
+
+.frame-alert-warning {
+  @extend .alert;
+  @extend .alert-warning;
+}
+
+.frame-alert-danger {
+  @extend .alert;
+  @extend .alert-danger;
+}
