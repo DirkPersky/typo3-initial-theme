@@ -218,7 +218,7 @@
 
 		&:before {
 		  @extend .fas;
-		  @extend .fa-angle-right
+		  content: fa-content($fa-var-angle-right);
 		}
 	  }
 	}
@@ -250,7 +250,7 @@
 
 	  &:before {
 		@extend .fas;
-		@extend .fa-angle-left;
+		content: fa-content($fa-var-angle-left);
 
 		font-size: 22px;
 		position: absolute;

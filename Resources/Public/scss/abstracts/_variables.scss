@@ -20,13 +20,13 @@ $font-size-base-calc:                       18px !default; // Assumes the browse
 $font-family-base:       "Roboto",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 
 // Hamburger
-$hamburger-padding-x                       : 5px !default;
-$hamburger-padding-y                       : 6px !default;
-$hamburger-layer-width                     : 20px !default;
-$hamburger-layer-height                    : 3px !default;
+$hamburger-padding-x                       : 1.5rem !default;
+$hamburger-padding-y                       : 5px !default;
+$hamburger-layer-width                     : 32px !default;
+$hamburger-layer-height                    : 2px !default;
 $hamburger-layer-color                     : #000 !default;
 $hamburger-layer-border-radius             : 2px !default;
-$hamburger-layer-spacing                   : 4px !default;
+$hamburger-layer-spacing                   : 6px !default;
 $hamburger-hover-opacity                   : 1 !default;
 // Onpage Element
 $bg-animation-speed:            40s !default;
