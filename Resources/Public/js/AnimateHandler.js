@@ -52,7 +52,7 @@
         window.addEventListener('scroll', function (_eScroll) {
             var st = window.pageYOffset || document.documentElement.scrollTop;
             // scoll direction
-            if (st > lastScrollTop) scrollDirection = 'down';
+            if (st > lastScrollTop || st == lastScrollTop) scrollDirection = 'down';
             // upscroll code
             else scrollDirection = 'up';
             // update last scroll
@@ -67,15 +67,15 @@
          * Init the Trigger
          * @param trigger
          */
-        function callTrigger(trigger) {
+        function callTrigger(trigger, direction) {
             if (cleanProcessDOM(trigger)) return;
             // trigger events for element
             if (trigger.element instanceof DPNodeList) {
                 trigger.element.forEach((element, i) => {
-                    isCondition(element, trigger);
+                    isCondition(element, trigger, direction);
                 })
             } else if (trigger.element instanceof HTMLDivElement) {
-                isCondition(trigger.element, trigger);
+                isCondition(trigger.element, trigger, direction);
             }
         }
 
@@ -108,20 +108,21 @@
          * @param element
          * @param trigger
          */
-        function isCondition(element, trigger) {
+        function isCondition(element, trigger, direction) {
+            if(typeof direction != 'undefined') scrollDirection = direction;
             // Start Event prepare
             var startTrigger = trigger.options.start.split(' ');
-            var endTrigger = trigger.options.end.split(' ');
+            var endTrigger = null
+            if(trigger.options.end) endTrigger = trigger.options.end.split(' ');
             // update values
             startTrigger[0] = replaceElementTriggerPosition(startTrigger[0], element);
-            endTrigger[0] = replaceElementTriggerPosition(endTrigger[0], element);
+            if(endTrigger) endTrigger[0] = replaceElementTriggerPosition(endTrigger[0], element);
             // get triggerpoint
             startTrigger[1] = replaceTriggerPosition(startTrigger[1], element);
-            endTrigger[1] = replaceTriggerPosition(endTrigger[1], element);
-
+            if(endTrigger) endTrigger[1] = replaceTriggerPosition(endTrigger[1], element);
             if (scrollDirection == 'down') {
                 // onLeave callback
-                if (isActive(element) && endTrigger[0] < endTrigger[1]) {
+                if (endTrigger && isActive(element) && endTrigger[0] < endTrigger[1]) {
                     // unset active
                     if (trigger.options.once == false) unsetActive(element);
                     // run callback
@@ -129,13 +130,13 @@
                     cbk(element);
                 }
                 // onUpdateCallback
-                if (isActive(element)) {
+                if (endTrigger && isActive(element)) {
                     // run callback
                     var cbk = trigger.options.onUpdate.bind(this);
                     cbk(element);
                 }
                 // onEnter callback
-                if (!isActive(element) && startTrigger[0] <= startTrigger[1] && endTrigger[0] >= endTrigger[1]) {
+                if (!isActive(element) && startTrigger[0] <= startTrigger[1] && (!endTrigger || endTrigger[0] >= endTrigger[1])) {
                     // set active
                     setActive(element);
                     // run callback
@@ -158,7 +159,7 @@
                     cbk(element);
                 }
                 // onEnterBack callback
-                if (!isActive(element) && endTrigger[0] >= endTrigger[1] && startTrigger[0] < startTrigger[1]) {
+                if (!isActive(element) && (!endTrigger || endTrigger[0] >= endTrigger[1]) && startTrigger[0] < startTrigger[1]) {
                     // set active
                     setActive(element);
                     // run callback
@@ -242,7 +243,7 @@
                 // add trigger to que
                 triggers.push(trigger);
                 // init active test
-                callTrigger(trigger);
+                callTrigger(trigger, 'down');
             },
             kill: function (trigger) {
                 // find index
@@ -262,7 +263,7 @@
         // default Options
         var defaultOptions = {
             start: 'top bottom',
-            end: 'bottom top',
+            end: null,
             once: false,
             onEnter: function () {
             },
