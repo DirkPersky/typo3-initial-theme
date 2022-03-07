@@ -24,6 +24,15 @@ jQuery(function ($) {
                 offset: $offset // offset when anchor scroll
             })
         ],
+        skipPopStateHandling: function (event) {
+            if (event.state && event.state.url == window.location.href) {
+                return true;
+            }
+            if (event.state && event.state.source == "swup") {
+                return false;
+            }
+            return true;
+        },
         linkSelector:
             'a[href^="' +
             window.location.origin +
