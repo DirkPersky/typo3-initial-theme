@@ -1,7 +1,7 @@
 page.10 = FLUIDTEMPLATE
 page.10 {
-	layoutRootPath = EXT:dp_theme/Resources/Private/Layout/
-	partialRootPath = EXT:dp_theme/Resources/Private/Partial/
+	layoutRootPath = EXT:dp_theme/Resources/Private/Layouts/
+	partialRootPath = EXT:dp_theme/Resources/Private/Partials/
 	variables{
 	    layout = TEXT
 	    layout.data = levelfield:-1,backend_layout_next_level,slide
@@ -66,9 +66,9 @@ page.10 {
 	  key.data = levelfield:-1, backend_layout_next_level, slide
 	  key.override.field = backend_layout
 	  default = TEXT
-	  default.value = EXT:dp_theme/Resources/Private/Template/normal.html
+	  default.value = EXT:dp_theme/Resources/Private/Templates/normal.html
 
 	  pagets__2 = TEXT
-	  pagets__2.value = EXT:dp_theme/Resources/Private/Template/root.html
+	  pagets__2.value = EXT:dp_theme/Resources/Private/Templates/root.html
 	}
 }

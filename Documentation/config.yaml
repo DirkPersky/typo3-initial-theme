@@ -16,13 +16,13 @@ languages:
 errorHandling:
   - errorCode: '404'
     errorHandler: Fluid
-    errorFluidTemplate: 'EXT:dp_theme/Resources/Private/Layout/Error.html'
+    errorFluidTemplate: 'EXT:dp_theme/Resources/Private/Layouts/Error.html'
     errorFluidTemplatesRootPath: ''
     errorFluidLayoutsRootPath: ''
     errorFluidPartialsRootPath: ''
   - errorCode: '500'
     errorHandler: Fluid
-    errorFluidTemplate: 'EXT:dp_theme/Resources/Private/Layout/Error.html'
+    errorFluidTemplate: 'EXT:dp_theme/Resources/Private/Layouts/Error.html'
     errorFluidTemplatesRootPath: ''
     errorFluidLayoutsRootPath: ''
     errorFluidPartialsRootPath: ''

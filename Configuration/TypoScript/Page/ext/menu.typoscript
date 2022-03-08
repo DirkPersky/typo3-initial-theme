@@ -18,8 +18,8 @@ mmenuPage {
 
 mmenuPage.10 = FLUIDTEMPLATE
 mmenuPage.10 {
-	layoutRootPath = EXT:dp_theme/Resources/Private/Layout/
-	partialRootPath = EXT:dp_theme/Resources/Private/Partial/
+	layoutRootPath = EXT:dp_theme/Resources/Private/Layouts/
+	partialRootPath = EXT:dp_theme/Resources/Private/Partials/
 
     ##########################
     ### DATA PREPROCESSING ###
@@ -58,5 +58,5 @@ mmenuPage.10 {
         }
     }
 
-	file = EXT:dp_theme/Resources/Private/Template/Navigation.html
+	file = EXT:dp_theme/Resources/Private/Templates/Navigation.html
 }
