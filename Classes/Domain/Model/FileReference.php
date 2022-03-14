@@ -32,6 +32,11 @@ class FileReference extends \TYPO3\CMS\Extbase\Domain\Model\FileReference
     protected $link;
 
     /**
+     * @var string
+     */
+    protected $mimeType;
+
+    /**
      * Set File uid
      *
      * @param int $fileUid
@@ -129,5 +134,15 @@ class FileReference extends \TYPO3\CMS\Extbase\Domain\Model\FileReference
     public function getTitle()
     {
         return $this->title !== null ? $this->title : $this->getOriginalResource()->getTitle();
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->mimeType !== null ? $this->mimeType : $this->getOriginalResource()->getMimeType();
     }
 }

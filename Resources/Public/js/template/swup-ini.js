@@ -25,9 +25,9 @@ jQuery(function ($) {
             })
         ],
         skipPopStateHandling: function (event) {
-            if (event.state && event.state.url == window.location.href) {
-                return true;
-            }
+            // abort if fancy is open
+            if(typeof window.fancyStartClose != 'undefined' && window.fancyStartClose) return true;
+
             if (event.state && event.state.source == "swup") {
                 return false;
             }

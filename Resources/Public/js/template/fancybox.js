@@ -25,6 +25,13 @@ window.StateManager.attach('fancybox', function () {
         ],
         thumbs : {
             autoStart : true
+        },
+
+        beforeClose: function(e){
+            window.fancyStartClose = true;
+        },
+        afterClose: function (e){
+            window.fancyStartClose = null;
         }
     });
     jQuery('.various, a[rel="various"]').fancybox({
