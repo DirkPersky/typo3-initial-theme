@@ -38,7 +38,6 @@
                 type="{file.mime_type}"/>
     </f:if>
     <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
-    <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}" type="{file.mime_type}"/>
-    <img alt="{file.alternative -> f:format.stripTags()}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" lazyload="true" />
+    <img alt="{file.alternative -> f:format.stripTags()}" src="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" lazyload="true" />
 </picture>
 </html>
