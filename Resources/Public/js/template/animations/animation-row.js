@@ -16,7 +16,17 @@ window.AnimateManager.attach('animation-row', function () {
         if(!window.matchMedia('(min-width: 768px)').matches) return;
 
         element.classList.forEach((key) => {
-            if( key.indexOf('animate-') != -1){
+            if(key.indexOf('animate-textBounceLeft') != -1){
+                // get left col Header
+                var sliderText = new SplitType($(element).find('header').find('*'), {types: "words, chars"});
+                // inimate Text
+                window.DPAnimate.animate(sliderText.chars, {
+                    class: 'animated textBounceLeft',
+                    stagger: 0.02,
+                    delay: .3,
+                    onComplete: e => sliderText.revert()
+                });
+            } else if( key.indexOf('animate-') != -1){
                 // inimate Text
                 window.DPAnimate.animate(element, {
                     class: key.replace('animate-', 'animated '),
