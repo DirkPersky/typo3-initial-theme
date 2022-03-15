@@ -1,3 +1,28 @@
 page.includeJSLibs {
-    charjslib = https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js
+    charjslib = https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js
 }
+
+
+tt_content.chart_bar {
+    dataProcessing {
+        // process selected diagram data to easy output diagrams
+        10 = Hoogi91\Charts\DataProcessing\ChartsProcessor
+        10 {
+          	assets = 0
+            data.field = tx_charts_chartdata
+            as = data_chart
+        }
+
+        // process pi_flexform field settings
+        20 = Hoogi91\Charts\DataProcessing\FlexFormProcessor
+        20 {
+            if.isTrue.field = pi_flexform
+            fieldName = pi_flexform
+            as = settings
+        }
+
+    }
+}
+tt_content.chart_line < tt_content.chart_bar
+tt_content.chart_pie < tt_content.chart_bar
+tt_content.chart_doughnut < tt_content.chart_bar
