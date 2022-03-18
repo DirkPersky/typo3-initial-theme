@@ -51,7 +51,7 @@
   animation-duration: calc(var(--animate-duration) * 3);
 }
 
-@media print, (prefers-reduced-motion: reduce) {
+@media print {
   .animated {
 	transition-duration: 1ms !important;
 	animation-duration: 1ms !important;
