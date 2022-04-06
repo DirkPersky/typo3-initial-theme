@@ -1,0 +1,15 @@
+.no-js {
+  body:before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: $danger;
+    color: #fff;
+    content: 'For the best experience please using Chrome, Firefox or Safari and activate JavaScript!';
+    display: block;
+  }
+}
