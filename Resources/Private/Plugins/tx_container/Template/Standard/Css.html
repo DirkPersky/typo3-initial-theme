@@ -8,18 +8,27 @@
     {f:if(condition:'{flexform.inlinecss}',then:'style="{flexform.inlinecss}"')}
 >
     <f:if condition="{flexform.image}">
-        <style data-ignore="1"><v:format.eliminate whitespace="1">
-            #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+        <style data-ignore="1"><v:format.eliminate whitespaceBetweenHtmlTags="1" tabs="1" unixBreaks="1" windowsBreaks="1">
+            html.no-js #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
                 background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile)}</f:format.raw>);
             }
+            html.js #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+                 background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile, fileExtension:'webp')}</f:format.raw>);
+            }
             @media(min-width: 768px){
-                #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+                html.no-js #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
                     background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 992, cropVariant: tablet)}</f:format.raw>);
+                }
+                html.js #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+                     background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 992, cropVariant: tablet, fileExtension:'webp')}</f:format.raw>);
                 }
             }
             @media(min-width: 1200px){
-                #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+                html.no-js #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
                     background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 1960, cropVariant: desktop)}</f:format.raw>);
+                }
+                html.js #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+                     background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 1960, cropVariant: desktop, fileExtension:'webp')}</f:format.raw>);
                 }
             }
         </v:format.eliminate></style>
