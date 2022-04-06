@@ -13,6 +13,9 @@
       data-namespace-typo3-fluid="true">
     <!-- Load all JS files -->
     <db:JavaScript dir="EXT:dp_theme/Resources/Public/js" files="js"/>
+    <!--[if IE]>
+    <div class="browser-warning"><p>For the best experience please open using Chrome, Firefox or Safari</p></div>
+    <![endif]-->
     <!-- Navigation left -->
     <header id="mainNavigation" class="{f:if(condition:'{data.is_siteroot}', then:'home')}" data-canvis-side>
         <div class="navbar nav-minimal fixed-top" role="navigation">
