@@ -12,20 +12,14 @@ page {
         # Define Preloads
         105 = TEXT
         105.insertDate=1
-        # Inline CSS::__Above the fold__::Mobile
 
-        110 = FLUIDTEMPLATE
-        110 {
-            stdWrap.wrap = <style type="text/css" media="(max-width: 991px)" data-ignore="1" data-abovethefold="1">|</style>
-            file = EXT:dp_theme/Resources/Public/assets/abovethefold-xs.css
-        }
-
-        # Inline CSS::__Above the fold__::Desktop
+        # Inline CSS::__Above the fold__
         120 = FLUIDTEMPLATE
         120 {
-            stdWrap.wrap = <style type="text/css" media="(min-width: 992px)" data-ignore="1" data-abovethefold="1">|</style>
+            stdWrap.wrap = <style type="text/css" data-ignore="1" data-abovethefold="1">|</style>
             file = EXT:dp_theme/Resources/Public/assets/abovethefold.css
         }
+
     }
 }
 

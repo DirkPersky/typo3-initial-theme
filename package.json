@@ -24,8 +24,6 @@
     "swup": "latest"
   },
   "devDependencies": {
-    "clean-css": "latest",
-    "penthouse": "latest",
-    "request": "latest"
+    "crittr": "latest"
   }
 }
