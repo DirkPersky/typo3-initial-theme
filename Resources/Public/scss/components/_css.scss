@@ -18,8 +18,11 @@
 
       background: inherit;
       background-position: center;
-      background-attachment: fixed;
       background-size: cover;
+
+      @include media-breakpoint-up(xl){
+        background-attachment: fixed;
+      }
     }
 
     &:after {

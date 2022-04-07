@@ -36,7 +36,7 @@ jQuery(function ($) {
         linkSelector:
             'a[href^="' +
             window.location.origin +
-            '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])'
+            '"]:not([data-no-swup]):not(.various), a[href^="/"]:not([data-no-swup]):not(.various), a[href^="#"]:not([data-no-swup]):not(.various)'
     });
     // page change
     window.swupLoad.on('contentReplaced', function (e, i) {
