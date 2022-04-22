@@ -16,6 +16,7 @@ const fs = require('fs');
 const _URLS_ = [
     'URL1',
 ];
+
 /**
  * @private
  */
@@ -26,7 +27,7 @@ const _DIR_ = process.argv.slice(2);
  */
 const outFiles = {
     above: _DIR_ + '/assets/abovethefold.css',
-    // rest: _DIR_ + '/assets/main.css'
+    rest: _DIR_ + '/assets/main.css'
 };
 /**
  * LOAD Remove CSS FILE
@@ -36,15 +37,41 @@ const outFiles = {
     try {
         const { critical, rest } = await Crittr({
             urls: _URLS_,
-            outputRemainingCss: false,
+            // outputRemainingCss: false,
+            removeSelectors: [
+                '.dp--revoke%',
+                '.cc-%',
+                '.swup%'
+            ],
+            keepSelectors: [
+                '.col-%',
+                '.pt-%',
+                '.pb-%',
+                '.ps-%',
+                '.pe-%',
+                '.mt-%',
+                '.mb-%',
+                '.me-%',
+                '.ms-%',
+                '%-sm-%',
+                '%-md-%',
+                '%-lg-%',
+                '%-xl-%',
+                '%-xxl-%',
+                '.frame-space-%',
+                '.css-space-%',
+            ],
             device: {
                 width:  1920,
                 height: 1080
+            },
+            browser: {
+                userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36(KHTML, like Gecko) Chrome/61.0.3116.0 Safari/537.36 Chrome-Lighthouse',
             }
         });
 
         fs.writeFileSync(outFiles.above, critical);
-        // fs.writeFileSync(outFiles.rest, rest);
+        fs.writeFileSync(outFiles.rest, rest);
     } catch (err) {
         console.error('Removed @Support inside @media in Fancybox??');
     }
