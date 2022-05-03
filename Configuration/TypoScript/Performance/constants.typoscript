@@ -10,6 +10,7 @@ plugin.tx_scriptmerger {
         mergedHeadFilePosition = </body>
         compress.enable = 0
 	    merge.ignore >
+        merge.ignore = Javascript\/dp_cookieconsent.
 
 	    minify {
 	        enable = 1

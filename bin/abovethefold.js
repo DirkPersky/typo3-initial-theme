@@ -44,6 +44,14 @@ const outFiles = {
                 '.swup%'
             ],
             keepSelectors: [
+                '.btn',
+                '.btn%',
+                '%-xs',
+                '%-sm',
+                '%-md',
+                '%-lg',
+                '%-xl',
+                '%-xxl',
                 '.col-%',
                 '.pt-%',
                 '.pb-%',
