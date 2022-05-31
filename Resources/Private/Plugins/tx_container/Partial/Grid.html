@@ -1,6 +1,14 @@
 <html xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<div class="{v:format.trim(content:"{flexform.width_column_xs_{col}} {flexform.width_column_sm_{col}} {flexform.width_column_md_{col}} {flexform.width_column_lg_{col}} {flexform.width_column_xl_{col}} {v:format.replace(content:'{flexform.visibility_col{col}}', substring:',', replacement:' ')} {flexform.class_col{col}}")}">
-    <f:render partial="Content" arguments="{contents: contents }" />
+
+{f:variable(name: 'ColXS', value: '{f:if(condition:"{flexform.width_column_xs_{col}}", then: "col-{flexform.width_column_xs_{col}}", else: "col-12")}')}
+{f:variable(name: 'ColSM', value: '{f:if(condition:"{flexform.width_column_sm_{col}}", then: " col-sm-{flexform.width_column_sm_{col}}", else: "")}')}
+{f:variable(name: 'ColMD', value: '{f:if(condition:"{flexform.width_column_md_{col}}", then: " col-md-{flexform.width_column_md_{col}}", else: "")}')}
+{f:variable(name: 'ColLG', value: '{f:if(condition:"{flexform.width_column_lg_{col}}", then: " col-lg-{flexform.width_column_lg_{col}}", else: "")}')}
+{f:variable(name: 'ColXL', value: '{f:if(condition:"{flexform.width_column_xl_{col}}", then: " col-xl-{flexform.width_column_xl_{col}}", else: "")}')}
+{f:variable(name: 'ColXXL', value: '{f:if(condition:"{flexform.width_column_xxl_{col}}", then: " col-xxl-{flexform.width_column_xxl_{col}}", else: "")}')}
+
+<div class="{v:format.trim(content:"{ColXS}{ColSM}{ColMD}{ColLG}{ColXL}{ColXXL} {v:format.replace(content:'{flexform.visibility_col{col}}', substring:',', replacement:' ')} {flexform.class_col{col}}")}">
+<f:render partial="Content" arguments="{contents: contents }" />
 </div>
 </html>
