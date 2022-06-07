@@ -332,6 +332,8 @@
             repeat: 0,
             duration: 0,
             onComplete: function () {
+            },
+            onItemComplete: function(){
             }
         };
         // abort if not exists
@@ -372,6 +374,10 @@
             function wrapper() {
                 // remove Listener
                 element.removeEventListener("animationend", wrapper, true);
+                // item events
+                var itemCbk = _DPAnimate.options.onItemComplete.bind(_DPAnimate);
+                itemCbk(element);
+                // stackker Event
                 _DPAnimate.cbkCounter += 1;
                 if (_DPAnimate.cbkCounter == _DPAnimate.element.length) {
                     //cbk
