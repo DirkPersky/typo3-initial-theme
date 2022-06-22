@@ -106,6 +106,7 @@ plugin.tx_csseo {
 ### Favicon ###
 ###############
 favicon = favicon.png
+logo = EXT:dp_theme/Resources/Public/assets/logo.png
 
 ########################
 ### IndexSearch Page ###

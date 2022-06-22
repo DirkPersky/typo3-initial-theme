@@ -59,4 +59,8 @@ mmenuPage.10 {
     }
 
 	file = EXT:dp_theme/Resources/Private/Templates/Navigation.html
+
+    settings {
+        logo = {$logo}
+    }
 }
