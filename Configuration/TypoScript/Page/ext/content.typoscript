@@ -1,3 +1,23 @@
+###################
+### Replace tag ###
+###################
+lib.replacement {
+    10 {
+        search = #NAV_TITLE#
+        replace.data = page:nav_title
+    }
+
+    20 {
+        search = #PAGE#
+        replace.data = page:title
+    }
+}
+
+lib.contentElement {
+	stdWrap.required = 1
+    stdWrap.replacement < lib.replacement
+}
+
 ##########################
 ### styles.content.get ###
 ##########################
@@ -10,6 +30,11 @@ lib.content {
 
   10 < styles.content.get
   15 = RESTORE_REGISTER
+}
+
+lib.contentElement {
+	stdWrap.required = 1
+    stdWrap.replacement < lib.replacement
 }
 
 ########################################################################

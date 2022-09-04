@@ -15,16 +15,16 @@
  * @licence: MIT
  * @param options
  */
-$.fn.typo3form = function(options){
+u.prototype.typo3form = function(options){
     /**
      * Set Configuration Array
      */
-    var settings = $.extend({
+    var settings = Object.assign({
 
     }, options);
     // loop forms
-    this.map(function (index, element) {
-        var form = $(element),
+    this.map(element => {
+        var form = u(element),
             submit = form.find('[type="submit"]'),
             backwards = form.find('.btn-group.previous .btn');
 
@@ -41,32 +41,37 @@ $.fn.typo3form = function(options){
         });
 
         function formSubmit(btn) {
-            var formData = new FormData(form[0]);
+            var formData = new FormData(form.first());
             // add next page flag
-            formData.set(btn.prop('name'), btn.prop('value'));
+            formData.set(btn.attr('name'), btn.attr('value'));
             // disable Fieldset
             form.find('fieldset').attr('disabled','disabled');
             // offset saver
-            window.formScrollOffset = form.offset().top;
-            // add scroll handler
-            window.formScroll = function ($offset) {
-                window.swupLoad.scrollTo(window.formScrollOffset - $offset);
-                // clear handler
-                window.formScroll = undefined;
-                window.formScrollOffset = undefined;
-            };
-            // perform request
-            window.swupLoad.loadPage({
-                url: form.data('ajax-form'), // route of request (defaults to current url)
-                method: 'POST', // method of request (defaults to "GET")
-                data: formData, // data passed into XMLHttpRequest send method
-            });
+            window.formScrollOffset = form.first().offsetTop;
+            // handle SWUP Events
+            if (typeof window.swupLoad != 'undefined'){
+                // add scroll handler
+                window.formScroll = function ($offset) {
+                    window.swupLoad.scrollTo(window.formScrollOffset - $offset);
+                    // clear handler
+                    window.formScroll = undefined;
+                    window.formScrollOffset = undefined;
+                };
+                // perform request
+                window.swupLoad.loadPage({
+                    url: form.data('ajax-form'), // route of request (defaults to current url)
+                    method: 'POST', // method of request (defaults to "GET")
+                    data: formData, // data passed into XMLHttpRequest send method
+                });
+            } else {
+                /**
+                 * Handling Without SWUP
+                 */
+            }
         }
-
-
     });
 };
 
 window.StateManager.attach('forms', function () {
-    jQuery('form[data-ajax-form]').typo3form();
+    u('form[data-ajax-form]').typo3form();
 });

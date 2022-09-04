@@ -31,7 +31,7 @@ mmenuPage.10 {
             special = list
             special.value = {$plugin.tx_dp_theme.settings.nav.homeUid}
 
-            levels = 3
+            levels = 4
             includeSpacer = 1
             as = menuMain
 
@@ -61,6 +61,6 @@ mmenuPage.10 {
 	file = EXT:dp_theme/Resources/Private/Templates/Navigation.html
 
     settings {
-        logo = {$logo}
+        #logo = {$logo}
     }
 }

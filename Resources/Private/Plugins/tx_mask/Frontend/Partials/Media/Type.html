@@ -3,7 +3,16 @@
         <f:case value="4">
         </f:case>
         <f:defaultCase>
-            <f:render section="pictureTag" arguments="{_all}" />
+            <f:if condition="{file.link}">
+                <f:then>
+                    <f:link.typolink parameter="{file.link}">
+                        <f:render section="pictureTag" arguments="{_all}" />
+                    </f:link.typolink>
+                </f:then>
+                <f:else>
+                    <f:render section="pictureTag" arguments="{_all}" />
+                </f:else>
+            </f:if>
         </f:defaultCase>
     </f:switch>
 

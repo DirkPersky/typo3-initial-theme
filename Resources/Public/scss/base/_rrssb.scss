@@ -42,45 +42,29 @@ $social-list: (
 		rrssb-xing $rrssb-xing
 );
 
-// Set the border radius for the buttons
-$rrssb-border-radius: 2px !default;
-$rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // The meat and potatoes
 .rrssb-buttons {
   box-sizing: border-box;
-  font-family: $rrssb-main-font;
   font-size: 12px;
-  height: 36px;
   margin: 0;
   padding: 0;
   width: 100%;
 
-  // clearfix buttons for large-format
-  &:after {
-	clear: both;
-  }
-
-  &:before,
-  &:after {
-	content: ' ';
-	display: table;
-  }
+  display: flex;
+  align-items: center;
 
   li {
-	box-sizing: border-box;
-	float: left;
-	height: 100%;
-	line-height: 13px;
 	list-style: none;
 	margin: 0;
-	padding: 0 2px;
+	padding: .25rem;
 
 	// This generates individual button classes for each item in social list on line 39.
 	@each $s-name in $social-list {
 	  &.#{nth($s-name, 1)} {
 		a {
-		  background-color: nth($s-name, 2);
+		  border-color: nth($s-name, 2);
+		  color: nth($s-name, 2);
 
 		  &:hover {
 			background-color: darken(nth($s-name, 2), 10%);
@@ -91,152 +75,48 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 	// end @each directive
 
 	a {
-	  background-color: #ccc;
-	  border-radius: $rrssb-border-radius;
-	  box-sizing: border-box;
-	  display: block;
-	  -moz-osx-font-smoothing: grayscale;
-	  -webkit-font-smoothing: antialiased;
+	  border-width: 2px;
+	  border-style: solid;
+
+	  border-radius: 1000px;
 	  font-weight: bold;
-	  height: 100%;
-	  padding: 11px 7px 12px 27px;
+	  padding: .25rem;
+	  width: 2.5rem;
+	  height: 2.5rem;
+
 	  position: relative;
 	  text-align: center;
 	  text-decoration: none;
 	  text-transform: uppercase;
 	  transition: background-color 0.2s ease-in-out;
-	  width: 100%;
+
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
 
 	  .rrssb-icon {
 		display: block;
-		left: 10px;
-		padding-top: 9px;
-		position: absolute;
-		top: 0;
-		width: 10%;
+		text-align: center;
+		line-height: 1;
 
 		i {
-		  font-size: 17px;
-		  color: $rrssb-txt;
-		}
-		svg {
-		  height: 17px;
-		  width: 17px;
-
-		  path, circle {
-			fill: $rrssb-txt;
-		  }
+		  transform: translate(0, 1px);
+		  font-size: 1.15rem;
+		  color: inherit;
 		}
 	  }
 
 	  .rrssb-text {
-		color: $rrssb-txt;
+		@include fa-sr-only;
 	  }
 
 	  &:active {
 		box-shadow: inset 1px 3px 15px 0 rgba(22, 0, 0, .25);
 	  }
-	}
 
-	&.small {
-	  a {
-		padding: 0;
-
-		.rrssb-icon {
-		  left: auto;
-		  margin: 0 auto;
-		  overflow: hidden;
-		  position: relative;
-		  top: auto;
-		  width: 100%;
-		}
-
-		.rrssb-text {
-		  visibility: hidden;
-		}
+	  &:hover {
+		color: #fff;
 	  }
 	}
-  }
-
-  &.large-format {
-	height: auto;
-
-	li {
-	  height: auto;
-
-	  a {
-		backface-visibility: hidden;
-		border-radius: 0.2em;
-
-		.rrssb-text {
-		  backface-visibility: hidden;
-		}
-	  }
-	}
-  }
-
-  &.small-format {
-	padding-top: 5px;
-  }
-
-  &.tiny-format {
-	height: 22px;
-	position: relative;
-
-	li {
-	  padding-right: 7px;
-
-	  a {
-		background-color: transparent;
-		padding: 0;
-
-		.rrssb-icon {
-		  // Avoids a shifting effect in IE11, ref #144
-		  height: 100%;
-
-		  svg {
-			height: 70%;
-			width: 100%;
-		  }
-		}
-
-		&:hover,
-		&:active {
-		  background-color: transparent;
-		}
-	  }
-
-	  // This generates individual button classes for each item in social list on line 39.
-	  @each $s-name in $social-list {
-		&.#{nth($s-name, 1)} {
-		  a {
-			.rrssb-icon {
-			  svg {
-				path {
-				  fill: nth($s-name, 2);
-				}
-			  }
-
-			  &:hover {
-				.rrssb-icon {
-				  svg {
-					path {
-					  fill: darken(nth($s-name, 2), 20%);
-					}
-				  }
-				}
-			  }
-			}
-		  }
-		}
-	  }
-	  // end @each directive
-	}
-  }
-}
-
-.rrssb-xing {
-  svg {
-	fill: white;
   }
 }

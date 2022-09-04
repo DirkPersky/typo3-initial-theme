@@ -3,11 +3,9 @@
 ###########
 RTE.default.buttons {
 	 link.properties.class.allowedClasses := addToList(btn btn-default)
-	 link.properties.class.allowedClasses := addToList(btn btn-info)
+	 link.properties.class.allowedClasses := addToList(btn btn-dark)
 	 link.properties.class.allowedClasses := addToList(btn btn-primary)
-	 link.properties.class.allowedClasses := addToList(btn btn-success)
-	 link.properties.class.allowedClasses := addToList(btn btn-warning)
-	 link.properties.class.allowedClasses := addToList(btn btn-danger)
+	 link.properties.class.allowedClasses := addToList(btn btn-outline-primary)
 
 	 link.properties.class.allowedClasses := addToList(btn btn-default btn-lg)
 	 link.properties.class.allowedClasses := addToList(btn btn-default btn-sm)

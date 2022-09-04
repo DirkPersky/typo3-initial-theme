@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2021.
  *
@@ -9,41 +8,40 @@
  * @license    AGPL v3
  */
 
-$.fn.searchLoading = function (options) {
+u.prototype.searchLoading = function (options) {
     /**
      * Set Configuration Array
      */
-    var settings = $.extend({
+    var settings = Object.assign({
         type: 9718,
         clearHTML: true,
         submitSelector: 'a',
         formSelector: '[form-input]',
         inputSelector: '#tx-indexedsearch-searchbox-sword',
         parentFormSelector: '#tx_indexedsearch',
-        onError :null,
-        onSuccess:null,
+        onError: null,
+        onSuccess: null,
     }, options);
-    $(this).each(function (index, element) {
+    u(this).each( element => {
         /**
          * Loop Over Elements
          */
-        var parent = $(element),
+        var parent = u(element),
             submitBtn = parent.find(settings.submitSelector),
             href = parent.data('href'),
             targetContainer = parent.find(settings.formSelector),
             ajaxTimer = null;
+
         // Load Form from URL
         clearTimeout(ajaxTimer);
         ajaxTimer = setTimeout(function () {
             // Call Ajax
-            $.ajax({
-                url: href,
-                data: {
-                    type: settings.type
-                },
-            }).then(function(data, status, request)  {
+            fetch(href + '?' + new URLSearchParams({
+                type: settings.type
+            })).then(response => response.text())
+                .then(function(data)  {
                 // Get Ajax Table
-                var targetTable = $(data).find(settings.parentFormSelector);
+                var targetTable = u(data).find(settings.parentFormSelector);
                 // Call Success Handling
                 onSucces(targetTable);
             },function(status)  {
@@ -51,6 +49,7 @@ $.fn.searchLoading = function (options) {
                 onError();
             });
         }, 50);
+
         /**
          * Global Functions
          */
@@ -58,66 +57,67 @@ $.fn.searchLoading = function (options) {
             // get Input
             var input = content.find(settings.inputSelector);
             // Clear Index Search HTMl
-            if(settings.clearHTML) {
+            if (settings.clearHTML) {
                 // move Submit Button
                 var submit = content.find('.tx-indexedsearch-search-submit');
-                submit.hide();
-                content.append( submit );
+                submit.addClass('d-none');
+                content.append(submit);
                 // append Input to Form
-                content.append(input.detach());
+                content.append(input);
                 // add Focus bar after Input
                 content.append('<div class="focus-bar"/>');
                 // Remove Fieldset
                 content.find('fieldset').remove();
             }
             // clear & remove IDS
-            content.attr('id', 'ajax-form-loaded');
-            content.find('input').removeAttr('id');
-            content.find('select').removeAttr('id');
+            content.attr({id: 'ajax-form-loaded'});
+            content.find('input').attr({id: null});
+            content.find('select').attr({id: null});
             // Write to HTMl
             targetContainer.append(
                 content
             );
             // Add Class to Form for Animatio
-            setTimeout(function(){
+            setTimeout(function () {
                 targetContainer.addClass('show');
             }, 50);
             // Bind Submit
-            submitBtn.on('click', function(e){
+            submitBtn.on('click', function (e) {
                 e.preventDefault();
                 // Submit form now
                 content.submit();
             });
             // call Success Handling
-            if(settings.onSuccess) {
+            if (settings.onSuccess) {
                 settings.onSuccess(parent, content);
             }
         }
+
         /**
          * On Error Link to Form on Button Click
          */
         function onError() {
-            submitBtn.on('click', function(e){
+            submitBtn.on('click', function (e) {
                 e.preventDefault();
                 // ridirect now
                 window.location = href;
             });
             // call Error Handling
-            if(settings.onError) {
+            if (settings.onError) {
                 settings.onError(parent);
             }
         }
     });
 };
 
-jQuery(function($){
+window.addEventListener('DOMContentLoaded', () => {
     /**
      * Bind Dynamic Searchform Loadind to Element
      */
-    $('[search-loading]').searchLoading({
+    u('[search-loading]').searchLoading({
         type: 9718,
         onError: function (element, href) {
-            $('div[data-bs-target="#collapseSearch"]').on('click', (e) => {
+            u('div[data-bs-target="#collapseSearch"]').on('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
 

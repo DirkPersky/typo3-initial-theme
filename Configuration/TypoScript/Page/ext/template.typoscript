@@ -59,7 +59,7 @@ page.10 {
 
     settings {
       pidRoot = {$plugin.tx_dp_theme.settings.nav.homeUid}
-      logo = {$logo}
+      #logo = {$logo}
     }
 
 	file.cObject = CASE

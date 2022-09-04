@@ -12,9 +12,7 @@
 <f:layout name="Default" />
 <f:section name="Header">
 	<f:if condition="{gallery.position.noWrap} != 1">
-		<f:if condition="{data.layout} != 7">
-			<f:render partial="Header/All" arguments="{_all}" />
-		</f:if>
+		<f:render partial="Header/All" arguments="{_all}" />
 	</f:if>
 </f:section>
 <f:section name="Main">

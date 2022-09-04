@@ -53,7 +53,7 @@ class JavaScriptViewHelper extends AbstractViewHelper
                 $fileName = basename($filePath);
                 $fileName = str_replace('.min.js', '', $fileName);
                 // move jquery to first
-                if ($fileName == 'jquery') {
+                if (in_array($fileName, ['jquery', 'umbrella'])) {
                     $pageRenderer->addJsLibrary($fileName, $filePath);
                     continue;
                 }
@@ -82,7 +82,7 @@ class JavaScriptViewHelper extends AbstractViewHelper
                         $fileName = basename($filePath);
                         $fileName = str_replace('.min.js', '', $fileName);
                         // skip if jquery
-                        if ($fileName != 'jquery') {
+                        if (!in_array($fileName, ['jquery', 'umbrella'])) {
                             // add files
                             $pageRenderer->addJsLibrary($fileName, $filePath);
                         }

@@ -21,8 +21,8 @@ page {
 }
 
 page.includeCSS {
-  template >
-  main = EXT:dp_theme/Resources/Public/assets/main.css
+  #template >
+  #main = EXT:dp_theme/Resources/Public/assets/main.css
 }
 
 

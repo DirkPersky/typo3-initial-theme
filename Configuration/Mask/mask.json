@@ -1,1118 +1,1136 @@
 {
-    "sys_file_reference": {
-        "elements": [],
-        "sql": {
-            "tx_mask_image": {
-                "sys_file_reference": {
-                    "tx_mask_image": "int(11) unsigned DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_img": {
-                "sys_file_reference": {
-                    "tx_mask_img": "int(11) unsigned DEFAULT '0' NOT NULL"
+    "version": "7.2.0",
+    "tables": {
+        "sys_file_reference": {
+            "sql": {
+                "tx_mask_image": {
+                    "sys_file_reference": {
+                        "tx_mask_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_img": {
+                    "sys_file_reference": {
+                        "tx_mask_img": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
                 }
             }
         },
-        "tca": [],
-        "palettes": []
-    },
-    "tt_content": {
-        "elements": {
-            "carousel_slider": {
-                "key": "carousel_slider",
-                "label": "Carousel (Slider)",
-                "description": "",
-                "shortLabel": "",
-                "color": "#000000",
-                "icon": "",
-                "columns": [
-                    "tx_mask_7049007af85b1",
-                    "tx_mask_item"
-                ],
-                "labels": [
-                    "",
-                    "Seiten"
-                ],
-                "descriptions": [
-                    "",
-                    ""
-                ],
-                "sorting": 1
-            },
-            "flyout": {
-                "key": "flyout",
-                "label": "Flyout",
-                "description": "",
-                "shortLabel": "",
-                "color": "#000000",
-                "icon": "",
-                "columns": [
-                    "tx_mask_8a349a58e970b",
-                    "tx_mask_image",
-                    "tx_mask_content"
-                ],
-                "labels": [
-                    "",
-                    "Bild",
-                    "Inhalt"
-                ],
-                "descriptions": [
-                    "",
-                    "",
-                    ""
-                ],
-                "sorting": 0
-            },
-            "google_4_jobs": {
-                "key": "google_4_jobs",
-                "label": "Google 4 Jobs",
-                "description": "",
-                "shortLabel": "",
-                "color": "#000000",
-                "icon": "fa-address-card-o",
-                "columns": [
-                    "tx_mask_07deffe4dae05",
-                    "tx_mask_9cdff6bd61902",
-                    "tx_mask_4bd5eb2820cff"
-                ],
-                "labels": [
-                    "Job Beschreibung",
-                    "Firma",
-                    "Bezahlung"
-                ],
-                "descriptions": [
-                    "",
-                    "",
-                    ""
-                ],
-                "sorting": 0,
-                "hidden": 1
-            },
-            "social_share": {
-                "key": "social_share",
-                "label": "Social Share",
-                "description": "Social Share buttons",
-                "shortLabel": "Social Share",
-                "color": "#f96332",
-                "icon": "fa-share-alt-square",
-                "columns": [
-                    "tx_mask_d46e8ca6ca128"
-                ],
-                "labels": [
-                    ""
-                ],
-                "descriptions": [
-                    ""
-                ],
-                "sorting": 0
-            }
-        },
-        "sql": {
-            "tx_mask_city": {
-                "tt_content": {
-                    "tx_mask_city": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_content": {
-                "tt_content": {
-                    "tx_mask_content": "int(11) unsigned DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_country": {
-                "tt_content": {
-                    "tx_mask_country": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_currency": {
-                "tt_content": {
-                    "tx_mask_currency": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_description": {
-                "tt_content": {
-                    "tx_mask_description": "mediumtext"
-                }
-            },
-            "tx_mask_einheit": {
-                "tt_content": {
-                    "tx_mask_einheit": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_email": {
-                "tt_content": {
-                    "tx_mask_email": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_facebook": {
-                "tt_content": {
-                    "tx_mask_facebook": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_filter": {
-                "tt_content": {
-                    "tx_mask_filter": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_hiring_name": {
-                "tt_content": {
-                    "tx_mask_hiring_name": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_icon": {
-                "tt_content": {
-                    "tx_mask_icon": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_image": {
-                "tt_content": {
-                    "tx_mask_image": "int(11) unsigned DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_interval": {
-                "tt_content": {
-                    "tx_mask_interval": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_item": {
-                "tt_content": {
-                    "tx_mask_item": "int(11) unsigned DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_link": {
-                "tt_content": {
-                    "tx_mask_link": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_linkedin": {
-                "tt_content": {
-                    "tx_mask_linkedin": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_region": {
-                "tt_content": {
-                    "tx_mask_region": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_skills": {
-                "tt_content": {
-                    "tx_mask_skills": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_street": {
-                "tt_content": {
-                    "tx_mask_street": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_title": {
-                "tt_content": {
-                    "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_twitter": {
-                "tt_content": {
-                    "tx_mask_twitter": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_value": {
-                "tt_content": {
-                    "tx_mask_value": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            },
-            "tx_mask_whatsap": {
-                "tt_content": {
-                    "tx_mask_whatsap": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_xing": {
-                "tt_content": {
-                    "tx_mask_xing": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_zip": {
-                "tt_content": {
-                    "tx_mask_zip": "varchar(255) DEFAULT '' NOT NULL"
-                }
-            }
-        },
-        "tca": {
-            "header": {
-                "coreField": 1,
-                "key": "header",
-                "fullKey": "header",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "carousel_slider": "tx_mask_7049007af85b1",
-                    "flyout": "tx_mask_8a349a58e970b"
+        "tt_content": {
+            "elements": {
+                "carousel_slider": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_7049007af85b1",
+                        "tx_mask_item"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "carousel_slider",
+                    "label": "Carousel (Slider)",
+                    "labels": [
+                        "",
+                        "Seiten"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
                 },
-                "label": {
-                    "carousel_slider": "",
-                    "flyout": ""
+                "flyout": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_8a349a58e970b",
+                        "tx_mask_image",
+                        "tx_mask_content"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "flyout",
+                    "label": "Flyout",
+                    "labels": [
+                        "",
+                        "Bild",
+                        "Inhalt"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
                 },
-                "description": {
-                    "carousel_slider": "in der Webseite nicht sichtbar",
-                    "flyout": ""
+                "google_4_jobs": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_07deffe4dae05",
+                        "tx_mask_9cdff6bd61902",
+                        "tx_mask_4bd5eb2820cff"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "hidden": 1,
+                    "icon": "fa-address-card-o",
+                    "iconOverlay": "",
+                    "key": "google_4_jobs",
+                    "label": "Google 4 Jobs",
+                    "labels": [
+                        "Job Beschreibung",
+                        "Firma",
+                        "Bezahlung"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
                 },
-                "order": {
-                    "carousel_slider": 1,
-                    "flyout": 1
+                "social_share": {
+                    "color": "#f96332",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_d46e8ca6ca128"
+                    ],
+                    "description": "Social Share buttons",
+                    "descriptions": [
+                        ""
+                    ],
+                    "icon": "fa-share-alt-square",
+                    "iconOverlay": "",
+                    "key": "social_share",
+                    "label": "Social Share",
+                    "labels": [
+                        ""
+                    ],
+                    "shortLabel": "Social Share",
+                    "sorting": 0
                 }
             },
-            "tx_mask_07deffe4dae05": {
-                "config": {
-                    "type": "palette"
+            "palettes": {
+                "tx_mask_07deffe4dae05": {
+                    "description": "",
+                    "label": "Job Beschreibung",
+                    "showitem": [
+                        "tx_mask_title",
+                        "tx_mask_filter",
+                        "tx_mask_skills",
+                        "tx_mask_a88087ee4ddde",
+                        "tx_mask_description"
+                    ]
                 },
-                "key": "07deffe4dae05",
-                "fullKey": "tx_mask_07deffe4dae05",
-                "type": "palette"
-            },
-            "tx_mask_095b88929a698": {
-                "config": {
-                    "type": "linebreak"
+                "tx_mask_4bd5eb2820cff": {
+                    "description": "",
+                    "label": "Bezahlung",
+                    "showitem": [
+                        "tx_mask_value",
+                        "tx_mask_currency",
+                        "tx_mask_einheit"
+                    ]
                 },
-                "key": "095b88929a698",
-                "fullKey": "tx_mask_095b88929a698",
-                "type": "linebreak",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                "tx_mask_7049007af85b1": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "header",
+                        "tx_mask_interval"
+                    ]
                 },
-                "label": {
-                    "google_4_jobs": ""
+                "tx_mask_8a349a58e970b": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "header",
+                        "tx_mask_link",
+                        "tx_mask_icon"
+                    ]
                 },
-                "order": {
-                    "google_4_jobs": 2
+                "tx_mask_9cdff6bd61902": {
+                    "description": "",
+                    "label": "Firma",
+                    "showitem": [
+                        "tx_mask_hiring_name",
+                        "tx_mask_095b88929a698",
+                        "tx_mask_street",
+                        "tx_mask_zip",
+                        "tx_mask_city",
+                        "tx_mask_9ca99b988b64",
+                        "tx_mask_region",
+                        "tx_mask_country"
+                    ]
+                },
+                "tx_mask_d46e8ca6ca128": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_email",
+                        "tx_mask_facebook",
+                        "tx_mask_xing",
+                        "tx_mask_linkedin",
+                        "tx_mask_twitter",
+                        "tx_mask_whatsap"
+                    ]
                 }
             },
-            "tx_mask_4bd5eb2820cff": {
-                "config": {
-                    "type": "palette"
+            "sql": {
+                "tx_mask_city": {
+                    "tt_content": {
+                        "tx_mask_city": "varchar(255) DEFAULT '' NOT NULL"
+                    }
                 },
-                "key": "4bd5eb2820cff",
-                "fullKey": "tx_mask_4bd5eb2820cff",
-                "type": "palette"
-            },
-            "tx_mask_7049007af85b1": {
-                "config": {
-                    "type": "palette"
+                "tx_mask_content": {
+                    "tt_content": {
+                        "tx_mask_content": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
                 },
-                "key": "7049007af85b1",
-                "fullKey": "tx_mask_7049007af85b1",
-                "type": "palette"
-            },
-            "tx_mask_8a349a58e970b": {
-                "config": {
-                    "type": "palette"
+                "tx_mask_country": {
+                    "tt_content": {
+                        "tx_mask_country": "varchar(255) DEFAULT '' NOT NULL"
+                    }
                 },
-                "key": "8a349a58e970b",
-                "fullKey": "tx_mask_8a349a58e970b",
-                "type": "palette"
-            },
-            "tx_mask_9ca99b988b64": {
-                "config": {
-                    "type": "linebreak"
+                "tx_mask_currency": {
+                    "tt_content": {
+                        "tx_mask_currency": "varchar(255) DEFAULT '' NOT NULL"
+                    }
                 },
-                "key": "9ca99b988b64",
-                "fullKey": "tx_mask_9ca99b988b64",
-                "type": "linebreak",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_9cdff6bd61902"
+                "tx_mask_description": {
+                    "tt_content": {
+                        "tx_mask_description": "mediumtext"
+                    }
                 },
-                "label": {
-                    "google_4_jobs": ""
+                "tx_mask_einheit": {
+                    "tt_content": {
+                        "tx_mask_einheit": "varchar(255) DEFAULT '' NOT NULL"
+                    }
                 },
-                "order": {
-                    "google_4_jobs": 6
+                "tx_mask_email": {
+                    "tt_content": {
+                        "tx_mask_email": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_facebook": {
+                    "tt_content": {
+                        "tx_mask_facebook": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_filter": {
+                    "tt_content": {
+                        "tx_mask_filter": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_hiring_name": {
+                    "tt_content": {
+                        "tx_mask_hiring_name": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_icon": {
+                    "tt_content": {
+                        "tx_mask_icon": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_image": {
+                    "tt_content": {
+                        "tx_mask_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_interval": {
+                    "tt_content": {
+                        "tx_mask_interval": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_item": {
+                    "tt_content": {
+                        "tx_mask_item": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_link": {
+                    "tt_content": {
+                        "tx_mask_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_linkedin": {
+                    "tt_content": {
+                        "tx_mask_linkedin": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_region": {
+                    "tt_content": {
+                        "tx_mask_region": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_skills": {
+                    "tt_content": {
+                        "tx_mask_skills": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_street": {
+                    "tt_content": {
+                        "tx_mask_street": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_title": {
+                    "tt_content": {
+                        "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_twitter": {
+                    "tt_content": {
+                        "tx_mask_twitter": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_value": {
+                    "tt_content": {
+                        "tx_mask_value": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_whatsap": {
+                    "tt_content": {
+                        "tx_mask_whatsap": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_xing": {
+                    "tt_content": {
+                        "tx_mask_xing": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_zip": {
+                    "tt_content": {
+                        "tx_mask_zip": "varchar(255) DEFAULT '' NOT NULL"
+                    }
                 }
             },
-            "tx_mask_9cdff6bd61902": {
-                "config": {
-                    "type": "palette"
-                },
-                "key": "9cdff6bd61902",
-                "fullKey": "tx_mask_9cdff6bd61902",
-                "type": "palette"
-            },
-            "tx_mask_a88087ee4ddde": {
-                "config": {
-                    "type": "linebreak"
-                },
-                "key": "a88087ee4ddde",
-                "fullKey": "tx_mask_a88087ee4ddde",
-                "type": "linebreak",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_07deffe4dae05"
-                },
-                "label": {
-                    "google_4_jobs": ""
-                },
-                "order": {
-                    "google_4_jobs": 4
-                }
-            },
-            "tx_mask_city": {
-                "config": {
-                    "type": "input"
-                },
-                "l10n_mode": "exclude",
-                "key": "city",
-                "fullKey": "tx_mask_city",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_9cdff6bd61902"
-                },
-                "label": {
-                    "google_4_jobs": "Ort"
-                },
-                "description": {
-                    "google_4_jobs": "jobLocation"
-                },
-                "order": {
-                    "google_4_jobs": 5
-                }
-            },
-            "tx_mask_content": {
-                "config": {
-                    "appearance": {
-                        "collapseAll": 1,
-                        "enabledControls": {
-                            "dragdrop": 1
-                        },
-                        "levelLinksPosition": "top",
-                        "showAllLocalizationLink": 1,
-                        "showPossibleLocalizationRecords": 1,
-                        "useSortable": 1
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "description": {
+                        "carousel_slider": "in der Webseite nicht sichtbar",
+                        "flyout": ""
                     },
-                    "foreign_sortby": "sorting",
-                    "foreign_table": "tt_content",
-                    "maxitems": "1",
-                    "overrideChildTca": {
-                        "columns": {
-                            "colPos": {
-                                "config": {
-                                    "default": 999
+                    "fullKey": "header",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "carousel_slider": "tx_mask_7049007af85b1",
+                        "flyout": "tx_mask_8a349a58e970b"
+                    },
+                    "key": "header",
+                    "label": {
+                        "carousel_slider": "",
+                        "flyout": ""
+                    },
+                    "order": {
+                        "carousel_slider": 1,
+                        "flyout": 1
+                    },
+                    "type": "string"
+                },
+                "tx_mask_07deffe4dae05": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_07deffe4dae05",
+                    "key": "07deffe4dae05",
+                    "type": "palette"
+                },
+                "tx_mask_095b88929a698": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "fullKey": "tx_mask_095b88929a698",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_9cdff6bd61902"
+                    },
+                    "key": "095b88929a698",
+                    "label": {
+                        "google_4_jobs": ""
+                    },
+                    "order": {
+                        "google_4_jobs": 2
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_4bd5eb2820cff": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_4bd5eb2820cff",
+                    "key": "4bd5eb2820cff",
+                    "type": "palette"
+                },
+                "tx_mask_7049007af85b1": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_7049007af85b1",
+                    "key": "7049007af85b1",
+                    "type": "palette"
+                },
+                "tx_mask_8a349a58e970b": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_8a349a58e970b",
+                    "key": "8a349a58e970b",
+                    "type": "palette"
+                },
+                "tx_mask_9ca99b988b64": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "fullKey": "tx_mask_9ca99b988b64",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_9cdff6bd61902"
+                    },
+                    "key": "9ca99b988b64",
+                    "label": {
+                        "google_4_jobs": ""
+                    },
+                    "order": {
+                        "google_4_jobs": 6
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_9cdff6bd61902": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_9cdff6bd61902",
+                    "key": "9cdff6bd61902",
+                    "type": "palette"
+                },
+                "tx_mask_a88087ee4ddde": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "fullKey": "tx_mask_a88087ee4ddde",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_07deffe4dae05"
+                    },
+                    "key": "a88087ee4ddde",
+                    "label": {
+                        "google_4_jobs": ""
+                    },
+                    "order": {
+                        "google_4_jobs": 4
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_city": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "google_4_jobs": "jobLocation"
+                    },
+                    "fullKey": "tx_mask_city",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_9cdff6bd61902"
+                    },
+                    "key": "city",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "Ort"
+                    },
+                    "order": {
+                        "google_4_jobs": 5
+                    },
+                    "type": "string"
+                },
+                "tx_mask_content": {
+                    "cTypes": [
+                        "textmedia",
+                        "shortcut",
+                        "list",
+                        "html"
+                    ],
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "tt_content",
+                        "maxitems": "1",
+                        "overrideChildTca": {
+                            "columns": {
+                                "colPos": {
+                                    "config": {
+                                        "default": 999
+                                    }
                                 }
                             }
-                        }
-                    },
-                    "type": "inline"
-                },
-                "key": "content",
-                "fullKey": "tx_mask_content",
-                "type": "content",
-                "cTypes": [
-                    "textmedia",
-                    "shortcut",
-                    "list",
-                    "html"
-                ]
-            },
-            "tx_mask_country": {
-                "config": {
-                    "default": "DE",
-                    "type": "input"
-                },
-                "key": "country",
-                "fullKey": "tx_mask_country",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_9cdff6bd61902"
-                },
-                "label": {
-                    "google_4_jobs": "Land"
-                },
-                "description": {
-                    "google_4_jobs": "addressCountry"
-                },
-                "order": {
-                    "google_4_jobs": 8
-                }
-            },
-            "tx_mask_currency": {
-                "config": {
-                    "items": [
-                        [
-                            "EUR \u20ac",
-                            "EUR"
-                        ],
-                        [
-                            "USD $",
-                            "USD"
-                        ]
-                    ],
-                    "renderType": "selectSingle",
-                    "type": "select"
-                },
-                "l10n_mode": "exclude",
-                "key": "currency",
-                "fullKey": "tx_mask_currency",
-                "type": "select",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_4bd5eb2820cff"
-                },
-                "label": {
-                    "google_4_jobs": "W\u00e4hrung"
-                },
-                "description": {
-                    "google_4_jobs": ""
-                },
-                "order": {
-                    "google_4_jobs": 2
-                }
-            },
-            "tx_mask_d46e8ca6ca128": {
-                "config": {
-                    "type": "palette"
-                },
-                "key": "d46e8ca6ca128",
-                "fullKey": "tx_mask_d46e8ca6ca128",
-                "type": "palette"
-            },
-            "tx_mask_description": {
-                "config": {
-                    "enableRichtext": 1,
-                    "richtextConfiguration": "minimal",
-                    "type": "text"
-                },
-                "key": "description",
-                "fullKey": "tx_mask_description",
-                "type": "richtext",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_07deffe4dae05"
-                },
-                "label": {
-                    "google_4_jobs": "Beschreibung"
-                },
-                "description": {
-                    "google_4_jobs": ""
-                },
-                "order": {
-                    "google_4_jobs": 5
-                }
-            },
-            "tx_mask_einheit": {
-                "config": {
-                    "items": [
-                        [
-                            "pro Monat",
-                            "MONTH"
-                        ],
-                        [
-                            "pro Jahr",
-                            "YEAR"
-                        ]
-                    ],
-                    "renderType": "selectSingle",
-                    "type": "select"
-                },
-                "l10n_mode": "exclude",
-                "key": "einheit",
-                "fullKey": "tx_mask_einheit",
-                "type": "select",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_4bd5eb2820cff"
-                },
-                "label": {
-                    "google_4_jobs": "Referenz"
-                },
-                "description": {
-                    "google_4_jobs": ""
-                },
-                "order": {
-                    "google_4_jobs": 3
-                }
-            },
-            "tx_mask_email": {
-                "config": {
-                    "renderType": "checkboxToggle",
-                    "type": "check"
-                },
-                "l10n_mode": "exclude",
-                "key": "email",
-                "fullKey": "tx_mask_email",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "EMail"
-                },
-                "description": {
-                    "social_share": ""
-                },
-                "order": {
-                    "social_share": 1
-                }
-            },
-            "tx_mask_facebook": {
-                "config": {
-                    "renderType": "checkboxToggle",
-                    "type": "check"
-                },
-                "l10n_mode": "exclude",
-                "key": "facebook",
-                "fullKey": "tx_mask_facebook",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "Facebook"
-                },
-                "description": {
-                    "social_share": ""
-                },
-                "order": {
-                    "social_share": 2
-                }
-            },
-            "tx_mask_filter": {
-                "config": {
-                    "items": [
-                        [
-                            "Vollzeit",
-                            "FULL_TIME"
-                        ],
-                        [
-                            "Teilzeit",
-                            "PART_TIME"
-                        ]
-                    ],
-                    "renderType": "selectSingle",
-                    "type": "select"
-                },
-                "l10n_mode": "exclude",
-                "key": "filter",
-                "fullKey": "tx_mask_filter",
-                "type": "select",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_07deffe4dae05"
-                },
-                "label": {
-                    "google_4_jobs": "Arbeitszeiten"
-                },
-                "description": {
-                    "google_4_jobs": ""
-                },
-                "order": {
-                    "google_4_jobs": 2
-                }
-            },
-            "tx_mask_hiring_name": {
-                "config": {
-                    "eval": "trim",
-                    "type": "input"
-                },
-                "l10n_mode": "exclude",
-                "key": "hiring_name",
-                "fullKey": "tx_mask_hiring_name",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_9cdff6bd61902"
-                },
-                "label": {
-                    "google_4_jobs": "Name"
-                },
-                "description": {
-                    "google_4_jobs": "hiringOrganization"
-                },
-                "order": {
-                    "google_4_jobs": 1
-                }
-            },
-            "tx_mask_icon": {
-                "config": {
-                    "type": "input"
-                },
-                "l10n_mode": "exclude",
-                "key": "icon",
-                "fullKey": "tx_mask_icon",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "flyout": "tx_mask_8a349a58e970b"
-                },
-                "label": {
-                    "flyout": "Font Awesome-Icon"
-                },
-                "description": {
-                    "flyout": ""
-                },
-                "order": {
-                    "flyout": 3
-                }
-            },
-            "tx_mask_image": {
-                "config": {
-                    "appearance": {
-                        "expandSingle": 1,
-                        "fileUploadAllowed": 1
-                    },
-                    "foreign_table": "sys_file_reference",
-                    "maxitems": "1",
-                    "type": "inline"
-                },
-                "l10n_mode": "exclude",
-                "key": "image",
-                "fullKey": "tx_mask_image",
-                "type": "file",
-                "allowedFileExtensions": "jpg,png,svg,jpeg,gif,webp",
-                "imageoverlayPalette": 0
-            },
-            "tx_mask_interval": {
-                "config": {
-                    "default": "3000",
-                    "eval": "required,int",
-                    "range": {
-                        "lower": "2000",
-                        "upper": "10000"
-                    },
-                    "size": "5",
-                    "slider": {
-                        "step": "500",
-                        "width": "400"
-                    },
-                    "type": "input"
-                },
-                "key": "interval",
-                "fullKey": "tx_mask_interval",
-                "type": "integer",
-                "inPalette": 1,
-                "inlineParent": {
-                    "carousel_slider": "tx_mask_7049007af85b1"
-                },
-                "label": {
-                    "carousel_slider": "Interval"
-                },
-                "description": {
-                    "carousel_slider": "in ms"
-                },
-                "order": {
-                    "carousel_slider": 2
-                }
-            },
-            "tx_mask_item": {
-                "config": {
-                    "appearance": {
-                        "collapseAll": 1,
-                        "enabledControls": {
-                            "dragdrop": 1
                         },
-                        "levelLinksPosition": "top",
-                        "showAllLocalizationLink": 1,
-                        "showPossibleLocalizationRecords": 1
+                        "type": "inline"
                     },
-                    "foreign_field": "parentid",
-                    "foreign_sortby": "sorting",
-                    "foreign_table": "--inlinetable--",
-                    "foreign_table_field": "parenttable",
-                    "type": "inline"
+                    "fullKey": "tx_mask_content",
+                    "key": "content",
+                    "type": "content"
                 },
-                "key": "item",
-                "fullKey": "tx_mask_item",
-                "type": "inline",
-                "ctrl": {
-                    "label": "tx_mask_text"
-                }
-            },
-            "tx_mask_link": {
-                "config": {
-                    "renderType": "inputLink",
-                    "softref": "typolink",
-                    "type": "input"
+                "tx_mask_country": {
+                    "config": {
+                        "default": "DE",
+                        "type": "input"
+                    },
+                    "description": {
+                        "google_4_jobs": "addressCountry"
+                    },
+                    "fullKey": "tx_mask_country",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_9cdff6bd61902"
+                    },
+                    "key": "country",
+                    "label": {
+                        "google_4_jobs": "Land"
+                    },
+                    "order": {
+                        "google_4_jobs": 8
+                    },
+                    "type": "string"
                 },
-                "l10n_mode": "exclude",
-                "key": "link",
-                "fullKey": "tx_mask_link",
-                "type": "link",
-                "inPalette": 1,
-                "inlineParent": {
-                    "flyout": "tx_mask_8a349a58e970b"
+                "tx_mask_currency": {
+                    "config": {
+                        "items": [
+                            [
+                                "EUR \u20ac",
+                                "EUR",
+                                "",
+                                ""
+                            ],
+                            [
+                                "USD $",
+                                "USD",
+                                "",
+                                ""
+                            ]
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "google_4_jobs": ""
+                    },
+                    "fullKey": "tx_mask_currency",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_4bd5eb2820cff"
+                    },
+                    "key": "currency",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "W\u00e4hrung"
+                    },
+                    "order": {
+                        "google_4_jobs": 2
+                    },
+                    "type": "select"
                 },
-                "label": {
-                    "flyout": "Link"
-                },
-                "description": {
-                    "flyout": ""
-                },
-                "order": {
-                    "flyout": 2
-                }
-            },
-            "tx_mask_linkedin": {
-                "config": {
-                    "renderType": "checkboxToggle",
-                    "type": "check"
-                },
-                "l10n_mode": "exclude",
-                "key": "linkedin",
-                "fullKey": "tx_mask_linkedin",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "LinkedIn"
-                },
-                "description": {
-                    "social_share": ""
-                },
-                "order": {
-                    "social_share": 4
-                }
-            },
-            "tx_mask_region": {
-                "config": {
-                    "default": "NRW",
-                    "type": "input"
-                },
-                "l10n_mode": "exclude",
-                "key": "region",
-                "fullKey": "tx_mask_region",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_9cdff6bd61902"
-                },
-                "label": {
-                    "google_4_jobs": "Bundesland"
-                },
-                "description": {
-                    "google_4_jobs": "addressRegion"
-                },
-                "order": {
-                    "google_4_jobs": 7
-                }
-            },
-            "tx_mask_skills": {
-                "config": {
-                    "eval": "trim",
-                    "placeholder": "skill1,skill2,skill3",
-                    "type": "input"
-                },
-                "key": "skills",
-                "fullKey": "tx_mask_skills",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_07deffe4dae05"
-                },
-                "label": {
-                    "google_4_jobs": "Skills"
-                },
-                "description": {
-                    "google_4_jobs": ""
-                },
-                "order": {
-                    "google_4_jobs": 3
-                }
-            },
-            "tx_mask_street": {
-                "config": {
-                    "type": "input"
-                },
-                "l10n_mode": "exclude",
-                "key": "street",
-                "fullKey": "tx_mask_street",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_9cdff6bd61902"
-                },
-                "label": {
-                    "google_4_jobs": "Stra\u00dfe"
-                },
-                "description": {
-                    "google_4_jobs": "jobLocation"
-                },
-                "order": {
-                    "google_4_jobs": 3
-                }
-            },
-            "tx_mask_title": {
-                "config": {
-                    "type": "input"
-                },
-                "key": "title",
-                "fullKey": "tx_mask_title",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_07deffe4dae05"
-                },
-                "label": {
-                    "google_4_jobs": "Job Title"
-                },
-                "description": {
-                    "flyout": "",
-                    "google_4_jobs": ""
-                },
-                "order": {
-                    "google_4_jobs": 1
-                }
-            },
-            "tx_mask_twitter": {
-                "config": {
-                    "renderType": "checkboxToggle",
-                    "type": "check"
-                },
-                "l10n_mode": "exclude",
-                "key": "twitter",
-                "fullKey": "tx_mask_twitter",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "Twitter"
-                },
-                "description": {
-                    "social_share": ""
-                },
-                "order": {
-                    "social_share": 5
-                }
-            },
-            "tx_mask_value": {
-                "config": {
-                    "mode": 0,
-                    "type": "input"
-                },
-                "l10n_mode": "exclude",
-                "key": "value",
-                "fullKey": "tx_mask_value",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_4bd5eb2820cff"
-                },
-                "label": {
-                    "google_4_jobs": "Gehalt"
-                },
-                "description": {
-                    "google_4_jobs": ""
-                },
-                "order": {
-                    "google_4_jobs": 1
-                }
-            },
-            "tx_mask_whatsap": {
-                "config": {
-                    "renderType": "checkboxToggle",
-                    "type": "check"
-                },
-                "l10n_mode": "exclude",
-                "key": "whatsap",
-                "fullKey": "tx_mask_whatsap",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "Whatsapp"
-                },
-                "description": {
-                    "social_share": ""
-                },
-                "order": {
-                    "social_share": 6
-                }
-            },
-            "tx_mask_xing": {
-                "config": {
-                    "renderType": "checkboxToggle",
-                    "type": "check"
-                },
-                "l10n_mode": "exclude",
-                "key": "xing",
-                "fullKey": "tx_mask_xing",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "Xing"
-                },
-                "description": {
-                    "social_share": ""
-                },
-                "order": {
-                    "social_share": 3
-                }
-            },
-            "tx_mask_zip": {
-                "config": {
-                    "type": "input"
-                },
-                "l10n_mode": "exclude",
-                "key": "zip",
-                "fullKey": "tx_mask_zip",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "google_4_jobs": "tx_mask_9cdff6bd61902"
-                },
-                "label": {
-                    "google_4_jobs": "PLZ"
-                },
-                "description": {
-                    "google_4_jobs": "jobLocation"
-                },
-                "order": {
-                    "google_4_jobs": 4
-                }
-            }
-        },
-        "palettes": {
-            "tx_mask_07deffe4dae05": {
-                "label": "Job Beschreibung",
-                "description": "",
-                "showitem": [
-                    "tx_mask_title",
-                    "tx_mask_filter",
-                    "tx_mask_skills",
-                    "tx_mask_a88087ee4ddde",
-                    "tx_mask_description"
-                ]
-            },
-            "tx_mask_4bd5eb2820cff": {
-                "label": "Bezahlung",
-                "description": "",
-                "showitem": [
-                    "tx_mask_value",
-                    "tx_mask_currency",
-                    "tx_mask_einheit"
-                ]
-            },
-            "tx_mask_7049007af85b1": {
-                "label": "",
-                "description": "",
-                "showitem": [
-                    "header",
-                    "tx_mask_interval"
-                ]
-            },
-            "tx_mask_8a349a58e970b": {
-                "label": "",
-                "description": "",
-                "showitem": [
-                    "header",
-                    "tx_mask_link",
-                    "tx_mask_icon"
-                ]
-            },
-            "tx_mask_9cdff6bd61902": {
-                "label": "Firma",
-                "description": "",
-                "showitem": [
-                    "tx_mask_hiring_name",
-                    "tx_mask_095b88929a698",
-                    "tx_mask_street",
-                    "tx_mask_zip",
-                    "tx_mask_city",
-                    "tx_mask_9ca99b988b64",
-                    "tx_mask_region",
-                    "tx_mask_country"
-                ]
-            },
-            "tx_mask_d46e8ca6ca128": {
-                "label": "",
-                "description": "",
-                "showitem": [
-                    "tx_mask_email",
-                    "tx_mask_facebook",
-                    "tx_mask_xing",
-                    "tx_mask_linkedin",
-                    "tx_mask_twitter",
-                    "tx_mask_whatsap"
-                ]
-            }
-        }
-    },
-    "tx_mask_item": {
-        "elements": [],
-        "sql": {
-            "tx_mask_img": {
-                "tx_mask_item": {
-                    "tx_mask_img": "int(11) unsigned DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_text": {
-                "tx_mask_item": {
-                    "tx_mask_text": "mediumtext"
-                }
-            }
-        },
-        "tca": {
-            "tx_mask_64023d64be141": {
-                "config": {
+                "tx_mask_d46e8ca6ca128": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_d46e8ca6ca128",
+                    "key": "d46e8ca6ca128",
                     "type": "palette"
                 },
-                "label": "Seite",
-                "key": "64023d64be141",
-                "fullKey": "tx_mask_64023d64be141",
-                "type": "palette",
-                "inlineParent": "tx_mask_item",
-                "order": 1
-            },
-            "tx_mask_img": {
-                "config": {
-                    "appearance": {
-                        "expandSingle": 1,
-                        "fileUploadAllowed": 1
+                "tx_mask_description": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "richtextConfiguration": "minimal",
+                        "type": "text"
                     },
-                    "foreign_table": "sys_file_reference",
-                    "maxitems": "1",
-                    "minitems": "1",
+                    "description": {
+                        "google_4_jobs": ""
+                    },
+                    "fullKey": "tx_mask_description",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_07deffe4dae05"
+                    },
+                    "key": "description",
+                    "label": {
+                        "google_4_jobs": "Beschreibung"
+                    },
+                    "order": {
+                        "google_4_jobs": 5
+                    },
+                    "type": "richtext"
+                },
+                "tx_mask_einheit": {
+                    "config": {
+                        "items": [
+                            [
+                                "pro Monat",
+                                "MONTH",
+                                "",
+                                ""
+                            ],
+                            [
+                                "pro Jahr",
+                                "YEAR",
+                                "",
+                                ""
+                            ]
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "google_4_jobs": ""
+                    },
+                    "fullKey": "tx_mask_einheit",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_4bd5eb2820cff"
+                    },
+                    "key": "einheit",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "Referenz"
+                    },
+                    "order": {
+                        "google_4_jobs": 3
+                    },
+                    "type": "select"
+                },
+                "tx_mask_email": {
+                    "config": {
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_email",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_d46e8ca6ca128"
+                    },
+                    "key": "email",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "EMail"
+                    },
+                    "order": {
+                        "social_share": 1
+                    },
+                    "type": "check"
+                },
+                "tx_mask_facebook": {
+                    "config": {
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_facebook",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_d46e8ca6ca128"
+                    },
+                    "key": "facebook",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "Facebook"
+                    },
+                    "order": {
+                        "social_share": 2
+                    },
+                    "type": "check"
+                },
+                "tx_mask_filter": {
+                    "config": {
+                        "items": [
+                            [
+                                "Vollzeit",
+                                "FULL_TIME",
+                                "",
+                                ""
+                            ],
+                            [
+                                "Teilzeit",
+                                "PART_TIME",
+                                "",
+                                ""
+                            ]
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "google_4_jobs": ""
+                    },
+                    "fullKey": "tx_mask_filter",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_07deffe4dae05"
+                    },
+                    "key": "filter",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "Arbeitszeiten"
+                    },
+                    "order": {
+                        "google_4_jobs": 2
+                    },
+                    "type": "select"
+                },
+                "tx_mask_hiring_name": {
+                    "config": {
+                        "eval": "trim",
+                        "type": "input"
+                    },
+                    "description": {
+                        "google_4_jobs": "hiringOrganization"
+                    },
+                    "fullKey": "tx_mask_hiring_name",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_9cdff6bd61902"
+                    },
+                    "key": "hiring_name",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "Name"
+                    },
+                    "order": {
+                        "google_4_jobs": 1
+                    },
+                    "type": "string"
+                },
+                "tx_mask_icon": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "flyout": ""
+                    },
+                    "fullKey": "tx_mask_icon",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flyout": "tx_mask_8a349a58e970b"
+                    },
+                    "key": "icon",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "flyout": "Font Awesome-Icon"
+                    },
+                    "order": {
+                        "flyout": 3
+                    },
+                    "type": "string"
+                },
+                "tx_mask_image": {
+                    "allowedFileExtensions": "jpg,png,svg,jpeg,gif,webp",
+                    "config": {
+                        "appearance": {
+                            "expandSingle": 1,
+                            "fileUploadAllowed": 1
+                        },
+                        "foreign_table": "sys_file_reference",
+                        "maxitems": "1",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_image",
+                    "imageoverlayPalette": 0,
+                    "key": "image",
+                    "l10n_mode": "exclude",
+                    "type": "file"
+                },
+                "tx_mask_interval": {
+                    "config": {
+                        "default": "3000",
+                        "eval": "required,int",
+                        "range": {
+                            "lower": "2000",
+                            "upper": "10000"
+                        },
+                        "size": "5",
+                        "slider": {
+                            "step": "500",
+                            "width": "400"
+                        },
+                        "type": "input"
+                    },
+                    "description": {
+                        "carousel_slider": "in ms"
+                    },
+                    "fullKey": "tx_mask_interval",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "carousel_slider": "tx_mask_7049007af85b1"
+                    },
+                    "key": "interval",
+                    "label": {
+                        "carousel_slider": "Interval"
+                    },
+                    "order": {
+                        "carousel_slider": 2
+                    },
+                    "type": "integer"
+                },
+                "tx_mask_item": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "dragdrop": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showPossibleLocalizationRecords": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "ctrl": {
+                        "label": "tx_mask_text"
+                    },
+                    "fullKey": "tx_mask_item",
+                    "key": "item",
                     "type": "inline"
                 },
-                "label": "Bild",
-                "key": "img",
-                "fullKey": "tx_mask_img",
-                "type": "file",
-                "inPalette": 1,
-                "allowedFileExtensions": "gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp",
-                "imageoverlayPalette": 1,
-                "inlineParent": "tx_mask_64023d64be141",
-                "order": 1
-            },
-            "tx_mask_text": {
-                "config": {
-                    "enableRichtext": 1,
-                    "type": "text"
+                "tx_mask_link": {
+                    "config": {
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "description": {
+                        "flyout": ""
+                    },
+                    "fullKey": "tx_mask_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flyout": "tx_mask_8a349a58e970b"
+                    },
+                    "key": "link",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "flyout": "Link"
+                    },
+                    "order": {
+                        "flyout": 2
+                    },
+                    "type": "link"
                 },
-                "label": "Beschreibung",
-                "key": "text",
-                "fullKey": "tx_mask_text",
-                "type": "richtext",
-                "inPalette": 1,
-                "inlineParent": "tx_mask_64023d64be141",
-                "order": 2
+                "tx_mask_linkedin": {
+                    "config": {
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_linkedin",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_d46e8ca6ca128"
+                    },
+                    "key": "linkedin",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "LinkedIn"
+                    },
+                    "order": {
+                        "social_share": 4
+                    },
+                    "type": "check"
+                },
+                "tx_mask_region": {
+                    "config": {
+                        "default": "NRW",
+                        "type": "input"
+                    },
+                    "description": {
+                        "google_4_jobs": "addressRegion"
+                    },
+                    "fullKey": "tx_mask_region",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_9cdff6bd61902"
+                    },
+                    "key": "region",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "Bundesland"
+                    },
+                    "order": {
+                        "google_4_jobs": 7
+                    },
+                    "type": "string"
+                },
+                "tx_mask_skills": {
+                    "config": {
+                        "eval": "trim",
+                        "placeholder": "skill1,skill2,skill3",
+                        "type": "input"
+                    },
+                    "description": {
+                        "google_4_jobs": ""
+                    },
+                    "fullKey": "tx_mask_skills",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_07deffe4dae05"
+                    },
+                    "key": "skills",
+                    "label": {
+                        "google_4_jobs": "Skills"
+                    },
+                    "order": {
+                        "google_4_jobs": 3
+                    },
+                    "type": "string"
+                },
+                "tx_mask_street": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "google_4_jobs": "jobLocation"
+                    },
+                    "fullKey": "tx_mask_street",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_9cdff6bd61902"
+                    },
+                    "key": "street",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "Stra\u00dfe"
+                    },
+                    "order": {
+                        "google_4_jobs": 3
+                    },
+                    "type": "string"
+                },
+                "tx_mask_title": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "flyout": "",
+                        "google_4_jobs": ""
+                    },
+                    "fullKey": "tx_mask_title",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_07deffe4dae05"
+                    },
+                    "key": "title",
+                    "label": {
+                        "google_4_jobs": "Job Title"
+                    },
+                    "order": {
+                        "google_4_jobs": 1
+                    },
+                    "type": "string"
+                },
+                "tx_mask_twitter": {
+                    "config": {
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_twitter",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_d46e8ca6ca128"
+                    },
+                    "key": "twitter",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "Twitter"
+                    },
+                    "order": {
+                        "social_share": 5
+                    },
+                    "type": "check"
+                },
+                "tx_mask_value": {
+                    "config": {
+                        "mode": 0,
+                        "type": "input"
+                    },
+                    "description": {
+                        "google_4_jobs": ""
+                    },
+                    "fullKey": "tx_mask_value",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_4bd5eb2820cff"
+                    },
+                    "key": "value",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "Gehalt"
+                    },
+                    "order": {
+                        "google_4_jobs": 1
+                    },
+                    "type": "string"
+                },
+                "tx_mask_whatsap": {
+                    "config": {
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_whatsap",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_d46e8ca6ca128"
+                    },
+                    "key": "whatsap",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "Whatsapp"
+                    },
+                    "order": {
+                        "social_share": 6
+                    },
+                    "type": "check"
+                },
+                "tx_mask_xing": {
+                    "config": {
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_xing",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_d46e8ca6ca128"
+                    },
+                    "key": "xing",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "Xing"
+                    },
+                    "order": {
+                        "social_share": 3
+                    },
+                    "type": "check"
+                },
+                "tx_mask_zip": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "google_4_jobs": "jobLocation"
+                    },
+                    "fullKey": "tx_mask_zip",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "google_4_jobs": "tx_mask_9cdff6bd61902"
+                    },
+                    "key": "zip",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "google_4_jobs": "PLZ"
+                    },
+                    "order": {
+                        "google_4_jobs": 4
+                    },
+                    "type": "string"
+                }
             }
         },
-        "palettes": {
-            "tx_mask_64023d64be141": {
-                "label": "Seite",
-                "description": "",
-                "showitem": [
-                    "tx_mask_img",
-                    "tx_mask_text"
-                ]
+        "tx_mask_item": {
+            "palettes": {
+                "tx_mask_64023d64be141": {
+                    "description": "",
+                    "label": "Seite",
+                    "showitem": [
+                        "tx_mask_img",
+                        "tx_mask_text"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_img": {
+                    "tx_mask_item": {
+                        "tx_mask_img": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_text": {
+                    "tx_mask_item": {
+                        "tx_mask_text": "mediumtext"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_64023d64be141": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_64023d64be141",
+                    "inlineParent": "tx_mask_item",
+                    "key": "64023d64be141",
+                    "label": "Seite",
+                    "order": 1,
+                    "type": "palette"
+                },
+                "tx_mask_img": {
+                    "allowedFileExtensions": "gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp",
+                    "config": {
+                        "appearance": {
+                            "expandSingle": 1,
+                            "fileUploadAllowed": 1
+                        },
+                        "foreign_table": "sys_file_reference",
+                        "maxitems": "1",
+                        "minitems": "1",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_img",
+                    "imageoverlayPalette": 1,
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_64023d64be141",
+                    "key": "img",
+                    "label": "Bild",
+                    "order": 1,
+                    "type": "file"
+                },
+                "tx_mask_text": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_text",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_64023d64be141",
+                    "key": "text",
+                    "label": "Beschreibung",
+                    "order": 2,
+                    "type": "richtext"
+                }
             }
         }
     }

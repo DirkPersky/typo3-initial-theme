@@ -28,6 +28,25 @@
   animation-name: bounceInRight;
 }
 
+@keyframes bounceInLeft {
+  from {
+	opacity: 0;
+	transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+
+  80% {
+	opacity: 1;
+	transform: translate3d(10px, 0, 0) scaleX(1);
+  }
+
+  to {
+	transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInLeft {
+  animation-name: bounceInLeft;
+}
 
 @keyframes bounceIn {
   from {
@@ -71,4 +90,21 @@
 
 .bounceInTop {
   animation-name: bounceInTop;
+}
+
+
+@keyframes bounce {
+  from {
+	transform: translate3d(0, -10px, 0);
+  }
+  50% {
+	transform: translate3d(0, 0, 0);
+  }
+  to {
+	transform: translate3d(0, -10px, 0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
 }

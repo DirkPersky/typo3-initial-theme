@@ -99,14 +99,13 @@ plugin.tx_csseo {
     # hreflang config now from core
     hreflang.enable = 0
     # Default Social Image
-    social.defaultImage = EXT:dp_theme/Resources/Public/img/logo.png
+    social.defaultImage = EXT:dp_theme/Resources/Public/assets/logo.svg
 }
 
 ###############
 ### Favicon ###
 ###############
 favicon = favicon.png
-logo = EXT:dp_theme/Resources/Public/assets/logo.png
 
 ########################
 ### IndexSearch Page ###

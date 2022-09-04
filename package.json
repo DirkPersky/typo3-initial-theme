@@ -16,12 +16,14 @@
     "@swup/overlay-theme": "latest",
     "@swup/scroll-plugin": "latest",
     "bootstrap": "latest",
+    "bs5-lightbox": "latest",
     "hamburgers": "latest",
     "jquery": "latest",
     "recursive-copy": "latest",
     "rrssb": "latest",
     "split-type": "latest",
-    "swup": "latest"
+    "swup": "latest",
+    "umbrellajs": "latest"
   },
   "devDependencies": {
     "crittr": "latest"

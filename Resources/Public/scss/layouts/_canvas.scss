@@ -303,9 +303,9 @@ html.nav--open {
 	@include media-breakpoint-up(sm) {
 	  transform: translate3d(-440px, 0, 0);
 	}
-	//
-	//@include media-breakpoint-up(lg) {
-	//  transform: none;
-	//}
+
+	@include media-breakpoint-up(lg) {
+	  transform: none;
+	}
   }
 }

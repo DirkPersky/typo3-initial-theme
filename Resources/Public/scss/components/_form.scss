@@ -1,99 +1,74 @@
 /*!
- * Copyright (c) 2021.
+ * Copyright (c) 2022.
  *
  * @category TYPO3
  *
- * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @copyright  2022 Dirk Persky (https://github.com/DirkPersky)
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
-
 .frame-type-form_formframework {
-  .form-group {
-    padding-bottom: .75rem;
+
+  .form-floating {
+
+
+    input, select, textarea {
+      background-color: transparent;
+      border-right: 0;
+      border-left: 0;
+      border-top: 0;
+      border-radius: 0;
+
+      border-bottom: 1px solid $body-color;
+
+      margin-bottom: 2rem;
+      padding-bottom: 0.3125rem !important;
+      padding-top: 1.625rem !important;
+    }
   }
 
   .form-check {
     padding-left: 0;
-  }
 
-  > div,
-  form {
-    background-color: $light;
-    padding:  1rem 1.5rem 1.5rem;
-    position: relative;
-    box-shadow: 1px 1px 3px #999;
 
-    h2,legend {
-      padding-left: 1.5rem;
-      font-weight: 300;
-    }
+    label {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      line-height: 1;
+      margin-bottom: 1rem;
 
-    .error.help-block {
-      @extend .alert;
-      @extend .alert-danger;
+      input {
+        margin-bottom: 0 !important;
+      }
 
-      display: inline-block;
-      margin-top: .25rem;
-    }
+      > span {
+        position: relative;
+        top: -3px;
 
-    &:before {
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      top: 0;
-
-      padding: .75rem 0 0 .75rem;
-      text-align: center;
-
-      color: #fff;
-
-      @extend .far;
-      @extend .fa-envelope;
-    }
-
-    &:after {
-      position: absolute;
-      left: 0;
-      top: 0;
-
-      content: '';
-
-      display: block;
-      z-index: 1;
-
-      border: 2rem solid $primary;
-      border-right-color: transparent;
-      border-bottom-color: transparent;
-    }
-
-  }
-
-  .form-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .toolbar--steps {
-      font-size: .9rem;
-      opacity: .7;
-
-      span {
-        display: inline-block;
-
-        + span {
-          &:before {
-            content: '/';
-            display: inline-block;
-
-            padding: 0 .25rem;
-          }
-        }
+        padding-left: .5rem;
+        font-size: .9em;
+        line-height: 1.4em;
       }
     }
   }
-}
 
-.btn-cancel {
-  @include button-variant(darken($light, 10%), darken($light, 10%));
+  .checkbox + .clearfix {
+    .frame {
+      padding-left: 1.2rem;
+      font-size: .9em;
+      line-height: 1.4em;
+    }
+  }
+
+  .actions {
+    padding-top: 2.5rem;
+  }
+  .btn {
+    @extend .btn-dark;
+    @extend .btn-lg;
+
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
 }

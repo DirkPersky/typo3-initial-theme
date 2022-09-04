@@ -4,7 +4,7 @@
 
 <div
     id="dp-css-element{data.uid}"
-    class="css--element {f:if(condition:'{flexform.image}',then:'lazyload ')}{f:if(condition:'{flexform.css}',then:"{flexform.css -> v:format.replace(substring:',', replacement:' ')}")}{f:if(condition:'{data.space_before_class}',then:' css-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' css-space-after-{data.space_after_class}')}"
+    class="css--element {f:if(condition:'{flexform.image}',then:'lazyload ')}{f:if(condition:'{flexform.customclass}',then:'{flexform.customclass} ')}{f:if(condition:'{flexform.css}',then:"{flexform.css -> v:format.replace(substring:',', replacement:' ')}")}"
     {f:if(condition:'{flexform.inlinecss}',then:'style="{flexform.inlinecss}"')}
 >
     <f:if condition="{flexform.image}">
@@ -26,7 +26,7 @@
     </f:if>
 
 
-    <div class="fluid-container">
+    <div class="fluid-container {f:if(condition:'{data.space_before_class}',then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' frame-space-after-{data.space_after_class}')}">
         <f:render partial="Content" arguments="{contents: children_201 }" />
     </div>
 </div>
