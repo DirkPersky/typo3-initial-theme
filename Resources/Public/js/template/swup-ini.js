@@ -18,7 +18,11 @@ window.addEventListener('DOMContentLoaded', () => {
             new SwupFormsPlugin({formSelector: 'form:not([data-ajax-form])'}),
             new SwupScrollPlugin({
                 doScrollingRightAway: false,
-                animateScroll: true,
+                animateScroll: {
+                    betweenPages: true,
+                    samePageWithHash: false,
+                    samePage: true
+                },
                 scrollFriction: 0.3,
                 scrollAcceleration: 0.04,
                 offset: $offset // offset when anchor scroll
