@@ -30,6 +30,7 @@ TCEFORM.tt_content.layout {
         6 = Layout 4
         7 = Layout 5
         9 = ToP Header
+        10 = Underline
     }
 
 	types {
@@ -40,6 +41,7 @@ TCEFORM.tt_content.layout {
 
         header {
             addItems.9 = 9
+            addItems.10 = 10
         }
 
         menu_pages {

@@ -16,12 +16,15 @@ const _PACKGES_ = [
     {
         'vendor': 'js/vendor/',
         'src': [
-            {src: '@fancyapps/fancybox/dist/jquery.fancybox.min.js'},
+            // {src: '@fancyapps/fancybox/dist/jquery.fancybox.min.js'},
             {src: 'bootstrap/dist/js/bootstrap.min.js'},
             {src: 'bootstrap/dist/js/bootstrap.min.js.map'},
-            {src: 'jquery/dist/jquery.min.js'},
-            {src: 'jquery/dist/jquery.min.map'},
-            {src: 'rrssb/js/rrssb.min.js'},
+            // {src: 'jquery/dist/jquery.min.js'},
+            // {src: 'jquery/dist/jquery.min.map'},
+            {src: 'bs5-lightbox/dist/index.bundle.min.js'},
+            {src: 'bs5-lightbox/dist/index.bundle.min.js.map'},
+            {src: 'umbrellajs/umbrella.min.js'},
+            // {src: 'rrssb/js/rrssb.min.js'},
 
             /**
              * Swup
@@ -40,7 +43,7 @@ const _PACKGES_ = [
     {
         'vendor': 'scss/vendor/',
         'src': [
-            '@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+            // '@fancyapps/fancybox/dist/jquery.fancybox.min.css',
             '@fortawesome/fontawesome-free/scss',
             'bootstrap/scss',
             'hamburgers/_sass',

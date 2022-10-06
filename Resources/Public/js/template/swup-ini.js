@@ -7,12 +7,12 @@
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
-jQuery(function ($) {
+window.addEventListener('DOMContentLoaded', () => {
     var $offset = 150;
     // init swup
     window.swupLoad = new Swup({
         cache: false,
-        debugMode: true,
+        debugMode: false,
         plugins: [
             new SwupOverlayTheme(),
             new SwupFormsPlugin({formSelector: 'form:not([data-ajax-form])'}),
@@ -24,6 +24,7 @@ jQuery(function ($) {
                 offset: $offset // offset when anchor scroll
             })
         ],
+        containers: ["#swup"],
         skipPopStateHandling: function (event) {
             // abort if fancy is open
             if(typeof window.fancyStartClose != 'undefined' && window.fancyStartClose) return true;
@@ -50,14 +51,14 @@ jQuery(function ($) {
         // Swup Scolling
         if (typeof window.formScroll != "undefined") {
             window.formScroll($offset);
-        } else if (window.location.href.indexOf('#') == -1 && jQuery('div[data-swup-scroll]').length > 0) {
+        } else if (window.location.href.indexOf('#') == -1 && u('div[data-swup-scroll]').length > 0) {
             // only do if no anker is defined
-            window.swupLoad.scrollTo(jQuery('div[data-swup-scroll]').offset().top - $offset);
+            window.swupLoad.scrollTo(u('div[data-swup-scroll]').first().offsetTop - $offset);
         } else {
             window.swupLoad.triggerEvent('scrollDone');
         }
     });
-});
+}, false);
 
 
 

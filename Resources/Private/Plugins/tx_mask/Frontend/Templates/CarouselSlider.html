@@ -11,7 +11,6 @@
         <f:if condition="{data.tx_mask_item -> f:count()} > 1">
             <!--- Indicators -->
             <div class="carousel-indicators">
-                <div class="scroll-down"><i class="fa-solid fa-angles-down"></i> Scroll down</div>
                 <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
                     <button aria-current="true"
                             aria-label="Slide {f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} + 1')}"
@@ -40,9 +39,34 @@
                     <!-- Carousel caption -->
                     <f:if condition="{row.tx_mask_text}">
                         <div class="carousel-inner-wrap">
-                            <div class="container">
+                            <div class="container-lg">
                                 <div class="carousel-caption">
-                                    <f:format.html>{row.tx_mask_text}</f:format.html>
+                                    <f:if condition="{row.tx_mask_title}">
+                                        <header>
+                                            <f:if condition="{row.tx_mask_pref}">
+                                                <div class="subline">
+                                                    {row.tx_mask_pref->f:format.raw()}
+                                                </div>
+                                            </f:if>
+                                            <f:switch expression="{row.tx_mask_typ}">
+                                                <f:case value="h1">
+                                                    <h1>
+                                                        {row.tx_mask_title -> f:format.raw()}
+                                                    </h1>
+                                                </f:case>
+                                                <f:defaultCase>
+                                                    <h2>
+                                                        {row.tx_mask_title -> f:format.raw()}
+                                                    </h2>
+                                                </f:defaultCase>
+                                            </f:switch>
+                                        </header>
+                                    </f:if>
+                                    <f:if condition="{row.tx_mask_text}">
+                                        <div class="bodytext">
+                                            {row.tx_mask_text -> f:format.html()}
+                                        </div>
+                                    </f:if>
                                 </div>
                             </div>
                         </div>
@@ -63,6 +87,14 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </f:if>
+
+        <div class="scroll-down">
+            <i class="fa-solid fa-angles-down"></i>
+
+            <span class="d-none d-lg-block">
+                Scroll down
+            </span>
+        </div>
     </div>
 </f:if>
 </html>

@@ -82,9 +82,9 @@ _StateManager.prototype.callByName = function (name) {
 
 window.StateManager = new _StateManager();
 
-jQuery(function ($) {
+window.addEventListener('DOMContentLoaded', () => {
     window.StateManager.call();
-});
+}, false);
 
 // new Statemanager for GASP
 window.AnimateManager = new _StateManager();

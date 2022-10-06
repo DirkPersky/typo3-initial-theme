@@ -8,11 +8,11 @@
  * @license    AGPL v3
  */
 
-jQuery.fn.NewsAjaxScrollPaging = function (options) {
+u.prototype.NewsAjaxScrollPaging = function (options) {
     /**
      * Set Configuration Array
      */
-    var settings = $.extend({
+    var settings = Object.assign({
         next: {
             class_current: 'current left',
             class_new: 'next',
@@ -31,13 +31,13 @@ jQuery.fn.NewsAjaxScrollPaging = function (options) {
     /**
      * Loop data
      */
-    this.map(function (index, element) {
-        var $el = jQuery(element),
+    this.map(element => {
+        var $el = u(element),
             $url = $el.data('news-next');
         // remove Content
         $el.html('');
         // mark as loaded
-        $el.removeAttr('data-news-next');
+        $el.attr({'data-news-next': null});
         element.classList.add('news-loading');
 
         const $waypoint = window.DPAnimate.scrollTrigger(element, {
@@ -49,24 +49,17 @@ jQuery.fn.NewsAjaxScrollPaging = function (options) {
 
         function loadPage($el) {
             // ajax request next page
-            var response = jQuery.get({
-                url: $url,
-                cache: true
-            });
-            // handle Response
-            response.then(function (data) {
+            fetch($url).then(response => response.text()).then(function (data) {
                 // destroy old binding
                 $waypoint.kill();
                 // find news list
-                var _html = jQuery(data);
+                var _html = u(data);
                 // find parent id
-                var _id = $el.parents('.news-list-view')[0].id;
+                var _id = $el.closest('.news-list-view').first().id;
                 // replace content
                 var _children = _html.find('#' + _id).children();
-                // paging
-                var _paging = _html.closest('div[data-news-next]');
                 // replace
-                _children.insertAfter($el);
+                $el.after(_children);
                 // remove old element
                 $el.remove();
                 // run scripts
@@ -77,30 +70,19 @@ jQuery.fn.NewsAjaxScrollPaging = function (options) {
         }
     });
 };
-
-jQuery.fn.isInViewport = function () {
-    var elementTop = jQuery(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
-
-    var viewportTop = jQuery(window).scrollTop();
-    var viewportBottom = viewportTop + jQuery(window).height();
-
-    return elementBottom > viewportTop && elementTop < viewportBottom;
-};
-
-jQuery.fn.NewsAjaxPaging = function (options){
+u.prototype.NewsAjaxPaging = function (options) {
     /**
      * Set Configuration Array
      */
-    var settings = $.extend({
+    var settings = Object.assign({
         parent: '.news-list-view',
         links: 'a'
     }, options);
     /**
      * Loop data
      */
-    this.map(function (index, element) {
-        var $el = jQuery(element),
+    this.map(element => {
+        var $el = u(element),
             $links = $el.find(settings.links);
 
         $links.on('click', e => {
@@ -111,22 +93,17 @@ jQuery.fn.NewsAjaxPaging = function (options){
         })
 
         function loadPage(e) {
-            var _parent = $el.parents(settings.parent)[0];
+            var _parent = $el.closest(settings.parent).first();
             _parent.classList.add('is--loading');
             // ajax request next page
-            var response = jQuery.get({
-                url: e.delegateTarget.href,
-                cache: true
-            });
-            // handle Response
-            response.then(function (data) {
+            fetch(e.delegateTarget.href).then(response => response.text()).then(function (data) {
                 // find parent id
                 var _id = _parent.id;
                 // find replace content
-                var _html = jQuery(data),
+                var _html = u(data),
                     _children = _html.find('#' + _id);
                 // replace
-                _children.insertAfter(_parent);
+                _parent.after(_children);
                 // remove old element
                 _parent.remove();
                 // run scripts
@@ -138,7 +115,8 @@ jQuery.fn.NewsAjaxPaging = function (options){
         }
     });
 }
+
 window.StateManager.attach('news-paging', function () {
-    $('div[data-news-next]').NewsAjaxScrollPaging();
-    $('.news-list-view .pagination').NewsAjaxPaging();
+    u('div[data-news-next]').NewsAjaxScrollPaging();
+    // u('.news-list-view .pagination').NewsAjaxPaging();
 });

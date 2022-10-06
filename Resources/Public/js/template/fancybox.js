@@ -7,34 +7,39 @@
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
+
 window.StateManager.attach('fancybox', function () {
+    const options = {
+        keyboard: true
+    };
+
     /**
-     * Fancybox
+     * Lightbox
      */
-    var classicLightbox = jQuery('.fancybox, a[rel="fancybox"]');
-    classicLightbox.map((index, element) => {
-        var el = jQuery(element),
-            rel = el.attr('rel') || null;
+    var classicLightbox = u('.fancybox, a[rel="fancybox"]');
+    classicLightbox.map(element => {
+        var group = element.dataset.fancybox || null;
+        if(group) element.dataset.gallery = group;
+        element.dataset.toggle = 'lightbox';
 
-        if (rel) el.attr('data-fancybox', rel);
-    });
-    classicLightbox.fancybox({
-        buttons : [
-            'close',
-            'thumbs'
-        ],
-        thumbs : {
-            autoStart : true
-        },
 
-        beforeClose: function(e){
-            window.fancyStartClose = true;
-        },
-        afterClose: function (e){
-            window.fancyStartClose = null;
-        }
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lightbox = new Lightbox(element, options);
+            lightbox.show();
+        })
     });
-    jQuery('.various, a[rel="various"]').fancybox({
-        type: 'iframe',
+
+    var variousLightbox = u('.various, a[rel="various"]');
+    variousLightbox.map(element => {
+        var group = element.dataset.fancybox || null;
+        if(group) element.dataset.gallery = group;
+        element.dataset.toggle = 'lightbox';
+
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lightbox = new Lightbox(element, options);
+            lightbox.show();
+        })
     });
 });

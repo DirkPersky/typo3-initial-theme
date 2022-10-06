@@ -1,3 +1,10 @@
+plugin.tx_form {
+    view {
+        #templateRootPaths.0 = EXT:form/Resources/Private/Frontend/FrontendVersion2/Templates/
+        #partialRootPaths.0 = EXT:form/Resources/Private/Frontend/FrontendVersion2/Partials/
+        #layoutRootPaths.0 = EXT:form/Resources/Private/Frontend/Layouts/
+    }
+}
 
 plugin.tx_form.settings.yamlConfigurations {
     100 = EXT:dp_theme/Configuration/Yaml/dpFormSetup.yaml

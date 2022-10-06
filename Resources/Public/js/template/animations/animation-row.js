@@ -18,7 +18,7 @@ window.AnimateManager.attach('animation-row', function () {
         element.classList.forEach((key) => {
             if(key.indexOf('animate-textBounceLeft') != -1){
                 // get left col Header
-                var sliderText = new SplitType($(element).find('header').find('*'), {types: "words, chars"});
+                var sliderText = new SplitType(element.querySelectorAll('header > *'), {types: "words, chars"});
                 // inimate Text
                 window.DPAnimate.animate(sliderText.chars, {
                     class: 'animated textBounceLeft',

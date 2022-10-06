@@ -1,0 +1,48 @@
+
+header {
+  .subline {
+	font-size: 1.2rem;
+	font-weight: 300;
+	color: $primary;
+
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+
+	@include media-breakpoint-up(xl){
+	  letter-spacing: 2px;
+	}
+	@include media-breakpoint-up(xxl){
+	  letter-spacing: 2.5px;
+	}
+  }
+}
+
+.frame-type-header.frame-layout-9,
+.frame-type-header.frame-layout-10 {
+  header {
+	padding-bottom: 1rem;
+	position: relative;
+
+	h1,h2,h3,h4,h5,h6 {
+	  margin-bottom: 0;
+	}
+
+	&:before {
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  width: 4rem;
+
+	  content: '';
+	  display: block;
+	  border-bottom: 2px solid $headings-color;
+	  transition: all .2s ease-in-out;
+	}
+  }
+}
+
+.frame-type-header.frame-layout-9 {
+  header {
+	padding-bottom: .75rem;
+  }
+}

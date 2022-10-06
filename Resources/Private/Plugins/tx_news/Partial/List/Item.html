@@ -10,21 +10,23 @@
 	<div class="article--body">
 
 		<!-- header -->
-		<div class="header">
-			<!-- date -->
-			<span class="news-list-date">
-				<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
-					<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
-				</time>
-			</span>
+		<header class="header">
+			<div class="subline">
+				<!-- date -->
+				<span class="news-list-date">
+					<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+						<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+					</time>
+				</span>
+			</div>
 
-			<h2>
+			<div class="h3">
 				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title -> f:format.stripTags()}">
 					<span itemprop="headline"><f:format.raw>{newsItem.title}</f:format.raw></span>
 				</n:link>
-			</h2>
-		</div>
-		<span class="news--icon">
+			</div>
+		</header>
+		<span class="news--icon d-none">
 				<f:if condition="{newsItem.notes}">
 					<f:then>
 						<i class="{newsItem.notes}"></i>
@@ -51,7 +53,7 @@
 
 		<f:if condition="{newsItem.mediaPreviews}">
 			<!-- media preview element -->
-			<div class="news-img-wrap">
+			<div class="news-img-wrap d-none">
 				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title -> f:format.stripTags()}">
 					<f:alias map="{mediaElement: '{newsItem.mediaPreviews.0}'}">
 						<f:if condition="{mediaElement.originalResource.type} == 2">

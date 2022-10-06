@@ -3,7 +3,7 @@
 
 <f:if condition="{menuMain}">
     <f:for as="mainItem" each="{menuMain}">
-        <li class="nav-item {f:if(condition:mainItem.current, then:' active')}">
+        <li class="nav-item {f:if(condition:mainItem.current, then:' active')} home">
             <f:render arguments="{item: mainItem}" partial="Navigation/Elements/Link"/>
         </li>
         <f:if condition="{mainItem.children}">

@@ -14,7 +14,9 @@ const fs = require('fs');
  * @type {string[]}
  */
 const _URLS_ = [
-    'URL1',
+    'https://dp-wired.de/',
+    'https://dp-wired.de/leistungen/ecommerce-mit-shopware',
+    'https://dp-wired.de/lebenslauf'
 ];
 
 /**

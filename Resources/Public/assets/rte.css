@@ -12,8 +12,14 @@
     background-color: gray;
 }
 
+.btn.btn-outline-primary,
 .btn.btn-primary {
     border-color: blue;
+    background-color: blue;
+    color: #fff;
+}
+
+.btn.btn-primary {
     background-color: blue;
     color: #fff;
 }

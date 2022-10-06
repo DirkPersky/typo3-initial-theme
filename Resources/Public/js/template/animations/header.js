@@ -10,14 +10,15 @@
 
 window.AnimateManager.attach('bs-header-nav', function () {
     function onEnter(){
-        $('html').addClass('nav--sticky');
+        document.querySelector('html').classList.add('nav--sticky');
+
     }
     function onLeave(){
-        $('html').removeClass('nav--sticky');
+        document.querySelector('html').classList.remove('nav--sticky');
     }
     // bind Scroll handler
     window.DPAnimate.scrollTrigger('section.slider', {
-        start: 'bottom top=100px',
+        start: 'bottom top=130px',
         // once: false,
         onEnter: onEnter,
         onLeaveBack: onLeave,

@@ -17,8 +17,9 @@ $style_color_dark: 							#333 !default;
 $font-size-base-calc:                       18px !default; // Assumes the browser default, typically `16px`
 
 // Bootstrap Overrides
-$font-family-base:       "Roboto",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-
+$font-family-base:       					"Roboto",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: 					"Merriweather", serif !default;
+$headings-font-family:  $font-family-sans-serif !default;
 // Hamburger
 $hamburger-padding-x                       : 1.5rem !default;
 $hamburger-padding-y                       : 5px !default;
@@ -42,3 +43,24 @@ $headings-color:              #505050 !default;
 $border-radius:               0 !default;
 $border-radius-lg:            0 !default;
 $border-radius-sm:            0 !default;
+
+
+$grid-breakpoints: (
+		xs: 0,
+		sm: 576px,
+		md: 768px,
+		lg: 992px,
+		xl: 1200px,
+		xxl: 1400px,
+		3xl: 1600px,
+) !default;
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+		sm: 540px,
+		md: 720px,
+		lg: 960px,
+		xl: 1140px,
+		xxl: 1320px,
+		3xl: 1520px
+) !default;

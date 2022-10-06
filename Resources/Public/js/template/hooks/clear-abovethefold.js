@@ -8,6 +8,10 @@
  * @license    AGPL v3
  */
 
-jQuery(function ($) {
-    $('style[data-abovethefold]').remove();
-});
+(function () {
+    var aboveTheFolds = document.querySelectorAll('style[data-abovethefold]');
+    // remove elements
+    aboveTheFolds.forEach((e, i) => {
+        e.remove();
+    });
+})();

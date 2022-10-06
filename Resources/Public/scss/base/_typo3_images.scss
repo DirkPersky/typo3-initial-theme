@@ -13,6 +13,7 @@ picture {
 
 figure {
   margin-bottom: 0;
+
 }
 
 .ce-column {
@@ -20,6 +21,10 @@ figure {
 	width: 100%;
 	picture {
 	  width: 100%;
+	}
+
+	a {
+	  display: inline-block;
 	}
   }
 }
@@ -31,6 +36,17 @@ figure {
 .frame-layout-1 {
   .ce-gallery {
 	@include typo3CeMediaCols();
+
+
+	&[data-ce-columns="9999"]{
+	  .ce-column {
+		width: 50%;
+
+		@include media-breakpoint-up(lg){
+		  width: 33.3333%;
+		}
+	  }
+	}
   }
 }
 
