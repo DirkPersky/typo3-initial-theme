@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 animateScroll: {
                     betweenPages: true,
                     samePageWithHash: false,
-                    samePage: true
+                    samePage: false
                 },
                 scrollFriction: 0.3,
                 scrollAcceleration: 0.04,
