@@ -18,7 +18,7 @@ window.AnimateManager.attach('bs-header-nav', function () {
     }
     // bind Scroll handler
     window.DPAnimate.scrollTrigger('section.slider', {
-        start: 'bottom top=130px',
+        start: 'bottom top+=130px',
         // once: false,
         onEnter: onEnter,
         onLeaveBack: onLeave,
