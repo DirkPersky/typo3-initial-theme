@@ -13,6 +13,7 @@
  Team: @dbox, @joshuatuscan
  Site: http://www.rrssb.ml
  Twitter: @therealkni
+
         ___           ___
        /__/|         /__/\        ___
       |  |:|         \  \:\      /  /\
@@ -51,16 +52,16 @@
     // init load
     window.addEventListener('DOMContentLoaded', () => {
         try {
-            jQuery(document).on('click', '.rrssb-buttons a.popup', function(e){
-                var self = jQuery(this);
+            u(document).on('click', '.rrssb-buttons a.popup', function(e){
+                var self = u(this);
                 DPsocialButtons.popupCenter(self.attr('href'), self.find('.rrssb-text').html(), 580, 470);
                 e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation();
             });
 
-            jQuery(document).on('click', 'div[data-share]', function(e){
-                var self = jQuery(this);
+            u(document).on('click', 'div[data-share]', function(e){
+                var self = u(this);
                 if( self.hasClass('popup') ){
                     DPsocialButtons.popupCenter(self.data('share'), self.find('.rrssb-text').html(), 580, 470);
                 } else {
