@@ -791,11 +791,19 @@
                         "appearance": {
                             "collapseAll": 1,
                             "enabledControls": {
-                                "dragdrop": 1
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
                             },
                             "levelLinksPosition": "top",
                             "showAllLocalizationLink": 1,
-                            "showPossibleLocalizationRecords": 1
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
                         },
                         "foreign_field": "parentid",
                         "foreign_sortby": "sorting",
@@ -1071,6 +1079,14 @@
                         "tx_mask_img",
                         "tx_mask_text"
                     ]
+                },
+                "tx_mask_c68cfc856ae6a": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_title",
+                        "tx_mask_typ"
+                    ]
                 }
             },
             "sql": {
@@ -1079,9 +1095,24 @@
                         "tx_mask_img": "int(11) unsigned DEFAULT '0' NOT NULL"
                     }
                 },
+                "tx_mask_pref": {
+                    "tx_mask_item": {
+                        "tx_mask_pref": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
                 "tx_mask_text": {
                     "tx_mask_item": {
                         "tx_mask_text": "mediumtext"
+                    }
+                },
+                "tx_mask_title": {
+                    "tx_mask_item": {
+                        "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_typ": {
+                    "tx_mask_item": {
+                        "tx_mask_typ": "varchar(255) DEFAULT '' NOT NULL"
                     }
                 }
             },
@@ -1094,6 +1125,16 @@
                     "inlineParent": "tx_mask_item",
                     "key": "64023d64be141",
                     "label": "Seite",
+                    "order": 3,
+                    "type": "palette"
+                },
+                "tx_mask_c68cfc856ae6a": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_c68cfc856ae6a",
+                    "inlineParent": "tx_mask_item",
+                    "key": "c68cfc856ae6a",
                     "order": 1,
                     "type": "palette"
                 },
@@ -1101,8 +1142,18 @@
                     "allowedFileExtensions": "gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp",
                     "config": {
                         "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
                             "expandSingle": 1,
-                            "fileUploadAllowed": 1
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
                         },
                         "foreign_table": "sys_file_reference",
                         "maxitems": "1",
@@ -1118,6 +1169,17 @@
                     "order": 1,
                     "type": "file"
                 },
+                "tx_mask_pref": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_pref",
+                    "inlineParent": "tx_mask_item",
+                    "key": "pref",
+                    "label": "Subline",
+                    "order": 2,
+                    "type": "string"
+                },
                 "tx_mask_text": {
                     "config": {
                         "enableRichtext": 1,
@@ -1130,6 +1192,52 @@
                     "label": "Beschreibung",
                     "order": 2,
                     "type": "richtext"
+                },
+                "tx_mask_title": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_title",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_c68cfc856ae6a",
+                    "key": "title",
+                    "label": "\u00dcberschrift",
+                    "order": 1,
+                    "type": "string"
+                },
+                "tx_mask_typ": {
+                    "config": {
+                        "default": "h2",
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            [
+                                "H2",
+                                "h2",
+                                "",
+                                ""
+                            ],
+                            [
+                                "H1",
+                                "h1",
+                                "",
+                                ""
+                            ]
+                        ],
+                        "maxitems": "1",
+                        "minitems": "1",
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_typ",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_c68cfc856ae6a",
+                    "key": "typ",
+                    "order": 2,
+                    "type": "select"
                 }
             }
         }
