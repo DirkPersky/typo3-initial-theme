@@ -9,6 +9,13 @@
  */
 
 .modal.lightbox {
+
+  .carousel-item {
+	.ratio {
+	  background-color: transparent !important;
+	}
+  }
+
   .btn-close {
 	position: absolute !important;
 	right: 50% !important;

@@ -22,9 +22,11 @@ window.StateManager.attach('fancybox', function () {
         if(group) element.dataset.gallery = group;
         element.dataset.toggle = 'lightbox';
 
-
         element.addEventListener('click', (e) => {
             e.preventDefault();
+            // has Caption?
+            if(u(element).find('img').first())  element.dataset.caption = u(element).find('img').first().title;
+            // load lightbox
             const lightbox = new Lightbox(element, options);
             lightbox.show();
         })
