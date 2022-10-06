@@ -8,11 +8,14 @@
 }
 
 .btn.btn-default {
-    border-color: blue;
+    border-color: gray;
+    background-color: gray;
 }
 
 .btn.btn-primary {
     border-color: blue;
+    background-color: blue;
+    color: #fff;
 }
 
 .btn.btn-lg {
