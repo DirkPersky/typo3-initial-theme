@@ -56,6 +56,10 @@ TCEFORM.sys_file_reference.crop.config.cropVariants {
                 title = free
                 value = 0.0
             }
+            Portrait {
+                title = Portrait
+                value = 0.75
+            }
             4:3 {
                 title = 4/3
                 value = 1.3333333

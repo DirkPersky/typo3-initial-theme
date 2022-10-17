@@ -12,12 +12,18 @@
                 <el type="array">
                     <valign type="array">
                         <TCEforms type="array">
-                            <label>Vertical Align</label>
+                            <label>Ausrichtung</label>
                             <config type="array">
                                 <type>select</type>
-                                <renderType>selectSingle</renderType>
+                                <renderType>selectCheckBox</renderType>
                                 <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAlignClasses</itemsProcFunc>
-                                <default></default>
+                                <itemGroups>
+                                    <group1>Vertical</group1>
+                                    <group2>Horizontal</group2>
+                                </itemGroups>
+                                <maxitems>2</maxitems>
+                                <size>10</size>
+                                <default>justify-content-start, align-items-start</default>
                             </config>
                         </TCEforms>
                     </valign>
