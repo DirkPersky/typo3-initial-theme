@@ -25,6 +25,8 @@ const _PACKGES_ = [
             {src: 'bs5-lightbox/dist/index.bundle.min.js.map'},
             {src: 'umbrellajs/umbrella.min.js'},
             // {src: 'rrssb/js/rrssb.min.js'},
+            {src: 'jarallax/dist/jarallax.min.js'},
+            {src: 'jarallax/dist/jarallax.min.js.map'},
 
             /**
              * Swup

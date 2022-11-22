@@ -1,5 +1,5 @@
 [request.getQueryParams()['type'] != '22']
-    @import 'EXT:sourceopt/Configuration/TypoScript/setup.txt'
+    @import 'EXT:sourceopt/Configuration/TypoScript/setup.typoscript'
     @import 'EXT:scriptmerger/Configuration/TypoScript/setup.typoscript'
     @import 'EXT:dp_http2/Configuration/TypoScript/setup.txt'
 [end]

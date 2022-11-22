@@ -1,22 +1,24 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers" data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:if condition="{data.tx_mask_item}">
     <div
-        id="carousel-generic-{data.uid}"
-        class="carousel slide"
-        data-interval="{data.tx_mask_interval}"
-        data-ride="carousel"
-        data-wrap="true"
-        >
+            id="carousel-generic-{data.uid}"
+            class="carousel slide"
+            data-interval="{data.tx_mask_interval}"
+            data-ride="carousel"
+            data-wrap="true"
+            {f:if(condition:data.imageborder,then:
+    'data-parallax=".carousel-item .carousel-item-medias"')}
+    >
 
-        <f:if condition="{data.tx_mask_item -> f:count()} > 1">
-            <!--- Indicators -->
-            <div class="carousel-indicators">
-                <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
-                    <button aria-current="true"
-                            aria-label="Slide {f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} + 1')}"
-                            class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}"
-                            data-bs-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber}')}"
-                            data-bs-target="#carousel-generic-{data.uid}" type="button"
+    <f:if condition="{data.tx_mask_item -> f:count()} > 1">
+        <!--- Indicators -->
+        <div class="carousel-indicators">
+            <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
+                <button aria-current="true"
+                        aria-label="Slide {f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} + 1')}"
+                        class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}"
+                        data-bs-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber}')}"
+                        data-bs-target="#carousel-generic-{data.uid}" type="button"
                     >
                         <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
                             <div style="background-image:url({f:uri.image(image:file, width:360, cropVariant:'default')})"></div>

@@ -1,5 +1,5 @@
 @import 'EXT:dp_http2/Configuration/TypoScript/constants.txt'
-@import 'EXT:sourceopt/Configuration/TypoScript/constants.txt'
+@import 'EXT:sourceopt/Configuration/TypoScript/constants.typoscript'
 @import 'EXT:scriptmerger/Configuration/TypoScript/constants.typoscript'
 
 ###################
@@ -15,7 +15,7 @@ plugin.tx_scriptmerger {
 	    minify {
 	        enable = 1
 	        useJSMinPlus = 1
-	        useJShrink = 1
+	        useJShrink = 0
 	    }
 
         parseBody = 1
