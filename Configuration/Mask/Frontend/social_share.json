@@ -1,197 +1,228 @@
 {
-    "tt_content": {
-        "elements": {
-            "social_share": {
-                "key": "social_share",
-                "label": "Social Share",
-                "description": "Social Share buttons",
-                "shortLabel": "Social Share",
-                "color": "#f96332",
-                "icon": "fa-share-alt-square",
-                "columns": [
-                    "tx_mask_d46e8ca6ca128"
-                ],
-                "labels": [
-                    ""
-                ],
-                "descriptions": [],
-                "sorting": 2
-            }
-        },
-        "sql": {
-            "tx_mask_email": {
-                "tt_content": {
-                    "tx_mask_email": "int(11) DEFAULT '0' NOT NULL"
+    "version": "7.2.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "social_share": {
+                    "color": "#f96332",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_f68f0a4b7fa1b"
+                    ],
+                    "description": "Social Share buttons",
+                    "descriptions": [
+                        ""
+                    ],
+                    "icon": "fa-share-alt-square",
+                    "iconOverlay": "",
+                    "key": "social_share",
+                    "label": "Social Share",
+                    "labels": [
+                        ""
+                    ],
+                    "shortLabel": "Social Share",
+                    "sorting": 2
                 }
             },
-            "tx_mask_facebook": {
-                "tt_content": {
-                    "tx_mask_facebook": "int(11) DEFAULT '0' NOT NULL"
+            "palettes": {
+                "tx_mask_f68f0a4b7fa1b": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_email",
+                        "tx_mask_facebook",
+                        "tx_mask_xing",
+                        "tx_mask_linkedin",
+                        "tx_mask_twitter",
+                        "tx_mask_whatsap"
+                    ]
                 }
             },
-            "tx_mask_xing": {
-                "tt_content": {
-                    "tx_mask_xing": "int(11) DEFAULT '0' NOT NULL"
+            "sql": {
+                "tx_mask_email": {
+                    "tt_content": {
+                        "tx_mask_email": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_facebook": {
+                    "tt_content": {
+                        "tx_mask_facebook": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_linkedin": {
+                    "tt_content": {
+                        "tx_mask_linkedin": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_twitter": {
+                    "tt_content": {
+                        "tx_mask_twitter": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_whatsap": {
+                    "tt_content": {
+                        "tx_mask_whatsap": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_xing": {
+                    "tt_content": {
+                        "tx_mask_xing": "int(11) DEFAULT '0' NOT NULL"
+                    }
                 }
             },
-            "tx_mask_linkedin": {
-                "tt_content": {
-                    "tx_mask_linkedin": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_twitter": {
-                "tt_content": {
-                    "tx_mask_twitter": "int(11) DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_whatsap": {
-                "tt_content": {
-                    "tx_mask_whatsap": "int(11) DEFAULT '0' NOT NULL"
-                }
-            }
-        },
-        "tca": {
-            "tx_mask_d46e8ca6ca128": {
-                "config": {
+            "tca": {
+                "tx_mask_email": {
+                    "config": {
+                        "items": [],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_email",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_f68f0a4b7fa1b"
+                    },
+                    "key": "email",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "EMail"
+                    },
+                    "order": {
+                        "social_share": 1
+                    },
+                    "type": "check"
+                },
+                "tx_mask_f68f0a4b7fa1b": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_f68f0a4b7fa1b",
+                    "key": "f68f0a4b7fa1b",
                     "type": "palette"
                 },
-                "key": "d46e8ca6ca128",
-                "fullKey": "tx_mask_d46e8ca6ca128",
-                "type": "palette"
-            },
-            "tx_mask_email": {
-                "config": {
-                    "renderType": "checkboxToggle",
+                "tx_mask_facebook": {
+                    "config": {
+                        "items": [],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_facebook",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_f68f0a4b7fa1b"
+                    },
+                    "key": "facebook",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "Facebook"
+                    },
+                    "order": {
+                        "social_share": 2
+                    },
                     "type": "check"
                 },
-                "l10n_mode": "exclude",
-                "key": "email",
-                "fullKey": "tx_mask_email",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "EMail"
-                },
-                "order": {
-                    "social_share": 1
-                }
-            },
-            "tx_mask_facebook": {
-                "config": {
-                    "renderType": "checkboxToggle",
+                "tx_mask_linkedin": {
+                    "config": {
+                        "items": [],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_linkedin",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_f68f0a4b7fa1b"
+                    },
+                    "key": "linkedin",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "LinkedIn"
+                    },
+                    "order": {
+                        "social_share": 4
+                    },
                     "type": "check"
                 },
-                "l10n_mode": "exclude",
-                "key": "facebook",
-                "fullKey": "tx_mask_facebook",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "Facebook"
-                },
-                "order": {
-                    "social_share": 2
-                }
-            },
-            "tx_mask_xing": {
-                "config": {
-                    "renderType": "checkboxToggle",
+                "tx_mask_twitter": {
+                    "config": {
+                        "items": [],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_twitter",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_f68f0a4b7fa1b"
+                    },
+                    "key": "twitter",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "Twitter"
+                    },
+                    "order": {
+                        "social_share": 5
+                    },
                     "type": "check"
                 },
-                "l10n_mode": "exclude",
-                "key": "xing",
-                "fullKey": "tx_mask_xing",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "Xing"
-                },
-                "order": {
-                    "social_share": 3
-                }
-            },
-            "tx_mask_linkedin": {
-                "config": {
-                    "renderType": "checkboxToggle",
+                "tx_mask_whatsap": {
+                    "config": {
+                        "items": [],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_whatsap",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_f68f0a4b7fa1b"
+                    },
+                    "key": "whatsap",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "Whatsapp"
+                    },
+                    "order": {
+                        "social_share": 6
+                    },
                     "type": "check"
                 },
-                "l10n_mode": "exclude",
-                "key": "linkedin",
-                "fullKey": "tx_mask_linkedin",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "LinkedIn"
-                },
-                "order": {
-                    "social_share": 4
-                }
-            },
-            "tx_mask_twitter": {
-                "config": {
-                    "renderType": "checkboxToggle",
+                "tx_mask_xing": {
+                    "config": {
+                        "items": [],
+                        "renderType": "checkboxToggle",
+                        "type": "check"
+                    },
+                    "description": {
+                        "social_share": ""
+                    },
+                    "fullKey": "tx_mask_xing",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_share": "tx_mask_f68f0a4b7fa1b"
+                    },
+                    "key": "xing",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "social_share": "Xing"
+                    },
+                    "order": {
+                        "social_share": 3
+                    },
                     "type": "check"
-                },
-                "l10n_mode": "exclude",
-                "key": "twitter",
-                "fullKey": "tx_mask_twitter",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "Twitter"
-                },
-                "order": {
-                    "social_share": 5
                 }
-            },
-            "tx_mask_whatsap": {
-                "config": {
-                    "renderType": "checkboxToggle",
-                    "type": "check"
-                },
-                "l10n_mode": "exclude",
-                "key": "whatsap",
-                "fullKey": "tx_mask_whatsap",
-                "type": "check",
-                "inPalette": 1,
-                "inlineParent": {
-                    "social_share": "tx_mask_d46e8ca6ca128"
-                },
-                "label": {
-                    "social_share": "Whatsapp"
-                },
-                "order": {
-                    "social_share": 6
-                }
-            }
-        },
-        "palettes": {
-            "tx_mask_d46e8ca6ca128": {
-                "label": "",
-                "description": "",
-                "showitem": [
-                    "tx_mask_email",
-                    "tx_mask_facebook",
-                    "tx_mask_xing",
-                    "tx_mask_linkedin",
-                    "tx_mask_twitter",
-                    "tx_mask_whatsap"
-                ]
             }
         }
     }

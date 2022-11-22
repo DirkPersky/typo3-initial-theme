@@ -1,0 +1,320 @@
+{
+    "version": "7.2.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "carousel_slider": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_42f614e9a658b",
+                        "tx_mask_item"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "carousel_slider",
+                    "label": "Carousel (Slider)",
+                    "labels": [
+                        "",
+                        "Seiten"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 3
+                }
+            },
+            "palettes": {
+                "tx_mask_42f614e9a658b": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "header",
+                        "tx_mask_interval"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_interval": {
+                    "tt_content": {
+                        "tx_mask_interval": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_item": {
+                    "tt_content": {
+                        "tx_mask_item": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "description": {
+                        "carousel_slider": "in der Webseite nicht sichtbar",
+                        "flyout": ""
+                    },
+                    "fullKey": "header",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "carousel_slider": "tx_mask_42f614e9a658b",
+                        "flyout": "tx_mask_8a349a58e970b"
+                    },
+                    "key": "header",
+                    "label": {
+                        "carousel_slider": "",
+                        "flyout": ""
+                    },
+                    "order": {
+                        "carousel_slider": 1,
+                        "flyout": 1
+                    },
+                    "type": "string"
+                },
+                "tx_mask_42f614e9a658b": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_42f614e9a658b",
+                    "key": "42f614e9a658b",
+                    "type": "palette"
+                },
+                "tx_mask_interval": {
+                    "config": {
+                        "default": "3000",
+                        "eval": "required,int",
+                        "range": {
+                            "lower": "2000",
+                            "upper": "10000"
+                        },
+                        "size": "5",
+                        "slider": {
+                            "step": "500",
+                            "width": "400"
+                        },
+                        "type": "input"
+                    },
+                    "description": {
+                        "carousel_slider": "in ms"
+                    },
+                    "fullKey": "tx_mask_interval",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "carousel_slider": "tx_mask_42f614e9a658b"
+                    },
+                    "key": "interval",
+                    "label": {
+                        "carousel_slider": "Interval"
+                    },
+                    "order": {
+                        "carousel_slider": 2
+                    },
+                    "type": "integer"
+                },
+                "tx_mask_item": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "ctrl": {
+                        "label": "tx_mask_text"
+                    },
+                    "fullKey": "tx_mask_item",
+                    "key": "item",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_item": {
+            "palettes": {
+                "tx_mask_0c3325f5d9fbc": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_img",
+                        "tx_mask_text"
+                    ]
+                },
+                "tx_mask_8f68b46e91ad2": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_title",
+                        "tx_mask_typ"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_img": {
+                    "tx_mask_item": {
+                        "tx_mask_img": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_pref": {
+                    "tx_mask_item": {
+                        "tx_mask_pref": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_text": {
+                    "tx_mask_item": {
+                        "tx_mask_text": "mediumtext"
+                    }
+                },
+                "tx_mask_title": {
+                    "tx_mask_item": {
+                        "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_typ": {
+                    "tx_mask_item": {
+                        "tx_mask_typ": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_0c3325f5d9fbc": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_0c3325f5d9fbc",
+                    "inlineParent": "tx_mask_item",
+                    "key": "0c3325f5d9fbc",
+                    "order": 3,
+                    "type": "palette"
+                },
+                "tx_mask_8f68b46e91ad2": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_8f68b46e91ad2",
+                    "inlineParent": "tx_mask_item",
+                    "key": "8f68b46e91ad2",
+                    "order": 1,
+                    "type": "palette"
+                },
+                "tx_mask_img": {
+                    "allowedFileExtensions": "gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp",
+                    "config": {
+                        "appearance": {
+                            "collapseAll": "0",
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "expandSingle": 1,
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_table": "sys_file_reference",
+                        "maxitems": "1",
+                        "minitems": "1",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_img",
+                    "imageoverlayPalette": 1,
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_0c3325f5d9fbc",
+                    "key": "img",
+                    "label": "Bild",
+                    "order": 1,
+                    "type": "file"
+                },
+                "tx_mask_pref": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_pref",
+                    "inlineParent": "tx_mask_item",
+                    "key": "pref",
+                    "label": "Subline",
+                    "order": 2,
+                    "type": "string"
+                },
+                "tx_mask_text": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_text",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_0c3325f5d9fbc",
+                    "key": "text",
+                    "label": "Beschreibung",
+                    "order": 2,
+                    "type": "richtext"
+                },
+                "tx_mask_title": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_title",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_8f68b46e91ad2",
+                    "key": "title",
+                    "label": "\u00dcberschrift",
+                    "order": 1,
+                    "type": "string"
+                },
+                "tx_mask_typ": {
+                    "config": {
+                        "default": "h2",
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            [
+                                "H2",
+                                "h2",
+                                "",
+                                ""
+                            ],
+                            [
+                                "H1",
+                                "h1",
+                                "",
+                                ""
+                            ]
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "fullKey": "tx_mask_typ",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_8f68b46e91ad2",
+                    "key": "typ",
+                    "label": "Headline Type",
+                    "order": 2,
+                    "type": "select"
+                }
+            }
+        }
+    }
+}

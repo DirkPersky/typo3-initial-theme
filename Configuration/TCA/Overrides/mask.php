@@ -29,9 +29,9 @@ $options = [
     'json' => 'EXT:dp_theme/Configuration/Mask/mask.json',
     'preview' => 'EXT:dp_theme/Resources/Public/Mask/',
 
-    'loader_identifier ' => 'json-split',
-    'content_elements_folder ' => 'EXT:dp_theme/Configuration/Mask/Frontend',
-    'backend_layouts_folder  ' => 'EXT:dp_theme/Configuration/Mask/Backend'
+    'loader_identifier' => 'json-split',
+    'content_elements_folder' => 'EXT:dp_theme/Configuration/Mask/Frontend',
+    'backend_layouts_folder' => 'EXT:dp_theme/Configuration/Mask/Backend'
 ];
 /**
  * Update Plugin Configs

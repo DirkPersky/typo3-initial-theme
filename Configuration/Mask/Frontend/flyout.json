@@ -1,197 +1,214 @@
 {
-    "sys_file_reference": {
-        "sql": {
-            "tx_mask_image": {
-                "sys_file_reference": {
-                    "tx_mask_image": "int(11) unsigned DEFAULT '0' NOT NULL"
-                }
-            }
-        }
-    },
-    "tt_content": {
-        "elements": {
-            "flyout": {
-                "key": "flyout",
-                "label": "Flyout",
-                "description": "",
-                "shortLabel": "",
-                "color": "#000000",
-                "icon": "",
-                "columns": [
-                    "tx_mask_8a349a58e970b",
-                    "tx_mask_image",
-                    "tx_mask_content"
-                ],
-                "labels": [
-                    "",
-                    "Bild",
-                    "Inhalt"
-                ],
-                "descriptions": [],
-                "sorting": 0,
-                "hidden": 1
-            }
-        },
-        "sql": {
-            "tx_mask_title": {
-                "tt_content": {
-                    "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
+    "version": "7.2.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "flyout": {
+                    "color": "#000000",
+                    "colorOverlay": "",
+                    "columns": [
+                        "tx_mask_8a349a58e970b",
+                        "tx_mask_image",
+                        "tx_mask_content"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "hidden": 1,
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "flyout",
+                    "label": "Flyout",
+                    "labels": [
+                        "",
+                        "Bild",
+                        "Inhalt"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
                 }
             },
-            "tx_mask_link": {
-                "tt_content": {
-                    "tx_mask_link": "varchar(255) DEFAULT '' NOT NULL"
+            "palettes": {
+                "tx_mask_8a349a58e970b": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "header",
+                        "tx_mask_link",
+                        "tx_mask_icon"
+                    ]
                 }
             },
-            "tx_mask_icon": {
-                "tt_content": {
-                    "tx_mask_icon": "varchar(255) DEFAULT '' NOT NULL"
+            "sql": {
+                "tx_mask_content": {
+                    "tt_content": {
+                        "tx_mask_content": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_icon": {
+                    "tt_content": {
+                        "tx_mask_icon": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_image": {
+                    "tt_content": {
+                        "tx_mask_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_link": {
+                    "tt_content": {
+                        "tx_mask_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
                 }
             },
-            "tx_mask_image": {
-                "tt_content": {
-                    "tx_mask_image": "int(11) unsigned DEFAULT '0' NOT NULL"
-                }
-            },
-            "tx_mask_content": {
-                "tt_content": {
-                    "tx_mask_content": "int(11) unsigned DEFAULT '0' NOT NULL"
-                }
-            }
-        },
-        "tca": {
-            "tx_mask_8a349a58e970b": {
-                "config": {
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "description": {
+                        "carousel_slider": "in der Webseite nicht sichtbar",
+                        "flyout": ""
+                    },
+                    "fullKey": "header",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "carousel_slider": "tx_mask_42f614e9a658b",
+                        "flyout": "tx_mask_8a349a58e970b"
+                    },
+                    "key": "header",
+                    "label": {
+                        "carousel_slider": "",
+                        "flyout": ""
+                    },
+                    "order": {
+                        "carousel_slider": 1,
+                        "flyout": 1
+                    },
+                    "type": "string"
+                },
+                "tx_mask_8a349a58e970b": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_8a349a58e970b",
+                    "key": "8a349a58e970b",
                     "type": "palette"
                 },
-                "key": "8a349a58e970b",
-                "fullKey": "tx_mask_8a349a58e970b",
-                "type": "palette"
-            },
-            "tx_mask_title": {
-                "config": {
-                    "type": "input"
-                },
-                "key": "title",
-                "fullKey": "tx_mask_title",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "flyout": "tx_mask_8a349a58e970b",
-                    "google_4_jobs": "tx_mask_07deffe4dae05"
-                },
-                "label": {
-                    "flyout": "Title",
-                    "google_4_jobs": "Job Title"
-                },
-                "order": {
-                    "flyout": 1,
-                    "google_4_jobs": 1
-                }
-            },
-            "tx_mask_link": {
-                "l10n_mode": "exclude",
-                "config": {
-                    "type": "input",
-                    "renderType": "inputLink",
-                    "softref": "typolink"
-                },
-                "key": "link",
-                "fullKey": "tx_mask_link",
-                "type": "link",
-                "inPalette": 1,
-                "inlineParent": {
-                    "flyout": "tx_mask_8a349a58e970b"
-                },
-                "label": {
-                    "flyout": "Link"
-                },
-                "order": {
-                    "flyout": 2
-                }
-            },
-            "tx_mask_icon": {
-                "l10n_mode": "exclude",
-                "config": {
-                    "type": "input"
-                },
-                "key": "icon",
-                "fullKey": "tx_mask_icon",
-                "type": "string",
-                "inPalette": 1,
-                "inlineParent": {
-                    "flyout": "tx_mask_8a349a58e970b"
-                },
-                "label": {
-                    "flyout": "Font Awesome-Icon"
-                },
-                "order": {
-                    "flyout": 3
-                }
-            },
-            "tx_mask_image": {
-                "config": {
-                    "appearance": {
-                        "expandSingle": 1,
-                        "fileUploadAllowed": 1
-                    },
-                    "maxitems": "1",
-                    "type": "inline",
-                    "foreign_table": "sys_file_reference"
-                },
-                "l10n_mode": "exclude",
-                "key": "image",
-                "fullKey": "tx_mask_image",
-                "type": "file",
-                "allowedFileExtensions": "jpg,png,svg,jpeg,gif,webp",
-                "imageoverlayPalette": 0
-            },
-            "tx_mask_content": {
-                "config": {
-                    "appearance": {
-                        "levelLinksPosition": "top",
-                        "showAllLocalizationLink": 1,
-                        "showPossibleLocalizationRecords": 1,
-                        "collapseAll": 1,
-                        "useSortable": 1,
-                        "enabledControls": {
-                            "dragdrop": 1
-                        }
-                    },
-                    "maxitems": "1",
-                    "type": "inline",
-                    "foreign_table": "tt_content",
-                    "overrideChildTca": {
-                        "columns": {
-                            "colPos": {
-                                "config": {
-                                    "default": 999
+                "tx_mask_content": {
+                    "cTypes": [
+                        "textmedia",
+                        "shortcut",
+                        "list",
+                        "html"
+                    ],
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "tt_content",
+                        "maxitems": "1",
+                        "overrideChildTca": {
+                            "columns": {
+                                "colPos": {
+                                    "config": {
+                                        "default": 999
+                                    }
                                 }
                             }
-                        }
+                        },
+                        "type": "inline"
                     },
-                    "foreign_sortby": "sorting"
+                    "fullKey": "tx_mask_content",
+                    "key": "content",
+                    "type": "content"
                 },
-                "key": "content",
-                "fullKey": "tx_mask_content",
-                "type": "content",
-                "cTypes": [
-                    "textmedia",
-                    "shortcut",
-                    "list",
-                    "html"
-                ]
-            }
-        },
-        "palettes": {
-            "tx_mask_8a349a58e970b": {
-                "label": "",
-                "description": "",
-                "showitem": [
-                    "tx_mask_title",
-                    "tx_mask_link",
-                    "tx_mask_icon"
-                ]
+                "tx_mask_icon": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "flyout": ""
+                    },
+                    "fullKey": "tx_mask_icon",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flyout": "tx_mask_8a349a58e970b"
+                    },
+                    "key": "icon",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "flyout": "Font Awesome-Icon"
+                    },
+                    "order": {
+                        "flyout": 3
+                    },
+                    "type": "string"
+                },
+                "tx_mask_image": {
+                    "allowedFileExtensions": "jpg,png,svg,jpeg,gif,webp",
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "expandSingle": 1,
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "maxitems": "1"
+                    },
+                    "fullKey": "tx_mask_image",
+                    "imageoverlayPalette": 0,
+                    "key": "image",
+                    "l10n_mode": "exclude",
+                    "type": "file"
+                },
+                "tx_mask_link": {
+                    "config": {
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "description": {
+                        "flyout": ""
+                    },
+                    "fullKey": "tx_mask_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "flyout": "tx_mask_8a349a58e970b"
+                    },
+                    "key": "link",
+                    "l10n_mode": "exclude",
+                    "label": {
+                        "flyout": "Link"
+                    },
+                    "order": {
+                        "flyout": 2
+                    },
+                    "type": "link"
+                }
             }
         }
     }

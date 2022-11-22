@@ -23,7 +23,8 @@
     "rrssb": "latest",
     "split-type": "latest",
     "swup": "latest",
-    "umbrellajs": "latest"
+    "umbrellajs": "latest",
+    "jarallax": "latest"
   },
   "devDependencies": {
     "crittr": "latest"
