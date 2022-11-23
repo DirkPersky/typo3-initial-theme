@@ -10,21 +10,7 @@
 //
 window.AnimateManager.attach('jarallax-effekts', function () {
     // get Slider image
-    u('[data-parallax]').map(e => {
-        // get selector
-        var dataSelector = e.dataset.parallax;
-        // remove datset
-        delete e.dataset.parallax;
-        // prepare for jarallax
-        e.querySelectorAll(dataSelector).forEach(item => {
-            item.classList.add('jarallax');
-            item.querySelectorAll('img').forEach(img => {
-                img.classList.add('jarallax-img');
-            });
-            // init jarallax for item
-            jarallax(item, {});
-        });
-    });
+    jarallax(document.querySelectorAll('.carousel .jarallax'), {});
 
     // init jarallax for css elements
     jarallax(document.querySelectorAll('.css--element.jarallax'), {

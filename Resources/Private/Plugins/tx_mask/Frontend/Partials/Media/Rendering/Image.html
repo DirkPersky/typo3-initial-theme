@@ -1,16 +1,17 @@
-<html xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
-      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html
+        data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <picture>
-    <f:variable name="origFile" value="{f:uri.image(image:file, cropVariant:'default')}" />
-    <f:variable name="width" value="{n:imageSize(property:'width',image:origFile)}" />
-    <f:variable name="height" value="{n:imageSize(property:'height',image:origFile)}" />
+    <f:variable name="origFile" value="{f:uri.image(image:file, cropVariant:'default')}"/>
+    <f:variable name="width" value="{n:imageSize(property:'width',image:origFile)}"/>
+    <f:variable name="height" value="{n:imageSize(property:'height',image:origFile)}"/>
 
     <f:if condition="{width} > 1400">
-        <source media="(min-width: 1400px)" srcset="{f:uri.image(image:file, width:1960, maxWidth:width, maxHeight:height, cropVariant:'default', fileExtension:'webp')}"
+        <source media="(min-width: 1400px)"
+                srcset="{f:uri.image(image:file, width:1960, maxWidth:width, maxHeight:height, cropVariant:'default', fileExtension:'webp')}"
                 type="image/webp"/>
-        <source media="(min-width: 1400px)" srcset="{f:uri.image(image:file, width:1960, maxWidth:width, maxHeight:height, cropVariant:'default')}"
+        <source media="(min-width: 1400px)"
+                srcset="{f:uri.image(image:file, width:1960, maxWidth:width, maxHeight:height, cropVariant:'default')}"
                 type="{file.mime_type}"/>
     </f:if>
     <f:if condition="{width} > 1200">
@@ -39,6 +40,7 @@
     </f:if>
     <source srcset="{f:uri.image(image:file, width:360, maxWidth:width, maxHeight:height, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
     <source srcset="{f:uri.image(image:file, width:360, maxWidth:width, maxHeight:height, cropVariant:'mobile')}" type="{file.mime_type}"/>
-    <img alt="{file.alternative -> f:format.stripTags()}" class="img-fluid" height="{height}" title="{file.title -> f:format.stripTags()}" width="{data.width}" lazyload="true"/>
+    <img alt="{file.alternative -> f:format.stripTags()}" class="img-fluid {f:if(condition:class, then: class)}"
+         height="{height}" lazyload="true" title="{file.title -> f:format.stripTags()}" width="{data.width}"/>
 </picture>
 </html>

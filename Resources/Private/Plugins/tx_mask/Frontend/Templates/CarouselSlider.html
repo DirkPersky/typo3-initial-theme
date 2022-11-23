@@ -6,9 +6,8 @@
             data-interval="{data.tx_mask_interval}"
             data-ride="carousel"
             data-wrap="true"
-            {f:if(condition:data.imageborder,then:
-    'data-parallax=".carousel-item .carousel-item-medias"')}
     >
+    <f:variable name="imgClass" value="{f:if(condition:data.imageborder,then: 'jarallax-img')}"/>
 
     <f:if condition="{data.tx_mask_item -> f:count()} > 1">
         <!--- Indicators -->
@@ -31,10 +30,12 @@
         <div class="carousel-inner">
             <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
                 <div class="carousel-item {f:if(condition:'{row_iteration.isFirst}',then:'active')}">
-                    <div class="carousel-item-medias">
+                    <div class="carousel-item-medias {f:if(condition:data.imageborder,then: 'jarallax')}">
                         <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
-                            <div class="carousel-item-media" data-mediaload="row{row_iteration.index}-item{column_iteration.index}">
-                                <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings}" />
+                            <div class="carousel-item-media "
+                                 data-mediaload="row{row_iteration.index}-item{column_iteration.index}">
+                                <f:render arguments="{file: file, data: data, settings: settings, class: imgClass}"
+                                          partial="Media/Type"/>
                             </div>
                         </f:for>
                     </div>
