@@ -9,6 +9,7 @@
   .article {
 	padding: 1rem;
 	width: 100%;
+	position: relative;
 
 	.header {
 	  .subline {
@@ -20,24 +21,42 @@
 		  text-decoration: none;
 
 		  display: block;
-		  position: relative;
 		  padding-bottom: 1rem;
 		  margin-bottom: 1rem;
 
-		  &:before {
-			position: absolute;
-			top: 100%;
-			left: 0;
-			width: 4rem;
-
-			content: '';
+		  // underline for Animation
+		  > span {
 			display: block;
-			border-bottom: 2px solid $headings-color;
-			transition: all .2s ease-in-out;
+			position: relative;
+
+			&:before {
+			  position: absolute;
+			  top: 100%;
+			  left: 0;
+			  width: 4rem;
+			  margin-top: 1rem;
+
+			  content: '';
+			  display: block;
+			  border-bottom: 2px solid $headings-color;
+			  transition: all .2s ease-in-out;
+			}
+		  }
+
+		  // full item click
+		  &:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			width: 100%;
+			height: 100%;
 		  }
 
 		  &:hover {
-			&:before {
+			// underline animation
+			> span:before {
 			  width: 100%;
 			}
 		  }
