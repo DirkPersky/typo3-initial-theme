@@ -30,6 +30,7 @@ class CSSClasses {
             ],
             'Animation' => [
                 ['animate', 'Animation'],
+                ['jarallax', 'Parallax Effekt'],
             ]
         ];
 

@@ -11,4 +11,11 @@
 	height: 100%;
 	object-fit: cover;
   }
+
+  > .css-element-jarallax {
+	z-index: 0 !important;
+	left: 50% !important;
+	width: 100vw !important;
+	margin-left: -50vw !important;
+  }
 }

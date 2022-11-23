@@ -25,4 +25,11 @@ window.AnimateManager.attach('jarallax-effekts', function () {
             jarallax(item, {});
         });
     });
+
+    // init jarallax for css elements
+    jarallax(document.querySelectorAll('.css--element.jarallax'), {
+        onInit: function (e) {
+            this.image.$container.classList.add('css-element-jarallax');
+        }
+    });
 });
