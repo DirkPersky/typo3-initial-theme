@@ -155,7 +155,7 @@
                     </width_column_xs_4>
                     <width_column_xs_5 type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
+                            <label>Breite Spalte 5</label>
                             <config type="array">
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -165,7 +165,7 @@
                     </width_column_xs_5>
                     <width_column_xs_6 type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
+                            <label>Breite Spalte 6</label>
                             <config type="array">
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -224,7 +224,7 @@
                     </width_column_sm_4>
                     <width_column_sm_5 type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
+                            <label>Breite Spalte 5</label>
                             <config type="array">
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -234,7 +234,7 @@
                     </width_column_sm_5>
                     <width_column_sm_6 type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
+                            <label>Breite Spalte 6</label>
                             <config type="array">
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -293,7 +293,7 @@
                     </width_column_md_4>
                     <width_column_md_5 type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
+                            <label>Breite Spalte 5</label>
                             <config type="array">
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -303,7 +303,7 @@
                     </width_column_md_5>
                     <width_column_md_6 type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
+                            <label>Breite Spalte 6</label>
                             <config type="array">
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -366,7 +366,7 @@
                     </width_column_lg_4>
                     <width_column_lg_5 type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
+                            <label>Breite Spalte 5</label>
                             <config type="array">
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -377,7 +377,7 @@
                     </width_column_lg_5>
                     <width_column_lg_6 type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
+                            <label>Breite Spalte 6</label>
                             <config type="array">
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>

@@ -14,4 +14,4 @@ defined('TYPO3_MODE') || die();
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 // Add Plugin Configs
-ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/TSconfig/config.tsconfig', 'DPTheme');
+ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/TSconfig/Layout1/config.tsconfig', 'DPTheme - Layout 1');

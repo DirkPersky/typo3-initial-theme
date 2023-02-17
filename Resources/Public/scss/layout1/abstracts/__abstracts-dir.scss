@@ -7,8 +7,8 @@
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
+@import "variables";
+@import "../../abstracts/_abstracts-dir";
 
-@import "canvas";
-@import "footer";
-@import "header";
-@import "swup";
+@import "roboto";
+@import "webfont";

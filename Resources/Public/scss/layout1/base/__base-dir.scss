@@ -7,10 +7,7 @@
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
-@import "animate/_animate-dir";
-@import "html";
-@import "typo3_images";
-@import "rrssb";
-@import "spaces";
-@import "text";
-@import "alert";
+@import "../../base/_base-dir";
+@import "content";
+@import "arcordion";
+@import "header";

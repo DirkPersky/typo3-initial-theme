@@ -1,10 +1,10 @@
 #################################
 ### LOAD BASIC CONFIGURATIONS ###
 #################################
-@import 'EXT:dp_theme/Configuration/TSconfig/ext/rte.tsconfig'
-@import 'EXT:dp_theme/Configuration/TSconfig/ext/be_layout.tsconfig'
-@import 'EXT:dp_theme/Configuration/TSconfig/ext/ident.tsconfig'
-@import 'EXT:dp_theme/Configuration/TSconfig/ext/image.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/Default/ext/rte.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/Default/ext/be_layout.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/Default/ext/ident.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/Default/ext/image.tsconfig'
 
 #######################
 ### Default Sprache ###

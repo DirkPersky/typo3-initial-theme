@@ -18,7 +18,7 @@ tt_content.bs3-grid2 {
     }
 }
 
-tt_content.bs3-grid3 < tt_content.bs3-grid2
+tt_content.bs3-grid3 =< tt_content.bs3-grid2
 tt_content.bs3-grid3 {
     templateName = bs3-grid3
 
@@ -31,7 +31,7 @@ tt_content.bs3-grid3 {
     }
 }
 
-tt_content.bs3-grid4 < tt_content.bs3-grid3
+tt_content.bs3-grid4 =< tt_content.bs3-grid3
 tt_content.bs3-grid4 {
     templateName = bs3-grid4
 
@@ -44,7 +44,7 @@ tt_content.bs3-grid4 {
     }
 }
 
-tt_content.bs3-grid6 < tt_content.bs3-grid4
+tt_content.bs3-grid6 =< tt_content.bs3-grid4
 tt_content.bs3-grid6 {
     templateName = bs3-grid6
 

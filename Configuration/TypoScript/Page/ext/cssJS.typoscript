@@ -3,8 +3,7 @@
 #####################
 
 page.includeCSS {
-  template = EXT:dp_theme/Resources/Public/scss/style.scss
-  #changes = EXT:dp_theme/Resources/Public/css/changes.css
+  #template = EXT:dp_theme/Resources/Public/scss/style.scss
 }
 
 ####################

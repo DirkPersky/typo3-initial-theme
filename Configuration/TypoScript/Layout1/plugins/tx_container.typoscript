@@ -3,9 +3,18 @@
 ###############################
 lib.containerElementFlexform < lib.contentElement
 lib.containerElementFlexform {
-    partialRootPaths.200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Partial/
-    templateRootPaths.200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Template/
-    layoutRootPaths.200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Layout/
+    partialRootPaths {
+        200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Partial/
+        210 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Partial/Layout1/
+    }
+    templateRootPaths {
+        200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Template/
+        210 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Template/Layout1/
+    }
+    layoutRootPaths {
+        200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Layout/
+        210 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Layout/Layout1/
+    }
 
     dataProcessing {
 

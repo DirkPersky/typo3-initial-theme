@@ -57,7 +57,7 @@
 	  border-bottom: 0;
 	}
 	@include media-breakpoint-up(xl) {
-	  height: 120px;
+	  height: 111px;
 	}
 
 	.nav--sticky & {
@@ -84,7 +84,10 @@
 		color: $dark;
 		font-weight: bold;
 		text-transform: uppercase;
-		display: block;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		@include media-breakpoint-up(sm) {
 		  margin-right: 16px;
@@ -95,11 +98,9 @@
 		@include media-breakpoint-up(xxl) {
 		  padding: .25rem 0;
 		}
-	  }
 
-	  .logo {
+
 		height: calc(60px - .625rem);
-		width: auto;
 
 		@include media-breakpoint-up(lg) {
 		  height: calc(90px - 2rem);
@@ -110,6 +111,12 @@
 		@include media-breakpoint-up(xxl) {
 		  height: calc(120px - .5rem);
 		}
+	  }
+
+	  .logo {
+		height: auto;
+		max-height: 100%;
+		width: auto;
 	  }
 	}
 

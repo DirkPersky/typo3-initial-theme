@@ -1,0 +1,6 @@
+#####################
+### CSS einbinden ###
+#####################
+page.includeCSS {
+  template = EXT:dp_theme/Resources/Public/scss/layout1/style.scss
+}

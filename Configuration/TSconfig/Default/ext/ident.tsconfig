@@ -29,6 +29,7 @@ TCEFORM.tt_content.layout {
     altLabels  {
         6 = Layout 4
         7 = Layout 5
+        8 = Gray Scale
         9 = ToP Header
         10 = Underline
     }
@@ -37,6 +38,7 @@ TCEFORM.tt_content.layout {
         textmedia {
             addItems.6 = 6
         	addItems.7 = 7
+        	addItems.8 = 8
         }
 
         header {

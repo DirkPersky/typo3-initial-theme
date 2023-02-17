@@ -1,0 +1,21 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+/* Load Bootstrap */
+@import "bootstrap";
+/* Menu Button Hambugers */
+@import "vendor/hamburgers/hamburgers/hamburgers";
+/* Fonts */
+@import "vendor/@fortawesome/fontawesome";
+@import "vendor/@fortawesome/brands";
+@import "vendor/@fortawesome/solid";
+@import "vendor/@fortawesome/regular";
+/* Import Fancybox css */
+//@import "vendor/@fancyapps/jquery.fancybox.min";

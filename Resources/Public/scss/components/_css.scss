@@ -1,6 +1,8 @@
 .css--element {
   &.bg-op {
     position: relative;
+    background-size: cover;
+    background-position: center;
 
     &:before {
       position: absolute;
@@ -17,8 +19,8 @@
       display: block;
 
       background: inherit;
-      background-position: center;
-      background-size: cover;
+      background-position: inherit;
+      background-size: inherit;
 
       @include media-breakpoint-up(xl){
         background-attachment: fixed;

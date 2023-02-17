@@ -1,0 +1,134 @@
+{
+    "version": "7.2.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "card": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "tx_mask_2e037547bcc89",
+                        "image",
+                        "bodytext"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "card",
+                    "label": "Card",
+                    "labels": [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 4
+                }
+            },
+            "palettes": {
+                "tx_mask_2e037547bcc89": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "header_layout",
+                        "header_link"
+                    ]
+                }
+            },
+            "tca": {
+                "bodytext": {
+                    "bodytextTypeByElement": {
+                        "card": "richtext"
+                    },
+                    "coreField": 1,
+                    "fullKey": "bodytext",
+                    "key": "bodytext"
+                },
+                "header": {
+                    "coreField": 1,
+                    "description": {
+                        "carousel_slider": "in der Webseite nicht sichtbar",
+                        "flyout": ""
+                    },
+                    "fullKey": "header",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "carousel_slider": "tx_mask_42f614e9a658b",
+                        "flyout": "tx_mask_8a349a58e970b"
+                    },
+                    "key": "header",
+                    "label": {
+                        "carousel_slider": "",
+                        "flyout": ""
+                    },
+                    "order": {
+                        "carousel_slider": 1,
+                        "flyout": 1
+                    },
+                    "type": "string"
+                },
+                "header_layout": {
+                    "coreField": 1,
+                    "description": {
+                        "card": ""
+                    },
+                    "fullKey": "header_layout",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "card": "tx_mask_2e037547bcc89"
+                    },
+                    "key": "header_layout",
+                    "label": {
+                        "card": ""
+                    },
+                    "order": {
+                        "card": 1
+                    },
+                    "type": "select"
+                },
+                "header_link": {
+                    "coreField": 1,
+                    "description": {
+                        "card": ""
+                    },
+                    "fullKey": "header_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "card": "tx_mask_2e037547bcc89"
+                    },
+                    "key": "header_link",
+                    "label": {
+                        "card": ""
+                    },
+                    "order": {
+                        "card": 2
+                    },
+                    "type": "link"
+                },
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "imageoverlayPalette": 1,
+                    "key": "image",
+                    "type": "file"
+                },
+                "tx_mask_2e037547bcc89": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_2e037547bcc89",
+                    "key": "2e037547bcc89",
+                    "type": "palette"
+                }
+            }
+        }
+    }
+}

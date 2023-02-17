@@ -63,3 +63,8 @@ $container-max-widths: (
 		xxl: 1320px,
 		3xl: 1520px
 ) !default;
+
+
+$card-color2: #2473be !default;
+$card-color1: $primary !default;
+$card-bg: darken($card-color2, 25%) !default;

@@ -1,0 +1,5 @@
+mmenuPage.10 {
+	layoutRootPath = EXT:dp_theme/Resources/Private/Layouts/Layout1/
+	#partialRootPath = EXT:dp_theme/Resources/Private/Partials/Layout1/
+	file = EXT:dp_theme/Resources/Private/Templates/Layout1/Navigation.html
+}

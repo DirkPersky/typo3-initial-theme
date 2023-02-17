@@ -1,0 +1,33 @@
+
+<div class="card card--hover">
+    <div class="card-body">
+        <f:if condition="{data.image}">
+            <div class="card-image">
+                <f:for each="{data.image}" as="file">
+                    <f:image image="{file}" width="200" />
+                </f:for>
+            </div>
+        </f:if>
+
+        <f:variable name="headerType" value="div" />
+        <f:if condition="{data.header_layout} > 0 && {data.header_layout} < 6">
+            <f:variable name="headerType" value="h{data.header_layout}" />
+        </f:if>
+        <{headerType} class="card-title">
+            {data.header -> f:format.raw()}
+        </{headerType}>
+
+        <f:if condition="{data.bodytext}">
+            {data.bodytext -> f:format.html()}
+        </f:if>
+
+        <f:if condition="{data.header_link}">
+            <f:link.typolink parameter="{data.header_link}" class="card-link">&nbsp;</f:link.typolink>
+        </f:if>
+    </div>
+</div>
+
+
+
+
+
