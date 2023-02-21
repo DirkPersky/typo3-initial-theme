@@ -1,0 +1,89 @@
+$card-color1: $primary !default;
+$card-color2: $primary !default;
+$card-bg: darken($card-color1, 25%) !default;
+
+.cards {
+  --xPos: 0;
+  --yPos: 0;
+}
+
+.card--hover {
+  position: relative;
+  min-height: 100%;
+  z-index: 1;
+
+  padding: 2px;
+  border: 0;
+  border-radius: 0;
+
+  background-color: $card-color1;
+  background: radial-gradient(
+				  100rem circle at var(--xPos) var(--yPos),
+				  rgba($card-color1, 1),
+				  $card-color2 15%
+  );
+
+  transition: all 0.15s;
+  text-align: center;
+
+  &:hover {
+	transform: scale(0.97);
+
+	&::before {
+	  opacity: 1;
+	}
+  }
+
+  &::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	background: radial-gradient(
+					50rem circle at var(--xPos) var(--yPos),
+					rgba($card-color1, .1),
+					transparent 35%
+	);
+	opacity: 0;
+	transition: all 0.15s ease-in-out;
+  }
+
+
+  .card-image {
+	img {
+	  width: 125px;
+	  height: auto;
+	}
+  }
+
+  .card-title {
+	font-size: 1.3rem;
+	font-weight: bold;
+
+	padding-top: .5rem;
+	margin-bottom: .5rem;
+  }
+
+  .card-body {
+	background-color: $card-bg;
+	padding: 1.5rem;
+	border-radius: inherit;
+	transition: all 0.25s;
+
+	height: 100%;
+	width: 100%;
+  }
+
+  .card-link {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	display: block;
+	text-decoration: none;
+  }
+}

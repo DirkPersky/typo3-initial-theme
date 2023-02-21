@@ -15,5 +15,6 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 // Add Plugin Configs
 ExtensionManagementUtility::addStaticFile('dp_theme', 'Configuration/TypoScript/Layout1', 'DPTheme Layout 1');
+ExtensionManagementUtility::addStaticFile('dp_theme', 'Configuration/TypoScript/Layout2', 'DPTheme Layout 2');
 ExtensionManagementUtility::addStaticFile('dp_theme', 'Configuration/TypoScript/Performance', 'DPTheme GoLive Configuration');
 ExtensionManagementUtility::addStaticFile('dp_theme', 'Configuration/TypoScript/rss', 'DPTheme RSS (last if needed)');

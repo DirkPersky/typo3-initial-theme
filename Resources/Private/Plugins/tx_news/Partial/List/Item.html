@@ -5,10 +5,25 @@
 	=====================
 		Partials/List/Item.html
 -->
-<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} animate-fadeInUp" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}{f:if(condition: settings.hidePagination, then: '', else:' animate-fadeInUp')}" itemscope="itemscope" itemtype="http://schema.org/Article">
 	<n:excludeDisplayedNews newsItem="{newsItem}"/>
 	<div class="article--body">
-
+		<f:if condition="{newsItem.mediaPreviews}">
+			<div class="news-img-wrap">
+				<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+					<f:if condition="{mediaElement.originalResource.type} == 2">
+						<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+					</f:if>
+					<f:if condition="{mediaElement.originalResource.type} == 4">
+						<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+					</f:if>
+					<f:if condition="{mediaElement.originalResource.type} == 5">
+						<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+					</f:if>
+				</f:alias>
+			</div>
+		</f:if>
 		<!-- header -->
 		<header class="header">
 			<div class="subline">

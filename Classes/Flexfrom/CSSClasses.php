@@ -29,7 +29,13 @@ class CSSClasses {
                 ['text-primary', 'Text: Primary'],
             ],
             'Animation' => [
-                ['animate', 'Animation'],
+                ['animate-fadeIn', 'Animation (FadeIn)'],
+                ['animate-fadeInUp', 'Animation (FadeInUp)'],
+                ['animate-bounceIn', 'Animation (BounceIn)'],
+                ['animate-bounceInTop', 'Animation (BounceInTop)'],
+
+
+
                 ['jarallax', 'Parallax Effekt'],
             ]
         ];

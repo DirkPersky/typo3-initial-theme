@@ -1,0 +1,21 @@
+####################################
+### Load Default Template Config ###
+####################################
+@import 'EXT:dp_theme/Configuration/TypoScript/Page/setup.typoscript'
+
+################################
+### overwrite Plugin Configs ###
+################################
+@import 'EXT:dp_theme/Configuration/TypoScript/Layout2/plugins/tx_form.typoscript'
+
+###########################
+### load Plugin Modules ###
+###########################
+@import 'EXT:dp_theme/Configuration/TypoScript/Layout2/ext/cssJS.typoscript'
+@import 'EXT:dp_theme/Configuration/TypoScript/Layout2/ext/menu.typoscript'
+
+#####################
+### Load Template ###
+#####################
+@import 'EXT:dp_theme/Configuration/TypoScript/Layout2/plugins/tx_container.typoscript'
+@import 'EXT:dp_theme/Configuration/TypoScript/Layout2/ext/template.typoscript'

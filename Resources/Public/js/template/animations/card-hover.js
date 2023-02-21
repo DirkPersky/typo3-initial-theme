@@ -6,7 +6,6 @@ window.AnimateManager.attach('card-hover', function () {
         function eventHandle($event){
             let cards = wraps.querySelectorAll(".card--hover");
 
-            console.log(cards);
             cards.forEach((card) => {
                 const rect = card.getBoundingClientRect();
                 let x = $event.clientX - rect.left;

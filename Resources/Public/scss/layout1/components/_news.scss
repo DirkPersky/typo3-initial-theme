@@ -64,6 +64,10 @@
 	  }
 	}
 
+	.news-img-wrap {
+	  display: none;
+	}
+
 	@include media-breakpoint-up(lg) {
 	  width: 50%;
 	}

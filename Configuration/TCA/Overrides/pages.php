@@ -15,3 +15,4 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 // Add Plugin Configs
 ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/TSconfig/Layout1/config.tsconfig', 'DPTheme - Layout 1');
+ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/TSconfig/Layout2/config.tsconfig', 'DPTheme - Layout 2');
