@@ -10,8 +10,9 @@ editor:
     stylesSet:
       - { name: "BTN Default",  element: "a", attributes: { class: "btn btn-default"} }
       - { name: "BTN Primary",  element: "a", attributes: { class: "btn btn-primary"} }
+      - { name: "BTN Primary BIG",      element: "a", attributes: { class: "btn btn-primary btn-lg"} }
       - { name: "BTN Outline Primary",  element: "a", attributes: { class: "btn btn-outline-primary"} }
+      - { name: "BTN Outline Primary BIG",      element: "a", attributes: { class: "btn btn-outline-primary btn-lg"} }
       - { name: "BTN Dark",     element: "a", attributes: { class: "btn btn-dark"} }
-      - { name: "BTN BIG",      element: "a", attributes: { class: "btn btn-primary btn-lg"} }
       - { name: "Text Fett",    element: "p", attributes: { class: "fw-bold" } }
 

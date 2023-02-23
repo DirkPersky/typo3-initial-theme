@@ -1,6 +1,6 @@
 $card-color1: $primary !default;
-$card-color2: $primary !default;
-$card-bg: darken($card-color1, 25%) !default;
+$card-color2: $success !default;
+$card-bg: #fff !default;
 
 .cards {
   --xPos: 0;
@@ -14,7 +14,7 @@ $card-bg: darken($card-color1, 25%) !default;
 
   padding: 2px;
   border: 0;
-  border-radius: 0;
+  border-radius: 10px;
 
   background-color: $card-color1;
   background: radial-gradient(
@@ -24,7 +24,7 @@ $card-bg: darken($card-color1, 25%) !default;
   );
 
   transition: all 0.15s;
-  text-align: center;
+  text-align: left;
 
   &:hover {
 	transform: scale(0.97);
@@ -53,8 +53,25 @@ $card-bg: darken($card-color1, 25%) !default;
 
 
   .card-image {
+	display: inline-flex;
+	background-color: $card-color1;
+	background: radial-gradient(
+					100rem circle at var(--xPos) var(--yPos),
+					rgba($card-color1, 1),
+					$card-color2 15%
+	);
+	border-radius: 10px;
+	padding: 1rem;
+
+	width: 80px;
+	height: 80px;
+
+	align-items: center;
+	justify-content: center;
+
 	img {
-	  width: 125px;
+	  width: auto;
+	  max-width: 90%;
 	  height: auto;
 	}
   }
@@ -63,7 +80,7 @@ $card-bg: darken($card-color1, 25%) !default;
 	font-size: 1.3rem;
 	font-weight: bold;
 
-	padding-top: .5rem;
+	padding-top: 1.5rem;
 	margin-bottom: .5rem;
   }
 

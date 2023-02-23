@@ -43,9 +43,9 @@
                     <f:if condition="{row.tx_mask_text}">
                         <div class="carousel-inner-wrap">
                             <div class="container-lg">
-                                <div class="carousel-caption">
+                                <div class="carousel-caption frame">
                                     <f:if condition="{row.tx_mask_title}">
-                                        <header>
+                                        <header class="flex-column">
                                             <f:if condition="{row.tx_mask_pref}">
                                                 <div class="subline">
                                                     {row.tx_mask_pref->f:format.raw()}
@@ -66,7 +66,7 @@
                                         </header>
                                     </f:if>
                                     <f:if condition="{row.tx_mask_text}">
-                                        <div class="bodytext">
+                                        <div class="bodytext ce-bodytext">
                                             {row.tx_mask_text -> f:format.html()}
                                         </div>
                                     </f:if>

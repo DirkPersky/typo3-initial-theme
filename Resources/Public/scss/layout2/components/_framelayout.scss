@@ -14,6 +14,28 @@
 }
 
 .frame {
+  h1, h2, h3 {
+	position: relative;
+	padding-bottom: 18px;
+	font-weight: bold;
+
+	&:before,
+	&:after {
+	  content: "";
+	  display: block;
+	  position: absolute;
+	  bottom: ((18px - 4px) / 2);
+	  left: 0;
+	  width: 40px;
+	  height: 4px;
+	  background: $primary;
+	  transform: skewX(45deg);
+	}
+	&:before {
+	  transform: skewX(-45deg) translate(20px, 0);
+	}
+  }
+
   header {
 	display: flex;
 
@@ -26,30 +48,30 @@
 	.ce-headline-center {
 	  margin-left: auto;
 	  margin-right: auto;
+
+	  &:before,
+	  &:after {
+		left: 50%;
+		transform: skewX(45deg) translate(calc(-50% - 10px), 0);
+	  }
+
+	  &:before {
+		transform: skewX(-45deg) translate(calc(-50% + 10px), 0);
+	  }
 	}
 	.ce-headline-right {
-		margin-left: auto;
-	}
-  }
-  h1, h2, h3 {
-	position: relative;
-	padding-bottom: 18px;
-	font-weight: bold;
+	  margin-left: auto;
 
-	&:before,
-	&:after {
-	  content: "";
-	  display: block;
-	  position: absolute;
-	  bottom: ((18px - 4px) / 2);
-	  left: 50%;
-	  width: 40px;
-	  height: 4px;
-	  background: $primary;
-	  transform: skewX(45deg) translate(calc(-50% - 10px), 0);
-	}
-	&:before {
-	  transform: skewX(-45deg) translate(calc(-50% + 10px), 0);
+	  &:before,
+	  &:after {
+		left: auto;
+		right: 0;
+		transform: skewX(45deg) translate(-20px, 0);
+	  }
+
+	  &:before {
+		transform: skewX(-45deg);
+	  }
 	}
   }
 }

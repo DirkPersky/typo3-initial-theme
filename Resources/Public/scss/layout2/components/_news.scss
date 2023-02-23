@@ -11,7 +11,7 @@
 	width: 100%;
 	position: relative;
 
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(md) {
 	  width: 50%;
 	}
 	@include media-breakpoint-up(xl) {
@@ -20,6 +20,11 @@
 
 	$article-padding: 1.5rem;
 
+	.news-img-wrap {
+	  img {
+		width: 100%;
+	  }
+	}
 	.header {
 	  position: static;
 	  padding: $article-padding;
@@ -35,7 +40,7 @@
 		position: static;
 		padding-bottom: 0;
 		margin-bottom: 0;
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 
 		&:after,
 		&:before {

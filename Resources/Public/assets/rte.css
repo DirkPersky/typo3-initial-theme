@@ -12,15 +12,22 @@
     background-color: gray;
 }
 
-.btn.btn-outline-primary,
 .btn.btn-primary {
     border-color: blue;
     background-color: blue;
     color: #fff;
 }
 
-.btn.btn-primary {
-    background-color: blue;
+.btn.btn-outline-primary {
+    border-color: blue;
+    background-color: transparent;
+    color: blue;
+}
+
+
+.btn.btn-dark {
+    border-color: #000;
+    background-color: #000;
     color: #fff;
 }
 

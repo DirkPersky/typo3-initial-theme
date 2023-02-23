@@ -18,13 +18,13 @@
     "bootstrap": "latest",
     "bs5-lightbox": "latest",
     "hamburgers": "1.1.3",
+    "jarallax": "latest",
     "jquery": "latest",
     "recursive-copy": "latest",
     "rrssb": "latest",
     "split-type": "latest",
-    "swup": "latest",
-    "umbrellajs": "latest",
-    "jarallax": "latest"
+    "swup": "^3.0.4",
+    "umbrellajs": "latest"
   },
   "devDependencies": {
     "crittr": "latest"

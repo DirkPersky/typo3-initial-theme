@@ -31,10 +31,13 @@ const _PACKGES_ = [
             /**
              * Swup
              */
-            {src: 'swup/dist/swup.js', dir: 'swup'},
+            {src: 'swup/dist/swup.umd.js', dir: 'swup'},
+            {src: 'swup/dist/swup.umd.js.map', dir: 'swup'},
             {src: '@swup/overlay-theme/dist/SwupOverlayTheme.js', dir: 'swup/plugin'},
-            {src: '@swup/forms-plugin/dist/SwupFormsPlugin.js', dir: 'swup/plugin'},
-            {src: '@swup/scroll-plugin/dist/SwupScrollPlugin.js', dir: 'swup/plugin'},
+            {src: '@swup/forms-plugin/dist/index.umd.js', dir: 'swup/plugin/forms', name: 'SwupForms.js'},
+            {src: '@swup/forms-plugin/dist/index.umd.js.map', dir: 'swup/plugin/forms'},
+            {src: '@swup/scroll-plugin/dist/index.umd.js', dir: 'swup/plugin/scroll', name: 'SwupScroll.js'},
+            {src: '@swup/scroll-plugin/dist/index.umd.js.map', dir: 'swup/plugin/scroll'},
 
             /**
              * SplitText

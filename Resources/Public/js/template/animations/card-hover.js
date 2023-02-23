@@ -17,6 +17,9 @@ window.AnimateManager.attach('card-hover', function () {
                 ) {
                     card.style.setProperty("--xPos", `${x}px`);
                     card.style.setProperty("--yPos", `${y}px`);
+                } else {
+                    card.style.setProperty("--xPos", `0`);
+                    card.style.setProperty("--yPos", `0`);
                 }
             });
         }

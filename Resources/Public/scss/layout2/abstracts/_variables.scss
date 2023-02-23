@@ -18,7 +18,7 @@ $font-size-base-calc:                       18px !default; // Assumes the browse
 
 // Bootstrap Overrides
 $font-family-base:       					"Roboto",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-sans-serif: 					"Merriweather", serif !default;
+$font-family-sans-serif: 					$font-family-base !default;
 $headings-font-family:  $font-family-sans-serif !default;
 // Hamburger
 $hamburger-padding-x                       : 1.5rem !default;
@@ -63,4 +63,4 @@ $container-max-widths: (
 
 $card-color2: #2473be !default;
 $card-color1: $primary !default;
-$card-bg: darken($card-color2, 25%) !default;
+$card-bg: #fff !default;
