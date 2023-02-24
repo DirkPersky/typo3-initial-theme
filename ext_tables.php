@@ -9,12 +9,12 @@
  * @license    AGPL v3
  */
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 call_user_func(function ($ext_key) {
     /**
      * Add backend Styles
      */
-    if (TYPO3_MODE === 'BE') {
+    if (TYPO3 === 'BE') {
         // add css Skin
         if(!isset($GLOBALS['TBE_STYLES']['skins'][$ext_key])){
             $GLOBALS['TBE_STYLES']['skins'][$ext_key] = [

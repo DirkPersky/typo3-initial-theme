@@ -9,7 +9,7 @@
  * @license    AGPL v3
  */
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 call_user_func(function ($ext_key) {
     // increase log level to stop massiv PHP8 notices
@@ -26,14 +26,17 @@ call_user_func(function ($ext_key) {
             'tx_news_pi1[@widget_0][currentPage]'
         ]
     );
-    // overwrite Container to add Flexforms
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\B13\Container\Tca\ContainerConfiguration::class] = [
-        'className' => \DirkPersky\Theme\Tca\ContainerConfiguration::class
-    ];
-    // overwrite Registry to add Flexforms
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\B13\Container\Tca\Registry::class] = [
-        'className' => \DirkPersky\Theme\Tca\Registry::class
-    ];
+    if(class_exists(\B13\Container\Tca\ContainerConfiguration::class)) {
+
+        // overwrite Container to add Flexforms
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\B13\Container\Tca\ContainerConfiguration::class] = [
+            'className' => \DirkPersky\Theme\Tca\ContainerConfiguration::class
+        ];
+        // overwrite Registry to add Flexforms
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\B13\Container\Tca\Registry::class] = [
+            'className' => \DirkPersky\Theme\Tca\Registry::class
+        ];
+    }
 
 
     if(class_exists(\Hoogi91\Charts\DataProcessing\Charts\LibraryRegistry::class)){

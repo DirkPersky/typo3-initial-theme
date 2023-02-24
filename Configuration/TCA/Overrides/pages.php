@@ -9,7 +9,7 @@
  * @license    AGPL v3
  */
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 

@@ -4,9 +4,22 @@ imports:
 
 editor:
   config:
-    contentsCss:
-      - "EXT:dp_theme/Resources/Public/assets/rte.css"
-      - "EXT:rte_ckeditor/Resources/Public/Css/contents.css"
+    contentsCss: "EXT:dp_theme/Resources/Public/assets/rte.css"
+
+    style:
+      definitions:
+        - { name: "BTN Default",  element: "a", classes: ["btn", "btn-default"]}
+        - { name: "BTN Primary",  element: "a", classes: ["btn", "btn-primary"]}
+        - { name: "BTN Primary BIG",  element: "a", classes: ["btn", "btn-primary", "btn-lg"]}
+        - { name: "BTN Outline Primary",  element: "a", classes: [ "btn", "btn-outline-primary" ] }
+        - { name: "BTN Outline Primary BIG",  element: "a", classes: [ "btn", "btn-outline-primary", "btn-lg" ] }
+        - { name: "BTN Dark",  element: "a", classes: ["btn", "btn-dark"]}
+        - { name: "Text Fett",  element: "p", classes: ["fw-bold"]}
+
+#    heading:
+#      options:
+#        - { model: 'heading2', view: 'h2', title: 'Heading 2' }
+
     stylesSet:
       - { name: "BTN Default",  element: "a", attributes: { class: "btn btn-default"} }
       - { name: "BTN Primary",  element: "a", attributes: { class: "btn btn-primary"} }

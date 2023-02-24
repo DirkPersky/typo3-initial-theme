@@ -22,19 +22,20 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'typo3' => '12.0.0-12.99.99',
             'ws_scss' => '11.0.2-12.9.99',
-            'cs_seo' => '7.3.1-7.9.99',
-            'dp_http2' => '3.0.0-3.9.99',
-            'rte_ckeditor_fontawesome' => '11.5.6-12.0.0',
-            'dp_cookieconsent' => '11.7.0-12.0.0',
             'vhs' => '6.1.2-6.9.99',
-            'container' => '2.1.1-3.0.0',
             'mask' => '8.0.4-8.9.99',
-            'news' => '10.0.3-10.9.99',
-            'content_defender' => '3.2.3-3.9.9',
+            'dp_cookieconsent' => '11.7.0-12.0.0',
         ],
         'conflicts' => [
         ],
         'suggests' => [
+            'cs_seo' => '7.3.1-7.9.99',
+            'dp_http2' => '3.0.0-3.9.99',
+            'rte_ckeditor_fontawesome' => '11.5.6-12.0.0',
+            'container' => '2.1.1-3.0.0',
+            'news' => '10.0.3-10.9.99',
+
+            'content_defender' => '3.2.3-3.9.9',
             'sourceopt' => '5.0.0-5.9.99',
             'scriptmerger' => '8.0.3-8.9.99',
             'eventnews ' => '5.0.0-5.9.99',
