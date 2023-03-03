@@ -1,0 +1,54 @@
+footer#bottom {
+  background-color: $body-color;
+  color: #fff;
+  font-size: 0.9rem;
+
+  a {
+	color: inherit;
+
+	&:hover {
+	  color: $primary;
+	}
+  }
+
+  header {
+	* {
+	  font-weight: bold;
+	  font-size: 1.2rem;
+	  letter-spacing: 1px;
+
+	  @extend .pb-4;
+	}
+  }
+
+  .footer-content {
+	ul {
+	  > li {
+		> a {
+		  position: relative;
+		  padding: .125rem .25rem .125rem 1.25rem;
+		  line-height: 1;
+
+		  &:before {
+			display: block;
+			content: '';
+			background-color: #fff;
+			width: 10px;
+			height: 1px;
+
+			position: absolute;
+			top: 50%;
+			left: 0;
+		  }
+		}
+	  }
+	}
+  }
+
+  .sub-line {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  }
+}

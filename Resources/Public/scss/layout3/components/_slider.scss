@@ -1,0 +1,249 @@
+/*!
+ * Copyright (c) 2021.
+ *
+ * @category TYPO3
+ *
+ * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <dirk.persky@gmail.com>
+ * @license    AGPL v3
+ */
+
+// main: ../style.scss
+.slider {
+  padding: 0;
+  min-height: 60px;
+  position: relative;
+
+  padding-top: 55px;
+
+  @include media-breakpoint-up(md) {
+	padding-top: 130px;
+  }
+
+  .carousel-item {
+	display: flex;
+	align-items: stretch;
+	flex-wrap: wrap;
+
+	.carousel-item-medias {
+	  flex: 1 1 100%;
+	  position: relative;
+
+	  .carousel-item-media:first-child {
+
+		&:before,
+		& picture:before {
+		  @extend .fa-regular;
+		  content: "\f111";
+		  position: absolute;
+
+		  color: $primary;
+		  opacity: .7;
+		}
+
+		&:after,
+		& picture:after {
+		  @extend .fa-regular;
+		  content: "\f111";
+		  position: absolute;
+
+		  color: #fff;
+		  font-size: .8em;
+		  opacity: .6;
+		}
+
+		&:before {
+		  top: 65px;
+		  left: 80px;
+		  animation: animationSliderCircle 20s infinite linear;
+
+		}
+
+		&:after {
+		  top: 35px;
+		  left: 265px;
+		  animation: animationSliderCircle 20s infinite linear;
+
+		  @include media-breakpoint-up(sm){
+			left: 385px;
+		  }
+		}
+
+		picture {
+		  &:before {
+			bottom: 65px;
+			right: 80px;
+			animation: animationSliderCircleReverse 20s infinite linear;
+		  }
+
+		  &:after {
+			bottom: 35px;
+			right: 265px;
+			animation: animationSliderCircleReverse 20s infinite linear;
+
+			@include media-breakpoint-up(sm){
+			  right: 385px;
+			}
+		  }
+		}
+	  }
+
+	  &:before {
+		content: '';
+		display: block;
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(#000, .5);
+	  }
+
+	  img {
+		width: 100%;
+		min-height: 400px;
+		height: calc(100vh - 130px);
+		object-fit: cover;
+	  }
+	}
+
+	.carousel-inner-wrap {
+	  display: flex;
+	  align-items: center;
+	  justify-content: flex-end;
+
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+
+	  .container-lg {
+		position: relative;
+
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-start;
+
+		@include media-breakpoint-down(md) {
+		  padding: 0;
+		}
+	  }
+
+	  .carousel-caption {
+		position: relative;
+		z-index: 2;
+		bottom: auto;
+		right: auto;
+		left: 0;
+		top: 0;
+
+		color: #fff;
+		padding: 2rem 1rem;
+		text-align: left;
+
+		background-color: transparent !important;
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+		  padding: 2rem 0rem;
+		  width: 525px;
+		}
+		@include media-breakpoint-up(lg) {
+		  width: 550px;
+		}
+		@include media-breakpoint-up(xl) {
+		  width: 600px;
+		}
+
+		header {
+		  text-transform: uppercase;
+		}
+	  }
+	}
+  }
+
+  .scroll-down {
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+
+	display: inline-flex;
+	flex-direction: column;
+
+	text-transform: uppercase;
+	text-align: center;
+	font-size: .8rem;
+	color: #fff;
+
+	transform: translate(-50%, 0);
+
+	i {
+	  font-size: 1rem;
+
+	  @extend .animated;
+	  @extend .bounce;
+
+	  color: #fff;
+
+	  animation-iteration-count: infinite;
+	  animation-duration: calc(var(--animate-duration) * 0.75);
+	}
+  }
+
+  .slider--style-2 {
+	.carousel-item {
+	  .carousel-item-medias {
+		img {
+		  min-height: 250px;
+		  height: 30vh;
+		}
+	  }
+	}
+  }
+}
+
+
+@keyframes animationSliderCircle {
+  0% {
+	transform: translate(0px, 0px);
+  }
+  20% {
+	transform: translate(75px, -1px);
+  }
+  40% {
+	transform: translate(140px, 70px);
+  }
+  60% {
+	transform: translate(85px, 120px);
+  }
+  80% {
+	transform: translate(-40px, 70px);
+  }
+  100% {
+	transform: translate(0px, 0px);
+  }
+}
+
+
+@keyframes animationSliderCircleReverse {
+  0% {
+	transform: translate(0px, 0px);
+  }
+  20% {
+	transform: translate(-75px, 1px);
+  }
+  40% {
+	transform: translate(-140px, -70px);
+  }
+  60% {
+	transform: translate(-85px, -120px);
+  }
+  80% {
+	transform: translate(40px, -70px);
+  }
+  100% {
+	transform: translate(0px, 0px);
+  }
+}

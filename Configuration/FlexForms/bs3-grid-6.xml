@@ -614,5 +614,92 @@
                 </el>
             </ROOT>
         </visibility>
+        <animations>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Animationen</sheetTitle>
+                </TCEforms>
+                <el type="array">
+                    <animation_col1 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 1</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectCheckBox</renderType>
+                                <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAnimationClasses</itemsProcFunc>
+                                <maxitems>1</maxitems>
+                                <size>4</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </animation_col1>
+                    <animation_col2 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 2</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectCheckBox</renderType>
+                                <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAnimationClasses</itemsProcFunc>
+                                <maxitems>1</maxitems>
+                                <size>4</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </animation_col2>
+                    <animation_col3 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 3</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectCheckBox</renderType>
+                                <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAnimationClasses</itemsProcFunc>
+                                <maxitems>1</maxitems>
+                                <size>4</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </animation_col3>
+                    <animation_col4 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 4</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectCheckBox</renderType>
+                                <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAnimationClasses</itemsProcFunc>
+                                <maxitems>1</maxitems>
+                                <size>4</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </animation_col4>
+                    <animation_col5 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 5</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectCheckBox</renderType>
+                                <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAnimationClasses</itemsProcFunc>
+                                <maxitems>1</maxitems>
+                                <size>4</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </animation_col5>
+                    <animation_col6 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 6</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectCheckBox</renderType>
+                                <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAnimationClasses</itemsProcFunc>
+                                <maxitems>1</maxitems>
+                                <size>4</size>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </animation_col6>
+                </el>
+            </ROOT>
+        </animations>
     </sheets>
 </T3DataStructure>

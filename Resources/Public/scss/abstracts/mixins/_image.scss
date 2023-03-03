@@ -94,6 +94,22 @@
       }
     }
   }
+
+
+  &.ce-border {
+    .ce-row {
+      margin-left: -0.5rem;
+      margin-right: -0.5rem;
+
+      &:first-child {
+        margin-top: -0.5rem;
+      }
+
+      .ce-column {
+        padding: 0.5em;
+      }
+    }
+  }
 }
 
 

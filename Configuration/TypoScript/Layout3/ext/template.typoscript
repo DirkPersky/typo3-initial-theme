@@ -1,0 +1,13 @@
+page.10 {
+	layoutRootPaths {
+	    10 = EXT:dp_theme/Resources/Private/Layouts/Layout3/
+	}
+	partialRootPaths {
+	    10 = EXT:dp_theme/Resources/Private/Partials/Layout3/
+	}
+
+	file.cObject {
+	  default.value = EXT:dp_theme/Resources/Private/Templates/Layout3/normal.html
+	  pagets__2.value = EXT:dp_theme/Resources/Private/Templates/Layout3/root.html
+	}
+}

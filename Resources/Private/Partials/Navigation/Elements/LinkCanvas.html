@@ -16,7 +16,7 @@
     </f:else>
 </f:if>
 
-{item.title}
+{item.title->f:format.raw()}
 <f:if condition="{item.children}">
     <span class="trigger"></span>
 </f:if>

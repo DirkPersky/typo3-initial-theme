@@ -40,6 +40,29 @@ class GridClasses
             }
         }
     }
+    /**
+     * Get Animation Classes
+     * @param $fConfig
+     * @return void
+     */
+    public function getAnimationClasses(&$fConfig)
+    {
+
+        $visibilityClasses = [
+            ['fadeIn', 'Animation (FadeIn)'],
+            ['fadeInUp', 'Animation (FadeInUp)'],
+            ['fadeInLeft', 'Animation (fadeInLeft)'],
+            ['fadeInRight', 'Animation (fadeInRight)'],
+            ['bounceIn', 'Animation (BounceIn)'],
+            ['bounceInTop', 'Animation (BounceInTop)'],
+        ];
+
+        foreach ($visibilityClasses as $visibility) {
+            $fConfig['items'][] = [
+                $visibility[1], 'animate-' . $visibility[0]
+            ];
+        }
+    }
 
     /**
      * Get Row Class for Alignment

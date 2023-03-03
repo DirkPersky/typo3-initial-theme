@@ -2,7 +2,7 @@
 <f:if condition="{data.tx_mask_item}">
     <div
             id="carousel-generic-{data.uid}"
-            class="carousel slide"
+            class="carousel slide slider--style-{data.layout}"
             data-interval="{data.tx_mask_interval}"
             data-ride="carousel"
             data-wrap="true"
@@ -40,7 +40,7 @@
                         </f:for>
                     </div>
                     <!-- Carousel caption -->
-                    <f:if condition="{row.tx_mask_text}">
+                    <f:if condition="{row.tx_mask_text} || {row.tx_mask_title}">
                         <div class="carousel-inner-wrap">
                             <div class="container-lg">
                                 <div class="carousel-caption frame">
