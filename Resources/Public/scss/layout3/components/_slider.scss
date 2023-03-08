@@ -64,7 +64,7 @@
 		  left: 265px;
 		  animation: animationSliderCircle 20s infinite linear;
 
-		  @include media-breakpoint-up(sm){
+		  @include media-breakpoint-up(sm) {
 			left: 385px;
 		  }
 		}
@@ -81,7 +81,7 @@
 			right: 265px;
 			animation: animationSliderCircleReverse 20s infinite linear;
 
-			@include media-breakpoint-up(sm){
+			@include media-breakpoint-up(sm) {
 			  right: 385px;
 			}
 		  }
@@ -196,11 +196,30 @@
 	.carousel-item {
 	  .carousel-item-medias {
 		img {
-		  min-height: 250px;
-		  height: 30vh;
+		  min-height: 350px;
+		  height: 35vh;
 		}
 	  }
 	}
+
+	//&#carousel-generic-news {
+
+	  .carousel-item {
+		.carousel-inner-wrap {
+		  .carousel-caption {
+			@include media-breakpoint-up(md) {
+			  width: 650px;
+			}
+			@include media-breakpoint-up(lg) {
+			  width: 700px;
+			}
+			@include media-breakpoint-up(xl) {
+			  width: 750px;
+			}
+		  }
+		}
+	  }
+	//}
   }
 }
 

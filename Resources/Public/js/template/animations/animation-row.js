@@ -36,11 +36,36 @@ window.AnimateManager.attach('animation-row', function () {
             }
         });
     }
-    window.DPAnimate.scrollTrigger('div[class*="animate-"]', {
-        start: 'top bottom-=50px',
-        end: 'bottom top+=150px',
-        once: true,
-        onEnter: onEnterCustom,
-        onEnterBack: onEnterCustom,
-    });
+
+    /**
+     * init after initial scroll is done
+     */
+    var animationTimer =  startTimer();
+    window.onscroll = function(ev) {
+        if(animationTimer) {
+            clearTimeout(animationTimer);
+            animationTimer = startTimer();
+        }
+    };
+    // start anyways after 1.5 secs
+    setTimeout(() => {
+        if(animationTimer) {
+            clearTimeout(animationTimer);
+            initAnimation();
+        }
+    }, 1500);
+    function initAnimation(){
+        animationTimer = false;
+        window.DPAnimate.scrollTrigger('div[class*="animate-"]', {
+            start: 'top bottom-=50px',
+            end: 'bottom top+=150px',
+            once: true,
+            onEnter: onEnterCustom,
+            onEnterBack: onEnterCustom,
+        });
+    }
+
+    function startTimer(){
+        return setTimeout(() => initAnimation(), 100);
+    }
 })

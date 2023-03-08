@@ -1,0 +1,17 @@
+###############
+### TX_NEWS ###
+###############
+plugin.tx_news {
+    settings {
+        # Disable Dummy Image
+        displayDummyIfNoMedia = 1
+
+        cropMaxCharacters = 150
+
+        list {
+            media {
+                dummyImage = EXT:dp_theme/Resources/Public/assets/news-preview.jpg
+            }
+        }
+    }
+}

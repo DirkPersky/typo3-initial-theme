@@ -62,3 +62,9 @@
 	opacity: 0;
   }
 }
+
+html.js [class*="animate-"] {
+  &:not([data-dp-scroll]) {
+	opacity: 0;
+  }
+}

@@ -46,6 +46,10 @@
   }
 }
 
+[class*="btn-outline-"] {
+  color: inherit;
+}
+
 .btn-lg {
   @extend .px-4;
 }

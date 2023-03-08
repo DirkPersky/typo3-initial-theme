@@ -32,6 +32,7 @@ u.prototype.DPCanvas = function (options){
      */
     function loadNavigationContent(){
         var current = window.location.protocol+'//' + window.location.hostname + window.location.pathname;
+        current = current.replace(/\/$/g, '');
         // make Ajax Request
         fetch(current + '?' + new URLSearchParams({
             type: settings.type

@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.swupLoad = new Swup({
         cache: false,
         debugMode: false,
+        animateHistoryBrowsing: true,
         plugins: [
             new SwupOverlayTheme(),
             new SwupFormsPlugin({formSelector: 'form:not([data-ajax-form])'}),
@@ -23,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     samePageWithHash: false,
                     samePage: false
                 },
-                scrollFriction: 0.3,
+                scrollFriction: 0.2,
                 scrollAcceleration: 0.04,
                 offset: $offset // offset when anchor scroll
             })
@@ -47,10 +48,10 @@ window.addEventListener('DOMContentLoaded', () => {
     window.swupLoad.on('contentReplaced', function (e, i) {
         // wait for handler after scoll
         window.swupLoad.on('scrollDone', (e) => {
-            // rebind scripts
-            window.StateManager.call();
             // unbind handler
             window.swupLoad.off('scrollDone');
+            // rebind scripts
+            window.StateManager.call();
         });
         // Swup Scolling
         if (typeof window.formScroll != "undefined") {
@@ -58,7 +59,11 @@ window.addEventListener('DOMContentLoaded', () => {
         } else if (window.location.href.indexOf('#') == -1 && u('div[data-swup-scroll]').length > 0) {
             // only do if no anker is defined
             window.swupLoad.scrollTo(u('div[data-swup-scroll]').first().offsetTop - $offset);
-        } else {
+        } else if(!window.swupLoad.findPlugin('ScrollPlugin')){
+            // if ScrollPlugInIs disabled
+            window.StateManager.call();
+        } else if(window.scrollY <= (window.innerHeight / 2)){
+            // if no scroll needed fire direct
             window.swupLoad.triggerEvent('scrollDone');
         }
     });

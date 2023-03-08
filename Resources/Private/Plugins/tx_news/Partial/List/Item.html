@@ -10,19 +10,28 @@
 	<n:excludeDisplayedNews newsItem="{newsItem}"/>
 	<div class="article--body">
 		<f:if condition="{newsItem.mediaPreviews}">
-			<div class="news-img-wrap">
-				<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
-					<f:if condition="{mediaElement.originalResource.type} == 2">
-						<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
-					</f:if>
-					<f:if condition="{mediaElement.originalResource.type} == 4">
-						<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
-					</f:if>
-					<f:if condition="{mediaElement.originalResource.type} == 5">
-						<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
-					</f:if>
-				</f:alias>
-			</div>
+			<f:then>
+				<div class="news-img-wrap">
+					<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+						<f:if condition="{mediaElement.originalResource.type} == 2">
+							<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+						</f:if>
+						<f:if condition="{mediaElement.originalResource.type} == 4">
+							<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+						</f:if>
+						<f:if condition="{mediaElement.originalResource.type} == 5">
+							<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+						</f:if>
+					</f:alias>
+				</div>
+			</f:then>
+			<f:else>
+				<f:if condition="{settings.displayDummyIfNoMedia}">
+					<div class="news-img-wrap">
+						<f:image src="{settings.list.media.dummyImage}" title="" alt="" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+					</div>
+				</f:if>
+			</f:else>
 		</f:if>
 		<!-- header -->
 		<header class="header">
@@ -108,7 +117,7 @@
 			<f:if condition="{newsItem.teaser}">
 				<f:then>
 					<div itemprop="description">
-						<f:format.html>{newsItem.teaser}</f:format.html>
+						{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
 					</div>
 				</f:then>
 				<f:else>

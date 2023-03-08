@@ -1,0 +1,52 @@
+<div id="carousel-generic-news" class="carousel slide slider--style-2" data-interval="3000" data-ride="carousel" data-wrap="true">
+    <!-- Carousel Items -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="carousel-item-medias ">
+                <div class="carousel-item-media " data-mediaload="row0-item0">
+                    <f:if condition="{newsItem.mediaPreviews}">
+                        <f:then>
+                            <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+                                <f:if condition="{mediaElement.originalResource.type} == 2">
+                                    <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}"  maxWidth="1960"/>
+                                </f:if>
+                                <f:if condition="{mediaElement.originalResource.type} == 4">
+                                    <f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+                                </f:if>
+                                <f:if condition="{mediaElement.originalResource.type} == 5">
+                                    <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="1960"/>
+                                </f:if>
+                            </f:alias>
+                        </f:then>
+                        <f:else>
+                            <f:image src="{settings.list.media.dummyImage}" title="" alt="" loading="{settings.list.media.image.lazyLoading}" maxWidth="1960"/>
+                        </f:else>
+                    </f:if>
+                </div>
+            </div>
+            <!-- Carousel caption -->
+            <div class="carousel-inner-wrap">
+                <div class="container-lg">
+                    <div class="carousel-caption frame">
+                        <header class="flex-column">
+                            <div class="subline">
+                                <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+                            </div>
+                            <h1>
+                                {newsItem.title -> f:format.raw()}
+                            </h1>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-down">
+        <i class="fa-solid fa-angles-down"></i>
+
+        <span class="d-none d-lg-block">
+            Scroll down
+        </span>
+    </div>
+</div>
