@@ -3,22 +3,22 @@
       xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
 
 <div
-    id="dp-css-element{data.uid}"
+    id="c{data.uid}"
     class="css--element {f:if(condition:'{flexform.image}',then:'lazyload ')}{f:if(condition:'{flexform.customclass}',then:'{flexform.customclass} ')}{f:if(condition:'{flexform.css}',then:"{flexform.css -> v:format.replace(substring:',', replacement:' ')}")}"
     {f:if(condition:'{flexform.inlinecss}',then:'style="{flexform.inlinecss}"')}
 >
     <f:if condition="{flexform.image}">
         <style data-ignore="1"><v:format.eliminate whitespace="1">
-            #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+            #c<f:format.raw>{data.uid}</f:format.raw> {
                 background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile, fileExtension:'webp')}</f:format.raw>);
             }
             @media(min-width: 768px){
-                #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+                #c<f:format.raw>{data.uid}</f:format.raw> {
                     background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 992, cropVariant: tablet, fileExtension:'webp')}</f:format.raw>);
                 }
             }
             @media(min-width: 1200px){
-                #dp-css-element<f:format.raw>{data.uid}</f:format.raw> {
+                #c<f:format.raw>{data.uid}</f:format.raw> {
                     background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 1960, cropVariant: desktop, fileExtension:'webp')}</f:format.raw>);
                 }
             }
