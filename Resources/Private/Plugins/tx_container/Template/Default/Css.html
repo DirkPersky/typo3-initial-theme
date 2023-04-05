@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<div
+    id="c{data.uid}"
+    class="css--element {f:if(condition:'{flexform.image}',then:'lazyload ')}{f:if(condition:'{flexform.customclass}',then:'{flexform.customclass} ')}{f:if(condition:'{flexform.css}',then:"{flexform.css -> v:format.replace(substring:',', replacement:' ')}")}"
+    {f:if(condition:'{flexform.inlinecss}',then:'style="{flexform.inlinecss}"')}
+>
+    <f:if condition="{flexform.image}">
+        <style data-ignore="1"><v:format.eliminate whitespace="1">
+            #c<f:format.raw>{data.uid}</f:format.raw> {
+                background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile, fileExtension:'webp')}</f:format.raw>);
+            }
+            @media(min-width: 768px){
+                #c<f:format.raw>{data.uid}</f:format.raw> {
+                    background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 992, cropVariant: tablet, fileExtension:'webp')}</f:format.raw>);
+                }
+            }
+            @media(min-width: 1200px){
+                #c<f:format.raw>{data.uid}</f:format.raw> {
+                    background-image:url(<f:format.raw>{f:uri.image(image: files.0, maxWidth: 1960, cropVariant: desktop, fileExtension:'webp')}</f:format.raw>);
+                }
+            }
+        </v:format.eliminate></style>
+    </f:if>
+
+
+    <div class="fluid-container {f:if(condition:'{data.space_before_class}',then:' frame-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' frame-space-after-{data.space_after_class}')}">
+        <f:render partial="Content" arguments="{contents: children_201 }" />
+    </div>
+</div>
+
+</html>
