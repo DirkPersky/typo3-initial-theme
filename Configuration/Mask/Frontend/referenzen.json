@@ -1,0 +1,240 @@
+{
+    "version": "7.2.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "referenzen": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_referenzen"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "referenzen",
+                    "label": "Referenzen",
+                    "labels": [
+                        "Referenzen"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "sql": {
+                "tx_mask_referenzen": {
+                    "tt_content": {
+                        "tx_mask_referenzen": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_referenzen": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_referenzen",
+                    "key": "referenzen",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_referenzen": {
+            "palettes": {
+                "tx_mask_bbc02fd465a2f": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_logo",
+                        "tx_mask_filter"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_filter": {
+                    "tx_mask_referenzen": {
+                        "tx_mask_filter": "int(11) DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_hintergrund": {
+                    "tx_mask_referenzen": {
+                        "tx_mask_hintergrund": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_link": {
+                    "tx_mask_referenzen": {
+                        "tx_mask_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_logo": {
+                    "tx_mask_referenzen": {
+                        "tx_mask_logo": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_title": {
+                    "tx_mask_referenzen": {
+                        "tx_mask_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_bbc02fd465a2f": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_bbc02fd465a2f",
+                    "inlineParent": "tx_mask_referenzen",
+                    "key": "bbc02fd465a2f",
+                    "order": 3,
+                    "type": "palette"
+                },
+                "tx_mask_filter": {
+                    "config": {
+                        "items": [
+                            {
+                                "0": "CSS Filter",
+                                "iconIdentifierChecked": "",
+                                "iconIdentifierUnchecked": "",
+                                "invertStateDisplay": "0"
+                            }
+                        ],
+                        "type": "check"
+                    },
+                    "fullKey": "tx_mask_filter",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_bbc02fd465a2f",
+                    "key": "filter",
+                    "label": "CSS Filter",
+                    "order": 2,
+                    "type": "check"
+                },
+                "tx_mask_hintergrund": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileByUrlAllowed": 1,
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "maxitems": "1"
+                    },
+                    "fullKey": "tx_mask_hintergrund",
+                    "inlineParent": "tx_mask_referenzen",
+                    "key": "hintergrund",
+                    "label": "Hintergrund Bild",
+                    "onlineMedia": [
+                        "youtube",
+                        "vimeo"
+                    ],
+                    "order": 4,
+                    "type": "media"
+                },
+                "tx_mask_link": {
+                    "config": {
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "description": "(optional) Detail Seite",
+                    "fullKey": "tx_mask_link",
+                    "inlineParent": "tx_mask_referenzen",
+                    "key": "link",
+                    "label": "Link",
+                    "order": 2,
+                    "type": "link"
+                },
+                "tx_mask_logo": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileByUrlAllowed": 1,
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "maxitems": "1"
+                    },
+                    "fullKey": "tx_mask_logo",
+                    "inPalette": 1,
+                    "inlineParent": "tx_mask_bbc02fd465a2f",
+                    "key": "logo",
+                    "label": "Logo der Referenz",
+                    "onlineMedia": [
+                        "youtube",
+                        "vimeo"
+                    ],
+                    "order": 1,
+                    "type": "media"
+                },
+                "tx_mask_tags": {
+                    "config": {
+                        "relationship": "manyToMany",
+                        "treeConfig": {
+                            "appearance": {
+                                "expandAll": 1,
+                                "nonSelectableLevels": "0",
+                                "showHeader": 1
+                            }
+                        },
+                        "type": "category"
+                    },
+                    "fullKey": "tx_mask_tags",
+                    "inlineParent": "tx_mask_referenzen",
+                    "key": "tags",
+                    "label": "Tags",
+                    "order": 5,
+                    "type": "category"
+                },
+                "tx_mask_title": {
+                    "config": {
+                        "eval": "required",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_title",
+                    "inlineParent": "tx_mask_referenzen",
+                    "key": "title",
+                    "label": "\u00dcberschrift",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

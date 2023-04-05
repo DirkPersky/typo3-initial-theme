@@ -1,0 +1,190 @@
+$referenzen-color1: $primary !default;
+$referenzen-color2: $success !default;
+$referenzen-border-size: 0px !default;
+
+.referenzen {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  overflow: hidden;
+
+
+  .referenz-item {
+	position: relative;
+	padding: calc( 1rem + #{$referenzen-border-size} );
+
+	--xPos: 0;
+	--yPos: 0;
+
+	flex: 0 0 100%;
+	max-width: 100%;
+	width: 100%;
+
+	@include media-breakpoint-up(md){
+	  flex: 0 0 50%;
+	  max-width: 50%;
+	  width: 50%;
+	}
+
+	@include media-breakpoint-up(lg) {
+	  flex: 0 0 33.3333%;
+	  max-width: 33.3333%;
+	  width: 33.3333%;
+	}
+
+	@include media-breakpoint-up(xxl) {
+	  flex: 0 0 25%;
+	  max-width: 25%;
+	  width: 25%;
+	}
+
+	&.css-filter {
+	  .referenz-body {
+		img {
+		  filter: brightness(0) invert(1);
+		}
+	  }
+	}
+
+	> header {
+	  display: block;
+	  padding: .5rem 0;
+	}
+
+	.referenz-wrap {
+	  position: relative;
+
+	  &:before {
+		content: '';
+		display: block;
+
+		background-color: $card-color1;
+		background: radial-gradient(
+						100rem circle at var(--xPos) var(--yPos),
+						rgba($card-color1, 1),
+						$card-color2 15%
+		);
+
+		position: absolute;
+		z-index: 0;
+		top: -#{$referenzen-border-size};
+		left: -#{$referenzen-border-size};
+		right: -#{$referenzen-border-size};
+		bottom: -#{$referenzen-border-size};
+
+	  }
+	}
+
+	.referenz-link {
+
+	  &:after {
+		content: '';
+		position: absolute;
+		z-index: 10;
+		left: 0;
+		top: 0;
+
+		width: 100%;
+		height: 100%;
+
+		display: block;
+
+		transition: all .2s ease-in-out;
+	  }
+
+	  &:before {
+		@extend .fa-solid;
+		content: "\f055";
+
+		position: absolute;
+		z-index: 11;
+		left: 50%;
+		top: 50%;
+
+		color: $primary;
+		font-size: 2rem;
+		text-shadow: 0 0 4px #000;
+
+		opacity: 0;
+		visibility: hidden;
+		transition: all .2s ease-in-out;
+		transform: translate(-50%, -50%);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	  }
+
+	  &:hover {
+		&:after {
+		  background-color: rgba(#000, .5);
+
+		  background: radial-gradient(
+						  100rem circle at var(--xPos) var(--yPos),
+						  rgba($primary, .3),
+						  transparent 15%
+		  );
+		}
+		&:before {
+		  opacity: 1;
+		  visibility: visible;
+		}
+	  }
+	}
+	.referenz-bg {
+	  position: relative;
+	  z-index: 1;
+
+	  &:before {
+		content: '';
+		display: block;
+		padding-top: 80%;
+	  }
+
+	  img {
+		max-width: 100%;
+
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+
+	  }
+	}
+
+
+	.referenz-body {
+	  position: absolute;
+	  z-index: 2;
+	  left: 0;
+	  top: 0;
+
+	  width: 100%;
+	  height: 100%;
+
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+
+	  padding: 1.5rem;
+	  background-color: rgba(#000, .7);
+
+
+	  header {
+		display: block;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+		padding: .5rem 0;
+
+		text-align: center;
+	  }
+	}
+  }
+}

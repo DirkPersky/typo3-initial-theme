@@ -44,6 +44,10 @@
       color: $primary;
     }
   }
+
+  ul {
+    margin-bottom: 0;
+  }
 }
 
 [class*="btn-outline-"] {

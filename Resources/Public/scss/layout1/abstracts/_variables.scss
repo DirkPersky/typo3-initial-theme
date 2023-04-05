@@ -68,3 +68,6 @@ $container-max-widths: (
 $card-color2: #2473be !default;
 $card-color1: $primary !default;
 $card-bg: darken($card-color2, 35%) !default;
+
+$zindex-modal-backdrop:             10050 !default;
+$zindex-modal:                      10055 !default;
