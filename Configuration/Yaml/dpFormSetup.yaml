@@ -3,6 +3,33 @@ TYPO3:
     Form:
       prototypes:
         standard:
+          finishersDefinition:
+            EmailToSender:
+              options:
+                templateRootPaths:
+                  30: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Template/Email/Customer/'
+                layoutRootPaths:
+                  20: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Layout/Email/'
+                partialRootPaths:
+                  20: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Partial/Email/'
+              formEditor:
+                predefinedDefaults:
+                  options:
+                    useFluidEmail: true
+            EmailToReceiver:
+              options:
+                templateRootPaths:
+                  20: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Template/Email/'
+                layoutRootPaths:
+                  20: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Layout/Email/'
+                partialRootPaths:
+                  20: 'EXT:dp_theme/Resources/Private/Plugins/tx_form/Partial/Email/'
+              # Optional: Aktiviere FluidEmail für alle neu hinzugefügten Email-Finisher:
+              formEditor:
+                predefinedDefaults:
+                  options:
+                    useFluidEmail: true
+
           formElementsDefinition:
             Form:
               renderingOptions:
