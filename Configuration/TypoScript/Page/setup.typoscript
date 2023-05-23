@@ -14,7 +14,7 @@ page = PAGE
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/config.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/cssJS.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/copyright.typoscript'
-@import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/FEEdit.typoscript'
+#@import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/FEEdit.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/content.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/lightbox.typoscript'
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/menu.typoscript'

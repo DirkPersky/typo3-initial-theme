@@ -1,0 +1,142 @@
+$card-color1: $primary !default;
+$card-color2: $success !default;
+$card-bg: #fff !default;
+
+.cards {
+  --xPos: 0;
+  --yPos: 0;
+}
+
+.card--hover {
+  position: relative;
+  min-height: 100%;
+  z-index: 1;
+  padding: 2px;
+  border: 0;
+  background-color: $body-color;
+  background-image: url('#{$path}/assets/webb-dark.png');
+  color: #fff;
+
+  transition: all 0.15s;
+  text-align: left;
+
+  &::after {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+
+	width: 100%;
+	height: 100%;
+
+	content: '';
+	display: block;
+
+	background: rgba($body-color, .8);
+	pointer-events: none;
+  }
+
+
+  &::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	background: radial-gradient(
+					50rem circle at var(--xPos) var(--yPos),
+					rgba($card-color1, .1),
+					transparent 35%
+	);
+	opacity: 0;
+	transition: all 0.15s ease-in-out;
+	pointer-events: none;
+  }
+
+  .card-image {
+	position: relative;
+	width: 90%;
+
+	&:before {
+	  content: '';
+	  display: block;
+	  padding-top: 100%;
+	}
+	img {
+	  width: auto;
+	  max-width: 100%;
+	  height: auto;
+	  max-height: 100%;
+
+	  transition: all .3s ease-in-out;
+
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+
+	  transform: translate(-50%, -50%);
+	}
+  }
+
+  &:hover {
+	&::before {
+	  opacity: .7;
+	}
+
+	.card-image {
+		img {
+		  transform: translate(-50%, -50%) scale(1.07);
+		}
+	}
+  }
+
+  .card-title {
+	font-size: 1.1rem;
+	font-weight: 400;
+	text-transform: uppercase;
+
+	padding-top: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 0;
+
+	width: 100%;
+	text-align: center;
+
+	border-top: 5px solid $primary;
+
+	+ p {
+	  display: none;
+	}
+  }
+
+  .card-body {
+	position: relative;
+	z-index: 5;
+	padding: 1rem 1.5rem;
+
+	@include media-breakpoint-up(md) {
+	  padding: 1.5rem 2rem;
+	}
+	@include media-breakpoint-up(lg) {
+	  padding: 2rem 2.5rem;
+	}
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+  }
+
+  .card-link {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	display: block;
+	text-decoration: none;
+  }
+}

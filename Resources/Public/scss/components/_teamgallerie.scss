@@ -1,0 +1,48 @@
+
+.frame.frame-layout-11 {
+  img {
+	width: 100%;
+  }
+
+  a {
+	width: 100%;
+	display: block;
+  }
+
+  .ce-row {
+	margin: 0;
+
+	.ce-column {
+	  padding: 0;
+	  line-height: 0;
+	}
+  }
+
+  figure.image {
+	position: relative;
+	overflow: hidden;
+
+	.image-caption {
+	  position: absolute;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  overflow: hidden;
+	  padding: 0.5rem 0.25rem;
+	  transition: all .3s ease-in-out;
+	  transform: translate(0, 105%);
+	  text-align: center;
+	  text-overflow: ellipsis;
+	  color: #fff;
+	  background-color: $primary;
+	  line-height: initial;
+	}
+
+	&:hover {
+	  .image-caption {
+		transform: translate(0, 0);
+	  }
+	}
+  }
+
+}

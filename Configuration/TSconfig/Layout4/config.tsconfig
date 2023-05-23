@@ -1,0 +1,6 @@
+#################################
+### LOAD BASIC CONFIGURATIONS ###
+#################################
+@import 'EXT:dp_theme/Configuration/TSconfig/Default/config.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/Layout4/ext/be_layout.tsconfig'
+@import 'EXT:dp_theme/Configuration/TSconfig/Layout4/ext/ident.tsconfig'

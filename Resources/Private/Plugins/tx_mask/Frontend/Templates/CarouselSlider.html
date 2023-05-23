@@ -40,6 +40,48 @@
                         </f:for>
                     </div>
                     <!-- Carousel caption -->
+                    <f:if condition="{data.uploads_description} != 1">
+                        <f:if condition="{row.tx_mask_text} || {row.tx_mask_title}">
+                            <div class="carousel-inner-wrap">
+                                <div class="container-lg">
+                                    <div class="carousel-caption frame">
+                                        <f:if condition="{row.tx_mask_title}">
+                                            <header class="flex-column">
+                                                <f:if condition="{row.tx_mask_pref}">
+                                                    <div class="subline">
+                                                        {row.tx_mask_pref->f:format.raw()}
+                                                    </div>
+                                                </f:if>
+                                                <f:switch expression="{row.tx_mask_typ}">
+                                                    <f:case value="h1">
+                                                        <h1>
+                                                            {row.tx_mask_title -> f:format.raw()}
+                                                        </h1>
+                                                    </f:case>
+                                                    <f:defaultCase>
+                                                        <h2>
+                                                            {row.tx_mask_title -> f:format.raw()}
+                                                        </h2>
+                                                    </f:defaultCase>
+                                                </f:switch>
+                                            </header>
+                                        </f:if>
+                                        <f:if condition="{row.tx_mask_text}">
+                                            <div class="bodytext ce-bodytext">
+                                                {row.tx_mask_text -> f:format.html()}
+                                            </div>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </f:if>
+                    </f:if>
+                </div>
+            </f:for>
+        </div>
+        <f:if condition="{data.uploads_description} == 1">
+            <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
+                <f:if condition="{row_iteration.isFirst}">
                     <f:if condition="{row.tx_mask_text} || {row.tx_mask_title}">
                         <div class="carousel-inner-wrap">
                             <div class="container-lg">
@@ -74,9 +116,9 @@
                             </div>
                         </div>
                     </f:if>
-                </div>
+                </f:if>
             </f:for>
-        </div>
+        </f:if>
         <f:if condition="{data.tx_mask_item -> f:count()} > 1">
             <!--- Direction navs -->
             <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carousel-generic-{data.uid}"
@@ -90,14 +132,28 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </f:if>
+        <f:if condition="{data.tx_mask_item -> f:count()} > 1">
+            <!--- Direction navs -->
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carousel-generic-{data.uid}"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carousel-generic-{data.uid}"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </f:if>
+        <f:if condition="{data.tx_mask_item -> f:count()} < 2">
+            <div class="scroll-down">
+                <i class="fa-solid fa-angles-down"></i>
 
-        <div class="scroll-down">
-            <i class="fa-solid fa-angles-down"></i>
-
-            <span class="d-none d-lg-block">
-                Scroll down
-            </span>
-        </div>
+                <span class="d-none d-lg-block">
+                    Scroll down
+                </span>
+            </div>
+        </f:if>
     </div>
 </f:if>
 </html>

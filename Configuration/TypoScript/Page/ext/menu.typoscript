@@ -6,6 +6,7 @@
 
     config.sourceopt.enabled = 0
 
+    page.config.index_enable = 0
 [end]
 
 mmenuPage = PAGE

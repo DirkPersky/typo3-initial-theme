@@ -1,0 +1,394 @@
+header#mainNavigation {
+  position: relative;
+  z-index: 1010;
+  width: 100%;
+
+  .nav--overlay {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: block;
+	background-color: rgba(#000, .8);
+	transition: all .5s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+
+	cursor: pointer;
+
+	&.is-active {
+	  visibility: visible;
+	  opacity: 1;
+	}
+  }
+
+  .navbar {
+	background-color: transparent;
+	z-index: 1000;
+	padding: 0;
+	height: 60px;
+
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	-ms-transition: all .5s ease-out;
+	-o-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+
+	flex-direction: column;
+	flex-wrap: nowrap;
+	width: 100%;
+
+	@include media-breakpoint-up(md) {
+	  height: 90px;
+	  border-bottom: 0;
+	}
+
+	&:before {
+	  position: absolute;
+	  content: '';
+	  z-index: -1;
+	  left: 0;
+	  right: 0;
+	  top: 0;
+	  height: 125px;
+	  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%);
+	  pointer-events: none;
+	  @include media-breakpoint-up(lg){
+		height: 200px;
+	  }
+	}
+
+	.navigation-bar {
+	  position: relative;
+	}
+	.navigation-bar,
+	.container-fluid,
+	.nav--brand {
+	  height: 100%;
+	}
+	// brand
+	.dp--brand {
+	  height: 100%;
+	  padding: 0 10px 0 0;
+
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+
+	  .navbar-brand {
+		position: relative;
+		z-index: 2;
+
+		margin-right: 0;
+
+		color: $dark;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include media-breakpoint-up(sm) {
+		  margin-right: 16px;
+		}
+
+
+
+		height: 100%;
+
+	  }
+
+	  .logo {
+		height: auto;
+		max-height: 100%;
+		width: auto;
+	  }
+	}
+
+	// Search & Toggle Btn
+	.navbar-toggler {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  flex-direction: column;
+	  height: 100%;
+
+	  margin: 0;
+	  border-radius: 0;
+
+	  transition: background-color 0.7s ease-in-out;
+	  color: $dark;
+	  text-transform: uppercase;
+	  font-size: 12px;
+
+	  &:focus {
+		outline: none;
+		box-shadow: none;
+	  }
+
+	  .hamburger-box {
+		margin-top: 5px;
+
+		.hamburger-inner {
+		  background-color: $dark;
+
+		  &:before {
+			background-color: $dark;
+		  }
+
+		  &:after {
+			background-color: $dark;
+		  }
+		}
+	  }
+
+	  .menu-title {
+		margin-top: 0px;
+		display: block;
+		font-size: .7rem;
+		font-weight: bold;
+	  }
+
+	  &:hover {
+		background-color: darken($light, 10%);
+	  }
+	}
+
+	.container-fluid {
+	  @extend .container;
+
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+
+	  @include media-breakpoint-down(lg) {
+		max-width: 100%;
+		padding: 0;
+	  }
+	}
+  }
+}
+
+#canvas-sync {
+  .canvis-logo {
+	display: none;
+  }
+
+  .list-header {
+	position: absolute;
+	right: 0;
+	top: .25rem;
+
+	span {
+	  display: none;
+	}
+
+	&:before {
+	  content: 'X';
+	  font-weight: 200;
+	  font-size: 1.2rem;
+	  line-height: 1;
+	}
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 1.75rem;
+	height: 1.75rem;
+
+	background-color: rgba(#fff, .2);
+	border-radius: 1000px;
+
+	cursor: pointer;
+
+	&:hover {
+	  opacity: .8;
+	}
+  }
+
+  .home {
+	display: none;
+
+	@include media-breakpoint-up(xl) {
+	  display: block;
+	}
+  }
+
+  .navbar-nav {
+	flex-direction: row;
+
+	> .nav-item {
+	  > .nav-link {
+		transition: all .2s ease-in-out;
+		//text-transform: uppercase;
+		color: $body-color;
+		padding: .5rem .75rem;
+		//font-weight: bold;
+
+		position: relative;
+		z-index: 2;
+
+
+		@include media-breakpoint-up(xl) {
+		  font-size: 1.2rem;
+		}
+	  }
+
+	  &:hover {
+		> .nav-link {
+		  text-shadow: none;
+		  color: $primary;
+
+		}
+
+		&.dropdown {
+		  > .nav-link {
+			color: $primary !important;
+		  }
+		}
+
+		> .dropdown-wrap {
+		  opacity: 1;
+		  visibility: visible;
+		}
+	  }
+
+	  > .dropdown-wrap {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		padding-top: 90px;
+		padding-bottom: 5rem;
+
+		@include media-breakpoint-up(xl) {
+		  padding-top: 120px;
+		}
+
+		background-color: rgba(#000, .8);
+		color: #fff;
+		opacity: 0;
+		visibility: hidden;
+
+		> .dropdown-nav {
+		  @extend .container;
+		  position: relative;
+		  display: flex;
+		  flex-direction: row;
+
+		  padding: 2.5rem var(--bs-gutter-x, 0.75rem) 0;
+
+		  > .nav-item {
+			width: 33.3333%;
+			padding-bottom: 3rem;
+
+			@include media-breakpoint-up(3 xl) {
+			  width: 25%;
+			}
+
+			> .nav-link {
+			  position: relative;
+			  padding: .5rem 0;
+			  color: #fff;
+			  display: inline-block;
+
+			  &:after {
+				content: '';
+				display: block;
+
+				position: absolute;
+				top: 100%;
+				left: 0;
+
+				width: 50px;
+				border-bottom: 2px solid $primary;
+			  }
+
+			  &:hover {
+				color: $primary;
+			  }
+			}
+		  }
+
+		  .dropdown-nav {
+			flex-direction: column;
+			padding-top: .25rem;
+
+			.list-header {
+			  display: none;
+			}
+
+			.nav-link {
+			  padding: .325rem 0;
+			  color: #fff;
+			  font-weight: 300;
+			  display: inline-block;
+
+			  &:hover {
+				color: $primary;
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  }
+}
+
+
+.canvas--menu {
+  .canvis-icon--bar{
+	position: relative;
+	@include rem(top, 25);
+	justify-content: center;
+	color: $body-color;
+
+	border-top: 2px solid $primary;
+	border-bottom: 2px solid $primary;
+	@include rem(margin-left, -15);
+	@include rem(margin-left, -15);
+	margin-bottom: 1rem;
+
+	width: auto;
+
+	a {
+	  transition: all .2s ease-in-out;
+	  display: inline-block;
+
+	  &:hover {
+		transform: scale(1.05);
+	  }
+	}
+
+	.frame {
+	  display: none;
+
+	  &:last-child {
+		display: block;
+
+		position: relative;
+		z-index: 1;
+		padding-left: 2rem;
+	  }
+	}
+  }
+}
+
+*[data-canvis-side],
+.nav--backdrop {
+  transition: transform .4s ease, -webkit-transform .4s ease !important;
+
+  // on Modal Open
+  html.nav--open & {
+	transform: translate3d(-80%, 0, 0);
+
+	@include media-breakpoint-up(sm) {
+	  transform: translate3d(-440px, 0, 0);
+	}
+  }
+}

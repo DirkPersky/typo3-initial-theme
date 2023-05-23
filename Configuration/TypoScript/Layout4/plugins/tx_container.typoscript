@@ -1,0 +1,32 @@
+###############################
+### Prepare Content Loading ###
+###############################
+lib.containerElementFlexform < lib.contentElement
+lib.containerElementFlexform {
+    partialRootPaths {
+        200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Partial/
+        210 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Partial/Layout4/
+    }
+    templateRootPaths {
+        200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Template/
+        210 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Template/Layout4/
+    }
+    layoutRootPaths {
+        200 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Layout/
+        210 = EXT:dp_theme/Resources/Private/Plugins/tx_container/Layout/Layout4/
+    }
+
+    dataProcessing {
+
+        9999 = DirkPersky\Theme\DataProcessing\FlexformProcessor
+        9999 {
+            as = flexform
+        }
+    }
+}
+
+###############################
+### Load Default BE Modules ###
+###############################
+@import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_container/bs-grid.typoscript'
+@import 'EXT:dp_theme/Configuration/TypoScript/Page/plugins/tx_container/css.typoscript'

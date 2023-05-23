@@ -12,7 +12,9 @@
       xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
 >
 <div>
-    <div>{data.header -> f:format.html()}</div>
+    <div>
+        <f:format.raw>{data.header}</f:format.raw>
+    </div>
     <f:if condition="{data.tx_mask_item}">
         <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
             <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
