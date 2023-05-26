@@ -48,18 +48,6 @@
 	.image {
 	  a {
 		display: block;
-
-		img {
-		  transition: all .3s ease-in-out;
-		  border-radius: 50%;
-		  box-shadow: 0px 0px 3px 1px $dark;
-		}
-
-		&:hover {
-		  img {
-			box-shadow: 0px 0px 5px 2px $gray-900;
-		  }
-		}
 	  }
 	}
 
@@ -70,8 +58,11 @@
 
   .canvis-icon--bar {
 	height: 100%;
-	margin: 0 -15px;
+	margin: 0 -1rem;
 	padding: 0 1rem;
+
+	position: relative;
+	top: 1.25rem;
 
 	&,
 	.ce-bodytext {
@@ -113,7 +104,7 @@
   transform: translate3d(100%, 0, 0);
 
   color: $dark;
-  background-color: #f3f3f3;
+  background-color: #f7f7f7;
 
   html.nav--open & {
 	transform: translate3d(0, 0, 0);
@@ -136,7 +127,8 @@
 	//}
 
 	.canvis-logo {
-	  @include rem(padding, 25 15);
+	  padding: 1.25rem 1rem;
+	  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	  text-align: center;
 
 	  img {
@@ -149,36 +141,57 @@
 		}
 	  }
 	}
+
   }
 
   //Navbar link definition
   .nav {
 	> .nav-item {
 
+	  background-color: #fff;
+	  &:last-child{
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	  }
+
 	  &:nth-child(2n) {
 		> .nav-link {
-		  background-color: rgba(0, 0, 0, .05);
+		  //background-color: rgba(0, 0, 0, .05);
 		}
 	  }
 
 	  > .nav-link {
-		@include rem(padding, 10 15);
 		display: block;
 		color: inherit;
 
+		padding: 1rem 2rem 1rem 1rem;
+		font-size: 0.95rem;
 		&:hover {
 		  color: $primary;
 		  background-color: rgba(0, 0, 0, .08);
+		}
+
+		position: relative;
+
+		&:before {
+		  @extend .fa-solid;
+		  content: "\f105";
+
+		  position: absolute;
+		  right: 1rem;
+		  top: 50%;
+
+		  transform: translate(0, -50%);
 		}
 	  }
 
 	  &.active {
 		> .nav-link {
 		  color: $primary;
-		  background-color: rgba(0, 0, 0, .1);
+		  //background-color: rgba(0, 0, 0, .1);
 		}
 	  }
 	}
+
   }
 
   // Dropdowns
@@ -197,8 +210,12 @@
 	  padding-right: 55px !important;
 	  border: 0;
 
+	  &:before {
+		display: none !important;
+	  }
+
 	  > .trigger {
-		font-size: 22px;
+		font-size: inherit;
 		position: absolute;
 
 		top: 0;
@@ -214,7 +231,7 @@
 		cursor: pointer;
 		color: rgba(0, 0, 0, 0.3);
 		color: $primary;
-		background-color: rgba(0, 0, 0, .1);
+		background-color: rgba(#f7f7f7);
 
 		&:before {
 		  @extend .fas;
@@ -245,7 +262,7 @@
 	  cursor: pointer;
 	  text-align: center;
 
-	  color: $primary;
+	  color: inherit;
 	  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 	  &:before {

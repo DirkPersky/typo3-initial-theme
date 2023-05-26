@@ -428,8 +428,6 @@ header#mainNavigation {
 .canvas--menu {
   .canvis-icon--bar{
 	background-color: $primary;
-	position: relative;
-	@include rem(top, 25);
 	justify-content: flex-end;
 	color: #fff;
 

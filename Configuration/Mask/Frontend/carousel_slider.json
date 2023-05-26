@@ -1,5 +1,5 @@
 {
-    "version": "7.2.0",
+    "version": "8.1.0",
     "tables": {
         "tt_content": {
             "elements": {
@@ -8,12 +8,14 @@
                     "colorOverlay": "#000000",
                     "columns": [
                         "tx_mask_42f614e9a658b",
-                        "tx_mask_item"
+                        "tx_mask_item",
+                        "uploads_description"
                     ],
                     "description": "",
                     "descriptions": [
                         "",
-                        ""
+                        "",
+                        "Beschreibungs-Text des ersten Slider Items wird immer angezeigt."
                     ],
                     "icon": "",
                     "iconOverlay": "",
@@ -21,7 +23,8 @@
                     "label": "Carousel (Slider)",
                     "labels": [
                         "",
-                        "Seiten"
+                        "Seiten",
+                        "Aktiviere Statischer Text"
                     ],
                     "shortLabel": "",
                     "sorting": 3
@@ -84,17 +87,18 @@
                 "tx_mask_interval": {
                     "config": {
                         "default": "3000",
-                        "eval": "required,int",
+                        "nullable": 0,
                         "range": {
                             "lower": "2000",
                             "upper": "10000"
                         },
+                        "required": 1,
                         "size": "5",
                         "slider": {
                             "step": "500",
                             "width": "400"
                         },
-                        "type": "input"
+                        "type": "number"
                     },
                     "description": {
                         "carousel_slider": "in ms"
@@ -143,6 +147,12 @@
                     "fullKey": "tx_mask_item",
                     "key": "item",
                     "type": "inline"
+                },
+                "uploads_description": {
+                    "coreField": 1,
+                    "fullKey": "uploads_description",
+                    "key": "uploads_description",
+                    "type": "check"
                 }
             }
         },
@@ -231,10 +241,8 @@
                             "fileUploadAllowed": 1,
                             "useSortable": 1
                         },
-                        "foreign_table": "sys_file_reference",
                         "maxitems": "1",
-                        "minitems": "1",
-                        "type": "inline"
+                        "minitems": "1"
                     },
                     "fullKey": "tx_mask_img",
                     "imageoverlayPalette": 1,
@@ -247,6 +255,7 @@
                 },
                 "tx_mask_pref": {
                     "config": {
+                        "nullable": 0,
                         "type": "input"
                     },
                     "fullKey": "tx_mask_pref",
@@ -271,6 +280,7 @@
                 },
                 "tx_mask_title": {
                     "config": {
+                        "nullable": 0,
                         "type": "input"
                     },
                     "fullKey": "tx_mask_title",
@@ -290,18 +300,20 @@
                             }
                         },
                         "items": [
-                            [
-                                "H2",
-                                "h2",
-                                "",
-                                ""
-                            ],
-                            [
-                                "H1",
-                                "h1",
-                                "",
-                                ""
-                            ]
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "H2",
+                                "value": "h2"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "H1",
+                                "value": "h1"
+                            }
                         ],
                         "renderType": "selectSingle",
                         "type": "select"

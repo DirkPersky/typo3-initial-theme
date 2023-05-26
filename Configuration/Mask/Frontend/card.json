@@ -1,5 +1,5 @@
 {
-    "version": "7.2.0",
+    "version": "8.1.0",
     "tables": {
         "tt_content": {
             "elements": {
@@ -46,7 +46,8 @@
             "tca": {
                 "bodytext": {
                     "bodytextTypeByElement": {
-                        "card": "richtext"
+                        "card": "richtext",
+                        "carousel_slider": "richtext"
                     },
                     "coreField": 1,
                     "fullKey": "bodytext",

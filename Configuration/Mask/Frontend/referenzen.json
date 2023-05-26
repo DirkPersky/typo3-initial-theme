@@ -1,5 +1,5 @@
 {
-    "version": "7.2.0",
+    "version": "8.1.0",
     "tables": {
         "tt_content": {
             "elements": {
@@ -115,10 +115,9 @@
                     "config": {
                         "items": [
                             {
-                                "0": "CSS Filter",
                                 "iconIdentifierChecked": "",
                                 "iconIdentifierUnchecked": "",
-                                "invertStateDisplay": "0"
+                                "label": "CSS Filter"
                             }
                         ],
                         "type": "check"
@@ -162,8 +161,7 @@
                 },
                 "tx_mask_link": {
                     "config": {
-                        "renderType": "inputLink",
-                        "type": "input"
+                        "type": "link"
                     },
                     "description": "(optional) Detail Seite",
                     "fullKey": "tx_mask_link",
@@ -224,7 +222,7 @@
                 },
                 "tx_mask_title": {
                     "config": {
-                        "eval": "required",
+                        "required": 1,
                         "type": "input"
                     },
                     "fullKey": "tx_mask_title",

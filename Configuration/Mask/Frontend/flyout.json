@@ -1,5 +1,5 @@
 {
-    "version": "7.2.0",
+    "version": "8.1.0",
     "tables": {
         "tt_content": {
             "elements": {
@@ -178,7 +178,8 @@
                             "fileUploadAllowed": 1,
                             "useSortable": 1
                         },
-                        "maxitems": "1"
+                        "maxitems": "1",
+                        "minitems": ""
                     },
                     "fullKey": "tx_mask_image",
                     "imageoverlayPalette": 0,
@@ -188,8 +189,7 @@
                 },
                 "tx_mask_link": {
                     "config": {
-                        "renderType": "inputLink",
-                        "type": "input"
+                        "type": "link"
                     },
                     "description": {
                         "flyout": ""

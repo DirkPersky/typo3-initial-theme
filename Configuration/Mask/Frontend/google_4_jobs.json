@@ -1,5 +1,5 @@
 {
-    "version": "7.2.0",
+    "version": "8.1.0",
     "tables": {
         "tt_content": {
             "elements": {
@@ -260,18 +260,20 @@
                 "tx_mask_currency": {
                     "config": {
                         "items": [
-                            [
-                                "EUR \u20ac",
-                                "EUR",
-                                "",
-                                ""
-                            ],
-                            [
-                                "USD $",
-                                "USD",
-                                "",
-                                ""
-                            ]
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "EUR \u20ac",
+                                "value": "EUR"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "USD $",
+                                "value": "USD"
+                            }
                         ],
                         "renderType": "selectSingle",
                         "type": "select"
@@ -320,18 +322,20 @@
                 "tx_mask_einheit": {
                     "config": {
                         "items": [
-                            [
-                                "pro Monat",
-                                "MONTH",
-                                "",
-                                ""
-                            ],
-                            [
-                                "pro Jahr",
-                                "YEAR",
-                                "",
-                                ""
-                            ]
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "pro Monat",
+                                "value": "MONTH"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "pro Jahr",
+                                "value": "YEAR"
+                            }
                         ],
                         "renderType": "selectSingle",
                         "type": "select"
@@ -357,18 +361,20 @@
                 "tx_mask_filter": {
                     "config": {
                         "items": [
-                            [
-                                "Vollzeit",
-                                "FULL_TIME",
-                                "",
-                                ""
-                            ],
-                            [
-                                "Teilzeit",
-                                "PART_TIME",
-                                "",
-                                ""
-                            ]
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Vollzeit",
+                                "value": "FULL_TIME"
+                            },
+                            {
+                                "description": "",
+                                "group": "",
+                                "icon": "",
+                                "label": "Teilzeit",
+                                "value": "PART_TIME"
+                            }
                         ],
                         "renderType": "selectSingle",
                         "type": "select"
