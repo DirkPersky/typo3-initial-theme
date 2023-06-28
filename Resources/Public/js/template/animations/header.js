@@ -23,4 +23,18 @@ window.AnimateManager.attach('bs-header-nav', function () {
         onEnter: onEnter,
         onLeaveBack: onLeave,
     });
+
+    function onSmallEnter(){
+        document.querySelector('html').classList.add('nav--small-sticky');
+    }
+    function onSmallLeave(){
+        document.querySelector('html').classList.remove('nav--small-sticky');
+    }
+    // bind Scroll handler
+    window.DPAnimate.scrollTrigger('#mainNavigation', {
+        start: 'top top-=130px',
+        // once: false,
+        onEnter: onSmallEnter,
+        onLeaveBack: onSmallLeave,
+    });
 });

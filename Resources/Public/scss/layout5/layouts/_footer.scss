@@ -1,0 +1,163 @@
+footer#bottom {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+
+  &:before {
+	background-image: url(/fileadmin/user_upload/csm_adult-backlit-beach-1000445_5dc9a4efa9.jpg);
+	background-position: center center;
+	background-size: cover;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	z-index: -1;
+	content: '';
+  }
+  background-color: rgba(#111,.8);
+  color: #fff;
+  font-size: 0.9rem;
+
+  a {
+	color: inherit;
+
+	&:hover {
+	  color: $primary;
+	}
+
+  }
+
+  .ce-table {
+	color: inherit;
+
+	* {
+	  border-color: rgba(#fff, .3);
+	}
+
+	td:first-child {
+	  padding-left: .125rem;
+	}
+
+	td:last-child {
+	  padding-right: .125rem;
+	  text-align: right;
+	}
+  }
+
+  #to-top {
+	@extend .btn;
+
+	font-size: 1.3rem;
+	line-height: 1;
+	display: block;
+	width: auto;
+	max-width: 70%;
+	padding: 0.3rem 1rem;
+	text-align: center;
+	background-color: transparent;
+	transition: all .2s ease-in-out;
+	margin: 0 auto;
+	color: $primary;
+
+	&:hover {
+	  //background-color: rgba(0, 0, 0, 0.2);
+	}
+  }
+
+  header {
+	* {
+	  font-weight: bold;
+	  font-size: 1.2rem;
+	  letter-spacing: 1px;
+
+	  @extend .pb-4;
+	}
+  }
+
+  .footer-content {
+	ul {
+	  margin: 0 -.125rem;
+	  > li {
+		> a {
+		  position: relative;
+		  padding: .5rem .125rem;
+
+		  border-bottom:1px solid rgba(#fff, .3);
+		}
+	  }
+	}
+  }
+
+  .sub-line {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	border-top: 1px solid rgba(#fff, .3);
+
+	.nav-footer {
+	  margin: 0 -5px;
+
+	  .nav-link {
+		padding: 5px;
+		line-height: 1;
+	  }
+
+	  .nav-item {
+		+ .nav-item {
+		  position: relative;
+		  &:before {
+			border-left: 1px solid $body-color;
+			content: '';
+			display: block;
+
+			position: absolute;
+			left: 0;
+			top: 50%;
+			height: .9rem;
+
+			transform: translate(0, -50%);
+		  }
+		}
+	  }
+	}
+
+  }
+
+  .btn-default {
+	background-color: lighten(#000, 30%);
+
+	&[href^="tel:"] {
+	  position: relative;
+	  overflow: hidden;
+
+	  padding-left: 2.5rem;
+
+	  &:before {
+		@extend .fa-solid;
+		content: "\f095";
+
+		position: absolute;
+		top: 50%;
+		left: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 2rem;
+		height: 110%;
+		background-color: $primary;
+		color: #fff !important;
+
+		border-radius: inherit;
+
+		transform: translate(0, -50%);
+	  }
+	}
+  }
+}

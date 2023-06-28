@@ -1,0 +1,29 @@
+######################
+### IDENT SELECTOR ###
+######################
+TCEFORM.tt_content.layout {
+
+    removeItems = 9, 10
+
+    altLabels  {
+        6 = Layout 4
+        7 = Overlay Box
+        8 = Small Content
+    }
+
+	types {
+        textmedia {
+            addItems.6 = 6
+        	addItems.7 = 7
+        	addItems.8 = 8
+        }
+
+        header {
+        	addItems.8 = 8
+        }
+
+        menu_pages {
+
+        }
+    }
+}

@@ -1,0 +1,29 @@
+##################
+### Image Crop ###
+##################
+TCEFORM.sys_file_reference.crop.config.cropVariants {
+    default {
+        allowedAspectRatios {
+            1:1 {
+                title = 1/1
+                value = 1
+            }
+        }
+    }
+    tablet {
+        allowedAspectRatios {
+            1:1 {
+                title = 1/1
+                value = 1
+            }
+        }
+    }
+    mobile {
+        allowedAspectRatios {
+            1:1 {
+                title = 1/1
+                value = 1
+            }
+        }
+    }
+}

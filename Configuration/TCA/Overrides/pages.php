@@ -18,3 +18,4 @@ ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/
 ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/TSconfig/Layout2/config.tsconfig', 'DPTheme - Layout 2');
 ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/TSconfig/Layout3/config.tsconfig', 'DPTheme - Layout 3');
 ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/TSconfig/Layout4/config.tsconfig', 'DPTheme - Layout 4');
+ExtensionManagementUtility::registerPageTSConfigFile('dp_theme', 'Configuration/TSconfig/Layout5/config.tsconfig', 'DPTheme - Layout 5');

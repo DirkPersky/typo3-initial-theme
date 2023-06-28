@@ -33,6 +33,7 @@ TCEFORM.tt_content.layout {
         9 = ToP Header
         10 = Underline
         11 = Team Listing
+        12 = Gallery
     }
 
 	types {
@@ -41,6 +42,7 @@ TCEFORM.tt_content.layout {
         	addItems.7 = 7
         	addItems.8 = 8
         	addItems.11 = 11
+        	addItems.12 = 12
         }
 
         header {

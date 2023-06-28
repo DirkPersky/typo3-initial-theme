@@ -29,7 +29,7 @@ errorHandling:
 routes:
   - route: robots.txt
     type: staticText
-    content: "User-Agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\nAllow: /typo3temp/\r\n\r\n# parameters\r\nDisallow: /*?id=*\r\nDisallow: /*cHash*\r\nDisallow: /*tx_powermail_pi1\r\nDisallow: /*tx_form_formframework\r\nDisallow: /*.mp4\r\nDisallow: /*type=*\r\n\r\n# allow sitemap chash\r\nAllow: /sitemap.xml*\r\n# sitemap\r\nSitemap: https://example.de/sitemap.xml"
+    content: "User-Agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\nAllow: /typo3temp/\r\n\r\n# parameters\r\nDisallow: /*?id=*\r\nDisallow: /*?type=*\r\nDisallow: /*cHash*\r\nDisallow: /*tx_powermail_pi1\r\nDisallow: /*tx_form_formframework\r\n# Aussperren von allen MP4-Dateien\r\nDisallow: /*.mp4\r\n\r\n# allow sitemap chash\r\nAllow: /sitemap.xml*\r\n# sitemap\r\nSitemap: https://example.de/sitemap.xml"
 routeEnhancers:
   PageTypeSuffix:
     type: PageType

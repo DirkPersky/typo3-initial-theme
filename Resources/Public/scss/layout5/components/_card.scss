@@ -1,0 +1,133 @@
+$card-color1: $primary !default;
+$card-color2: $success !default;
+$card-bg: #fff !default;
+
+.cards {
+  --xPos: 0;
+  --yPos: 0;
+}
+
+.card--hover {
+  position: relative;
+  min-height: 100%;
+  z-index: 1;
+  padding: 2px;
+  border: 0;
+  background-color: rgba($primary, .075);
+
+  transition: all 0.15s;
+  text-align: left;
+  overflow: hidden;
+
+  &:before {
+	background-color: rgba($primary, .1);
+	transition: all .4s ease-in-out;
+	content: '';
+
+	position: absolute;
+	top: 0;
+	left: 50%;
+
+	width: 80%;
+	padding-top: 100%;
+	border-radius: 1000px;
+
+	transform: translate(-50%, -100%);
+  }
+
+  &:after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	height: 0;
+	width: 100%;
+
+	background-color: rgba($primary, .2);
+	transition: all .4s ease-in-out;
+	content: '';
+  }
+
+  &:hover {
+	&:before {
+	  transform: translate(-50%, -69%);
+	  transform: translate(-50%, calc(-100% + 110px));
+	}
+
+	&:after {
+	  height: 100%;
+	  top: 0;
+	}
+  }
+
+  .card-image {
+	position: relative;
+	width: 55px;
+
+	&:before {
+	  content: '';
+	  display: block;
+	  padding-top: 100%;
+	}
+
+	img {
+	  width: auto;
+	  max-width: 100%;
+	  height: auto;
+	  max-height: 100%;
+
+	  transition: all .3s ease-in-out;
+
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+
+	  transform: translate(-50%, -50%);
+	  filter: invert(1);
+	}
+  }
+
+  .card-title {
+	font-size: 1.3rem;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	padding-top: .5rem;
+	padding-bottom: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 0;
+
+	width: 100%;
+	text-align: center;
+  }
+
+  .card-body {
+	position: relative;
+	z-index: 5;
+	padding: 1rem 1.5rem;
+
+	@include media-breakpoint-up(md) {
+	  padding: 1.5rem 2rem;
+	}
+	@include media-breakpoint-up(lg) {
+	  padding: 2rem 2.5rem;
+	}
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+	text-align: center;
+  }
+
+  .card-link {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	display: block;
+	text-decoration: none;
+  }
+}

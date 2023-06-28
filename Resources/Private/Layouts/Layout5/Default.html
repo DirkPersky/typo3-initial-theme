@@ -1,0 +1,97 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category TYPO3
+  ~
+  ~ @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <dirk.persky@gmail.com>
+  ~ @license    AGPL v3
+  -->
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <!-- Load all JS files -->
+    <db:JavaScript dir="EXT:dp_theme/Resources/Public/js" files="js"/>
+    <!-- Navigation left -->
+    <header id="mainNavigation" class="{f:if(condition:'{data.is_siteroot}', then:'home')}" data-canvis-side>
+        <div class="navbar nav-minimal fixed-top" role="navigation">
+            <div class="header-bar d-none d-md-block justify-content-end">
+                <div class="header-container">
+                    <div class="container">
+                        <f:cObject typoscriptObjectPath="lib.colContentSlide" data="5" />
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-bar w-100">
+                <div class="container-fluid">
+                    <div class="nav--brand">
+                        <div class="dp--brand">
+                            <f:link.page pageUid="{settings.pidRoot}" class="navbar-brand" title="Home">
+                                <img class="logo"  src="{f:uri.image(src: 'EXT:dp_theme/Resources/Public/assets/logo_light.png', maxHeight: 90)}" alt="Bild Dirk Persky" title="Bild Dirk Persky" height="71" width="300">
+                            </f:link.page>
+                        </div>
+                    </div>
+                    <div class="d-none d-lg-flex flex-column" >
+                        <div id="canvas-sync"></div>
+                    </div>
+
+                    <button aria-controls="navigation" aria-label="Menu"
+                            class="navbar-toggler hamburger hamburger--collapse d-lg-none"
+                            data-dp-canvis="d-lg-none" data-sync="#canvas-sync" type="button" disabled>
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                        <span class="menu-title">Menü</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav--overlay"></div>
+    </header>
+    <!-- Main Content -->
+    <div id="swup" class="main--content transition-fade" data-canvis-side>
+        <section class="slider">
+            <f:cObject typoscriptObjectPath="lib.colContent" data="1" />
+        </section>
+        <section class="content container {layout}">
+              <!-- get Content -->
+            <f:render section="body"/>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="bottom" data-canvis-side>
+        <button id="to-top" data-no-swup>
+            <i class="fas fa-angle-double-up"></i>
+        </button>
+        <div class="container py-2">
+            <div class="row g-5 footer-content">
+                <div class="col-12 col-sm-6 col-lg-3 py-3">
+                    <f:cObject typoscriptObjectPath="lib.colContentSlide" data="14" />
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 py-3">
+                    <f:cObject typoscriptObjectPath="lib.colContentSlide" data="15" />
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 py-3">
+                    <f:cObject typoscriptObjectPath="lib.colContentSlide" data="16" />
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 py-3">
+                    <f:cObject typoscriptObjectPath="lib.colContentSlide" data="18" />
+                </div>
+            </div>
+
+            <div class="sub-line py-3">
+                <!-- Copyright -->
+                <div class="copyr">
+                    <f:cObject typoscriptObjectPath="lib.copyr"/>
+                </div>
+                <!-- footer nav -->
+                <nav class="nav-footer">
+                    <f:render partial="Navigation/Footer" arguments="{_all}"/>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</html>

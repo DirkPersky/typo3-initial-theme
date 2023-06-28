@@ -114,9 +114,82 @@ u.prototype.NewsAjaxPaging = function (options) {
             });
         }
     });
-}
+};
 
+u.prototype.NewsSlider = function (options) {
+    /**
+     * Set Configuration Array
+     */
+    var settings = Object.assign({
+        next: 'button.next',
+        prev: 'button.prev'
+    }, options);
+
+    /**
+     * Loop data
+     */
+    this.map(element => {
+        var $el = u(element),
+            $articles = $el.find('.article'),
+            $next = $el.find(settings.next),
+            $prev = $el.find(settings.prev),
+            $pos = 0;
+        /**
+         * Set Initial View Classes
+         */
+        markPosition();
+        /**
+         * Resize Handler
+         */
+        window.addEventListener('resize', () => {
+            markPosition();
+        });
+
+        $next.on('click', () => {
+            $pos++;
+            $articles.first().addEventListener('transitionend', eventTransitionEnd);
+            element.style.setProperty("--wk-scroll", $pos);
+            $prev.attr('disabled', true);
+            $next.attr('disabled', true);
+        });
+
+        $prev.on('click', () => {
+            $pos--;
+            $articles.first().addEventListener('transitionend', eventTransitionEnd);
+            element.style.setProperty("--wk-scroll", $pos);
+            $prev.attr('disabled', true);
+            $next.attr('disabled', true);
+        });
+
+        function eventTransitionEnd(){
+            $articles.first().removeEventListener('transitionend', eventTransitionEnd );
+            markPosition();
+        }
+
+        function markPosition() {
+            $articles.removeClass('show');
+            $prev.removeClass('show');
+            $next.removeClass('show');
+
+            $articles.map(function (article) {
+                var setShowClass = true;
+                if (parseInt(article.getBoundingClientRect().right - 10) <= parseInt(element.getBoundingClientRect().left)) {
+                    setShowClass = false;
+                    $prev.attr('disabled', false);
+                    $prev.addClass('show');
+                }
+                if (parseInt(article.getBoundingClientRect().left + 10) >= parseInt(element.getBoundingClientRect().right)) {
+                    setShowClass = false;
+                    $next.attr('disabled', false);
+                    $next.addClass('show');
+                }
+                if (setShowClass) article.classList.add('show');
+            })
+        }
+    });
+};
 window.StateManager.attach('news-paging', function () {
     u('div[data-news-next]').NewsAjaxScrollPaging();
+    u('.frame-layout-2 .news-list-view').NewsSlider();
     // u('.news-list-view .pagination').NewsAjaxPaging();
 });

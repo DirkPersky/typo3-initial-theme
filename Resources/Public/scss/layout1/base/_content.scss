@@ -10,6 +10,7 @@
 
 .main--content {
   overflow: hidden;
+  max-width: 100%;
   min-height: calc(100vh - 60px);
   padding-bottom: 2rem;
 
@@ -117,11 +118,10 @@
 }
 .frame-layout-8 {
   .ce-gallery{
-	margin: -1rem !important;
+	--bs-gutter-x: 2rem;
+	--bs-gutter-y: 2rem;
 
 	.ce-column {
-	  padding: 1rem !important;
-
 	  display: flex !important;
 	  justify-content: center;
 	  align-items: center;

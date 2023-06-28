@@ -1,0 +1,160 @@
+.frame-layout-12 {
+
+  .ce-gallery {
+	--bs-gutter-x: 1rem;
+	--bs-gutter-y: 1rem;
+
+	.ce-column {
+	  width: 50%;
+
+	  @include media-breakpoint-up(sm) {
+		width: 50%;
+	  }
+	  @include media-breakpoint-up(lg) {
+		width: 33.333%;
+	  }
+	  @include media-breakpoint-up(xl) {
+		width: 25%;
+	  }
+	}
+  }
+
+  picture {
+	img {
+	  width: 100%;
+	}
+  }
+
+  .image {
+	position: relative;
+	overflow: hidden;
+
+	> a {
+	  &:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		width: 100%;
+		height: 100%;
+		content: '';
+		z-index: 3;
+	  }
+	}
+
+	.inner-caption {
+	  color: #fff;
+	  padding: 1rem;
+	  line-height: 1.1em;
+	  text-align: left;
+	  width: 100%;
+
+	  margin-top: auto;
+	  position: relative;
+	  z-index: 1;
+	  transition: all .4s ease-in-out;
+
+
+	  top: 100%;
+
+	  div {
+		padding: .5rem 0;
+
+		+ div {
+		  position: relative;
+		  z-index: 2;
+
+		  &:before,
+		  &:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+
+			border-top: 1px solid #fff;
+			content: '';
+		  }
+
+		  &:after {
+			width: 2rem;
+			border-color: $primary;
+		  }
+		}
+	  }
+	}
+
+	.image-caption {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  transition: all .4s ease-in-out;
+
+	  .fancybox {
+		display: none;
+
+		justify-content: center;
+		align-items: center;
+
+		background-color: $primary;
+		font-size: 1.3rem;
+		color: #fff;
+		opacity: 0;
+		visibility: hidden;
+		height: 3rem;
+		width: 3rem;
+
+		transition: all .4s ease-in-out;
+		transform: translate(-50%, -50%);
+		border-radius: 1000px;
+		position: absolute;
+		z-index: 5;
+		left: 50%;
+		top: -65%;
+
+		@include media-breakpoint-up(sm){
+		  display: inline-flex;
+		}
+
+		&:hover {
+		  opacity: .8;
+		}
+	  }
+
+	  &:before {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+
+		width: 100%;
+		height: 0;
+		content: '';
+		background-color: rgba(#000, .8);
+		transition: all .4s ease-in-out;
+	  }
+	}
+
+	&:hover {
+	  .fancybox {
+		top: 35%;
+		opacity: 1;
+		visibility: visible;
+	  }
+	  .inner-caption {
+		top: 0;
+	  }
+	  .image-caption {
+		&:before {
+		  height: 100%;
+		  top: 0;
+		}
+	  }
+	}
+  }
+}

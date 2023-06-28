@@ -7,7 +7,10 @@
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
-
+.main--content {
+  overflow: hidden;
+  max-width: 100%;
+}
 .transition-fade {
   transition: 0.4s;
   opacity: 1;

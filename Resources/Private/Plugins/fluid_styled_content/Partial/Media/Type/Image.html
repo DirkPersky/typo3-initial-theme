@@ -1,5 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:switch expression="{data.layout}">
+	<f:case value="12">
+		<figure class="image">
+			<f:render section="galerieImage" arguments="{_all}" />
+		</figure>
+	</f:case>
 	<f:defaultCase>
 		<figure class="image">
 			<f:render section="defaultImage" arguments="{_all}" />
@@ -34,6 +39,36 @@
 		</figcaption>
 	</f:if>
 </f:section>
+<f:section name="galerieImage">
+	<f:if condition="{file.link}">
+		<f:then>
+			<f:link.typolink parameter="{file.link}" title="{file.title}">
+				<f:render section="pictureTag" arguments="{_all}" />
+			</f:link.typolink>
+		</f:then>
+		<f:else>
+			<f:render section="pictureTag" arguments="{_all}" />
+		</f:else>
+	</f:if>
+	<f:render section="figGalerieCaption" arguments="{_all}" />
+</f:section>
+<f:section name="figGalerieCaption">
+	<figcaption class="image-caption">
+		<f:if condition="{data.image_zoom}">
+			<ce:link.clickEnlarge image="{file}" configuration="{settings.media.popup}">
+				<i class="fa-solid fa-maximize"></i>
+			</ce:link.clickEnlarge>
+		</f:if>
+		<div class="inner-caption">
+			<div>
+				<f:format.raw>{file.title}</f:format.raw>
+			</div>
+			<div class="fw-bold">
+				<f:format.raw>{file.description}</f:format.raw>
+			</div>
+		</div>
+	</figcaption>
+</f:section>
 <f:section name="defaultImage">
 	<f:if condition="{file.link}">
 		<f:then>
@@ -61,6 +96,4 @@
 		</f:else>
 	</f:if>
 </f:section>
-
-
 </html>
