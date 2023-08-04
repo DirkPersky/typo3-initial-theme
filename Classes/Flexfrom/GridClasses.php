@@ -75,6 +75,7 @@ class GridClasses
             ['align-items-start', 'Start'],
             ['align-items-center', 'Center'],
             ['align-items-end', 'End'],
+            ['align-items-stretch', 'Stretch'],
         ];
 
         $horizontalAlignClasses = [

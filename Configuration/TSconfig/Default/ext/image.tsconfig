@@ -20,6 +20,10 @@ TCEFORM.sys_file_reference.crop.config.cropVariants {
                 title = free
                 value = 0.0
             }
+            1:1 {
+                title = 1/1
+                value = 1
+            }
             4:3 {
                 title = 4/3
                 value = 1.3333333
@@ -37,6 +41,10 @@ TCEFORM.sys_file_reference.crop.config.cropVariants {
             NaN {
                 title = free
                 value = 0.0
+            }
+            1:1 {
+                title = 1/1
+                value = 1
             }
             4:3 {
                 title = 4/3
@@ -59,6 +67,10 @@ TCEFORM.sys_file_reference.crop.config.cropVariants {
             Portrait {
                 title = Portrait
                 value = 0.75
+            }
+            1:1 {
+                title = 1/1
+                value = 1
             }
             4:3 {
                 title = 4/3
