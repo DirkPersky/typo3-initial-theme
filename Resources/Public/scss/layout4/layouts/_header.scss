@@ -342,6 +342,9 @@ header#mainNavigation {
 
 
 .canvas--menu {
+  .canvas--nav .navbar-nav .canvis-logo img {
+	width: auto !important;
+  }
   .canvis-icon--bar{
 	position: relative;
 	color: $body-color;
@@ -356,6 +359,16 @@ header#mainNavigation {
 
 	  &:hover {
 		transform: scale(1.05);
+	  }
+	}
+
+
+	.icon {
+	  .icon-fa {
+		color: $primary;
+	  }
+	  .icon-headline {
+		display: none;
 	  }
 	}
 
