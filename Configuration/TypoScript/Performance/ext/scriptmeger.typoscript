@@ -13,18 +13,12 @@ page {
         # Inline CSS::__Above the fold__
         120 = FLUIDTEMPLATE
         120 {
-            stdWrap.wrap = <style type="text/css" data-ignore="1" data-abovethefold="1">|</style>
+            stdWrap.wrap = <style type="text/css" data-ignore="1" data-abovethefold="1" data-abovethefold>|</style>
             file = EXT:dp_theme/Resources/Public/assets/abovethefold.css
         }
 
     }
 }
-
-page.includeCSS {
-  #template >
-  #main = EXT:dp_theme/Resources/Public/assets/main.css
-}
-
 
 ##########################
 ### Performance Config ###
