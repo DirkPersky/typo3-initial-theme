@@ -1,5 +1,6 @@
 <html xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
@@ -7,6 +8,7 @@
     <f:variable name="origFile" value="{f:uri.image(image:file, cropVariant:'default')}"/>
     <f:variable name="width" value="{n:imageSize(property:'width',image:origFile)}"/>
     <f:variable name="height" value="{n:imageSize(property:'height',image:origFile)}"/>
+    <f:variable name="mimeType" value="{db:data.image(property:'mime_type',image:file)}"/>
 
     <f:if condition="{width} > 1400">
         <source media="(min-width: 1400px)"
@@ -14,34 +16,34 @@
                 type="image/webp"/>
         <source media="(min-width: 1400px)"
                 srcset="{f:uri.image(image:file, width:1960, maxWidth:width, maxHeight:height, cropVariant:'default')}"
-                type="{file.mime_type}"/>
+                type="{mimeType}"/>
     </f:if>
     <f:if condition="{width} > 1200">
         <source media="(min-width: 1200px)" srcset="{f:uri.image(image:file, width:1400, maxWidth:width, maxHeight:height, cropVariant:'default', fileExtension:'webp')}"
                 type="image/webp"/>
         <source media="(min-width: 1200px)" srcset="{f:uri.image(image:file, width:1400, maxWidth:width, maxHeight:height, cropVariant:'default')}"
-                type="{file.mime_type}"/>
+                type="{mimeType}"/>
     </f:if>
     <f:if condition="{width} > 992">
         <source media="(min-width: 992px)" srcset="{f:uri.image(image:file, width:1200, maxWidth:width, maxHeight:height, cropVariant:'default', fileExtension:'webp')}"
                 type="image/webp"/>
         <source media="(min-width: 992px)" srcset="{f:uri.image(image:file, width:1200, maxWidth:width, maxHeight:height, cropVariant:'default')}"
-                type="{file.mime_type}"/>
+                type="{mimeType}"/>
     </f:if>
     <f:if condition="{width} > 768">
         <source media="(min-width: 768px)" srcset="{f:uri.image(image:file, width:992, maxWidth:width, maxHeight:height, cropVariant:'tablet', fileExtension:'webp')}"
                 type="image/webp"/>
         <source media="(min-width: 768px)" srcset="{f:uri.image(image:file, width:992, maxWidth:width, maxHeight:height, cropVariant:'tablet')}"
-                type="{file.mime_type}"/>
+                type="{mimeType}"/>
     </f:if>
     <f:if condition="{width} > 480">
         <source media="(min-width: 480px)" srcset="{f:uri.image(image:file, width:768, maxWidth:width, maxHeight:height, cropVariant:'mobile', fileExtension:'webp')}"
                 type="image/webp"/>
         <source media="(min-width: 480px)" srcset="{f:uri.image(image:file, width:768, maxWidth:width, maxHeight:height, cropVariant:'mobile')}"
-                type="{file.mime_type}"/>
+                type="{mimeType}"/>
     </f:if>
     <source srcset="{f:uri.image(image:file, width:360, maxWidth:width, maxHeight:height, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
-    <source srcset="{f:uri.image(image:file, width:360, maxWidth:width, maxHeight:height, cropVariant:'mobile')}" type="{file.mime_type}"/>
+    <source srcset="{f:uri.image(image:file, width:360, maxWidth:width, maxHeight:height, cropVariant:'mobile')}" type="{mimeType}"/>
     <img alt="{file.alternative -> f:format.stripTags()}" class="img-fluid {f:if(condition:class, then: class)}"
          height="{height}" lazyload="true" title="{file.title -> f:format.stripTags()}" width="{data.width}"/>
 </picture>
