@@ -1,5 +1,5 @@
 <?php
-namespace DirkPersky\Theme\ViewHelpers\Data;
+namespace DirkPersky\Theme\ViewHelpers\Media;
 
 use Closure;
 use TYPO3\CMS\Core\Page\AssetCollector;
@@ -11,7 +11,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 /**
  * ViewHelper to access GP data
  */
-class ImageViewHelper extends AbstractViewHelper {
+class MasonryViewHelper extends AbstractViewHelper {
 
     use CompileWithRenderStatic;
 
@@ -21,9 +21,7 @@ class ImageViewHelper extends AbstractViewHelper {
     public function initializeArguments()
     {
         parent::initializeArguments();
-        $this->registerArgument('property', 'string', 'either width or height', true);
-        $this->registerArgument('image', \TYPO3\CMS\Core\Resource\FileReference::class, 'generated image', false);
-        $this->registerArgument('src', 'string', 'generated image', false);
+        $this->registerArgument('src', 'string', 'generated image', true);
     }
 
     /**
@@ -34,11 +32,26 @@ class ImageViewHelper extends AbstractViewHelper {
      */
     public static function renderStatic(array $arguments, Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
-        if($arguments['image'] instanceof \TYPO3\CMS\Core\Resource\FileReference) {
-            $data = $arguments['image']->toArray();
-            if(isset($data[$arguments['property']])) return $data[$arguments['property']];
-        } else if(isset($arguments['src'])){
-            return '';
+        if(isset($arguments['src'])) {
+            list($width, $height, $type, $attr) = getimagesize($arguments['src']);
+
+            $ratio = $width/$height;
+
+            switch ($ratio){
+                case ($ratio > 2):
+                    return 'wide';
+                    break;
+                case ($ratio <= 0.75):
+                    return 'tall';
+                    break;
+                case ($ratio == 1):
+                    return 'big';
+                    break;
+                default:
+                    return '';
+            }
+
+
         } else {
             return '';
         }

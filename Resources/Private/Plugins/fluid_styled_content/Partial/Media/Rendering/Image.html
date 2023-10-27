@@ -1,19 +1,42 @@
 <html xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
 <f:comment>
     <!-- Original Link -->
     <f:media class="image-embed-item" file="{file}" width="{data.imagewidth}" height="{data.imageheight}" alt="{file.alternative}" title="{file.title}" />
     <f:image class="image-embed-item" image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" />
     <f:uri.image image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="specialMobile"  />
 </f:comment>
-<picture>
+
+<f:switch expression="{data.layout}">
+    <f:case value="13">
+        <f:variable name="imageMobile" value="{f:uri.image(image:file, width:600, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', absolute:1)}"/>
+        <f:variable name="class" value="{db:media.masonry(src:imageMobile)}"/>
+
+        <picture class="{class}">
+            <source srcset="{f:uri.image(image:file, width:600, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
+            <img alt="{file.alternative -> f:format.stripTags()}" src="{imageMobile}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" lazyload="true" />
+        </picture>
+    </f:case>
+    <f:defaultCase>
+        <picture>
+            <f:render section="renderImage" arguments="{_all}" />
+            <img alt="{file.alternative -> f:format.stripTags()}" src="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" lazyload="true" />
+        </picture>
+    </f:defaultCase>
+</f:switch>
+
+
+<f:section name="renderImage">
+
+    <f:variable name="imageString" value="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'default')}"/>
     <f:variable name="mimeType" value="{db:data.image(property:'mime_type',image:file)}"/>
 
     <f:if condition="{data.imagewidth} > 1400">
         <source media="(min-width: 1400px)" srcset="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'default', fileExtension:'webp')}"
                 type="image/webp"/>
-        <source media="(min-width: 1400px)" srcset="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'default')}"
+        <source media="(min-width: 1400px)" srcset="{imageString}"
                 type="{mimeType}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 1200">
@@ -41,6 +64,6 @@
                 type="{mimeType}"/>
     </f:if>
     <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
-    <img alt="{file.alternative -> f:format.stripTags()}" src="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" lazyload="true" />
-</picture>
+</f:section>
+
 </html>
