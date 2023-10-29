@@ -38,7 +38,6 @@ $EM_CONF[$_EXTKEY] = [
             'rte_ckeditor_fontawesome' => '11.5.6-12.0.0',
             'content_defender' => '3.2.3-3.9.9',
             'sourceopt' => '5.0.0-5.9.99',
-            'scriptmerger' => '8.0.3-8.9.99',
             'eventnews ' => '5.0.0-5.9.99',
             'typo3_console' => '7.1.2-7.9.99',
             'typoscript_rendering' => '2.4.0-2.9.99',

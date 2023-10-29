@@ -55,7 +55,8 @@ class MetaViewHelper extends AbstractViewHelper
                 switch ($arguments['field']) {
                     case 'url':
                         $request = $renderingContext->getRequest();
-                        $option = $request->getRequestUri();
+                        $normalizedParams = $request->getAttribute('normalizedParams');
+                        $option = $normalizedParams->getRequestUrl();
                         break;
                     default:
                         // get Page Value
