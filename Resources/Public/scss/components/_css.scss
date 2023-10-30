@@ -27,6 +27,10 @@
       }
     }
 
+    &.bg-repeat:before {
+      background-size: auto;
+    }
+
     &:after {
       position: absolute;
       bottom: 0;

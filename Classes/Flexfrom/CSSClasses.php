@@ -21,6 +21,7 @@ class CSSClasses {
                 ['bg-success', 'BG: Success'],
                 ['bg-primary', 'BG: Primary'],
                 ['bg-dark', 'BG: Dark'],
+                ['bg-repeat', 'BG: Repeat'],
             ],
             'Text' => [
                 ['text-white', 'Text: Weiß'],
