@@ -54,6 +54,11 @@ $social-list: (
   display: flex;
   align-items: center;
 
+  @function contrast-color($color, $dark, $light) {
+	@return if(lightness($color) < 55%, $light, $dark)
+  }
+
+
   li {
 	list-style: none;
 	margin: 0;
@@ -68,6 +73,7 @@ $social-list: (
 
 		  &:hover {
 			background-color: darken(nth($s-name, 2), 10%);
+			color: contrast-color(darken(nth($s-name, 2), 10%), #000, #fff) !important;
 		  }
 		}
 	  }

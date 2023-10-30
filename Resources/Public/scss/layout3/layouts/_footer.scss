@@ -1,7 +1,9 @@
 footer#bottom {
+  position: relative;
   background-color: $body-color;
   color: #fff;
   font-size: 0.9rem;
+  box-shadow: 0 0 10px rgb(var(--bs-primary-rgb));
 
   a {
 	color: inherit;
@@ -22,7 +24,7 @@ footer#bottom {
   }
 
   .footer-content {
-	ul {
+	ul:not(.rrssb-buttons) {
 	  > li {
 		> a {
 		  position: relative;

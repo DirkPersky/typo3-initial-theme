@@ -44,11 +44,11 @@ class MasonryViewHelper extends AbstractViewHelper {
                 case ($ratio <= 0.75):
                     return 'tall';
                     break;
-                case ($ratio == 1):
+                case ($ratio <= 1.1 and $ratio >= 0.9):
                     return 'big';
                     break;
                 default:
-                    return '';
+                    return 'asd-'.$ratio;
             }
 
 

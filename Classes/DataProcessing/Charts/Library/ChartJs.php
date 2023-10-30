@@ -32,15 +32,30 @@ class ChartJs extends \Hoogi91\Charts\DataProcessing\Charts\Library\ChartJs
         PageRenderer $pageRenderer = null
     ): string {
         // check if labels and datasets are not empty ;)
-        $labels = $chartEntity->getLabels();
-        $datasets = $chartEntity->getDatasets();
+        $labels = $chartEntity->getLabelList();
+        $datasets = $chartEntity->getDatasetList();
         if (empty($labels) || empty($datasets)) {
             return '';
         }
+
         // build datasets for current entity to insert in javascript below
         $datasets = $this->buildEntityDatasetsForJavascript($datasets, $chartEntity);
+
         // create standardized initialization and dataset/labels code
-        return json_encode(['labels' => $labels, 'datasets' => $datasets]);
+        $initCode = "";
+        $initCode .= "window['Hoogi91.chartsData'] = window['Hoogi91.chartsData']  || {};";
+        /** @psalm-suppress InternalMethod */
+        $codeIdentifier = sprintf('chartsData%d', $chartEntity->getUid());
+        $code = vsprintf(
+            "window['Hoogi91.chartsData']['%s'] = {labels: %s, datasets: %s};",
+            [
+                $codeIdentifier,
+                json_encode($labels, JSON_THROW_ON_ERROR),
+                json_encode($datasets, JSON_THROW_ON_ERROR),
+            ]
+        );
+
+        return $initCode . $code;
     }
 
 }

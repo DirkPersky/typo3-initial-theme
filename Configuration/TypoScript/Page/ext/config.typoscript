@@ -69,7 +69,7 @@ page.headerData.1337 {
     10 = TEXT
     10 {
         typolink {
-            parameter = typo3conf/ext/dp_theme/Resources/Public/assets/{$favicon}
+            parameter = fileadmin/user_upload/layout/{$favicon}
             returnLast = url
         }
 
