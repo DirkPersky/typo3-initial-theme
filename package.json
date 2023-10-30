@@ -23,7 +23,7 @@
     "recursive-copy": "latest",
     "rrssb": "latest",
     "split-type": "latest",
-    "swup": "^3.0.4",
+    "swup": "latest",
     "umbrellajs": "latest"
   },
   "devDependencies": {

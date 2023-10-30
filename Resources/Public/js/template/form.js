@@ -16,6 +16,7 @@
  * @param options
  */
 u.prototype.typo3form = function(options){
+    return;
     /**
      * Set Configuration Array
      */
@@ -58,8 +59,7 @@ u.prototype.typo3form = function(options){
                     window.formScrollOffset = undefined;
                 };
                 // perform request
-                window.swupLoad.loadPage({
-                    url: form.data('ajax-form'), // route of request (defaults to current url)
+                window.swupLoad.navigate(form.data('ajax-form'), {
                     method: 'POST', // method of request (defaults to "GET")
                     data: formData, // data passed into XMLHttpRequest send method
                 });

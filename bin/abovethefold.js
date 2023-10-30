@@ -81,7 +81,7 @@ const outFiles = {
         });
 
         fs.writeFileSync(outFiles.above, critical);
-        fs.writeFileSync(outFiles.rest, rest);
+        // fs.writeFileSync(outFiles.rest, rest);
     } catch (err) {
         console.error('Removed @Support inside @media in Fancybox??');
     }

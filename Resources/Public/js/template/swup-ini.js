@@ -45,11 +45,11 @@ window.addEventListener('DOMContentLoaded', () => {
             '"]:not([data-no-swup]):not(.various), a[href^="/"]:not([data-no-swup]):not(.various), a[href^="#"]:not([data-no-swup]):not(.various)'
     });
     // page change
-    window.swupLoad.on('contentReplaced', function (e, i) {
+    window.swupLoad.hooks.on('content:replace', function (e, i) {
         // wait for handler after scoll
-        window.swupLoad.on('scrollDone', (e) => {
+        window.swupLoad.hooks.on('scroll:end', (e) => {
             // unbind handler
-            window.swupLoad.off('scrollDone');
+            window.swupLoad.hooks.off('scroll:end');
             // rebind scripts
             window.StateManager.call();
         });
@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
             window.StateManager.call();
         } else if(window.scrollY <= (window.innerHeight / 2)){
             // if no scroll needed fire direct
-            window.swupLoad.triggerEvent('scrollDone');
+            window.swupLoad.hooks.call('scroll:end');
         }
     });
 }, false);

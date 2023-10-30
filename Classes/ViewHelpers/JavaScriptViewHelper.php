@@ -80,7 +80,7 @@ class JavaScriptViewHelper extends AbstractViewHelper
                         break;
                     case 'js-lib':
                         $fileName = basename($filePath);
-                        $fileName = str_replace('.min.js', '', $fileName);
+                        $fileName = str_replace(['.min.js','.js'], ['',''], $fileName);
                         // skip if jquery
                         if (!in_array($fileName, ['jquery', 'umbrella'])) {
                             // add files

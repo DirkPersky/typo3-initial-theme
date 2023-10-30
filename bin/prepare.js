@@ -33,7 +33,10 @@ const _PACKGES_ = [
              */
             {src: 'swup/dist/swup.umd.js', dir: 'swup'},
             {src: 'swup/dist/swup.umd.js.map', dir: 'swup'},
-            {src: '@swup/overlay-theme/dist/SwupOverlayTheme.js', dir: 'swup/plugin'},
+
+            {src: '@swup/overlay-theme/dist/index.umd.js', dir: 'swup/plugin/overlay', name: 'SwupOverlayTheme.js'},
+            {src: '@swup/overlay-theme/dist/index.umd.js.map', dir: 'swup/plugin/overlay'},
+
             {src: '@swup/forms-plugin/dist/index.umd.js', dir: 'swup/plugin/forms', name: 'SwupForms.js'},
             {src: '@swup/forms-plugin/dist/index.umd.js.map', dir: 'swup/plugin/forms'},
             {src: '@swup/scroll-plugin/dist/index.umd.js', dir: 'swup/plugin/scroll', name: 'SwupScroll.js'},

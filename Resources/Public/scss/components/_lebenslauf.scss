@@ -1,9 +1,7 @@
 /*!
- * Copyright (c) 2021.
+ * Copyright (c) 2023
  *
- * @category TYPO3
- *
- * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @copyright  2023 Dirk Persky (https://github.com/DirkPersky)
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
@@ -25,14 +23,35 @@
 }
 
 .frame-layout-7 {
-  padding: 1.5rem .5rem;
   width: 100%;
+  padding: .5rem;
+  position: relative;
 
   @include media-breakpoint-up(md) {
-    width: 50%;
+    width: calc(50% - .5rem);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+
+    border-radius: 10px;
+
+    background-color: #fff;
+    box-shadow: 0 0 5px #bbb;
+
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    bottom: .5rem;
+    right: .5rem;
+
   }
 
   header {
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
 
     .fa,.fas,.far,.fab {
       font-size: .9rem;
@@ -67,9 +86,7 @@
     }
 
     position: relative;
-    padding-bottom: .325rem;
-    margin-bottom: .5rem;
-
+    margin-bottom: 0;
     &:before {
       position: absolute;
       top: 100%;
@@ -81,6 +98,13 @@
       border-bottom: 2px solid $headings-color;
       transition: all .2s ease-in-out;
     }
+  }
+
+  .ce-bodytext {
+    padding: 0 1rem 1rem;
+
+    position: relative;
+    z-index: 1;
   }
 }
 //
