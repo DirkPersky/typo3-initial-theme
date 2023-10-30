@@ -12,13 +12,8 @@ config {
         additionalHeaders.10.header = Content-Type:application/rss+xml;charset=utf-8
         absRefPrefix = {$plugin.tx_news.rss.channel.link}
         linkVars >
-        sourceopt.enabled = 0
 }
 
-plugin.tx_scriptmerger {
-    css.enable = 0
-    javascript.enable = 0
-}
 
 pageNewsRSS = PAGE
 pageNewsRSS {
@@ -47,10 +42,6 @@ pageNewsRSS {
 [end]
 
 [request.getQueryParams()['type'] == '1533906436']
-config {
-    sourceopt.enabled = 0
-}
-
 plugin.tx_seo.config {
     xmlSitemap {
         sitemaps {

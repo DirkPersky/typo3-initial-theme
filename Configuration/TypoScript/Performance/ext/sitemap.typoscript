@@ -2,12 +2,5 @@
 ### SEO SITEMAP ###
 ###################
 [request.getQueryParams()['type'] == '1533906435']
-    plugin.tx_scriptmerger {
-        css.enable = 0
-        javascript.enable = 0
-    }
-
-    config.sourceopt.enabled = 0
     config.svgstore.enabled = 0
-
 [end]

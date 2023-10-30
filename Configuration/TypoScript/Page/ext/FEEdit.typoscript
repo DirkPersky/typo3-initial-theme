@@ -8,8 +8,4 @@
 
     config.admPanel = 1
 
-	plugin.tx_scriptmerger {
-		css.enable = 0
-		javascript.enable = 0
-	}
 [END]

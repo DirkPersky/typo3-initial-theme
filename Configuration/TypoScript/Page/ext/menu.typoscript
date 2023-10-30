@@ -1,11 +1,4 @@
 [request.getQueryParams()['type'] == '22']
-    plugin.tx_scriptmerger {
-        css.enable = 0
-        javascript.enable = 0
-    }
-
-    config.sourceopt.enabled = 0
-
     page.config.index_enable = 0
 [end]
 
