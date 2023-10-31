@@ -30,12 +30,16 @@ plugin.tx_dp_theme {
 
              # cat=plugin.tx_dptheme/config; type=color; label= Primary Color Text
              primarycolortext =
+
+             # cat=plugin.tx_dptheme/config; type=int; label= Content ID of Search
+             searchUid =
         }
 
         meta {
             # cat=plugin.tx_dptheme/meta; type=string; label=Author
             author = web-kon Internetagentur
         }
+
     }
 }
 

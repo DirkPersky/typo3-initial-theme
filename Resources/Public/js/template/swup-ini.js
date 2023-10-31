@@ -56,9 +56,9 @@ window.addEventListener('DOMContentLoaded', () => {
         // Swup Scolling
         if (typeof window.formScroll != "undefined") {
             window.formScroll($offset);
-        } else if (window.location.href.indexOf('#') == -1 && u('div[data-swup-scroll]').length > 0) {
+        } else if (window.location.href.indexOf('#') == -1 && document.querySelector('div[data-swup-scroll]')) {
             // only do if no anker is defined
-            window.swupLoad.scrollTo(u('div[data-swup-scroll]').first().offsetTop - $offset);
+            window.swupLoad.scrollTo(document.querySelector('div[data-swup-scroll]').offsetTop - $offset);
         } else if(!window.swupLoad.findPlugin('ScrollPlugin')){
             // if ScrollPlugInIs disabled
             window.StateManager.call();

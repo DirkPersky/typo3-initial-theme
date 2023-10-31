@@ -35,9 +35,11 @@
                             </f:link.page>
                         </div>
                     </div>
-                    <div class="d-none d-lg-flex flex-column" >
+                    <div class="d-none d-lg-flex flex-column ms-auto" >
                         <div id="canvas-sync"></div>
                     </div>
+
+                    <f:render partial="Search/Button" arguments="{_all}"/>
 
                     <button aria-label="Menü"
                             class="navbar-toggler hamburger hamburger--collapse d-lg-none"
@@ -68,6 +70,7 @@
             <f:render section="body"/>
         </section>
     </div>
+    <f:render partial="Search/Modal" arguments="{_all}"/>
     <!-- Footer -->
     <footer id="bottom" data-canvis-side>
         <div class="container">

@@ -65,6 +65,8 @@ page.10 {
 
     settings {
       pidRoot = {$plugin.tx_dp_theme.settings.nav.homeUid}
+      searchUid = {$plugin.tx_dp_theme.settings.config.searchUid}
+      primaryColor = {$plugin.tx_dp_theme.settings.config.primarycolor}
       #logo = {$logo}
     }
 

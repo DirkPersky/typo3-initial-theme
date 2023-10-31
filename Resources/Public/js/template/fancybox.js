@@ -12,17 +12,15 @@ window.StateManager.attach('fancybox', function () {
     const options = {
         keyboard: true
     };
-
     /**
      * Lightbox
      */
-    var classicLightbox = u('.fancybox, a[rel="fancybox"]');
-    classicLightbox.map(element => {
+    document.querySelectorAll('.fancybox, a[rel="fancybox"]').forEach(element => {
         var group = element.dataset.fancybox || null;
         if(group) element.dataset.gallery = group;
         element.dataset.toggle = 'lightbox';
         // has Caption?
-        if(u(element).find('img').first())  element.dataset.caption = u(element).find('img').first().title;
+        if(element.querySelector('img'))  element.dataset.caption = element.querySelector('img').title;
         // bind click
         element.addEventListener('click', (e) => {
             e.preventDefault();
@@ -32,8 +30,7 @@ window.StateManager.attach('fancybox', function () {
         })
     });
 
-    var variousLightbox = u('.various, a[rel="various"]');
-    variousLightbox.map(element => {
+    document.querySelectorAll('.various, a[rel="various"]').forEach(element => {
         var group = element.dataset.fancybox || null;
         if(group) element.dataset.gallery = group;
         element.dataset.toggle = 'lightbox';

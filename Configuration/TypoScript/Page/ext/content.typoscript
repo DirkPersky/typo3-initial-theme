@@ -77,18 +77,12 @@ lib.dynamicContent {
             value.current = 1
         }
     }
-    20 = CONTENT
+
+    20 = RECORDS
     20 {
-        table = tt_content
-        select {
-            pidInList = {register:pID}
-            pidInList.insertData = 1
-            where = colPos=2
-            #where.insertData = 1
-            begin=0
-            max=1
-            languageField = sys_language_uid
-        }
+        tables = tt_content
+        source = {register:pID}
+        source.insertData = 1
     }
 }
 

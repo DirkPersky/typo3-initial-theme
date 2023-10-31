@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="de" datatype="plaintext" original="messages" date="2022-03-08T16:03:14Z" product-name="dptheme">
+	<file source-language="de"
+	    datatype="plaintext"
+	    original="EXT:dp_theme/Resources/Private/Language/locallang.xlf"
+	    date="2023-03-08T16:03:14Z"
+	    product-name="dptheme"
+    >
 		<header/>
 		<body>
 			<trans-unit id="list_noklinkerfound">
                 <source>No products available.</source>
                 <target>Keine Produkte gefunden.</target>
+            </trans-unit>
+
+			<trans-unit id="search">
+                <source>What are you looking for?</source>
+                <target>Wir helfen dir bei der Suche</target>
             </trans-unit>
 		</body>
 	</file>
