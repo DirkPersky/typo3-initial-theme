@@ -1,0 +1,54 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
+>
+
+<div class="result-list-item result-list-item-type-{resultrow.type} {f:if(condition:filePreviewId, then:'with-preview')}">
+    <div class="result-body">
+        <div class="result-tags">
+            <f:for each="{resultrow.tags -> v:iterator.explode(glue: ',')}" as="resultTags" iteration="tag_iteration">
+                <v:condition.string.contains haystack="{resultTags}" needle="syscat">
+                    <f:then>
+                    </f:then>
+                    <f:else>
+                        <span data-result-tag="{resultTags->f:format.trim() -> f:format.stripTags()}">{resultTags->f:format.trim()}</span>
+                    </f:else>
+                </v:condition.string.contains>
+            </f:for>
+        </div>
+        <div class="result-title">
+            <f:format.raw>{resultrow.title}</f:format.raw>
+        </div>
+        <div class="result-teaser">
+            <f:format.raw>{resultrow.teaser}</f:format.raw>
+        </div>
+        <div class="result-info">
+            <f:if condition="{resultrow.type} == 'cal'">
+                <f:then>
+                    <f:comment><!-- Special cal date rendering --></f:comment>
+                    <f:render partial="CalDate" arguments="{resultrow: resultrow}"/>
+                    <br/>
+                </f:then>
+                <f:else>
+                    <f:comment><!-- Default date rendering --></f:comment>
+                    <f:if condition="{conf.showDate}">
+                        <i>{f:translate(key:
+                            'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xlf:label_date')}:</i>
+                        <f:format.date format="d.m.Y">{resultrow.date_timestamp}</f:format.date>
+                        <br/>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+
+    <f:if condition="{resultrow.filePreviewId}">
+        <div class="file-preview">
+            <div>
+                <f:image src="{resultrow.filePreviewId}" treatIdAsReference="{resultrow.treatIdAsReference}" maxWidth="200"/>
+            </div>
+        </div>
+    </f:if>
+</div>
+</html>

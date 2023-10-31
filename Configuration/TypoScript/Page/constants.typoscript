@@ -105,19 +105,13 @@ plugin.tx_csseo {
 ###############
 favicon = favicon.png
 
-########################
-### IndexSearch Page ###
-########################
-plugin.tx_indexedsearch {
-    settings {
-        displayAdvancedSearchLink = 0
-    }
-
-    view {
-        layoutRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_indexedsearch/Layout/
-        partialRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_indexedsearch/Partial/
-        templateRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_indexedsearch/Template/
-    }
+#################
+### KE Search ###
+#################
+plugin.tx_kesearch {
+    layoutRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_kesearch/Layout/
+    partialRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_kesearch/Partial/
+    templateRootPath = EXT:dp_theme/Resources/Private/Plugins/tx_kesearch/Template/
 }
 
 ###############

@@ -1,9 +1,0 @@
-##########################
-### INDEXSEARCH CONFIG ###
-##########################
-plugin.tx_indexedsearch {
-    settings {
-        targetPid =
-        displayAdvancedSearchLink = 0
-    }
-}

@@ -7,7 +7,7 @@
     <f:if condition="{data_chart.type} && {data_chart.library} && {data_chart.entity}">
         <f:render partial="{data_chart.library}" section="Main" arguments="{data_chart}"/>
 
-        <script data-ignore="1" data-chart>
+        <script data-ignore="1" data-swup-reload-charts>
             <f:format.raw>{data_chart.assets.js.entity.0}</f:format.raw>
         </script>
     </f:if>

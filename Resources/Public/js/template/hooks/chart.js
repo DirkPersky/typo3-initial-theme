@@ -211,6 +211,12 @@
 })();
 
 window.StateManager.attach('tx-charts', function () {
+    // reinit Chart Data
+    document.querySelectorAll('script[data-swup-reload-charts]').forEach( script => {
+        var code = script.innerHTML;
+        eval.call(this, code);
+    })
+    // draw charts
     window['Hoogi91.Charts'].init();
 });
 

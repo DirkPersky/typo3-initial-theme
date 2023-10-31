@@ -41,6 +41,8 @@ $EM_CONF[$_EXTKEY] = [
             'powermail' => '10.4.3-11.9.99',
             'charts' => '3.0.0-3.9.99',
             'spreadsheets' => '4.0.0-4.9.99',
+            'ke_search ' => '5.1.2-5.9.99',
+            'mask_kesearch_indexer ' => '3.0.2-3.9.99'
         ],
     ],
 ];
