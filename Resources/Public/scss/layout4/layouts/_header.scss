@@ -171,6 +171,19 @@ header#mainNavigation {
 	  }
 	}
   }
+
+
+  .search-btn-container {
+	margin-left: auto !important;
+  }
+
+  .btn-search-toggle {
+	display: none;
+
+	@include media-breakpoint-up(sm){
+	  display: block;
+	}
+  }
 }
 
 #canvas-sync {

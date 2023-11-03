@@ -32,8 +32,8 @@
                             <div class="header-container">
                                 <div class="icon--bar d-none d-md-flex">
                                     <f:cObject typoscriptObjectPath="lib.colContentSlide" data="5" />
+                                    <f:render partial="Search/Button" arguments="{_all}"/>
                                 </div>
-                                <f:render partial="SearchNav" />
                             </div>
                         </div>
                         <div id="canvas-sync"></div>
@@ -67,6 +67,7 @@
             <f:render section="body"/>
         </section>
     </div>
+    <f:render partial="Search/Modal" arguments="{_all}"/>
     <!-- Footer -->
     <footer id="bottom" data-canvis-side>
         <div class="container">

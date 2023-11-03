@@ -233,6 +233,15 @@ header#mainNavigation {
 	  }
 	}
   }
+
+  .btn-search-toggle {
+	color: #fff;
+	display: none;
+
+	@include media-breakpoint-up(sm){
+	  display: block;
+	}
+  }
 }
 
 #canvas-sync {
@@ -430,6 +439,14 @@ header#mainNavigation {
 		z-index: 1;
 		padding-left: 2rem;
 	  }
+	}
+  }
+}
+
+.modal-search-content {
+  .btn-group {
+	@include media-breakpoint-up(sm){
+	  margin-left: 1.5rem;
 	}
   }
 }
