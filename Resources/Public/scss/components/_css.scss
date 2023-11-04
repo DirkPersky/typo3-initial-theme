@@ -30,6 +30,9 @@
     &.bg-repeat:before {
       background-size: auto;
     }
+    &.bg-dark {
+      text-shadow: 0 0 5px #000;
+    }
 
     &:after {
       position: absolute;

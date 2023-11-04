@@ -1,0 +1,246 @@
+{
+    "version": "8.1.0",
+    "restructuringDone": false,
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "social_contact": {
+                    "color": "#f96332",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_c06e0d4fe2b3d"
+                    ],
+                    "description": "Social Contact Icons",
+                    "descriptions": [
+                        ""
+                    ],
+                    "icon": "fa-envelope-square",
+                    "iconOverlay": "",
+                    "key": "social_contact",
+                    "label": "Social Kontakt",
+                    "labels": [
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "palettes": {
+                "tx_mask_c06e0d4fe2b3d": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_email_link",
+                        "tx_mask_facebook_link",
+                        "tx_mask_linkedin_link",
+                        "tx_mask_twitter_link",
+                        "tx_mask_xing_link",
+                        "tx_mask_whatsapp_link",
+                        "tx_mask_github_link"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_email_link": {
+                    "tt_content": {
+                        "tx_mask_email_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_facebook_link": {
+                    "tt_content": {
+                        "tx_mask_facebook_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_github_link": {
+                    "tt_content": {
+                        "tx_mask_github_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_linkedin_link": {
+                    "tt_content": {
+                        "tx_mask_linkedin_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_twitter_link": {
+                    "tt_content": {
+                        "tx_mask_twitter_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_whatsapp_link": {
+                    "tt_content": {
+                        "tx_mask_whatsapp_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_xing_link": {
+                    "tt_content": {
+                        "tx_mask_xing_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_c06e0d4fe2b3d": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_c06e0d4fe2b3d",
+                    "key": "c06e0d4fe2b3d",
+                    "type": "palette"
+                },
+                "tx_mask_email_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "description": {
+                        "social_contact": ""
+                    },
+                    "fullKey": "tx_mask_email_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_contact": "tx_mask_c06e0d4fe2b3d"
+                    },
+                    "key": "email_link",
+                    "label": {
+                        "social_contact": "EMail"
+                    },
+                    "order": {
+                        "social_contact": 1
+                    },
+                    "type": "link"
+                },
+                "tx_mask_facebook_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "description": {
+                        "social_contact": ""
+                    },
+                    "fullKey": "tx_mask_facebook_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_contact": "tx_mask_c06e0d4fe2b3d"
+                    },
+                    "key": "facebook_link",
+                    "label": {
+                        "social_contact": "Facebook"
+                    },
+                    "order": {
+                        "social_contact": 2
+                    },
+                    "type": "link"
+                },
+                "tx_mask_github_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "description": {
+                        "social_contact": ""
+                    },
+                    "fullKey": "tx_mask_github_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_contact": "tx_mask_c06e0d4fe2b3d"
+                    },
+                    "key": "github_link",
+                    "label": {
+                        "social_contact": "Github"
+                    },
+                    "order": {
+                        "social_contact": 7
+                    },
+                    "type": "link"
+                },
+                "tx_mask_linkedin_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "description": {
+                        "social_contact": ""
+                    },
+                    "fullKey": "tx_mask_linkedin_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_contact": "tx_mask_c06e0d4fe2b3d"
+                    },
+                    "key": "linkedin_link",
+                    "label": {
+                        "social_contact": "LinkedIn"
+                    },
+                    "order": {
+                        "social_contact": 3
+                    },
+                    "type": "link"
+                },
+                "tx_mask_twitter_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "description": {
+                        "social_contact": ""
+                    },
+                    "fullKey": "tx_mask_twitter_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_contact": "tx_mask_c06e0d4fe2b3d"
+                    },
+                    "key": "twitter_link",
+                    "label": {
+                        "social_contact": "Twitter"
+                    },
+                    "order": {
+                        "social_contact": 4
+                    },
+                    "type": "link"
+                },
+                "tx_mask_whatsapp_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "description": {
+                        "social_contact": ""
+                    },
+                    "fullKey": "tx_mask_whatsapp_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_contact": "tx_mask_c06e0d4fe2b3d"
+                    },
+                    "key": "whatsapp_link",
+                    "label": {
+                        "social_contact": "WhatsApp"
+                    },
+                    "order": {
+                        "social_contact": 6
+                    },
+                    "type": "link"
+                },
+                "tx_mask_xing_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "description": {
+                        "social_contact": ""
+                    },
+                    "fullKey": "tx_mask_xing_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_contact": "tx_mask_c06e0d4fe2b3d"
+                    },
+                    "key": "xing_link",
+                    "label": {
+                        "social_contact": "Xing"
+                    },
+                    "order": {
+                        "social_contact": 5
+                    },
+                    "type": "link"
+                }
+            }
+        }
+    }
+}

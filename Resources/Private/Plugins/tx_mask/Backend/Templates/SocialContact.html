@@ -16,7 +16,7 @@
         <span class="icon">
             <span class="icon-markup">
                 <svg class="icon-color">
-                <f:if condition="{data.tx_mask_email}">
+                <f:if condition="{data.tx_mask_email_link}">
                     <f:then>
                           <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
                     </f:then>
@@ -33,7 +33,7 @@
         <span class="icon">
             <span class="icon-markup">
                 <svg class="icon-color">
-                <f:if condition="{data.tx_mask_facebook}">
+                <f:if condition="{data.tx_mask_facebook_link}">
                     <f:then>
                           <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
                     </f:then>
@@ -50,7 +50,7 @@
         <span class="icon">
             <span class="icon-markup">
                 <svg class="icon-color">
-                <f:if condition="{data.tx_mask_linkedin}">
+                <f:if condition="{data.tx_mask_linkedin_link}">
                     <f:then>
                           <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
                     </f:then>
@@ -67,7 +67,7 @@
         <span class="icon">
             <span class="icon-markup">
                 <svg class="icon-color">
-                <f:if condition="{data.tx_mask_xing}">
+                <f:if condition="{data.tx_mask_xing_link}">
                     <f:then>
                           <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
                     </f:then>
@@ -84,7 +84,7 @@
         <span class="icon">
             <span class="icon-markup">
                 <svg class="icon-color">
-                <f:if condition="{data.tx_mask_twitter}">
+                <f:if condition="{data.tx_mask_twitter_link}">
                     <f:then>
                           <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
                     </f:then>
@@ -101,7 +101,7 @@
         <span class="icon">
             <span class="icon-markup">
                 <svg class="icon-color">
-                <f:if condition="{data.tx_mask_whatsap}">
+                <f:if condition="{data.tx_mask_whatsap_link}">
                     <f:then>
                           <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
                     </f:then>
@@ -113,5 +113,25 @@
             </span>
         </span> Whatsap
     </div>
+
+    <div>
+        <span class="icon">
+            <span class="icon-markup">
+
+                <svg class="icon-color">
+                <f:if condition="{data.tx_mask_github_link}">
+                    <f:then>
+                          <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
+                    </f:then>
+                    <f:else>
+                          <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-off')}"></use>
+                    </f:else>
+                </f:if>
+                </svg>
+            </span>
+        </span> GitHub
+    </div>
+
+
 </div>
 </html>

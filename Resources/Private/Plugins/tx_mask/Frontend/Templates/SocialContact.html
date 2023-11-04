@@ -1,0 +1,89 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
+>
+
+<div class="share-container">
+    <ul class="rrssb-buttons">
+        <f:if condition="{data.tx_mask_email_link}">
+            <li class="rrssb-email">
+                <!-- Replace subject with your message using URL Encoding: http://meyerweb.com/eric/tools/dencoder/ -->
+                <f:link.typolink parameter="{data.tx_mask_email_link}">
+                <span class="rrssb-icon">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="rrssb-text">EMail</span>
+                </f:link.typolink>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_facebook_link}">
+            <li class="rrssb-facebook">
+                <!--  Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header:
+                      https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->
+                <f:link.typolink parameter="{data.tx_mask_facebook_link}" target="_blank">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-facebook-square"></i>
+                    </span>
+                    <span class="rrssb-text">Facebook</span>
+                </f:link.typolink>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_linkedin_link}">
+            <li class="rrssb-linkedin">
+                <!-- Replace href with your meta and URL information -->
+                <f:link.typolink parameter="{data.tx_mask_linkedin_link}" target="_blank">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </span>
+                    <span class="rrssb-text">LinkedIn</span>
+                </f:link.typolink>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_xing_link}">
+            <li class="rrssb-xing">
+                <!-- Replace href with your meta and URL information.  -->
+                <f:link.typolink parameter="{data.tx_mask_xing_link}" target="_blank">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-xing"></i>
+                    </span>
+                    <span class="rrssb-text">Xing</span>
+                </f:link.typolink>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_twitter_link}">
+            <li class="rrssb-twitter">
+                <!-- Replace href with your Meta and URL information  -->
+                <f:link.typolink parameter="{data.tx_mask_twitter_link}" target="_blank">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                    <span class="rrssb-text">Twitter</span>
+                </f:link.typolink>
+            </li>
+        </f:if>
+        <f:if condition="{data.tx_mask_whatsap_link}">
+            <li class="rrssb-whatsapp">
+                <f:link.typolink parameter="{data.tx_mask_whatsap_link}">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </span>
+                    <span class="rrssb-text">WhatsApp</span>
+                </f:link.typolink>
+            </li>
+        </f:if>
+
+
+        <f:if condition="{data.tx_mask_github_link}">
+            <li class="rrssb-github">
+                <f:link.typolink parameter="{data.tx_mask_github_link}" target="_blank">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span class="rrssb-text">GitHub</span>
+                </f:link.typolink>
+            </li>
+        </f:if>
+
+    </ul>
+</div>
+</html>
