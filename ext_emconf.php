@@ -35,6 +35,7 @@ $EM_CONF[$_EXTKEY] = [
         'conflicts' => [
         ],
         'suggests' => [
+            'ai_seo_helper' => '0.6.0-0.9.99',
             'content_defender' => '3.4.1-3.9.9',
             'eventnews ' => '5.0.0-5.9.99',
             'typo3_console' => '7.1.2-7.9.99',
