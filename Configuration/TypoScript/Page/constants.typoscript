@@ -33,6 +33,12 @@ plugin.tx_dp_theme {
 
              # cat=plugin.tx_dptheme/config; type=int; label= Content ID of Search
              searchUid =
+
+             # cat=plugin.tx_dptheme/config; type=string; label= Path to primary Logo
+             primayLogo =
+
+             # cat=plugin.tx_dptheme/config; type=string; label= Path to secondary Logo
+             mobileLogo =
         }
 
         meta {

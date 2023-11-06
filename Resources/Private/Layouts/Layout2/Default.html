@@ -28,8 +28,12 @@
                     <div class="nav--brand">
                         <div class="dp--brand">
                             <f:link.page pageUid="{settings.pidRoot}" class="navbar-brand" title="Home">
-                                <img class="logo d-sticky-none"  src="{f:uri.image(src: 'EXT:dp_theme/Resources/Public/assets/logo_dark.png', maxHeight: 90)}" alt="Bild Dirk Persky" title="Bild Dirk Persky" height="71" width="300">
-                                <img class="logo d-sticky-block"  src="{f:uri.image(src: 'EXT:dp_theme/Resources/Public/assets/logo_light.png', maxHeight: 90)}" alt="Bild Dirk Persky" title="Bild Dirk Persky" height="71" width="300">
+                                <f:if condition="{settings.primaryLogo}">
+                                    <img class="logo {f:if(condition:'{settings.mobileLogo}', then:'d-sticky-none')}"  src="{f:uri.image(src: '{settings.primaryLogo}', maxHeight: 90)}" alt="Bild Dirk Persky" title="Bild Dirk Persky" height="71" width="300">
+                                </f:if>
+                                <f:if condition="{settings.mobileLogo}">
+                                    <img class="logo d-sticky-block"  src="{f:uri.image(src: '{settings.mobileLogo}', maxHeight: 90)}" alt="Bild Dirk Persky" title="Bild Dirk Persky" height="71" width="300">
+                                </f:if>
                             </f:link.page>
                         </div>
                     </div>

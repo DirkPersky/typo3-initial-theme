@@ -4,4 +4,10 @@
 plugin.tx_cookieconsent.settings {
     # PID to Data Protection
     url =
+
+    storagePid =
+
+    tracking.googleTagManager {
+        id =
+    }
 }

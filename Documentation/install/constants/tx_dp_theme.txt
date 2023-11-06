@@ -1,0 +1,16 @@
+plugin.tx_dp_theme.settings {
+    nav{
+        homeUid = 1
+        exclude = 3,5
+        footer = 3,5
+    }
+    config {
+        primarycolor = #f96332
+        primarycolortext = #fff
+        searchUid =
+        primayLogo = EXT:dp_theme/Resources/Public/assets/logo_light.png
+        mobileLogo = EXT:dp_theme/Resources/Public/assets/logo_dark.png
+    }
+
+    meta.author =
+}
