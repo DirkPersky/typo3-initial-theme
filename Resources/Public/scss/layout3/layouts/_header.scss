@@ -155,9 +155,14 @@ header#mainNavigation {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding-left: 1rem;
 
 		@include media-breakpoint-up(sm) {
 		  margin-right: 16px;
+		}
+
+		@include media-breakpoint-up(lg) {
+		  padding-left: 0;
 		}
 
 
