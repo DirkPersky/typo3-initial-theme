@@ -61,7 +61,11 @@
   @for $i from 1 through 12 {
     &[data-ce-columns="#{$i}"] {
       .ce-column {
-        width: (100% / $i);
+        width: 50%;
+
+        @include media-breakpoint-up(sm){
+          width: (100% / $i);
+        }
       }
     }
   }
