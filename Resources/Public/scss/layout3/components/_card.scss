@@ -1,9 +1,7 @@
-.cards {
+.card--hover {
   --xPos: 0;
   --yPos: 0;
-}
 
-.card--hover {
   position: relative;
   min-height: 100%;
   z-index: 1;

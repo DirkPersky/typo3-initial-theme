@@ -1,5 +1,5 @@
 window.AnimateManager.attach('card-hover', function () {
-    const wrapper = document.querySelectorAll(".cards");
+    const wrapper = document.querySelectorAll(".cards, .dp-fancy");
     wrapper.forEach(wraps => {
         wraps.addEventListener("mousemove", eventHandle);
         wraps.addEventListener("dragover", eventHandle);

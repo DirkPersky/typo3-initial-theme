@@ -287,7 +287,7 @@
                                 <type>select</type>
                                 <renderType>selectCheckBox</renderType>
                                 <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAnimationClasses</itemsProcFunc>
-                                <maxitems>1</maxitems>
+                                <maxitems>2</maxitems>
                                 <size>4</size>
                                 <default></default>
                             </config>
@@ -300,7 +300,7 @@
                                 <type>select</type>
                                 <renderType>selectCheckBox</renderType>
                                 <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAnimationClasses</itemsProcFunc>
-                                <maxitems>1</maxitems>
+                                <maxitems>2</maxitems>
                                 <size>4</size>
                                 <default></default>
                             </config>

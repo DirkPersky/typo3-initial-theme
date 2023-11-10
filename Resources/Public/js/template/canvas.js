@@ -1,126 +1,144 @@
 /*
- * Copyright (c) 2021.
+ * Copyright (c) 2023.
  *
  * @category TYPO3
  *
- * @copyright  2020 Dirk Persky (https://github.com/DirkPersky)
+ * @copyright  2023 Dirk Persky (https://github.com/DirkPersky)
  * @author     Dirk Persky <dirk.persky@gmail.com>
  * @license    AGPL v3
  */
-u.prototype.DPCanvas = function (options){
+class DPCanvas {
+
+    constructor(element, options) {
+        /**
+         * Set Configuration Array
+         */
+        this.settings = Object.assign({
+            type: 22,
+            wrap: '<div class="canvas--menu"/>',
+            backdrop: '.nav--backdrop'
+        }, options);
+        // container
+        this.$button = element;
+        this.$container = this.createElement(this.settings.wrap);
+        // add data class
+        if(typeof this.$button.dataset['dpCanvis'] != 'undefined') this.$container.classList.add(this.$button.dataset['dpCanvis']);
+        // at wrapper to body
+        document.body.append(this.$container);
+        // Initial Load Content
+        this.loadNavigationContent();
+        // bind external triggers
+        this.bindTriggers();
+    }
+
+
     /**
-     * Set Configuration Array
+     * Reinit Triggers
      */
-    var settings = Object.assign({
-        type: 22,
-        wrap: '<div class="canvas--menu"/>',
-        backdrop: '.nav--backdrop'
-    }, options);
-    // container
-    var $button = u(this),
-        $container = u(settings.wrap);
-    // add data class
-    if($button.data('dp-canvis')) $container.addClass($button.data('dp-canvis'));
-    // at wrapper to body
-    u('body').append($container);
-    // Initial Load Content
-    loadNavigationContent();
-    // bind trigger events
-    bindTriggers();
-    /**
-     * Load Ajax Content from System
-     */
-    function loadNavigationContent(){
+    bindTriggers(){
+        this.$button.addEventListener('dp--canvas', () => {
+            // Initial Load Content
+            this.loadNavigationContent();
+            // close events
+            document.querySelector(this.settings.backdrop).click();
+        });
+    }
+
+    createElement(html){
+        return new DOMParser().parseFromString(html, 'text/html').body.childNodes[0];
+    }
+
+    loadNavigationContent(){
         var current = window.location.protocol+'//' + window.location.hostname + window.location.pathname;
         current = current.replace(/\/$/g, '');
         // make Ajax Request
         fetch(current + '?' + new URLSearchParams({
-            type: settings.type
-        })).then(response => response.text()).then(function (data){
-            $container.html(data);
+            type: this.settings.type
+        })).then(response => response.text()).then( (data) => {
+            this.$container.innerHTML = data;
             // add Bindings
-            linkBindings();
+            this.linkBindings();
             // add Toggle Button now
-            toggleButtonEvents();
+            this.toggleButtonEvents();
             // sync action
-            syncNav(data);
+            this.syncNav();
         }, function (error){ });
     }
-    /**
-     * Element Click Bindings
-     */
-    function linkBindings(){
+
+    linkBindings(){
         // Add CLick Bindings
-        var btn = $container.find('.trigger'),
-            header = $container.find('.list-header');
-        // Bind Open Handler
-        btn.on('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            // get Parent Droddown
-            u(e.target).closest('.dropdown').find('.dropdown-wrap').first().classList.add('show');
+        var btns = this.$container.querySelectorAll('.trigger'),
+            headers = this.$container.querySelectorAll('.list-header');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', this.eventTriggerBtn.bind(this));
+            var parent = btn.parentElement;
+            if(parent.classList.contains('item--spacer')) parent.addEventListener('click', this.eventTriggerBtn.bind(this));
         });
-        // Bind Close Handler
-        header.on('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            // get Parent Droddown
-            u(e.target).closest('.dropdown').find('.dropdown-wrap').first().classList.remove('show');
+
+        headers.forEach(header => {
+            header.addEventListener('click', this.eventListHeader.bind(this));
         });
+    }
+    eventTriggerBtn(e){
+        e.preventDefault();
+        e.stopPropagation();
+        // get Parent Droddown
+        e.target.closest('.dropdown').querySelector('.dropdown-wrap').classList.add('show');
+    }
+    eventListHeader(e){
+        e.preventDefault();
+        e.stopPropagation();
+        // get Parent Droddown
+        e.target.closest('.dropdown').querySelector('.dropdown-wrap').classList.remove('show');
     }
     /**
      * Toggle button Events
      */
-    function toggleButtonEvents(){
+    toggleButtonEvents(){
         // close event on Backdropclick
-        u(settings.backdrop).off('click').on('click', () => {
-            u('html').removeClass('nav--open');
-            $button.removeClass('is-active');
-        });
+        var backdrop = document.querySelector(this.settings.backdrop);
+        backdrop.removeEventListener('click', this.eventBackdrop.bind(this));
+        backdrop.addEventListener('click', this.eventBackdrop.bind(this));
         // bind button click
-        $button.off('click').on('click', () => {
-            u('html').toggleClass('nav--open');
-            $button.toggleClass('is-active');
-        });
+        this.$button.removeEventListener('click', this.eventToogleButton.bind(this));
+        this.$button.addEventListener('click', this.eventToogleButton.bind(this));
         // remove disable attribute
-        $button.attr('disabled', null);
+        this.$button.removeAttribute('disabled');
     }
-    /**
-     * Reinit Triggers
-     */
-    function bindTriggers(){
-        $button.on('dp--canvas', () => {
-            // Initial Load Content
-            loadNavigationContent();
-            // close events
-            u(settings.backdrop).trigger('click');
-        });
+    eventBackdrop(){
+        document.documentElement.classList.remove('nav--open');
+        this.$button.classList.remove('is-active');
+    }
+    eventToogleButton(){
+        document.documentElement.classList.add('nav--open');
+        this.$button.classList.add('is-active');
     }
 
     /**
      * Sync Main Action
      */
-    function syncNav(data){
-        var $syncTarget = $button.data('sync');
-        if($syncTarget && ($syncTarget = u($syncTarget)).length > 0) {
-            $syncTarget.html('');
-            $syncTarget.append($container.find('.navbar-nav').clone());
-            $syncTarget.find('.list-header').off('click');
+    syncNav(){
+        var $syncTarget = this.$button.dataset['sync'];
+        if($syncTarget && ($syncTarget = document.querySelector($syncTarget))) {
+            $syncTarget.innerHTML = '';
+            $syncTarget.append(this.$container.querySelector('.navbar-nav').cloneNode(true));
+            $syncTarget.querySelectorAll('.list-header').forEach(e => {
+                e.removeEventListener('click', this.eventListHeader.bind(this))
+            });
+            $syncTarget.querySelectorAll('.trigger').forEach(e => {
+                var parent = e.parentElement;
+                if(parent.classList.contains('item--spacer')) parent.removeEventListener('click', this.eventTriggerBtn.bind(this));
+            });
         }
     }
-};
-
+}
 
 window.addEventListener('DOMContentLoaded', (e) => {
-    u('[data-dp-canvis]').DPCanvas();
-
-    u('.nav-item.dropdown').on('mouseleave', function () {
-        var dropdownList = u(this).find('.dropdown-wrap');
-        dropdownList.removeClass('pull-right');
-    });
+    document.querySelectorAll('[data-dp-canvis]').forEach( e => new DPCanvas(e));
 });
 
 // init realod
 window.StateManager.attach('dp--canvas', function () {
-    u('[data-dp-canvis]').trigger('dp--canvas');
+    document.querySelector('[data-dp-canvis]').dispatchEvent( new Event('dp--canvas'));
 });

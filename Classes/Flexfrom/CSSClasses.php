@@ -34,6 +34,10 @@ class CSSClasses {
                 ['animate-fadeInUp', 'Animation (FadeInUp)'],
                 ['animate-bounceIn', 'Animation (BounceIn)'],
                 ['animate-bounceInTop', 'Animation (BounceInTop)'],
+                ['animate-bounceInLeft', 'Animation (BounceInLeft)'],
+                ['animate-bounceInRight', 'Animation (BounceInRight)'],
+                ['animate-textBounceLeft', 'Animation (TextBounceLeft)'],
+                ['animate-textBounceRight', 'Animation (TextBounceRight)'],
 
 
 

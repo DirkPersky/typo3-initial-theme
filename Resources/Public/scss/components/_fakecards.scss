@@ -6,7 +6,7 @@
  * @license    AGPL v3
  */
 
-.lebenslauf {
+.fake--cards {
   .fluid-container {
     display: flex;
     align-items: stretch;
@@ -23,6 +23,9 @@
 }
 
 .frame-layout-7 {
+  --xPos: 0;
+  --yPos: 0;
+
   width: 100%;
   padding: .5rem;
   position: relative;
@@ -31,6 +34,20 @@
     width: calc(50% - .5rem);
   }
 
+  &:after {
+    content: '';
+    display: block;
+
+    border-radius: 10px;
+
+    background-color: #fff;
+
+    position: absolute;
+    top: calc(.5rem + 2px);
+    left: calc(.5rem + 2px);
+    bottom: calc(.5rem + 2px);
+    right: calc(.5rem + 2px);
+  }
   &:before {
     content: '';
     display: block;
@@ -46,6 +63,13 @@
     bottom: .5rem;
     right: .5rem;
 
+
+    background-color: $card-color1;
+    background: radial-gradient(
+                    100rem circle at var(--xPos) var(--yPos),
+                    rgba($card-color1, 1),
+                    $card-color2 15%
+    );
   }
 
   header {
@@ -107,62 +131,3 @@
     z-index: 1;
   }
 }
-//
-//.frame-layout-7 {
-//  width: 100% !important;
-//
-//  display: flex;
-//  flex-direction: column;
-//  align-content: flex-end;
-//  align-items: flex-end;
-//
-//  > header,
-//  > div {
-//    @include media-breakpoint-up(md){
-//      width: 50%;
-//    }
-//  }
-//
-//  + .frame-layout-7 {
-//    margin-top: -2rem;
-//  }
-//
-//  &:nth-child(2n-1){
-//    @include media-breakpoint-up(md) {
-//      align-items: flex-start;
-//      justify-content: flex-start;
-//      text-align: right;
-//
-//      header {
-//        h1,h2,h3,h4,h5,h6 {
-//          align-items: flex-end;
-//          justify-content: flex-end;
-//        }
-//
-//        &:before {
-//          left: auto;
-//          right: 0;
-//        }
-//      }
-//    }
-//  }
-//
-//  &:last-child {
-//    align-items: center;
-//    justify-content: center;
-//    text-align: center;
-//
-//    header {
-//      h1,h2,h3,h4,h5,h6 {
-//        align-items: center;
-//        justify-content: center;
-//      }
-//      &:before {
-//        left: 50%;
-//        right: auto;
-//
-//        transform: translate(-50%, 0);
-//      }
-//    }
-//  }
-//}

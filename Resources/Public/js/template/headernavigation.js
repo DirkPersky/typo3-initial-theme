@@ -9,12 +9,14 @@
  */
 
 window.addEventListener('DOMContentLoaded', () => {
-    u('#canvas-sync').off('click').on('click', '.list-header', (e) => {
-        var parent = u(e.target).closest('.dropdown-wrap');
-        parent.addClass('d-none');
-        setTimeout(() => {
-            parent.removeClass('d-none');
-        }, 50);
-    });
+    document.querySelector('#canvas-sync').addEventListener('click', e => {
+        if(e.target.classList.contains('list-header')){
+            var parent = e.target.closest('.dropdown-wrap');
+            parent.classList.add('d-none');
+            setTimeout(() => {
+                parent.classList.remove('d-none');
+            }, 50);
+        }
+    })
 });
 

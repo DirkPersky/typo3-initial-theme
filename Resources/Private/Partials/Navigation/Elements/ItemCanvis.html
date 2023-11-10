@@ -3,7 +3,6 @@
 
 
 <li class="nav-item{f:if(condition:item.spacer, then:' spacer')}{f:if(condition:item.children, then:' dropdown')}{f:if(condition:'{item.current} || {item.active}', then:' active')}" {f:if(condition:item.children, then:' data-nav="true"')} >
-
 <f:render partial="Navigation/Elements/LinkCanvas" arguments="{item: item}"/>
 <f:if condition="{item.children}">
     <f:render section="submenu" arguments="{submenu: item.children, title: item.title}"/>

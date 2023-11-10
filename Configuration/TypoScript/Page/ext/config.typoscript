@@ -13,7 +13,7 @@ config  {
     cObject = COA
     cObject {
       10 = TEXT
-      10.value = class="no-js"
+      10.value = class="no-js {$plugin.tx_dp_theme.settings.html.class}"
       10.noTrimWrap = | | |
 
       20 = TEXT

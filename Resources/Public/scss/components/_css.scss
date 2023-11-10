@@ -32,6 +32,12 @@
     }
     &.bg-dark {
       text-shadow: 0 0 5px #000;
+
+
+      .dp-fancy &:after {
+        background-image: url(#{$path}/assets/simple_dashed.png);
+        background-repeat: repeat;
+      }
     }
 
     &:after {
@@ -54,7 +60,7 @@
 
     .fluid-container {
       position: relative;
-      overflow: hidden;
+      //overflow: hidden;
       z-index: 2;
     }
   }

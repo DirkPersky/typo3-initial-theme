@@ -9,6 +9,8 @@ plugin.tx_dp_theme {
     }
 
     settings {
+        html.class =
+
         #########################
         ### Navigation Config ###
         #########################

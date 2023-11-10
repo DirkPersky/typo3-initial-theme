@@ -61,8 +61,8 @@ header#mainNavigation {
 	  position: relative;
 	  z-index: 2;
 
+	  &:after,
 	  &:before {
-		content: '';
 		display: block;
 
 		position: absolute;
@@ -76,6 +76,18 @@ header#mainNavigation {
 		transform: skew(-25deg);
 
 		background-color: $body-color;
+	  }
+
+	  &:before {
+		content: '';
+	  }
+
+	  .dp-fancy &:after {
+		content: '';
+
+		background-image: url(#{$path}/assets/simple_dashed.png);
+		background-repeat: repeat;
+		opacity: .3;
 	  }
 	}
   }

@@ -55,6 +55,10 @@ class GridClasses
             ['fadeInRight', 'Animation (fadeInRight)'],
             ['bounceIn', 'Animation (BounceIn)'],
             ['bounceInTop', 'Animation (BounceInTop)'],
+            ['bounceInLeft', 'Animation (BounceInLeft)'],
+            ['bounceInRight', 'Animation (BounceInRight)'],
+            ['textBounceLeft', 'Animation (TextBounceLeft)'],
+            ['textBounceRight', 'Animation (TextBounceRight)'],
         ];
 
         foreach ($visibilityClasses as $visibility) {
