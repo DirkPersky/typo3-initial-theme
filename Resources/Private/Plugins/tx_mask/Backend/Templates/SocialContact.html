@@ -28,7 +28,22 @@
             </span>
         </span> EMail
     </div>
-
+    <div>
+        <span class="icon">
+            <span class="icon-markup">
+                <svg class="icon-color">
+                <f:if condition="{data.tx_mask_linkedin_link}">
+                    <f:then>
+                          <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
+                    </f:then>
+                    <f:else>
+                          <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-off')}"></use>
+                    </f:else>
+                </f:if>
+                </svg>
+            </span>
+        </span> LinkedIn
+    </div>
     <div>
         <span class="icon">
             <span class="icon-markup">
@@ -50,7 +65,7 @@
         <span class="icon">
             <span class="icon-markup">
                 <svg class="icon-color">
-                <f:if condition="{data.tx_mask_linkedin_link}">
+                <f:if condition="{data.tx_mask_insta_link}">
                     <f:then>
                           <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
                     </f:then>
@@ -60,7 +75,7 @@
                 </f:if>
                 </svg>
             </span>
-        </span> LinkedIn
+        </span> Instagram
     </div>
 
     <div>

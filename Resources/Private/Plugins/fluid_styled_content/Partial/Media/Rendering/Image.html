@@ -15,7 +15,8 @@
         <f:variable name="class" value="{db:media.masonry(src:imageMobile)}"/>
 
         <picture class="{class}">
-            <source srcset="{f:uri.image(image:file, width:600, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
+            <source srcset="{f:uri.image(image:file, width:992, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
+            <source media="(min-width: 768px)" srcset="{f:uri.image(image:file, width:550, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
             <img alt="{file.alternative -> f:format.stripTags()}" src="{imageMobile}" class="img-fluid" height="{dimensions.height}" title="{file.title -> f:format.stripTags()}" width="{dimensions.width}" lazyload="true" />
         </picture>
     </f:case>

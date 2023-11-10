@@ -1,7 +1,3 @@
-$card-color1: $primary !default;
-$card-color2: $success !default;
-$card-bg: #fff !default;
-
 .cards {
   --xPos: 0;
   --yPos: 0;
@@ -70,6 +66,7 @@ $card-bg: #fff !default;
 	justify-content: center;
 
 	img {
+	  filter: brightness(0) invert(1);
 	  width: auto;
 	  max-width: 90%;
 	  height: auto;

@@ -53,6 +53,7 @@
 	<f:render section="figGalerieCaption" arguments="{_all}" />
 </f:section>
 <f:section name="figGalerieCaption">
+	<f:if condition="{file.description}">
 	<figcaption class="image-caption">
 		<f:if condition="{data.image_zoom}">
 			<ce:link.clickEnlarge image="{file}" configuration="{settings.media.popup}">
@@ -68,6 +69,7 @@
 			</div>
 		</div>
 	</figcaption>
+	</f:if>
 </f:section>
 <f:section name="defaultImage">
 	<f:if condition="{file.link}">

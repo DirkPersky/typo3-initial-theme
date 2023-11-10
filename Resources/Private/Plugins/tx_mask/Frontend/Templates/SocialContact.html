@@ -16,6 +16,17 @@
                 </f:link.typolink>
             </li>
         </f:if>
+        <f:if condition="{data.tx_mask_linkedin_link}">
+            <li class="rrssb-linkedin">
+                <!-- Replace href with your meta and URL information -->
+                <f:link.typolink parameter="{data.tx_mask_linkedin_link}" target="_blank">
+                    <span class="rrssb-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </span>
+                    <span class="rrssb-text">LinkedIn</span>
+                </f:link.typolink>
+            </li>
+        </f:if>
         <f:if condition="{data.tx_mask_facebook_link}">
             <li class="rrssb-facebook">
                 <!--  Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header:
@@ -28,14 +39,14 @@
                 </f:link.typolink>
             </li>
         </f:if>
-        <f:if condition="{data.tx_mask_linkedin_link}">
-            <li class="rrssb-linkedin">
+        <f:if condition="{data.tx_mask_insta_link}">
+            <li class="rrssb-instagram">
                 <!-- Replace href with your meta and URL information -->
-                <f:link.typolink parameter="{data.tx_mask_linkedin_link}" target="_blank">
+                <f:link.typolink parameter="{data.tx_mask_insta_link}" target="_blank">
                     <span class="rrssb-icon">
-                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-instagram"></i>
                     </span>
-                    <span class="rrssb-text">LinkedIn</span>
+                    <span class="rrssb-text">Instagram</span>
                 </f:link.typolink>
             </li>
         </f:if>

@@ -12,7 +12,7 @@
             </fieldset>
         </f:then>
         <f:else>
-            <div class="{element.properties.containerClassAttribute}{f:if(condition: '{validationResults.errors.0}', then: ' {element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}')} form-floating">
+            <div class="{element.properties.containerClassAttribute}{f:if(condition: '{validationResults.errors.0}', then: ' {element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}')} {f:if(condition:'{element.type}!=RadioButton',then:'form-floating')}">
                 <f:render section="Element" arguments="{_all}"/>
 
                 <f:if condition="{doNotShowLabel} != 1">

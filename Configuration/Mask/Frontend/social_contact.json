@@ -31,8 +31,9 @@
                     "label": "",
                     "showitem": [
                         "tx_mask_email_link",
-                        "tx_mask_facebook_link",
                         "tx_mask_linkedin_link",
+                        "tx_mask_facebook_link",
+                        "tx_mask_insta_link",
                         "tx_mask_twitter_link",
                         "tx_mask_xing_link",
                         "tx_mask_whatsapp_link",
@@ -54,6 +55,11 @@
                 "tx_mask_github_link": {
                     "tt_content": {
                         "tx_mask_github_link": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_insta_link": {
+                    "tt_content": {
+                        "tx_mask_insta_link": "varchar(255) DEFAULT '' NOT NULL"
                     }
                 },
                 "tx_mask_linkedin_link": {
@@ -126,7 +132,7 @@
                         "social_contact": "Facebook"
                     },
                     "order": {
-                        "social_contact": 2
+                        "social_contact": 3
                     },
                     "type": "link"
                 },
@@ -148,7 +154,29 @@
                         "social_contact": "Github"
                     },
                     "order": {
-                        "social_contact": 7
+                        "social_contact": 8
+                    },
+                    "type": "link"
+                },
+                "tx_mask_insta_link": {
+                    "config": {
+                        "nullable": 0,
+                        "type": "link"
+                    },
+                    "description": {
+                        "social_contact": ""
+                    },
+                    "fullKey": "tx_mask_insta_link",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "social_contact": "tx_mask_c06e0d4fe2b3d"
+                    },
+                    "key": "insta_link",
+                    "label": {
+                        "social_contact": "Instagram"
+                    },
+                    "order": {
+                        "social_contact": 4
                     },
                     "type": "link"
                 },
@@ -170,7 +198,7 @@
                         "social_contact": "LinkedIn"
                     },
                     "order": {
-                        "social_contact": 3
+                        "social_contact": 2
                     },
                     "type": "link"
                 },
@@ -192,7 +220,7 @@
                         "social_contact": "Twitter"
                     },
                     "order": {
-                        "social_contact": 4
+                        "social_contact": 5
                     },
                     "type": "link"
                 },
@@ -214,7 +242,7 @@
                         "social_contact": "WhatsApp"
                     },
                     "order": {
-                        "social_contact": 6
+                        "social_contact": 7
                     },
                     "type": "link"
                 },
@@ -236,7 +264,7 @@
                         "social_contact": "Xing"
                     },
                     "order": {
-                        "social_contact": 5
+                        "social_contact": 6
                     },
                     "type": "link"
                 }
