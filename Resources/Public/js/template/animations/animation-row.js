@@ -16,12 +16,12 @@ window.AnimateManager.attach('animation-row', function () {
         if(!window.matchMedia('(min-width: 768px)').matches) return;
 
         element.classList.forEach((key) => {
-            if(key.indexOf('animate-textBounceLeft') != -1){
+            if(key.indexOf('animate-textBounce') != -1){
                 // get left col Header
                 var sliderText = new SplitType(element.querySelectorAll('header > *'), {types: "words, chars"});
                 // inimate Text
                 window.DPAnimate.animate(sliderText.chars, {
-                    class: 'animated textBounceLeft',
+                    class: key.replace('animate-', 'animated '),
                     stagger: 0.02,
                     delay: .3,
                     onComplete: e => sliderText.revert()
