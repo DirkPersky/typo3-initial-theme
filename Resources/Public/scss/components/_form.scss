@@ -11,7 +11,21 @@
 
   .form-floating {
 
+    .fieldset-top {
+      position: relative !important;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      padding-bottom: .75rem;
+    }
 
+    label:after {
+      display: none !important;
+    }
+
+    .bg-op & input[type="text"], .bg-op & textarea {
+      background-color: rgba(#fff, .2);
+    }
     input:not(.form-check-input), select, textarea {
       background-color: transparent;
       border-right: 0;

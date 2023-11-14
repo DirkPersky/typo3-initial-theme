@@ -131,8 +131,16 @@
 	  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	  text-align: center;
 
+	  .ce-column {
+		width: 100% !important;
+	  }
+
 	  img {
 		width: 60%;
+
+		.wk-homepage & {
+		  width: 100%;
+		}
 	  }
 
 	  ~ .navbar-nav {

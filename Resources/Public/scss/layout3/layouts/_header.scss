@@ -12,6 +12,10 @@ header#mainNavigation {
 	justify-content: center;
 	color: #fff;
 
+	.wk-homepage & {
+	  background: linear-gradient(90deg, $primary 0%, #2473be 100%);
+	}
+
 
 	a {
 	  transition: all .2s ease-in-out;
@@ -56,6 +60,7 @@ header#mainNavigation {
 	  align-items: center;
 	  justify-content: flex-start;
 	}
+
 	.frame:last-child {
 	  padding-left: 100px;
 	  position: relative;
@@ -88,6 +93,10 @@ header#mainNavigation {
 		background-image: url(#{$path}/assets/simple_dashed.png);
 		background-repeat: repeat;
 		opacity: .3;
+	  }
+
+	  .wk-homepage &:before {
+		display: none;
 	  }
 	}
   }
@@ -140,11 +149,13 @@ header#mainNavigation {
 	.navigation-bar {
 	  position: relative;
 	}
+
 	.navigation-bar,
 	.container-fluid,
 	.nav--brand {
 	  height: 100%;
 	}
+
 	// brand
 	.dp--brand {
 	  height: 100%;
@@ -165,7 +176,7 @@ header#mainNavigation {
 		text-transform: uppercase;
 
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
 		padding-left: 1rem;
 
@@ -178,7 +189,6 @@ header#mainNavigation {
 		}
 
 
-
 		height: 100%;
 
 	  }
@@ -188,7 +198,7 @@ header#mainNavigation {
 		max-height: 100%;
 		width: auto;
 
-		@include media-breakpoint-up(md){
+		@include media-breakpoint-up(md) {
 		  max-height: 72px;
 		}
 	  }
@@ -318,14 +328,11 @@ header#mainNavigation {
 
   .home {
 	display: none;
-
-	@include media-breakpoint-up(xl) {
-	  display: block;
-	}
   }
 
   .navbar-nav {
 	flex-direction: row;
+	flex-wrap: nowrap;
 
 	> .nav-item {
 	  > .nav-link {
@@ -337,6 +344,7 @@ header#mainNavigation {
 
 		position: relative;
 		z-index: 2;
+		white-space: nowrap;
 
 
 		@include media-breakpoint-up(xl) {
@@ -447,10 +455,14 @@ header#mainNavigation {
 
 
 .canvas--menu {
-  .canvis-icon--bar{
+  .canvis-icon--bar {
 	background-color: $primary;
 	justify-content: flex-end;
 	color: #fff;
+
+	.wk-homepage & {
+	  background: linear-gradient(90deg, $primary 0%, #2473be 100%);
+	}
 
 	a {
 	  transition: all .2s ease-in-out;
@@ -487,6 +499,10 @@ header#mainNavigation {
 		  transform: skew(-25deg);
 
 		  background-color: $body-color;
+		}
+
+		.wk-homepage &:before {
+		  display: none;
 		}
 	  }
 	}

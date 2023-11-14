@@ -31,12 +31,14 @@
       background-size: auto;
     }
     &.bg-dark {
-      text-shadow: 0 0 5px #000;
 
+      .dp-fancy & {
+        text-shadow: 0 0 5px #000;
 
-      .dp-fancy &:after {
-        background-image: url(#{$path}/assets/simple_dashed.png);
-        background-repeat: repeat;
+        &:after {
+          background-image: url(#{$path}/assets/simple_dashed.png);
+          background-repeat: repeat;
+        }
       }
     }
 
@@ -69,7 +71,13 @@
       color: inherit;
       text-decoration: none;
 
+
+
       &:hover {
+        .wk-homepage & {
+          --bs-link-color-rgb: 0,0,0;
+          text-shadow: none;
+        }
         color: rgb(var(--bs-link-color-rgb));
       }
     }

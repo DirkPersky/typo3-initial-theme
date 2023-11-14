@@ -1,7 +1,10 @@
 .card--hover {
+  --card-color-seconday: #{$card-color2};
   --xPos: 0;
   --yPos: 0;
-
+  .wk-homepage & {
+	--card-color-seconday: #2473be;
+  }
   position: relative;
   min-height: 100%;
   z-index: 1;
@@ -14,7 +17,7 @@
   background: radial-gradient(
 				  100rem circle at var(--xPos) var(--yPos),
 				  rgba($card-color1, 1),
-				  $card-color2 15%
+				  var(--card-color-seconday) 15%
   );
 
   transition: all 0.15s;
@@ -52,7 +55,7 @@
 	background: radial-gradient(
 					100rem circle at var(--xPos) var(--yPos),
 					rgba($card-color1, 1),
-					$card-color2 15%
+					var(--card-color-seconday) 15%
 	);
 	border-radius: 10px;
 	padding: 1rem;

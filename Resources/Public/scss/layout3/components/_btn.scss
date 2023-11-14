@@ -1,0 +1,14 @@
+.btn {
+  &.btn-primary {
+	.wk-homepage & {
+	  background: linear-gradient(90deg, $primary 0%, #2473be 100%);
+	  text-shadow: none !important;
+	  color: #fff;
+
+	  &:hover {
+		background: linear-gradient(90deg, $primary 50%, #2473be 100%);
+		color: #000;
+	  }
+	}
+  }
+}
