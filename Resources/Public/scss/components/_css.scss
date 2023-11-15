@@ -72,7 +72,6 @@
       text-decoration: none;
 
 
-
       &:hover {
         .wk-homepage & {
           --bs-link-color-rgb: 0,0,0;
@@ -80,6 +79,12 @@
         }
         color: rgb(var(--bs-link-color-rgb));
       }
+    }
+  }
+
+  &.bg-white {
+    header {
+      text-shadow: 0 0 10px #fff;
     }
   }
 }

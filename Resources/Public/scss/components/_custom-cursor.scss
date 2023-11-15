@@ -1,0 +1,33 @@
+[is=custom-cursor] {
+  background-color: currentColor;
+  mix-blend-mode: exclusion;
+  pointer-events: none;
+  border-radius: 100%;
+  color: #fff;
+  height: 70px;
+  width: 70px;
+  opacity: 0;
+
+  transform: translate(-50%, -50%) scale(var(--custom-cursor-scale)) rotate(90deg);
+  transition: transform var(--animation-duration) cubic-bezier(0,0,.23,1);
+
+  position: fixed;
+  z-index: 9999999;
+  left: var(--custom-cursor-left);
+  top: var(--custom-cursor-top);
+}
+
+:root {
+  --custom-cursor-left: 50%;
+  --custom-cursor-top: 50%;
+  --custom-cursor-scale: 0.33;
+}
+body.cursor--active [is=custom-cursor] {
+  @include media-breakpoint-up(lg){
+    opacity: 1;
+  }
+}
+
+body.cursor--active.cursor--ui {
+  --custom-cursor-scale: 1;
+}

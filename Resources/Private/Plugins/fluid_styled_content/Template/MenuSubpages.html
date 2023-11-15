@@ -1,0 +1,39 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{menu}">
+        <ul>
+            <f:for each="{menu}" as="page">
+                <li>
+                    <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')}{f:if(condition: page.current, then: ' aria-current="page"')} title="{page.title}">
+                        <span>{page.title}</span>
+                    </a>
+
+                    <f:if condition="{data.layout}==2">
+                        <f:render section="submenu" arguments="{_all}"/>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+
+</f:section>
+<f:section name="submenu">
+    <v:menu
+            pageUid="{page.data.uid}"
+            classActive=""
+            classCurrent="active"
+            as="submenu">
+            <ul class="sub">
+                <f:for each="{submenu}" as="sub">
+                <li>
+                    <a href="{sub.link}"{f:if(condition: sub.target, then: ' target="{sub.target}"')}{f:if(condition: sub.current, then: ' aria-current="page"')} title="{sub.title}">
+                        <span>{sub.title}</span>
+                    </a>
+                </li>
+                </f:for>
+            </ul>
+    </v:menu>
+</f:section>
+</html>

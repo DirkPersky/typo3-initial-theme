@@ -111,8 +111,8 @@ class DPCanvas {
         this.$button.classList.remove('is-active');
     }
     eventToogleButton(){
-        document.documentElement.classList.add('nav--open');
-        this.$button.classList.add('is-active');
+        document.documentElement.classList.toggle('nav--open');
+        this.$button.classList.toggle('is-active');
     }
 
     /**
@@ -131,6 +131,8 @@ class DPCanvas {
                 if(parent.classList.contains('item--spacer')) parent.removeEventListener('click', this.eventTriggerBtn.bind(this));
             });
         }
+
+        window.StateManager.callByName('custom-cursor');
     }
 }
 

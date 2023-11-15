@@ -14,7 +14,7 @@ editor:
         - { name: "BTN Outline Primary",  element: "a", classes: [ "btn", "btn-outline-primary" ] }
         - { name: "BTN Outline Primary BIG",  element: "a", classes: [ "btn", "btn-outline-primary", "btn-lg" ] }
         - { name: "BTN Dark",  element: "a", classes: ["btn", "btn-dark"]}
-        - { name: "Text Fett",  element: "p", classes: ["fw-bold"]}
+        - { name: "Text Fett",  element: "span", classes: ["fw-bold"]}
         - { name: "BTN Outline Primary",  element: "span", classes: [ "btn", "btn-outline-primary" ] }
         - { name: "Margin Top auto",  element: "span", classes: [ "mt-auto" ] }
 
@@ -29,7 +29,7 @@ editor:
       - { name: "BTN Outline Primary",  element: "a", attributes: { class: "btn btn-outline-primary"} }
       - { name: "BTN Outline Primary BIG",      element: "a", attributes: { class: "btn btn-outline-primary btn-lg"} }
       - { name: "BTN Dark",     element: "a", attributes: { class: "btn btn-dark"} }
-      - { name: "Text Fett",    element: "p", attributes: { class: "fw-bold" } }
+      - { name: "Text Fett",    element: "span", attributes: { class: "fw-bold" } }
       - { name: "BTN Outline Primary",  element: "span", attributes: { class: "btn btn-outline-primary"} }
       - { name: "Margin Top auto",  element: "p", attributes: { class: "mt-auto"} }
 

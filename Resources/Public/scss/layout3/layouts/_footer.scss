@@ -18,6 +18,11 @@ footer#bottom {
 	  opacity: .3;
   }
 
+  .wk-homepage & {
+	box-shadow: none;
+	background: linear-gradient(90deg, $primary 0%, #2473be 100%);
+  }
+
   .container {
 	position: relative;
   }

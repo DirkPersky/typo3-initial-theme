@@ -65,6 +65,7 @@ u.prototype.NewsAjaxScrollPaging = function (options) {
                 // run scripts
                 window.StateManager.callByName('animate-trigger');
                 window.StateManager.callByName('news-paging');
+                window.StateManager.callByName('custom-cursor');
             }, function (error) {
             });
         }
