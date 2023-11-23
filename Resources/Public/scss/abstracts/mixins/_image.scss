@@ -70,6 +70,7 @@
     }
   }
 
+  &[data-ce-columns="1"],
   &[data-ce-columns="2"],
   &[data-ce-columns="3"] {
     .ce-column {
