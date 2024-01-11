@@ -1,6 +1,7 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:switch expression="{file.type}">
     <f:case value="4">
+        <f:render section="videoTag" arguments="{_all}"/>
     </f:case>
     <f:defaultCase>
         <f:if condition="{file.link}">
@@ -9,27 +10,31 @@
                     <f:render section="pictureTag" arguments="{_all}"/>
                 </f:link.typolink>
             </f:then>
-                <f:else>
-                    <f:render section="pictureTag" arguments="{_all}" />
-                </f:else>
-            </f:if>
+            <f:else>
+                <f:render section="pictureTag" arguments="{_all}" />
+            </f:else>
+        </f:if>
+    </f:defaultCase>
+</f:switch>
+
+<f:section name="pictureTag">
+    <f:switch expression="{file.extension}">
+        <f:case value="gif">
+            <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data:data, class:class}"
+                      partial="Media/Rendering/ImageGif"/>
+        </f:case>
+        <f:case value="svg">
+            <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data:data, class:class}"
+                      partial="Media/Rendering/ImageSVG"/>
+        </f:case>
+        <f:defaultCase>
+            <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data:data, class:class}"
+                      partial="Media/Rendering/Image"/>
         </f:defaultCase>
     </f:switch>
+</f:section>
 
-    <f:section name="pictureTag">
-        <f:switch expression="{file.extension}">
-            <f:case value="gif">
-                <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data:data, class:class}"
-                          partial="Media/Rendering/ImageGif"/>
-            </f:case>
-            <f:case value="svg">
-                <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data:data, class:class}"
-                          partial="Media/Rendering/ImageSVG"/>
-            </f:case>
-            <f:defaultCase>
-                <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data:data, class:class}"
-                          partial="Media/Rendering/Image"/>
-            </f:defaultCase>
-        </f:switch>
-    </f:section>
+<f:section name="videoTag">
+    <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data:data, class:class}" partial="Media/Rendering/Video"/>
+</f:section>
 </html>

@@ -7,7 +7,14 @@
     <f:if condition="{data.tx_mask_item}">
         <f:for each="{data.tx_mask_item}" as="row" iteration="row_iteration" key="entrynumber">
             <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
-                <f:image image="{file}" width="200" />
+                <f:if condition="{file.type} == 4">
+                    <f:then>
+                        <f:media file="{file}" width="200" height="175" additionalConfig="{loop: '1', autoplay: '0'}"/>
+                    </f:then>
+                    <f:else>
+                        <f:image image="{file}" width="200" />
+                    </f:else>
+                </f:if>
             </f:for>
         </f:for>
     </f:if>

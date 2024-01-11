@@ -36,6 +36,7 @@
 	  .carousel-item-media:first-child {
 
 		&:before,
+		& .video-embed-wrap:before,
 		& picture:before {
 		  @extend .fa-regular;
 		  content: "\f111";
@@ -46,6 +47,7 @@
 		}
 
 		&:after,
+		& .video-embed-wrap:after,
 		& picture:after {
 		  @extend .fa-regular;
 		  content: "\f111";
@@ -73,6 +75,7 @@
 		  }
 		}
 
+		.video-embed-wrap,
 		picture {
 		  &:before {
 			bottom: 65px;
@@ -109,6 +112,7 @@
 		}
 	  }
 
+	  video,
 	  img {
 		width: 100%;
 		min-height: 400px;

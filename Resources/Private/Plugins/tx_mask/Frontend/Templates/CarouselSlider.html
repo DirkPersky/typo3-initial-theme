@@ -3,9 +3,9 @@
     <div
             id="carousel-generic-{data.uid}"
             class="carousel slide slider--style-{data.layout}"
-            data-interval="{data.tx_mask_interval}"
-            data-ride="carousel"
-            data-wrap="true"
+            data-bs-interval="{data.tx_mask_interval}"
+            data-bs-ride="carousel"
+            data-bs-wrap="true"
     >
     <f:variable name="imgClass" value="{f:if(condition:data.imageborder,then: 'jarallax-img')}"/>
 
@@ -20,7 +20,9 @@
                         data-bs-target="#carousel-generic-{data.uid}" type="button"
                     >
                         <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
-                            <div style="background-image:url({f:uri.image(image:file, width:360, cropVariant:'default')})"></div>
+                            <f:if condition="{file.type} != 4">
+                                <div style="background-image:url({f:uri.image(image:file, width:360, cropVariant:'default')})"></div>
+                            </f:if>
                         </f:for>
                     </button>
                 </f:for>

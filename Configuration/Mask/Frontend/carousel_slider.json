@@ -1,5 +1,6 @@
 {
     "version": "8.1.0",
+    "restructuringDone": false,
     "tables": {
         "tt_content": {
             "elements": {
@@ -9,13 +10,31 @@
                     "columns": [
                         "tx_mask_42f614e9a658b",
                         "tx_mask_item",
-                        "uploads_description"
+                        "tx_mask_ecf0d602eca1f"
                     ],
+                    "columnsOverride": {
+                        "imageborder": {
+                            "config": {
+                                "items": []
+                            },
+                            "fullKey": "imageborder",
+                            "key": "imageborder",
+                            "type": "check"
+                        },
+                        "uploads_description": {
+                            "config": {
+                                "items": []
+                            },
+                            "fullKey": "uploads_description",
+                            "key": "uploads_description",
+                            "type": "check"
+                        }
+                    },
                     "description": "",
                     "descriptions": [
                         "",
                         "",
-                        "Beschreibungs-Text des ersten Slider Items wird immer angezeigt."
+                        ""
                     ],
                     "icon": "",
                     "iconOverlay": "",
@@ -24,7 +43,7 @@
                     "labels": [
                         "",
                         "Seiten",
-                        "Aktiviere Statischer Text"
+                        ""
                     ],
                     "shortLabel": "",
                     "sorting": 3
@@ -37,6 +56,14 @@
                     "showitem": [
                         "header",
                         "tx_mask_interval"
+                    ]
+                },
+                "tx_mask_ecf0d602eca1f": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "uploads_description",
+                        "imageborder"
                     ]
                 }
             },
@@ -56,25 +83,40 @@
                 "header": {
                     "coreField": 1,
                     "description": {
-                        "carousel_slider": "in der Webseite nicht sichtbar",
-                        "flyout": ""
+                        "carousel_slider": "in der Webseite nicht sichtbar"
                     },
                     "fullKey": "header",
                     "inPalette": 1,
                     "inlineParent": {
-                        "carousel_slider": "tx_mask_42f614e9a658b",
-                        "flyout": "tx_mask_8a349a58e970b"
+                        "carousel_slider": "tx_mask_42f614e9a658b"
                     },
                     "key": "header",
                     "label": {
-                        "carousel_slider": "",
-                        "flyout": ""
+                        "carousel_slider": ""
                     },
                     "order": {
-                        "carousel_slider": 1,
-                        "flyout": 1
+                        "carousel_slider": 1
                     },
                     "type": "string"
+                },
+                "imageborder": {
+                    "coreField": 1,
+                    "description": {
+                        "carousel_slider": ""
+                    },
+                    "fullKey": "imageborder",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "carousel_slider": "tx_mask_ecf0d602eca1f"
+                    },
+                    "key": "imageborder",
+                    "label": {
+                        "carousel_slider": "Jarallax effekt"
+                    },
+                    "order": {
+                        "carousel_slider": 2
+                    },
+                    "type": "check"
                 },
                 "tx_mask_42f614e9a658b": {
                     "config": {
@@ -82,6 +124,14 @@
                     },
                     "fullKey": "tx_mask_42f614e9a658b",
                     "key": "42f614e9a658b",
+                    "type": "palette"
+                },
+                "tx_mask_ecf0d602eca1f": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_ecf0d602eca1f",
+                    "key": "ecf0d602eca1f",
                     "type": "palette"
                 },
                 "tx_mask_interval": {
@@ -150,8 +200,21 @@
                 },
                 "uploads_description": {
                     "coreField": 1,
+                    "description": {
+                        "carousel_slider": "Beschreibungs-Text des ersten Slider Items wird immer angezeigt."
+                    },
                     "fullKey": "uploads_description",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "carousel_slider": "tx_mask_ecf0d602eca1f"
+                    },
                     "key": "uploads_description",
+                    "label": {
+                        "carousel_slider": "Aktiviere Statischer Text"
+                    },
+                    "order": {
+                        "carousel_slider": 1
+                    },
                     "type": "check"
                 }
             }
@@ -224,7 +287,7 @@
                     "type": "palette"
                 },
                 "tx_mask_img": {
-                    "allowedFileExtensions": "gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp",
+                    "allowedFileExtensions": "gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg,webp,mp4",
                     "config": {
                         "appearance": {
                             "collapseAll": "0",
