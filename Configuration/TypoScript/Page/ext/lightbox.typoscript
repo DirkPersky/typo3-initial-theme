@@ -5,3 +5,10 @@ lib.contentElement.settings.media.popup {
     dataWrap = class = "fancybox" data-no-swup="true" data-fancybox="group{file:current:uid_foreign}"
   }
 }
+
+lib.contentElement.settings.media.additionalConfig {
+    loop = 1
+    muted = 1
+    controls = 0
+    playsinline = 1
+}

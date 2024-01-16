@@ -1,91 +1,124 @@
 .css--element {
   &.bg-op {
-    position: relative;
-    background-size: cover;
-    background-position: center;
+	position: relative;
+	background-size: cover;
+	background-position: center;
 
-    &:before {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      top: 0;
+	&:before {
+	  position: absolute;
+	  bottom: 0;
+	  left: 50%;
+	  top: 0;
 
-      margin-left: -50%;
-      margin-left: -50vw;
-      width: 100%;
-      width: 100vw;
+	  margin-left: -50%;
+	  margin-left: -50vw;
+	  width: 100%;
+	  width: 100vw;
 
-      content: '';
-      display: block;
+	  content: '';
+	  display: block;
 
-      background: inherit;
-      background-position: inherit;
-      background-size: inherit;
+	  background: inherit;
+	  background-position: inherit;
+	  background-size: inherit;
 
-      @include media-breakpoint-up(xl){
-        background-attachment: fixed;
-      }
-    }
+	  @include media-breakpoint-up(xl) {
+		background-attachment: fixed;
+	  }
+	}
 
-    &.bg-repeat:before {
-      background-size: auto;
-    }
-    &.bg-dark {
+	&.bg-repeat:before {
+	  background-size: auto;
+	}
 
-      .dp-fancy & {
-        text-shadow: 0 0 5px #000;
+	&.bg-dark {
 
-        &:after {
-          background-image: url(#{$path}/assets/simple_dashed.png);
-          background-repeat: repeat;
-        }
-      }
-    }
+	  .dp-fancy & {
+		text-shadow: 0 0 5px #000;
 
-    &:after {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      top: 0;
+		&:after {
+		  background-image: url(#{$path}/assets/simple_dashed.png);
+		  background-repeat: repeat;
+		}
+	  }
+	}
 
-      margin-left: -50%;
-      margin-left: -50vw;
-      width: 100%;
-      width: 100vw;
+	&:after {
+	  position: absolute;
+	  bottom: 0;
+	  left: 50%;
+	  top: 0;
 
-      content: '';
-      display: block;
+	  margin-left: -50%;
+	  margin-left: -50vw;
+	  width: 100%;
+	  width: 100vw;
 
-      background-color: inherit;
-      opacity: .4;
-    }
+	  content: '';
+	  display: block;
 
-    .fluid-container {
-      position: relative;
-      //overflow: hidden;
-      z-index: 2;
-    }
+	  background-color: inherit;
+	  opacity: .4;
+	}
+
+	.fluid-container {
+	  position: relative;
+	  //overflow: hidden;
+	  z-index: 2;
+	}
   }
+
   &.text-white {
-    a {
-      color: inherit;
-      text-decoration: none;
+	a {
+	  color: inherit;
+	  text-decoration: none;
 
 
-      &:hover {
-        .wk-homepage & {
-          --bs-link-color-rgb: 0,0,0;
-          text-shadow: none;
-        }
-        color: rgb(var(--bs-link-color-rgb));
-      }
-    }
+	  &:hover {
+		.wk-homepage & {
+		  --bs-link-color-rgb: 0, 0, 0;
+		  text-shadow: none;
+		}
+
+		color: rgb(var(--bs-link-color-rgb));
+	  }
+	}
   }
 
   &.bg-white {
-    header {
-      text-shadow: 0 0 10px #fff;
+	header {
+	  text-shadow: 0 0 10px #fff;
+	}
+  }
+
+
+  &.bg-gradient-css {
+    @include media-breakpoint-up(md) {
+      background-position: right center;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
+
+    &:after {
+      opacity: .6;
+
+      @include media-breakpoint-up(md) {
+        opacity: 1;
+      }
+    }
+
+    &.bg-dark {
+      &:after {
+        @include media-breakpoint-up(md){
+          background: linear-gradient(90deg, rgba(0,0,0,1) 40%, rgba(0,0,0,.4) 70%);
+        }
+
+        @include media-breakpoint-up(xl){
+          background: linear-gradient(90deg, rgba(0,0,0,1) 40%, rgba(0,0,0,.2) 70%);
+        }
+      }
+    }
+
   }
 }
 

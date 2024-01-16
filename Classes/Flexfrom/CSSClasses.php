@@ -22,6 +22,7 @@ class CSSClasses {
                 ['bg-primary', 'BG: Primary'],
                 ['bg-dark', 'BG: Dark'],
                 ['bg-repeat', 'BG: Repeat'],
+                ['bg-gradient-css', 'BG: Farbverlauf']
             ],
             'Text' => [
                 ['text-white', 'Text: Weiß'],

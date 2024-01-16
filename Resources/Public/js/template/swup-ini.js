@@ -46,6 +46,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     // page change
     window.swupLoad.hooks.on('content:replace', function (e, i) {
+        // load Script in SWUP Container
+        document.querySelectorAll(window.swupLoad.defaults.containers.join(',')).forEach( _container => {
+            _container.querySelectorAll('script').forEach( script => {
+                var code = script.innerHTML;
+                eval.call(this, code);
+            })
+        });
         // wait for handler after scoll
         window.swupLoad.hooks.on('scroll:end', (e) => {
             // unbind handler

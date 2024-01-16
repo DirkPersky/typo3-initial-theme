@@ -1,7 +1,24 @@
 <f:if condition="{data.tx_mask_items}">
-    <ul>
+    <div style="line-height: 1;">
         <f:for each="{data.tx_mask_items}" as="data_item">
-            <li>{data_item.tx_mask_name}</li>
+            <div>
+                <span class="icon">
+                    <span class="icon-markup">
+                        <svg class="icon-color">
+                        <f:if condition="!{data_item.hidden}">
+                            <f:then>
+                                  <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
+                            </f:then>
+                            <f:else>
+                                  <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-off')}"></use>
+                            </f:else>
+                        </f:if>
+                        </svg>
+                    </span>
+                </span>
+
+                {data_item.tx_mask_name}
+            </div>
         </f:for>
-    </ul>
+    </div>
 </f:if>
