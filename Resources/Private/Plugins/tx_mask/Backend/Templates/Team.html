@@ -1,0 +1,24 @@
+<f:if condition="{data.tx_mask_teams}">
+    <div style="line-height: 1;">
+        <f:for each="{data.tx_mask_teams}" as="data_item">
+            <div>
+                <span class="icon">
+                    <span class="icon-markup">
+                        <svg class="icon-color">
+                        <f:if condition="!{data_item.hidden}">
+                            <f:then>
+                                  <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-on')}"></use>
+                            </f:then>
+                            <f:else>
+                                  <use xlink:href="{f:uri.resource(path: 'EXT:core/Resources/Public/Icons/T3Icons/sprites/actions.svg#actions-toggle-off')}"></use>
+                            </f:else>
+                        </f:if>
+                        </svg>
+                    </span>
+                </span>
+
+                {data_item.tx_mask_title}
+            </div>
+        </f:for>
+    </div>
+</f:if>

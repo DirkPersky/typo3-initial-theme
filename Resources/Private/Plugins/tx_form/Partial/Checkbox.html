@@ -1,0 +1,35 @@
+<html   xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+        xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers"
+        data-namespace-typo3-fluid="true"
+>
+<formvh:renderRenderable renderable="{element}">
+    <f:render partial="Field/Field" arguments="{element: element, doNotShowLabel: 1}" contentAs="elementContent">
+        <div class="form-check">
+            <label class="{element.properties.elementClassAttribute} form-check-label" for="{element.uniqueIdentifier}">
+                <f:form.checkbox
+                        property="{element.identifier}"
+                        id="{element.uniqueIdentifier}"
+                        class="{element.properties.elementClassAttribute}"
+                        value="{element.properties.value}"
+                        errorClass="{element.properties.elementErrorClassAttribute}"
+                        additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+                />
+                <span>
+                    <f:variable name="checkboxLabel" value="{formvh:translateElementProperty(element: element, property: 'label')}" />
+                    <v:condition.string.contains haystack="{checkboxLabel}" needle="t3c:">
+                        <f:then>
+                            <f:variable name="checkboxLabel" value="{v:format.replace(content: checkboxLabel, substring: 't3c:', replacement:'')}" />
+                            <f:format.stripTags allowedTags="<a><span><b><strong>"><f:cObject typoscriptObjectPath="lib.tx_form.contentElementRendering">{checkboxLabel}</f:cObject></f:format.stripTags>
+                        </f:then>
+                        <f:else>{checkboxLabel -> f:format.raw()}</f:else>
+                    </v:condition.string.contains>
+
+
+                    <f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if>
+                </span>
+            </label>
+        </div>
+    </f:render>
+</formvh:renderRenderable>
+</html>

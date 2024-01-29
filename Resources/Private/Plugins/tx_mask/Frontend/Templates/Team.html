@@ -1,0 +1,47 @@
+<html xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{data.tx_mask_teams}">
+    <div class="team-container row g-4">
+        <f:for each="{data.tx_mask_teams}" as="data_item">
+            <div class="team-item col-sm-6 col-md-4 col-lg-3">
+                <div class="team-image">
+                    <f:for each="{data_item.tx_mask_img}" as="file">
+                        <picture>
+                            <f:variable name="origFile" value="{f:uri.image(image:file, width:360, cropVariant:'mobile')}"/>
+                            <f:variable name="width" value="{n:imageSize(property:'width',image:origFile)}"/>
+                            <f:variable name="height" value="{n:imageSize(property:'height',image:origFile)}"/>
+                            <f:variable name="mimeType" value="{db:data.image(property:'mime_type',image:file)}"/>
+
+                            <source srcset="{f:uri.image(image:file, width:360, maxWidth:width, maxHeight:height, cropVariant:'mobile', fileExtension:'webp')}" type="image/webp"/>
+                            <source srcset="{origFile}" type="{mimeType}"/>
+
+                            <img alt="{file.alternative -> f:format.stripTags()}"
+                                 lazyload="true" title="{file.title -> f:format.stripTags()}"
+                                 height="{height}" width="{width}"
+                            />
+                        </picture>
+                    </f:for>
+                </div>
+                <div class="team-title">{data_item.tx_mask_title -> f:format.raw()}</div>
+                <div class="team-actions">
+                    <f:if condition="{data_item.tx_mask_phone}">
+                        <f:link.typolink parameter="{data_item.tx_mask_phone}">
+                            <i class="fa-solid fa-phone"></i>
+                        </f:link.typolink>
+                    </f:if>
+                    <f:if condition="{data_item.tx_mask_mail}">
+                        <f:link.typolink parameter="{data_item.tx_mask_mail}">
+                            <i class="fa-solid fa-envelope"></i>
+                        </f:link.typolink>
+                    </f:if>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</f:if>
+
+</html>

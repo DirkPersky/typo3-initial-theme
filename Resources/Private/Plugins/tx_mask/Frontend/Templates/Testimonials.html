@@ -1,0 +1,60 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:if condition="{data.tx_mask_items}">
+    <div
+            id="carousel-generic-{data.uid}"
+            class="carousel slide slider--style-testemonials"
+            data-bs-interval="6000"
+            data-bs-ride="carousel"
+            data-bs-wrap="true"
+    >
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+            <f:for each="{data.tx_mask_items}" as="row" iteration="row_iteration" key="entrynumber">
+                <div class="carousel-item {f:if(condition:'{row_iteration.isFirst}',then:'active')}">
+
+                    <!-- Carousel caption -->
+                    <div class="testemonial-body">
+                        <div class="description">
+                            <div class="testemonial-item-medias">
+                                <f:for each="{row.tx_mask_img}" as="file" iteration="column_iteration">
+                                    <div class="carousel-item-medias"
+                                         data-mediaload="row{row_iteration.index}-item{column_iteration.index}">
+                                        <f:render arguments="{file: file, data: data, settings: settings, class: ''}"
+                                                  partial="Media/Type"/>
+                                    </div>
+                                </f:for>
+                            </div>
+
+                            {row.tx_mask_description->f:format.html()}
+                        </div>
+                        <div>
+                            <div class="name">
+                                {row.tx_mask_name->f:format.raw()}
+                            </div>
+                            <div class="subline">
+                                {row.tx_mask_subline->f:format.raw()}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+
+
+        <f:if condition="{data.tx_mask_items -> f:count()} > 1">
+            <!--- Indicators -->
+            <div class="carousel-indicators">
+                <f:for each="{data.tx_mask_items}" as="row" iteration="row_iteration" key="entrynumber">
+                    <button aria-current="true"
+                            aria-label="Slide {f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} + 1')}"
+                            class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}"
+                            data-bs-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber}')}"
+                            data-bs-target="#carousel-generic-{data.uid}" type="button"
+                    >
+                    </button>
+                </f:for>
+            </div>
+        </f:if>
+    </div>
+</f:if>
+</html>

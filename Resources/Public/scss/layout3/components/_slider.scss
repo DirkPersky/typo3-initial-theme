@@ -119,6 +119,12 @@
 		height: calc(100vh - 130px);
 		object-fit: cover;
 	  }
+
+	  img:before {
+		content: '';
+		display: block;
+		height: calc(100vh - 130px);
+	  }
 	}
 
 	.carousel-inner-wrap {
