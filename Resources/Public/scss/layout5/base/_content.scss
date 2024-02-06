@@ -7,4 +7,8 @@
   letter-spacing: 1px;
   font-weight: 800;
   font-size: 1rem;
+
+  &.btn-primary {
+    color: var(--bs-btn-color) !important;
+  }
 }

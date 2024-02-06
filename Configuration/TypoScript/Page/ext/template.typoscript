@@ -12,6 +12,9 @@ page.10 {
 	    layout = TEXT
 	    layout.data = levelfield:-1,backend_layout_next_level,slide
 	    layout.override.field = backend_layout
+
+	    siteTitle = TEXT
+	    siteTitle.data = site:websiteTitle
     }
 
     ##########################

@@ -9,6 +9,7 @@
   -->
 
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       xmlns:db="http://typo3.org/ns/DirkPersky/Theme/ViewHelpers"
       data-namespace-typo3-fluid="true">
     <!-- Load all JS files -->
@@ -29,7 +30,7 @@
                         <div class="dp--brand">
                             <f:link.page pageUid="{settings.pidRoot}" class="navbar-brand" title="Home">
                                 <f:if condition="{settings.primaryLogo}">
-                                    <img class="logo"  src="{f:uri.image(src: '{settings.primaryLogo}', maxHeight: 90)}" alt="Bild Dirk Persky" title="Bild Dirk Persky" height="71" width="300">
+                                    <img class="logo"  src="{f:uri.image(src: '{settings.primaryLogo}', maxHeight: 75)}" alt="{siteTitle-> f:format.stripTags()}" title="{siteTitle-> f:format.stripTags()}" height="75" width="378">
                                 </f:if>
                             </f:link.page>
                         </div>
@@ -66,7 +67,7 @@
     <f:render partial="Search/Modal" arguments="{_all}"/>
     <!-- Footer -->
     <footer id="bottom" data-canvis-side>
-        <button id="to-top" data-no-swup>
+        <button id="to-top" data-no-swup aria-label="to top">
             <i class="fas fa-angle-double-up"></i>
         </button>
         <div class="container py-2">
