@@ -76,7 +76,7 @@ _StateManager.prototype.callByName = function (name) {
             }
         });
     } catch (e) {
-        console.log(e);
+        console.log(name, e);
     }
 };
 
