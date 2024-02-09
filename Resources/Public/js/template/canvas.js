@@ -25,6 +25,10 @@ class DPCanvas {
         if(typeof this.$button.dataset['dpCanvis'] != 'undefined') this.$container.classList.add(this.$button.dataset['dpCanvis']);
         // at wrapper to body
         document.body.append(this.$container);
+
+        this.$toggleButtonCallback = this.eventToogleButton.bind(this);
+        this.$eventBackdropCallback = this.eventBackdrop.bind(this);
+
         // Initial Load Content
         this.loadNavigationContent();
         // bind external triggers
@@ -98,11 +102,11 @@ class DPCanvas {
     toggleButtonEvents(){
         // close event on Backdropclick
         var backdrop = document.querySelector(this.settings.backdrop);
-        backdrop.removeEventListener('click', this.eventBackdrop.bind(this));
-        backdrop.addEventListener('click', this.eventBackdrop.bind(this));
+        backdrop.removeEventListener('click', this.$eventBackdropCallback);
+        backdrop.addEventListener('click', this.$eventBackdropCallback);
         // bind button click
-        this.$button.removeEventListener('click', this.eventToogleButton.bind(this));
-        this.$button.addEventListener('click', this.eventToogleButton.bind(this));
+        this.$button.removeEventListener('click',  this.$toggleButtonCallback);
+        this.$button.addEventListener('click',  this.$toggleButtonCallback);
         // remove disable attribute
         this.$button.removeAttribute('disabled');
     }
