@@ -7,3 +7,9 @@ services:
   DirkPersky\Theme\:
     resource: '../Classes/*'
     exclude:  '../Classes/Domain/Model/*'
+
+  DirkPersky\Theme\EventListener\AdditionalPropertiesForSearch:
+    tags:
+      - name: event.listener
+        identifier: 'myAdditionalPropertiesForSearch'
+        event: Brotkrueml\Schema\Event\RegisterAdditionalTypePropertiesEvent

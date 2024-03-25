@@ -17,10 +17,6 @@
                                 <type>select</type>
                                 <renderType>selectCheckBox</renderType>
                                 <itemsProcFunc>DirkPersky\Theme\Flexfrom\GridClasses->getAlignClasses</itemsProcFunc>
-                                <itemGroups>
-                                    <group1>Vertical</group1>
-                                    <group2>Horizontal</group2>
-                                </itemGroups>
                                 <maxitems>2</maxitems>
                                 <size>10</size>
                                 <default>justify-content-start, align-items-start</default>

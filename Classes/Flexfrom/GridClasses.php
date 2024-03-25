@@ -75,35 +75,29 @@ class GridClasses
      */
     public function getAlignClasses(&$fConfig)
     {
-        $verticalAlignClasses = [
-            ['align-items-start', 'Start'],
-            ['align-items-center', 'Center'],
-            ['align-items-end', 'End'],
-            ['align-items-stretch', 'Stretch'],
+        $options = [
+            'Vertical' => [
+                ['align-items-start', 'Start'],
+                ['align-items-center', 'Center'],
+                ['align-items-end', 'End'],
+                ['align-items-stretch', 'Stretch'],
+            ],
+
+            'Horizontal' => [
+                ['justify-content-start', 'Left'],
+                ['justify-content-center', 'Center'],
+                ['justify-content-end', 'Right'],
+                ['justify-content-between', 'Space between'],
+            ]
         ];
 
-        $horizontalAlignClasses = [
-            ['justify-content-start', 'Left'],
-            ['justify-content-center', 'Center'],
-            ['justify-content-end', 'Right'],
-            ['justify-content-between', 'Space between'],
-        ];
-        foreach ($verticalAlignClasses as $class) {
-            $_temp = [];
-            $_temp[0] = $class[1];
-            $_temp[1] = $class[0];
-            $_temp[2] = '';
-            $_temp[3] = 'group1';
-            $fConfig['items'][] = $_temp;
-        }
 
-        foreach ($horizontalAlignClasses as $class) {
-            $_temp = [];
-            $_temp[0] = $class[1];
-            $_temp[1] = $class[0];
-            $_temp[2] = '';
-            $_temp[3] = 'group2';
-            $fConfig['items'][] = $_temp;
+        foreach ($options as $key => $grouop) {
+            foreach ($grouop as $option) {
+                $fConfig['items'][] = [
+                    $option[1], $option[0],'', $key
+                ];
+            }
         }
     }
 
