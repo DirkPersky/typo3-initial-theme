@@ -23,3 +23,4 @@ page = PAGE
 ### Load Template ###
 #####################
 @import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/template.typoscript'
+@import 'EXT:dp_theme/Configuration/TypoScript/Page/ext/richsnippet.typoscript'
