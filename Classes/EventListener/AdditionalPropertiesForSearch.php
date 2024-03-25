@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace DirkPersky\Theme\EventListener;
 
 use Brotkrueml\Schema\Event\RegisterAdditionalTypePropertiesEvent;
-use Brotkrueml\Schema\Model\Type\Person;
+use Brotkrueml\Schema\Model\Type\SearchAction;
 
 final class AdditionalPropertiesForSearch
 {

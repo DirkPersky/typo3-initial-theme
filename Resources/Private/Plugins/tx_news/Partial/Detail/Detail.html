@@ -41,9 +41,6 @@
             </f:if>
         </n:simplePrevNext>
     </f:if>
-    <div class="header">
-        <h1 itemprop="headline"><f:format.raw>{newsItem.title}</f:format.raw></h1>
-    </div>
     <n:renderMedia news="{newsItem}" imgClass="img-responsive" videoClass="video-wrapper" audioClass="audio-wrapper">
         <f:if condition="{newsItem.teaser}">
             <!-- teaser -->
